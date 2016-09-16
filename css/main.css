@@ -1,0 +1,39 @@
+	* {
+	    margin: 0px;
+	    padding: 0px;
+	}
+	
+	ul {
+	    list-style: none;
+	}
+	
+	.inputgroup {
+	    list-style: none;
+	}
+	
+	.inputgroup li {
+	    width: 20%;
+	    margin: 0 2%;
+	    float: left;
+	}
+
+	#exampleModal .inputgroup input {
+	    width: 100%;
+	    text-align: right;
+	    height: 24px;
+	}
+	#BACCon  .inputgroup input {
+		width: 100%;
+		text-align: left;
+		height: 24px;
+	}
+	#CenterConfig_dialog .inputgroup input{
+		width:100%;
+		text-align: left;
+		height:24px;
+	}
+	.modal-header {
+	    background-color: rgb(230, 230, 255);
+	}
+	
+	

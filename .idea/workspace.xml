@@ -1,0 +1,1594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="633d9224-d895-4f36-981f-81e88d16658e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/img/line_conn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/img/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/img/metro.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/img/metro.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/ext/ext-watermark/fonts/ext-watermark.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/ext/ext-watermark/fonts/ext-watermark.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/ext/ext-watermark/fonts/ext-watermark.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/boundlist/trigger-arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/box/corners-blue.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/box/corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/box/l-blue.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/box/l.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/box/r-blue.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/box/r.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/box/tb-blue.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/box/tb.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/breadcrumb/default-arrow-open-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/breadcrumb/default-arrow-open.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/breadcrumb/default-arrow-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/breadcrumb/default-arrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/breadcrumb/default-scroll-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/breadcrumb/default-scroll-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/breadcrumb/default-split-arrow-open-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/breadcrumb/default-split-arrow-open.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/breadcrumb/default-split-arrow-over-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/breadcrumb/default-split-arrow-over.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/breadcrumb/default-split-arrow-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/breadcrumb/default-split-arrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn-group/btn-group-default-framed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn-group/btn-group-default-framed-notitle-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn-group/btn-group-default-framed-notitle-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn-group/btn-group-default-framed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-focus-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-focus-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-focus-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-large-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-focus-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-focus-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-focus-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-medium-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-focus-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-focus-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-focus-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-small-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-focus-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-focus-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-focus-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-large-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-focus-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-focus-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-focus-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-medium-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-focus-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-focus-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-focus-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/btn/btn-default-toolbar-small-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/arrow-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/arrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/btn.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/group-cs.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/group-lr.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/group-tb.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/s-arrow-b-noline.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/s-arrow-b.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/s-arrow-bo.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/s-arrow-light-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/s-arrow-light.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/s-arrow-noline-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/s-arrow-noline.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/s-arrow-o-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/s-arrow-o.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/s-arrow-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/button/s-arrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/datepicker/datepicker-footer-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/datepicker/datepicker-header-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/dd/drop-add.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/dd/drop-no.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/dd/drop-yes.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/editor/tb-sprite.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/checkbox.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/clear-trigger-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/clear-trigger.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/date-trigger-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/date-trigger.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/error-tip-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/exclamation.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/radio.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/search-trigger-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/search-trigger.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/spinner-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/spinner-small-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/spinner-small.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/spinner.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/tag-field-item-close.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/text-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/trigger-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/trigger-square-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/trigger-square.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/trigger-tpl-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/trigger-tpl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/form/trigger.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-bottom-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-bottom-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-top-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-top-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/arrow-left-white.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/arrow-right-white.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/cell-special-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/cell-special-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/cell-special-selected-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/cell-special-selected-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/col-move-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/col-move-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/column-header-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/column-header-over-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/columns.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/dd-insert-arrow-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/dd-insert-arrow-left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/dd-insert-arrow-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/dd-insert-arrow-right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/dirty-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/dirty.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/done.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/drop-no.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/drop-yes.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/filters/equals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/filters/find.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/filters/greater_than.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/filters/less_than.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/footer-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/grid-blue-hd.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/grid-blue-split.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/grid-hrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/grid-loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/grid-split.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/grid-vista-hd.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/grid3-hd-btn-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/grid3-hd-btn.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/grid3-hrow-over.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/grid3-hrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/grid3-rowheader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/group-by.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/group-collapse.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/group-expand-sprite.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/group-expand.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/hd-pop.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/hmenu-asc.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/hmenu-desc.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/hmenu-lock.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/hmenu-lock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/hmenu-unlock.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/hmenu-unlock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/invalid_line.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/mso-hd.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/nowait.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/page-first-disabled.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/page-first.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/page-last-disabled.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/page-last.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/page-next-disabled.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/page-next.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/page-prev-disabled.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/page-prev.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/pick-button.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/property-cell-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/property-cell-selected-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/refresh-disabled.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/refresh.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/row-check-sprite.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/row-expand-sprite.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/row-over.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/row-sel.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/sort-hd.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/sort_asc.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/sort_desc.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/grid/wait.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/layout/mini-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/layout/mini-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/layout/mini-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/layout/mini-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/magnify.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/menu/default-checked.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/menu/default-group-checked.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/menu/default-menu-parent-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/menu/default-menu-parent.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/menu/default-scroll-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/menu/default-scroll-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/menu/default-unchecked.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-bottom-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-bottom-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-bottom-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-bottom-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-bottom-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-bottom-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-bottom-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-left-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-left-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-left-fbg-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-left-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-left-sides-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-left-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-right-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-right-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-right-fbg-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-right-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-right-sides-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-right-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-top-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-top-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-collapsed-top-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-left-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-left-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-left-fbg-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-left-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-left-sides-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-left-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-right-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-right-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-right-fbg-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-right-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-right-sides-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-right-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-top-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-top-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-framed-top-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-left-bg-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-left-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-right-bg-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-right-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel-header/panel-header-default-top-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel/panel-default-framed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/panel/panel-default-framed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/progress/progress-default-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/blue-loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/calendar.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/glass-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/hd-sprite.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/icon-error.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/icon-info.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/icon-question.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/icon-warning.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/large-loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/left-btn.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/loading-balls.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/right-btn.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/shadow-c.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/shadow-lr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/shadow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/shared/warning.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/e-handle-dark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/e-handle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/ne-handle-dark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/ne-handle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/nw-handle-dark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/nw-handle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/s-handle-dark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/s-handle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/se-handle-dark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/se-handle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/square.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/sw-handle-dark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/sizer/sw-handle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/slider/slider-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/slider/slider-thumb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/slider/slider-v-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/slider/slider-v-thumb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab-bar/default-scroll-bottom-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab-bar/default-scroll-bottom-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab-bar/default-scroll-left-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab-bar/default-scroll-left-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab-bar/default-scroll-right-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab-bar/default-scroll-right-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab-bar/default-scroll-top-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab-bar/default-scroll-top-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab-bar/tab-bar-default-bottom-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab-bar/tab-bar-default-left-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab-bar/tab-bar-default-right-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab-bar/tab-bar-default-top-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-focus-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-focus-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-focus-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-bottom-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-close.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-focus-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-focus-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-focus-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-left-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-focus-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-focus-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-focus-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-right-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-focus-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-focus-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-focus-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tab/tab-default-top-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tip/tip-default-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tip/tip-default-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tip/tip-form-invalid-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tip/tip-form-invalid-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/toolbar/default-more-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/toolbar/default-more.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/toolbar/default-scroll-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/toolbar/default-scroll-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/toolbar/default-scroll-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/toolbar/default-scroll-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/toolbar/footer-more-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/toolbar/footer-more.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/toolbar/footer-scroll-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/toolbar/footer-scroll-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/toolbar/toolbar-default-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tools/tool-sprite-tpl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tools/tool-sprites.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tools/tools-sprites-trans.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/arrows-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/arrows.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/drop-above.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/drop-add.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/drop-append.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/drop-below.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/drop-between.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/drop-no.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/drop-over.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/drop-under.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/drop-yes.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-end-minus-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-end-minus.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-end-plus-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-end-plus.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-end-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-end.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-line-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-line.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-minus-nl-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-minus-nl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-minus-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-minus.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-plus-nl-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-plus-nl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-plus-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-plus.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/elbow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/folder-open-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/folder-open.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/folder-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/folder.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/leaf-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/leaf.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/tree/s.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/util/splitter/mini-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/util/splitter/mini-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/util/splitter/mini-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/util/splitter/mini-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-bottom-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-bottom-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-collapsed-bottom-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-collapsed-bottom-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-collapsed-left-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-collapsed-left-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-collapsed-left-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-collapsed-right-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-collapsed-right-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-collapsed-right-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-collapsed-top-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-collapsed-top-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-left-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-left-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-left-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-right-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-right-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-right-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-top-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window-header/window-header-default-top-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window/toast/fade-blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window/toast/fader.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window/toast/icon16_error.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window/toast/icon16_info.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window/window-default-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/images/window/window-default-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-neutral/images/magnify.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-neutral/images/window/toast/fade-blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-neutral/images/window/toast/fader.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-neutral/images/window/toast/icon16_error.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-neutral/images/window/toast/icon16_info.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/1.PNG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/2870728213_172264749.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/2872301598_172264749.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/bac_content.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/buttons.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/idx-btm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/module.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/title.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/未标题-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/boundlist/trigger-arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/box/corners-blue.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/box/corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/box/l-blue.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/box/l.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/box/r-blue.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/box/r.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/box/tb-blue.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/box/tb.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/breadcrumb/default-arrow-open-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/breadcrumb/default-arrow-open.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/breadcrumb/default-arrow-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/breadcrumb/default-arrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/breadcrumb/default-scroll-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/breadcrumb/default-scroll-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/breadcrumb/default-split-arrow-open-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/breadcrumb/default-split-arrow-open.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/breadcrumb/default-split-arrow-over-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/breadcrumb/default-split-arrow-over.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/breadcrumb/default-split-arrow-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/breadcrumb/default-split-arrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn-group/btn-group-default-framed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn-group/btn-group-default-framed-notitle-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn-group/btn-group-default-framed-notitle-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn-group/btn-group-default-framed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-focus-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-focus-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-focus-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-large-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-focus-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-focus-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-focus-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-medium-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-focus-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-focus-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-focus-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-small-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-focus-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-focus-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-focus-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-large-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-focus-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-focus-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-focus-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-medium-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-focus-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-focus-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-focus-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-pressed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-pressed-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/btn/btn-default-toolbar-small-pressed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/arrow-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/arrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/btn.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/group-cs.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/group-lr.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/group-tb.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/s-arrow-b-noline.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/s-arrow-b.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/s-arrow-bo.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/s-arrow-light-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/s-arrow-light.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/s-arrow-noline-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/s-arrow-noline.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/s-arrow-o-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/s-arrow-o.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/s-arrow-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/button/s-arrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/datepicker/datepicker-footer-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/datepicker/datepicker-header-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/dd/drop-add.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/dd/drop-no.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/dd/drop-yes.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/editor/tb-sprite.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/checkbox.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/clear-trigger-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/clear-trigger.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/date-trigger-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/date-trigger.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/error-tip-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/exclamation.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/radio.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/search-trigger-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/search-trigger.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/spinner-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/spinner-small-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/spinner-small.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/spinner.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/tag-field-item-close.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/text-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/trigger-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/trigger-square-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/trigger-square.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/trigger-tpl-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/trigger-tpl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/form/trigger.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-bottom-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-bottom-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-top-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid-row-editor-buttons/grid-row-editor-buttons-default-top-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/arrow-left-white.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/arrow-right-white.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/cell-special-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/cell-special-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/cell-special-selected-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/cell-special-selected-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/col-move-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/col-move-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/column-header-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/column-header-over-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/columns.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/dd-insert-arrow-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/dd-insert-arrow-left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/dd-insert-arrow-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/dd-insert-arrow-right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/dirty-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/dirty.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/done.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/drop-no.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/drop-yes.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/filters/equals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/filters/find.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/filters/greater_than.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/filters/less_than.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/footer-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/grid-blue-hd.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/grid-blue-split.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/grid-hrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/grid-loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/grid-split.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/grid-vista-hd.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/grid3-hd-btn-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/grid3-hd-btn.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/grid3-hrow-over.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/grid3-hrow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/grid3-rowheader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/group-by.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/group-collapse.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/group-expand-sprite.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/group-expand.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/hd-pop.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/hmenu-asc.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/hmenu-desc.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/hmenu-lock.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/hmenu-lock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/hmenu-unlock.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/hmenu-unlock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/invalid_line.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/mso-hd.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/nowait.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/page-first-disabled.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/page-first.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/page-last-disabled.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/page-last.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/page-next-disabled.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/page-next.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/page-prev-disabled.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/page-prev.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/pick-button.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/property-cell-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/property-cell-selected-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/refresh-disabled.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/refresh.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/row-check-sprite.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/row-expand-sprite.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/row-over.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/row-sel.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/sort-hd.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/sort_asc.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/sort_desc.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/grid/wait.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/layout/mini-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/layout/mini-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/layout/mini-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/layout/mini-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/magnify.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/menu/default-checked.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/menu/default-group-checked.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/menu/default-menu-parent-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/menu/default-menu-parent.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/menu/default-scroll-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/menu/default-scroll-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/menu/default-unchecked.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-bottom-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-bottom-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-bottom-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-bottom-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-bottom-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-bottom-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-bottom-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-left-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-left-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-left-fbg-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-left-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-left-sides-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-left-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-right-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-right-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-right-fbg-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-right-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-right-sides-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-right-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-top-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-top-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-collapsed-top-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-left-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-left-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-left-fbg-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-left-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-left-sides-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-left-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-right-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-right-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-right-fbg-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-right-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-right-sides-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-right-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-top-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-top-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-framed-top-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-left-bg-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-left-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-right-bg-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-right-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel-header/panel-header-default-top-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel/panel-default-framed-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/panel/panel-default-framed-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/progress/progress-default-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/blue-loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/calendar.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/glass-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/hd-sprite.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/icon-error.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/icon-info.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/icon-question.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/icon-warning.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/large-loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/left-btn.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/loading-balls.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/right-btn.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/shadow-c.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/shadow-lr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/shadow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/shared/warning.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/e-handle-dark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/e-handle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/ne-handle-dark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/ne-handle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/nw-handle-dark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/nw-handle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/s-handle-dark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/s-handle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/se-handle-dark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/se-handle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/square.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/sw-handle-dark.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/sizer/sw-handle.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/slider/slider-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/slider/slider-thumb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/slider/slider-v-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/slider/slider-v-thumb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab-bar/default-scroll-bottom-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab-bar/default-scroll-bottom-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab-bar/default-scroll-left-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab-bar/default-scroll-left-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab-bar/default-scroll-right-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab-bar/default-scroll-right-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab-bar/default-scroll-top-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab-bar/default-scroll-top-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab-bar/tab-bar-default-bottom-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab-bar/tab-bar-default-left-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab-bar/tab-bar-default-right-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab-bar/tab-bar-default-top-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-focus-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-focus-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-focus-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-bottom-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-close.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-focus-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-focus-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-focus-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-left-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-focus-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-focus-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-focus-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-right-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-disabled-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-disabled-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-disabled-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-focus-active-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-focus-active-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-focus-active-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-focus-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-focus-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-focus-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-focus-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-focus-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-focus-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-over-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-over-fbg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-over-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tab/tab-default-top-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tip/tip-default-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tip/tip-default-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tip/tip-form-invalid-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tip/tip-form-invalid-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/toolbar/default-more-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/toolbar/default-more.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/toolbar/default-scroll-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/toolbar/default-scroll-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/toolbar/default-scroll-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/toolbar/default-scroll-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/toolbar/footer-more-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/toolbar/footer-more.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/toolbar/footer-scroll-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/toolbar/footer-scroll-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/toolbar/toolbar-default-bg.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tools/tool-sprite-tpl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tools/tool-sprites.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tools/tools-sprites-trans.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/arrows-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/arrows.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/drop-above.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/drop-add.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/drop-append.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/drop-below.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/drop-between.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/drop-no.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/drop-over.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/drop-under.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/drop-yes.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-end-minus-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-end-minus.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-end-plus-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-end-plus.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-end-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-end.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-line-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-line.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-minus-nl-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-minus-nl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-minus-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-minus.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-plus-nl-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-plus-nl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-plus-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-plus.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/elbow.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/folder-open-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/folder-open.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/folder-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/folder.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/leaf-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/leaf.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/tree/s.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/util/splitter/mini-bottom.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/util/splitter/mini-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/util/splitter/mini-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/util/splitter/mini-top.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-bottom-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-bottom-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-collapsed-bottom-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-collapsed-bottom-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-collapsed-left-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-collapsed-left-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-collapsed-left-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-collapsed-right-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-collapsed-right-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-collapsed-right-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-collapsed-top-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-collapsed-top-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-left-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-left-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-left-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-right-corners-rtl.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-right-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-right-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-top-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window-header/window-header-default-top-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window/toast/fade-blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window/toast/fader.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window/toast/icon16_error.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window/toast/icon16_info.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window/window-default-corners.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/images/window/window-default-sides.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/theme-neutral/images/magnify.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/theme-neutral/images/window/toast/fade-blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/theme-neutral/images/window/toast/fader.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/theme-neutral/images/window/toast/icon16_error.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/theme-neutral/images/window/toast/icon16_info.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/liuzhencai.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/www.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/changeIP.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/css/bootstrap-theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/css/bootstrap-theme.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/css/bootstrap-theme.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/css/bootstrap.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/js/npm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/metroStyle.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/Readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/ext/ext-watermark/Read Me.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/ext/ext-watermark/demo-files/demo.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/ext/ext-watermark/demo-files/demo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/ext/ext-watermark/demo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/ext/ext-watermark/fonts/ext-watermark.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/ext/ext-watermark/selection.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/ext/ext-watermark/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-base/Readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-classic-all-debug.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-classic-all-debug_1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-classic-all-debug_2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-classic-all-rtl-debug.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-classic-all-rtl-debug_1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-classic-all-rtl-debug_2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-classic-all-rtl.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-classic-all-rtl_1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-classic-all-rtl_2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-classic-all.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-classic-all_1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-classic-all_2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/resources/theme-neutral/Readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/default.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/download.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/driverconfig.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/init.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/ConfigUtil.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/d3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/ext-all.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/ext-component.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery.ztree.all.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/selectivizr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/swiper-3.3.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/passwd.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/Reboot.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/devinit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/globalTree.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/initfiles/bac_config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/initfiles/center_config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/initfiles/global.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/initfiles/guard.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/initfiles/ipconfig.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/initfiles/modbus.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/initfiles/modbus_config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/initfiles/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/initfiles/remote.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/initfiles/userinfo.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/iotext.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/publish.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/setdate.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/xmlRW.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/Readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/theme-base/Readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/theme-classic-all.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/theme-classic-all_1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/theme-classic-all_2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/theme-neutral/Readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/upload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+    </list>
+    <ignored path="www.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="www" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.41935483">
+              <caret line="308" column="47" selection-start-line="308" selection-start-column="47" selection-end-line="308" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="driverconfig.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/driverconfig.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.25">
+              <caret line="247" column="128" selection-start-line="247" selection-start-column="128" selection-end-line="247" selection-end-column="128" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/driverconfig.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/ext-component.js" />
+        <option value="$PROJECT_DIR$/passwd.xml" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1920" />
+    <option name="y" value="-356" />
+    <option name="width" value="1080" />
+    <option name="height" value="1798" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="js.eslint.nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../graph" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="633d9224-d895-4f36-981f-81e88d16658e" name="Default" comment="" />
+      <created>1472435196840</created>
+      <option name="number" value="Default" />
+      <updated>1472435196840</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1920" y="-356" width="1080" height="1798" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27360308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944608" sideWeight="0.50385356" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34836066" sideWeight="0.49614644" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/driverconfig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="247" column="131" selection-start-line="247" selection-start-column="131" selection-end-line="247" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ext-component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="266" column="9" selection-start-line="266" selection-start-column="9" selection-end-line="266" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/passwd.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/driverconfig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ext-component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="266" column="9" selection-start-line="266" selection-start-column="9" selection-end-line="266" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/passwd.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/driverconfig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/changeIP.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54901963">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ConfigUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0748663">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/passwd.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6465517">
+          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ext-component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.012668919">
+          <caret line="266" column="9" selection-start-line="266" selection-start-column="9" selection-end-line="266" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/driverconfig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="247" column="128" selection-start-line="247" selection-start-column="128" selection-end-line="247" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41935483">
+          <caret line="308" column="47" selection-start-line="308" selection-start-column="47" selection-end-line="308" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

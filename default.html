@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- TemplateParam name="class" type="URL" value="file:///F|/EM9460www/div-b" -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>BACnet Router&Control</title>
+    <style type="text/css">
+        body {
+            background: maroon;
+        }
+
+        .header {
+            position: relative;
+            width: 100%;
+            height: 60px;
+            background: brown;
+        }
+
+        .header .logo {
+            width: 165px;
+            height: 60px;
+            margin-left: 20px;
+            float: left;
+        }
+
+        .header .navlink {
+            float: left;
+            margin-left: 20px;
+            position: relative;
+            display: inline-flex;
+            list-style: none;
+            height: 60px;
+            width: 50%;
+        }
+
+        .header .navlink li {
+            float: left;
+            padding: 0 20px 0 40px;
+        }
+
+        .header .navlink li:hover {
+            background: red;
+        }
+
+        .header .navlink li a {
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 60px;
+            color: white;
+        }
+
+        .content {
+            background: url(http://imgm.photophoto.cn/064/121/007/1210070163.jpg) no-repeat;
+            background-size: 100% 100%;
+            text-align: center;
+            height: 740px;
+
+        }
+
+        .content .bac-img {
+
+            width: 800px;
+
+        }
+
+        #changePic {
+            background-color: transparent;
+            margin: auto;
+            width: 199px;
+            height: 260px;
+            left: 100px;
+            position: absolute;
+            top: 480px;
+        }
+
+        #changePicImg {
+            margin: auto;
+            width: 199px;
+            height: 260px;
+            left: 100px;
+            position: absolute;
+            top: 480px;
+            border:none;
+            }
+
+        .footer {
+            /*border:1px solid red;*/
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .footer-sns {
+            text-align: center;
+            padding: 20px;;
+        }
+
+        .footer .footer-sns a {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            margin: 0 20px 0 20px;;
+            background-image: url('img/idx-btm.png');
+        }
+
+        .footer .footer-sns a:hover {
+            background-position-y: 32px;
+        }
+
+        .footer-sns .sns-wb {
+            background-position: 0px 73px;
+        }
+
+        .footer-sns .sns-wx {
+            background-position: -52px 73px;
+            position: relative;
+        }
+
+        .footer-sns .sns-qq {
+            background-position: -104px 73px;
+        }
+
+        .footer-sns .sns-qq:hover i {
+            display: block;
+        }
+
+        .footer-sns .sns-qq i {
+            position: absolute;
+            width: 180px;
+            height: 260px;
+            margin-top: -260px;
+            margin-left: -70px;
+            display: none;
+            background: url('img/idx-btm.png') no-repeat;
+        }
+
+        .footer-sns .sns-kj {
+            background-position: -156px 73px;
+        }
+
+        .footer-link {
+            margin: auto;
+            width: 90%;
+        }
+
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="header">
+    <img src="img/logo.png" class="logo">
+    <ul class="navlink">
+        <li><a href="changeIP.html">IPConfig</a></li>
+        <li><a href="program/index.html">Program</a></li>
+        <li><a href="driverconfig.html">DriverConfig</a></li>
+        <li><a href="graph/index.html">Graphtools</a></li>
+    </ul>
+</div>
+
+<div class="content">
+
+        <img id="changePicImg">
+    <img class="bac-img" src="img/home.png">
+</div>
+<div class="footer">
+    <div class="footer-sns">
+
+    </div>
+    <div class="footer-link">
+
+    </div>
+</div>
+</body>
+
+<script>
+    (function () {
+        var count = 0;
+
+        function setPic() {
+            var aPic = ['img/1.PNG', "img/2.jpg", 'img/3.jpg'];
+            $("#changePicImg").attr("src", aPic[count%aPic.length]);
+            $("#changePicImg").fadeIn();
+            count++;
+            setTimeout(clearPic, 3000);
+        }
+
+        function clearPic() {
+            $("#changePicImg").fadeOut()
+
+            setTimeout(setPic, 3000)
+        }
+
+        setPic()
+    })()
+
+</script>
+</html>

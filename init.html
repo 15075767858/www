@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>修复初次使用异常问题</title>
+</head>
+<body>
+
+<h1>初始化设备</h1>
+<p>这是一个隐藏功能，用于第一次使用设备初始化设备参数。</p>	
+	<p>如果你的设备参数不正常请点这里<input type='button' id='init' value="初始化设备参数" ></input></p>
+	<p style="color:red">因问题可能有一定复杂性，仅限SmartIO厂商技术人员使用。</p>
+
+<script type="text/javascript">
+	var init = document.getElementById("init");
+init.onclick=function(){
+	if(confirm("你确认要初始化设备参数吗？"))
+	{
+		alert("初始化")
+		location.href="php/devinit.php";
+	}else{
+		
+	}
+}
+</script>
+</body>
+</html>

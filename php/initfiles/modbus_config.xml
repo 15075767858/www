@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<root>
+	<serial>
+		<serial_number>3</serial_number>		<!-- serial_number 为串口号 -->
+		<parity>2</parity>						<!-- parity 为串口的奇偶位 -->
+		<databits>8</databits>					<!-- databits 为串口的数据位 -->
+		<stopbits>1</stopbits>					<!-- stopbits 为串口的停止位 -->
+		<baud_rate>19200</baud_rate>			<!-- baud_rate 为串口的波特率 -->
+	</serial>
+
+	<module number="1">							<!-- number 为模块的地址 -->
+		<point type="1" address="1">			<!-- type 为点的类型，
+													0 为DO 线圈寄存器
+													1 为DI 离散寄存器
+													3 为AV 保持寄存器
+													4 为AI 输入寄存器
+													address 为点的起始地址 -->
+
+			<data_type>0</data_type>				<!-- data_type 为点数据的类型
+														0 为浮点数
+														1 为双精度浮点数
+														2 为短整型
+														3 代表长整型 -->
+
+			<endian>0</endian>						<!-- endian 为字节序
+														0 代表大端
+														1 代表小端-->
+
+			<handler>
+				<symbol>0</symbol>					<!-- symbol 为点的处理方式
+														0 为加上value的值
+														1 为减去value的值
+														2 为乘以value的值
+														3 为除以value的值 -->
+
+				<value>0</value>
+			</handler>
+		</point>
+
+		.
+		.
+		.
+
+		<point type="0" address="1">
+		</point>
+	</module>
+
+	<module number="3">
+		.
+		.
+		.
+	</module>
+
+	.
+	.
+	.
+</root>

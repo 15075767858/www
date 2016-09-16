@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- TemplateParam name="class" type="URL" value="file:///F|/EM9460www/div-b" -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>BACnet Router&Control</title>
+    <style type="text/css">
+        .main {
+            width: 100%;
+
+        }
+
+        .modal-content {
+            width: 327px;
+            margin: auto;
+        }
+
+        .index {
+            background: url(img/buttons.jpg) no-repeat;
+            width: 75px;
+            height: 75px;
+
+        }
+
+        .toolbar {
+            margin: 90px 0px 50px 50px;
+        }
+
+        .toolbar > button {
+            width: 160px;
+            margin: 0px 15px 20px 15px;
+            color: white;
+        }
+
+        .toolbar > button:hover {
+            color: blue;
+        }
+
+        .button_shadow {
+            box-shadow: 2px 2px 10px #000;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <img src="img/title.png" width="960" height="200"></img>
+
+    <div class="div-bas10000" id="DDCname">
+    </div>
+    <!-- <div class="div-c" id="www">
+        <a alt="HOME" href="index.html">
+            <div class='index'></div>
+            </a>
+        </div> -->
+    <div class="toolbar">
+        <!-- Large button group -->
+        <button type="button" class="btn btn-success btn-lg button_shadow" title="IP Config" data-toggle="modal"
+                data-target="#exampleModal"
+                data-whatever="@mdo" aria-label="Left Align">
+            <span class=" glyphicon glyphicon-cog" aria-hidden="true"></span> IP Config
+        </button>
+        <button type="button" class="btn btn-danger btn-lg button_shadow" aria-label="Left Align" id="clear">
+            <span class="glyphicon glyphicon-refresh " aria-hidden="true"></span> Clear
+        </button>
+        <button type="button" class="btn btn-info btn-lg button_shadow" id="datetime" aria-label="Left Align">
+            <span class="glyphicon glyphicon-open" aria-hidden="true"></span> Date time
+        </button>
+        <button type="button" class="btn btn-success btn-lg button_shadow" id="bacnetconfig" title="BACnet Config"
+                data-toggle="modal" data-target="#BACCon" aria-label="Left Align"><span
+                class=" glyphicon glyphicon-wrench" aria-hidden="true"></span>BIP Config
+        </button>
+        <button type="button" class="btn btn-success btn-lg button_shadow" id="CenterConfig" title="Center Config"
+                data-toggle="modal" data-target="#CenterConfig_dialog" aria-label="Left Align"><span
+                class=" glyphicon glyphicon-wrench" aria-hidden="true"></span> MS/TPConfig
+        </button>
+        <button type="button" class="btn btn-danger btn-lg button_shadow" aria-label="Left Align" id="reboot">
+            <span class="glyphicon glyphicon-refresh " aria-hidden="true"></span> Reboot
+        </button>
+        <button type="button" class="btn btn-primary btn-lg button_shadow" onclick="location.href='download.html'"
+                aria-label="Left Align">
+            <span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span> Download
+        </button>
+        <button type="button" class="btn btn-warning btn-lg button_shadow" onclick="location.href='index.html'"
+                aria-label="Left Align">
+            <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Exit
+        </button>
+    </div>
+    <div class="div-logo2" id="loge2"></div>
+    <div class="div-info" id="info">
+        <div align="">
+            <img src="img/home.png" width="960" height="780"></img>
+        </div>
+        <p>&nbsp;</p>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="BACCon" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">BACnet Config</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">DeviceName</label>
+                            <ul class="inputgroup">
+                                <input type="text" id="DeviceName">
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">NetNumber</label>
+                            <ul class="inputgroup">
+                                <select id="NetNumber" style="width:294px;height:24px;">
+
+                                </select>
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">RemotePort</label>
+                            <ul class="inputgroup">
+                                <input type="text" id="RemotePort">
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">DevicePort</label>
+                            <ul class="inputgroup">
+                                <input type="text" id="DevicePort">
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+
+
+                        <div class="form-group hide">
+                            <label for="message-text" class="control-label">max_master</label>
+                            <ul class="inputgroup">
+                                <input type="text" id="max_master">
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+
+                        <div class="form-group hide">
+                            <label for="message-text" class="control-label">address</label>
+                            <ul class="inputgroup">
+                                <input type="text" id="address">
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+
+
+                        <div class="form-group hide">
+                            <label for="message-text" class="control-label">max frame</label>
+                            <ul class="inputgroup">
+                                <input type="text" id="max_send_frame">
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+
+                        <div class="form-group hide">
+                            <label for="message-text" class="control-label">baud_rate</label>
+                            <ul class="inputgroup">
+                                <select id="baud_rate" style="width:294px;height:24px;">
+                                    <option value="19200">19200</option>
+                                    <option value="38400">38400</option>
+                                    <option value="57600">57600</option>
+                                    <option value="76800">76800</option>
+                                </select>
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" id="saveBACnetConfig" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="CenterConfig_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Center Config</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">max_master</label>
+                            <ul class="inputgroup">
+                                <input type="number" id="center_max_master" value=127>
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">parity</label>
+                            <ul class="inputgroup">
+                                <input type="number" id="center_parity" value=0>
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">databits</label>
+                            <ul class="inputgroup">
+                                <input type="number" id="center_databits" value=8>
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">stopbits</label>
+                            <ul class="inputgroup">
+                                <input type="number" id="center_stopbits" value=1>
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">address</label>
+                            <ul class="inputgroup">
+                                <input type="number" id="center_address" value="0">
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">max_send_frame</label>
+                            <ul class="inputgroup">
+                                <input type="number" id="center_max_send_frame" value=20>
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">baud_rate</label>
+                            <ul class="inputgroup">
+                                <select id="center_baud_rate" style="width:294px;height:24px;">
+                                    <option value="19200">19200</option>
+                                    <option value="38400" selected="selected">38400</option>
+                                    <option value="57600">57600</option>
+                                    <option value="76800">76800</option>
+                                </select>
+
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" id="saveCenterConfig" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">change info file userinfo.txt</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="changeini">
+
+                            <div class="form-group">
+                                <label for="message-text" class="control-label">IPAddress</label>
+                                <ul class="inputgroup">
+                                    <li><input type="text" id="IPAddress1"></li>
+                                    <li><input type="text" id="IPAddress2"></li>
+                                    <li><input type="text" id="IPAddress3"></li>
+                                    <li><input type="text" id="IPAddress4"></li>
+                                    <div style="clear:both"></div>
+                                </ul>
+                            </div>
+                            <div class="form-group hidden">
+                                <label for="recipient-name" class="control-label">DHCP</label>
+                                <ul class="inputgroup">
+                                    <li><input type="text" id="DHCP1"></li>
+                                    <li><input type="text" id="DHCP2"></li>
+                                    <li><input type="text" id="DHCP3"></li>
+                                    <li><input type="text" id="DHCP4"></li>
+                                    <div style="clear:both"></div>
+                                </ul>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message-text" class="control-label">SubnetMask</label>
+                                <ul class="inputgroup">
+                                    <li><input type="text" id="SubnetMask1"></li>
+                                    <li><input type="text" id="SubnetMask2"></li>
+                                    <li><input type="text" id="SubnetMask3"></li>
+                                    <li><input type="text" id="SubnetMask4"></li>
+                                    <div style="clear:both"></div>
+                                </ul>
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="control-label">DefaultGateway</label>
+                                <ul class="inputgroup">
+                                    <li><input type="text" id="DefaultGateway1"></li>
+                                    <li><input type="text" id="DefaultGateway2"></li>
+                                    <li><input type="text" id="DefaultGateway3"></li>
+                                    <li><input type="text" id="DefaultGateway4"></li>
+                                    <div style="clear:both"></div>
+                                </ul>
+                            </div>
+
+
+                            <div class="form-group hidden">
+                                <label for="message-text" class="control-label">Name</label>
+                                <textarea class="form-control" id="Name"></textarea>
+                            </div>
+                            <div class="form-group hidden">
+                                <label for="message-text" class="control-label">Parameters</label>
+                                <textarea class="form-control" id="Parameters"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" id="changeinisub" class="btn btn-primary">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<div id='data' class="hide">
+
+</div>
+
+<script src="js/ConfigUtil.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+    (function () {
+        var NetCount = 1100;
+        for (var i = 0; i < 89; i++) {
+            $("#NetNumber").append("<option value=" + NetCount + ">" + NetCount + "</option>");
+            NetCount += 100;
+        }
+
+        $.ajax({
+            type: "post",
+            url: "php/iotext.php",
+            dataType: 'html',
+            data: "r=r",
+            async: false,
+            success: function (res) {
+                $("#data").text(res);
+            }
+        })
+        $("#datetime").on("click", function () {
+            var oDate = new Date(); //实例一个时间对象；
+            var year = oDate.getFullYear();   //获取系统的年；
+            var month = oDate.getMonth() + 1;   //获取系统月份，由于月份是从0开始计算，所以要加1
+            var date = oDate.getDate(); // 获取系统日，
+            var hours = oDate.getHours(); //获取系统时，
+            var min = oDate.getMinutes(); //分
+            var seconds = oDate.getSeconds(); //秒
+            var curDate = year + "-" + month + "-" + date;
+            var curTime = hours + ":" + min + ":" + seconds;
+            //alert(curDate+curTime);
+            $.ajax({
+                type: "post",
+                url: "php/setdate.php",
+                dataType: 'json',
+                data: "date=" + curDate + "&time=" + curTime,
+                success: function (res) {
+                    //alert("change date success." + res)
+                }
+            });
+            alert("Change date success ,Server time " + curDate + " " + curTime + " .")
+        });
+        $("#clear").on("click", function () {
+
+            var r = confirm("Worning:Press qu'ren clear you database!");
+            if (r == true) {
+                alert("clear success");
+                $.ajax({
+                    type: "get",
+                    url: "program/resources/test1.php?par=clear",
+                    dataType: 'json',
+                    data: "",
+                    success: function () {
+                    }
+                });
+                window.location.reload();
+            }
+        })
+
+        $("#reboot").on("click", function () {
+
+            var r = confirm("Worning:Press qu'ren server restart!");
+            if (r == true) {
+                alert("reboot success");
+                $.ajax({
+                    type: "get",
+                    url: "php/Reboot.php",
+                    dataType: 'json',
+                    data: "",
+                    success: function () {
+                    }
+                });
+                window.location.reload();
+            }
+        })
+
+
+        var jDate = parseINIString(document.getElementById("data").innerHTML);
+        var DHCP = jDate["[LOCAL_MACHINE"].DHCP.replace(/\"/g, " ").split(".");
+        var DefaultGateway = jDate["[LOCAL_MACHINE"].DefaultGateway.replace(/\"/g, " ").split(".");
+        var IPAddress = jDate["[LOCAL_MACHINE"].IPAddress.replace(/\"/g, " ").split(".");
+        var SubnetMask = jDate["[LOCAL_MACHINE"].SubnetMask.replace(/\"/g, " ").split(".");
+        for (var i = 0; i < 4; i++) {
+            $("#DHCP" + (i + 1)).val(DHCP[i].trim());
+            $("#DefaultGateway" + (i + 1)).val($.trim(DefaultGateway[i]));
+            $("#IPAddress" + (i + 1)).val($.trim(IPAddress[i]));
+            $("#SubnetMask" + (i + 1)).val($.trim(SubnetMask[i]));
+        }
+
+        var Name = jDate["[USER_EXE"].Name.replace(/\"/g, "");
+        var Parameters = jDate["[USER_EXE"].Parameters.replace(/\"/g, "");
+        $("#Name").val(Name);
+        $("#Parameters").val(Parameters);
+        $("#changeinisub").on("click", function () {
+            var DHCP = $("#DHCP1").val() + "." + $("#DHCP2").val() + "." + $("#DHCP3").val() + "." + $("#DHCP4").val();
+            var DefaultGateway = $("#DefaultGateway1").val() + "." + $("#DefaultGateway2").val() + "." + $("#DefaultGateway3").val() + "." + $("#DefaultGateway4").val();
+            var IPAddress = $("#IPAddress1").val() + "." + $("#IPAddress2").val() + "." + $("#IPAddress3").val() + "." + $("#IPAddress4").val();
+            var SubnetMask = $("#SubnetMask1").val() + "." + $("#SubnetMask2").val() + "." + $("#SubnetMask3").val() + "." + $("#SubnetMask4").val();
+            SubnetMask = SubnetMask.trim();
+            console.log(SubnetMask)
+            if (SubnetMask != "255.255.255.0" & SubnetMask != "255.255.0.0") {
+                alert("error SubnetMask only 255.255.255.0 or 255.255.0.0")
+                return;
+            }
+            var Name = $("#Name").val();
+            var Parameters = $("#Parameters").val();
+            var uploadData = '[LOCAL_MACHINE]\
+            \nDHCP="' + DHCP + '"\
+            \nDefaultGateway="' + DefaultGateway + '"\
+            \nIPAddress="' + IPAddress + '"\
+            \nSubnetMask="' + SubnetMask + '"\
+            \n[USER_EXE]\
+            \nName="' + Name + '"\
+            \nParameters="' + Parameters + '"';
+
+
+            showXml("/mnt/sympad/ipconfig.xml", function (result) {
+                var xml = $($.parseXML(result));
+
+                xml.find("net").attr("addr", IPAddress);
+                xml.find("net").attr("addr", IPAddress);
+                //var xmlstr = xmlToStr(xml[0]);
+
+                var xmlstr = '<?xml version="1.0" encoding="GBK"?>\r\n' + $("<div></div>").append(xml[0].childNodes[0]).html()
+                console.log($("<div></div>").append(xml[0].childNodes[0]).html())
+
+                if (xmlstr == undefined) {
+                    alert("Error input");
+                    return;
+                }
+
+                saveXml("/mnt/sympad/ipconfig.xml", function () {
+                }, xmlstr)
+            })
+
+            $.ajax({
+                type: "post",
+                url: "php/iotext.php",
+                dataType: 'json',
+                data: "content=" + uploadData,
+                success: function () {
+                }
+
+            })
+            alert("Ok");
+
+            window.location.reload();
+        });
+
+
+        $("#exampleModal .inputgroup input").keyup(function (e) {
+            if (parseInt(this.value) > 255) {
+                alert("The number is not greater than 255")
+                this.value = 0;
+                return;
+            }
+            this.value = parseInt(this.value);
+        });
+
+
+        /*max_master
+         address
+         baud_rate
+         max_send_frame
+         */
+
+        $("#CenterConfig").click(function () {
+            $("#CenterConfig").click(null);
+            showXml("../../center_config.xml", function (result) {
+
+                var xml = $($.parseXML(result));
+
+                var max_master = xml.find("root max_master").text()
+                if (max_master) {
+                    $("#center_max_master").val(max_master);
+                }
+
+                var address = xml.find("root address").text()
+                if (address) {
+                    $("#center_address").val(address);
+                }
+                var baud_rate = xml.find("root baud_rate").text()
+                if (baud_rate) {
+                    $("#center_baud_rate").val(baud_rate);
+                }
+                var max_send_frame = xml.find("root max_send_frame").text()
+                if (max_send_frame) {
+                    $("#center_max_send_frame").val(max_send_frame);
+                }
+                var parity = xml.find("root parity").text()
+                if (parity) {
+                    $("#center_parity").val(parity);
+                }
+                var databits = xml.find("root databits").text()
+                if (databits) {
+                    $("#center_databits").val(databits);
+                }
+                var stopbits = xml.find("root stopbits").text()
+                if (stopbits) {
+                    $("#center_stopbits").val(stopbits);
+                }
+
+
+                $("#saveCenterConfig").click(function () {
+                            var root_tag = document.createElement("root")
+                            var serial_tag = document.createElement("serial")
+                            root_tag.appendChild(serial_tag)
+
+                            var max_master_tag = document.createElement("max_master");
+                            max_master_tag.innerHTML = $("#center_max_master").val();
+                            serial_tag.appendChild(max_master_tag)
+                            var address_tag = document.createElement("address");
+                            address_tag.innerHTML = $("#center_address").val();
+                            serial_tag.appendChild(address_tag)
+                            var baud_rate_tag = document.createElement("baud_rate");
+                            baud_rate_tag.innerHTML = $("#center_baud_rate").val();
+                            serial_tag.appendChild(baud_rate_tag)
+                            var max_send_frame_tag = document.createElement("max_send_frame");
+                            max_send_frame_tag.innerHTML = $("#center_max_send_frame").val();
+                            serial_tag.appendChild(max_send_frame_tag)
+                            var parity_tag = document.createElement("parity");
+                            parity_tag.innerHTML = $("#center_parity").val();
+                            serial_tag.appendChild(parity_tag)
+                            var databits_tag = document.createElement("databits");
+                            databits_tag.innerHTML = $("#center_databits").val();
+                            serial_tag.appendChild(databits_tag)
+                            var stopbits_tag = document.createElement("stopbits");
+                            stopbits_tag.innerHTML = $("#center_stopbits").val();
+                            serial_tag.appendChild(stopbits_tag)
+                            var xmlstr = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\r\n' + formatXml(root_tag.outerHTML)//$("<div></div>").append(xml[0].childNodes[0]).html()
+                            //var xmlstr = xmlToStr(xml[0]);
+                            if (xmlstr == undefined) {
+                                alert("Error input");
+                                return;
+                            }
+                            saveXml("../../center_config.xml", function () {
+                                var key = "9999.8.*";
+                                var value = "9999997\r\nPresent_Value\r\n1";
+                                async: false,
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "php/publish.php",
+                                            data: "key=" + key + "&value=" + value,
+                                        });
+                                alert("ok")
+
+                                window.location.reload();
+                            }, xmlstr);
+
+
+                        }
+                );
+            })
+        })
+
+        $("#bacnetconfig").click(function () {
+            $("#saveBACnetConfig").click(null);
+            showXml("../../center_config.xml", function (result) {
+
+                var xml = $($.parseXML(result));
+
+                $("#max_master").val(xml.find("root max_master").text());
+                $("#address").val(xml.find("root address").text());
+                $("#baud_rate").val(xml.find("root baud_rate").text());
+                $("#max_send_frame").val(xml.find("root max_send_frame").text());
+
+                $("#saveBACnetConfig").click(function () {
+                            xml.find("root max_master").text($("#max_master").val());
+                            xml.find("root address").text($("#address").val());
+                            xml.find("root baud_rate").text($("#baud_rate").val());
+                            xml.find("root max_send_frame").text($("#max_send_frame").val());
+
+
+                            var xmlstr = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\r\n' + $("<div></div>").append(xml[0].childNodes[0]).html()
+                            //var xmlstr = xmlToStr(xml[0]);
+
+                            if (xmlstr == undefined) {
+                                alert("Error input");
+                                return;
+                            }
+                            saveXml("../../center_config.xml", function () {
+                            }, xmlstr);
+
+                        }
+                );
+            })
+
+            showXml("../../bac_config.xml", function (result) {
+                var xml = $($.parseXML(result));
+
+                $("#DeviceName").val(xml.find("root name").text());
+                $("#NetNumber").val(xml.find("root net").text());
+                $("#RemotePort").val(xml.find("root lport").text());
+                $("#DevicePort").val(xml.find("root rport").text());
+
+                $("#saveBACnetConfig").click(null);
+
+                $("#saveBACnetConfig").click(function () {
+                    xml.find("root name").text($("#DeviceName").val());
+                    xml.find("root net").text($("#NetNumber").val());
+                    xml.find("root lport").text($("#RemotePort").val());
+                    xml.find("root rport").text($("#DevicePort").val());
+
+                    var xmlstr = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\r\n' + $("<div></div>").append(xml[0].childNodes[0]).html()
+                    //var xmlstr =xmlToStr(xml[0]);
+
+
+                    if (xmlstr == undefined) {
+                        alert("Error input");
+                        return;
+                    }
+
+                    saveXml("../../bac_config.xml",
+                            function () {
+                                alert("ok")
+                                window.location.reload();
+                            }, xmlstr);
+                });
+            });
+
+        });
+
+
+    })
+    ();
+
+</script>
+</html>

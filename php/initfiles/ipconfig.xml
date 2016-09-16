@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="GBK"?>
+<root cardcount="1">
+<net flag="1" addr="192.168.253.249" mask="255.255.255.0" mac="B0:C9:5B:00:03:DD" gate="192.168.253.1" dns=""/>
+</root>
