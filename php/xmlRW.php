@@ -1,6 +1,6 @@
 <?php  
-$fn=$_POST['fileName'];
-$rw=$_POST['rw'];
+$fn=$_REQUEST['fileName'];
+$rw=$_REQUEST['rw'];
 $fn="../".$fn;
 if($rw=='r'){
 	if(!file_exists($fn)){
@@ -12,10 +12,13 @@ if($rw=='r'){
 echo fgets($fp); 
 } 
 }else{
-$content=$_POST["content"];
+$content=$_REQUEST["content"];
     $fp = fopen($fn, 'w') or die("Unable to open file!");
-    
-    fwrite($fp, $content);
+
+    if(isset($_REQUEST['callback'])){
+        echo "save success ";
+    }
+    echo fwrite($fp, $content);
 fclose($fp);
 }
 ?>

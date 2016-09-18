@@ -152,11 +152,22 @@ function centerConfig(xmlFile) {
 
 function globalClick() {
 
-    var IPCombo = Ext.create("Ext.form.field.ComboBox", {
+    var IPCombo = Ext.create("Ext.form.field.Tag", {
         fieldLabel: "Sources IP",
-        store: ['127.0.0.1', window.location.hostname, "192.168.253.253"],
+        store: ['127.0.0.1', window.location.hostname, "192.168.253.253", "192.168.253.253"],
         labelWidth: 70,
-        value: location.hostname
+        maxWidth: 300,
+        createNewOnEnter: true,
+        createNewOnBlur: true,
+        filterPickList: true,
+        queryMode: 'local',
+        hideTrigger: false,
+        listeners: {
+            focus: function (field) {
+                field.el.query(".x-tagfield-arialist")[0].style.display = 'none';
+            }
+        }
+        //value: location.hostname
     });
     var PortCombo = Ext.create("Ext.form.field.ComboBox", {
         fieldLabel: "port number",
@@ -192,8 +203,8 @@ function globalClick() {
                                 text: "root"
                             }
                         })
-                        treePanel.setStore(treeStore);
 
+                        treePanel.setStore(treeStore);
                     }
                 }
             ]
@@ -279,7 +290,7 @@ function globalClick() {
 
     Ext.create("Ext.window.Window", {
         height: 500,
-        width: 600,
+        width: 700,
         title: "Export Global.xml",
         autoShow: true,
         renderTo: Ext.getBody(),
@@ -289,6 +300,7 @@ function globalClick() {
             {
                 text: "Export Checked Point",
                 handler: function () {
+
                     var win = Ext.create("Ext.window.Window", {
                         width: 300,
                         bodyPadding: 10,
@@ -305,36 +317,83 @@ function globalClick() {
                         buttons: [{
                             text: "Ok",
                             handler: function () {
-                                var ip  = win.items.items[0].getValue()
-                                console.log(ip)
+
+                                var childNodes = treePanel.store.root.childNodes
+                                //console.log(childNodes)
                                 var checkeds = treePanel.getChecked();
                                 var root = document.createElement("root");
-                                var device = document.createElement("device");
-                                device.setAttribute("address", "25")
-                                device.setAttribute("ip", IPCombo.value);
-                                device.setAttribute("name", "");
-                                device.setAttribute("port", PortCombo.value);
-                                device.setAttribute("timeout", "1000");
-                                root.appendChild(device)
-                                checkeds.sort(function (a, b) {
-                                    return a.data.text - b.data.text
-                                })
-                                for (var i = 0; i < checkeds.length; i++) {
-                                    if (checkeds[i].data.leaf) {
-                                        console.log(checkeds[i])
-                                        var point = document.createElement("point");
-                                        point.setAttribute("key", checkeds[i].data.text)
-                                        point.setAttribute("type", checkeds[i].data.text.substr(4, 1))
-                                        device.appendChild(point)
-                                    }
-                                }
-                                var content = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\r\n' + formatXml(root.outerHTML)
 
-                                console.log(content)
-                                /*saveXml("../../global.xml", function () {
-                                    Ext.Msg.alert("Massage", "Ok!")
-                                }, content)
-                                */
+                                for (var i = 0; i < childNodes.length; i++) {
+
+                                    var device = document.createElement("device");
+                                    device.setAttribute("ip", childNodes[i].data.text)
+                                    device.setAttribute("address", "25")
+                                    device.setAttribute("name", "");
+                                    device.setAttribute("port", PortCombo.value);
+                                    device.setAttribute("timeout", "1000");
+                                    for (var j = 0; j < checkeds.length; j++) {
+                                        if (checkeds[j].data.leaf) {
+                                            var data = checkeds[j].parentNode.parentNode.parentNode.data
+                                            if (data.text == childNodes[i].data.text) {
+                                                console.log(data)
+                                                var point = document.createElement("point");
+                                                point.setAttribute("key", data.text)
+                                                point.setAttribute("type", data.text.substr(4, 1))
+                                                device.appendChild(point)
+
+                                            }
+                                        }
+                                    }
+                                    root.appendChild(device)
+                                    var remoteIp = win.down("combo").value.trim()
+
+                                    var content = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\r\n' + formatXml(root.outerHTML)
+                                    console.log(content)
+                                    if (remoteIp == location.hostname) {
+                                        saveXml("../../global.xml", function () {
+                                            Ext.Msg.alert("Massage", "Ok!")
+                                        }, content)
+                                        return
+                                    } else {
+
+                                        var form = $('<form method="post" action="http://' + remoteIp + '/php/xmlRW.php" >\
+                                        <input name="rw" value="w">\
+                                        <input name="fileName" value="../../global.xml">\
+                                        <textarea name="content" type="textarea" value="' + content + '">\
+                                        <input type="submit" value="提交">\
+                                        </form>')
+                                        form.submit()
+                                    }
+                                    /* var formPanel = Ext.create('Ext.form.Panel', {
+                                     url:"http://"+remoteIp+"/php/xmlRW.php",
+                                     renderTo:Ext.getBody(),
+                                     method:"post",
+                                     items: [
+                                     {
+                                     xtype:"textfield",
+                                     name:"rw",
+                                     value:'w',
+                                     },
+                                     {
+                                     xtype: "textfield",
+                                     name: "fileName",
+                                     value: "../../global.xml"
+                                     },
+                                     {
+                                     xtype: "textarea",
+                                     name: "content",
+                                     value: content
+                                     }
+                                     ],
+                                     listeners:{
+                                     boxready:function(){
+                                     testForm =formPanel
+                                     }
+                                     }
+                                     })*/
+
+                                }
+
 
                                 win.close();
                             }
@@ -349,3 +408,34 @@ function globalClick() {
     })
 
 }
+/*
+
+ var ip = win.items.items[0].getValue()
+ console.log(ip)
+ var checkeds = treePanel.getChecked();
+ var root = document.createElement("root");
+ var device = document.createElement("device");
+
+ device.setAttribute("ip", IPCombo.value);
+ device.setAttribute("address", "25")
+
+ device.setAttribute("name", "");
+ device.setAttribute("port", PortCombo.value);
+ device.setAttribute("timeout", "1000");
+ root.appendChild(device)
+ checkeds.sort(function (a, b) {
+ return a.data.text - b.data.text
+ })
+
+ for (var i = 0; i < checkeds.length; i++) {
+ if (checkeds[i].data.leaf) {
+ console.log(checkeds[i])
+ var point = document.createElement("point");
+ point.setAttribute("key", checkeds[i].data.text)
+ point.setAttribute("type", checkeds[i].data.text.substr(4, 1))
+ device.appendChild(point)
+ }
+ }
+ var content = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\r\n' + formatXml(root.outerHTML)
+
+ */
