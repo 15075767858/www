@@ -176,6 +176,13 @@
             color: white;
             background: brown;;
         }
+
+        #updateDrive {
+            position: absolute;
+            left: 770px;
+            top: 600px;
+        }
+
     </style>
 </head>
 
@@ -285,7 +292,43 @@
             <pre></pre>
         </div>
     </div>
-
+    <div id="updateDrive" class="panel panel-default">
+        <div class="panel-heading">update drive</div>
+        <div class="panel-body">
+            <form id="updateDriveForm" enctype="multipart/form-data" action="php/UpdateDrive.php" method="post">
+                <div class="form-group">
+                    <label for="message-text" class="control-label">drive name</label>
+                    <ul class="inputgroup">
+                        <select id="driveName" name="driveName" style="width:294px;height:24px;">
+                            <option value="bip-client">bip-client</option>
+                            <option value="bac-logic">bac-logic</option>
+                            <option value="bac-mrouter">bac-mrouter</option>
+                            <option value="bac-global">bac-global</option>
+                            <option value="bac-logic-modbus">bac-logic-modbus</option>
+                            <option value="bac-server-modbus">bac-server-modbus</option>
+                            <option value="bac-client">bac-client</option>
+                            <option value="bac-server">bac-server</option>
+                        </select>
+                        <div style="clear:both"></div>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="message-text" class="control-label">select file</label>
+                    <ul class="inputgroup">
+                        <input id="driveFile" name="driveFile" type="file"/>
+                        <div style="clear:both"></div>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="message-text" class="control-label">submit</label>
+                    <ul class="inputgroup">
+                        <input type="submit"/>
+                        <div style="clear:both"></div>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 <!--<form method="post" action="http://192.168.253.253/php/xmlRW.php" >
 <input name="rw" value="w">
@@ -567,7 +610,6 @@
                 //$("#xmlpan .panel-heading").html(".xml");
                 $("#xmlpan .panel-body *").text(res);
             });
-
         });
 
         $("#modCon").on("click", function () {
@@ -577,11 +619,10 @@
                 if ($("#concheck1_s")[0].checked) {
                     isSelect = 1;
                 }
-                if ($("#concheck4")[0].checked){
+                if ($("#concheck4")[0].checked) {
                     xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-server-modbus"/>';
-                }else{
+                } else {
                     xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-server"/>';
-
                 }
             }
             if ($("#concheck2")[0].checked) {
@@ -590,7 +631,11 @@
                     isSelect = 1;
                 }
                 xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-client"/>';
-                xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-logic"/>';
+                if ($("#concheck4")[0].checked) {
+                    xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-logic-modbus"/>';
+                } else {
+                    xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-logic"/>';
+                }
             }
             if ($("#concheck3")[0].checked) {
                 var isSelect = 0;
@@ -605,7 +650,8 @@
                     isSelect = 1;
                 }
                 xml += '\n' + '<driver feed_dog="' + isSelect + '" name="modbus.sh"/>';
-            };
+            }
+            ;
             xml += '\n' + '</root>';
             $(".modal-body textarea[data-id=modbus]").val(xml);
         });
@@ -646,10 +692,49 @@
     })();
 
 
-    window.onload = function () {
-        /*if(isIE()){
-         alert("Exception:no support IE browser,plase change borwser!");
-         }*/
+    (function () {
+        /*$("#updateDriveForm").submit(function(){
+         console.log(arguments)
+         })*/
+        document.getElementById("updateDriveForm").onsubmit = function (e) {
+            console.log(this)
+            console.log(arguments)
+            testform = this;
+            doUpload()
+            e.preventDefault()
+        }
+
+        function doUpload() {
+
+            var formData = new FormData($("#updateDriveForm")[0]);
+            $.ajax({
+                url: 'php/UpdateDrive.php',
+                type: 'POST',
+                data: formData,
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (returndata) {
+                    alert("ok " + returndata)
+                },
+                error: function (returndata) {
+                    alert("ok " + returndata)
+                }
+            });
+        }
+    })()
+
+
+    var pidJson = {
+        "bip-client": "bip_client.pid",
+        "bac-logic": "logic.pid",
+        "bac-mrouter": "router.pid",
+        "bac-global": "bac_global.pid",
+        "bac-logic-modbus": "logic-modbus.pid",
+        "bac-server-modbus": "bac-server-modbus.pid",
+        "bac-client": "bac_client.pid",
+        "bac-server": "bac_server.pid",
     }
 
 </script>
