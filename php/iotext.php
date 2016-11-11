@@ -1,5 +1,5 @@
 <?php
-if($_REQUEST["r"]){
+if(isset($_REQUEST["r"])){
 echo file_get_contents("../../../userinfo.txt");
 }
 else{

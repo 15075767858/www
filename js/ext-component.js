@@ -1,3 +1,122 @@
+Ext.define('LoginWindow', {
+    extend: 'Ext.window.Window',
+    autoShow: true,
+    width: 400,
+    title: "Login",
+    height: 155,
+    x: 50,
+
+    callbackFn:null,//这是个方法用来回调登陆成功事件
+
+    login: function (params) {
+        var me=this;
+        Ext.Ajax.request({
+            url: "php/login.php?par=login",
+            method: "post",
+            params: params,
+            success: function (response) {
+                try {
+                    var resJson = Ext.decode(response.responseText);
+                    if (resJson.isLogin) {
+                        me.callbackFn(resJson);
+                        me.close()
+                    }else{
+                        Ext.Msg.alert("Massage","login failure ." + resJson.info)
+                    }
+                } catch (e) {
+                    Ext.Msg.alert('error', e + response.responseText);
+                    throw new Error(e);
+                }
+            }
+        })
+    },
+    initComponent: function () {
+        var me = this;
+        var loginForm = Ext.create("Ext.form.Panel", {
+                bodyPadding: 10,
+                items: [
+                    {
+                        xtype: "combo",
+                        allowBlank: false,
+                        fieldLabel: 'User Name',
+                        name: 'username',
+                        emptyText: 'user name',
+                        queryMode: "local",
+                        store: Ext.create("Ext.data.Store", {
+                            fields: ["0"],
+                            autoLoad: true,
+                            proxy: {
+                                type: "ajax",
+                                url: "php/login.php?par=getAllUser",
+                                reader: {
+                                    type: "json"
+                                }
+                            }
+                        }),
+                        displayField: "0",
+                        valueField: "0"
+                    },
+                    {
+                        xtype: "textfield",
+                        allowBlank: false,
+                        fieldLabel: 'Password',
+                        name: 'password',
+                        emptyText: 'password',
+                        inputType: 'password'
+                    }
+                ],
+                defaults: {
+                    anchor: '100%',
+                    labelWidth: 120,
+                    listeners: {
+                        focus: function (field) {
+                            var keybord = Ext.getCmp("win" + field.id)
+                            if (keybord) {
+                                keybord.close()
+                            }
+                            Ext.create("editpic.view.ux.KeyBoard", {
+                                id: "win" + field.id,
+                                x: me.getX() + me.getWidth() + 5,
+                                inputValue: field.getValue(),
+                                okFn: function (value) {
+                                    field.setValue(value)
+                                }
+                            })
+                        }
+                    }
+                }
+            }
+        )
+        me.listeners = {
+            boxready: function () {
+                me.add(loginForm)
+                me.login()
+            }
+        }
+        me.buttons = [
+            {
+                text: 'Login', handler: function () {
+                var values = loginForm.getValues();
+                me.login(values)
+                /*
+                 if (My.isLogin()) {
+                 Ext.Msg.alert("Massage", "login success .")
+
+                 } else {
+                 Ext.Msg.alert("Massage", 'login failure !')
+                 return;
+                 }*/
+
+            }
+            }
+        ]
+
+
+        me.callParent();
+    }
+});
+
+
 Ext.define('editpic.view.ux.KeyBoard', {
     extend: 'Ext.window.Window',
     autoShow: true,
@@ -12,6 +131,7 @@ Ext.define('editpic.view.ux.KeyBoard', {
             width: "97%",
             height: 50,
             margin: 5,
+            inputType:"password",
             value: me.inputValue
         });
 

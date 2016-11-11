@@ -47,9 +47,11 @@
             float: left;
             padding: 0 20px 0 40px;
         }
+
         .header .navlink button {
-            height:60px;
+            height: 60px;
         }
+
         .header .navlink li:hover {
         }
 
@@ -61,8 +63,8 @@
         }
 
         .content {
-/*
-*/
+            /*
+            */
 
             background-size: 100% 100%;
             text-align: center;
@@ -92,7 +94,7 @@
             left: 100px;
             position: absolute;
             top: 480px;
-            border:none;
+            border: none;
         }
 
         .footer {
@@ -176,55 +178,61 @@
 <div class="header">
     <img src="img/logo.png" class="logo">
     <ul class="navlink">
-        <li><a href="default.html">Engineer</a></li>
-        <li><a href="home">用户入口</a></li>
-       <!-- <li>
-        <button type="button" id="engineerLogin" class="btn btn-success btn-lg button_shadow"
-                data-whatever="@mdo" aria-label="Left Align">
-            <span class=" glyphicon glyphicon-cog" aria-hidden="true"></span> Engineer
-        </button>
+        <li><a id="engineerLogin">Engineer</a></li>
+        <li><a id="userLogin">用户入口</a></li>
+        <li><a id="userManager" style="display: none">用户管理</a></li>
+        <li><a id="outLogin" style="display: none">退出登陆</a></li>
+        <!-- <li>
+         <button type="button" id="engineerLogin" class="btn btn-success btn-lg button_shadow"
+                 data-whatever="@mdo" aria-label="Left Align">
+             <span class=" glyphicon glyphicon-cog" aria-hidden="true"></span> Engineer
+         </button>
 
-        </li>
-        <li>
-        <button type="button" class="btn btn-info btn-lg button_shadow" id="userLogin" aria-label="Left Align">
-            <span class="glyphicon glyphicon-open" aria-hidden="true"></span> 用户入口
-        </button>
-        </li>-->
+         </li>
+         <li>
+         <button type="button" class="btn btn-info btn-lg button_shadow" id="userLogin" aria-label="Left Align">
+             <span class="glyphicon glyphicon-open" aria-hidden="true"></span> 用户入口
+         </button>
+         </li>-->
     </ul>
 </div>
 <style>
-    .container-edit{
-        padding:50px 0px;
-        margin:50px auto;
-        width:800px;
-        background-color:#FFFFFF;
-        border:1px solid rgb(140,151,167);
+    .container-edit {
+        padding: 50px 0px;
+        margin: 50px auto;
+        width: 800px;
+        background-color: #FFFFFF;
+        border: 1px solid rgb(140, 151, 167);
         box-shadow: 1px 1px 20px #000;
     }
-    .container-text{
+
+    .container-text {
 
         width: 550px;
-        margin:0 115px 0 115px;
+        margin: 0 115px 0 115px;
         word-wrap: break-word;
     }
 
-    .container-text{
+    .container-text {
         width: 550px;
         font-family: "Myriad Pro", "Myriad Web", "Tahoma", "Helvetica", "Arial", sans-serif;
     }
-    .container-text h1{
+
+    .container-text h1 {
         font-size: 23px;
         font-weight: lighter;
-        color:black;
+        color: black;
     }
-    .container-text h2{
+
+    .container-text h2 {
         font-size: 20px;
-        color:black;
+        color: black;
         font-weight: 700;
     }
-    .container-text h3{
+
+    .container-text h3 {
         font-size: 17px;
-        color:black;
+        color: black;
         font-weight: 700;
     }
 </style>
@@ -238,31 +246,41 @@
 
             <h1><strong>完全开放，解决楼控行业困惑的新思路</strong></h1>
             <h2>---SmartIO思麦尔多品牌兼容网络楼宇自控系统简介</h2>
-           <p>于上世纪八十年代引入中国的楼宇自控系统，在提高设备利用率、合理地使用能源、加强对建筑设备状态的监视等方面有着重要作用，具有广阔的发展前景。然而长期以来，楼宇自控系统开放性差是业界要解决的最为紧迫的问题之一。随着美国暖通协会BACnet协议公开和LON协议的公布，众多生产厂商都加入到了两大协议标准上来，这也为众多楼宇自控厂商制造出不同品牌之间设备互连互通、相互操作提供了基础。</p>
+            <p>
+                于上世纪八十年代引入中国的楼宇自控系统，在提高设备利用率、合理地使用能源、加强对建筑设备状态的监视等方面有着重要作用，具有广阔的发展前景。然而长期以来，楼宇自控系统开放性差是业界要解决的最为紧迫的问题之一。随着美国暖通协会BACnet协议公开和LON协议的公布，众多生产厂商都加入到了两大协议标准上来，这也为众多楼宇自控厂商制造出不同品牌之间设备互连互通、相互操作提供了基础。</p>
             <p>
                 为寻找解决楼宇自控系统开放性差问题的新思路，我们采访了SmartIO思麦尔楼宇自控CEO李平中。李平中是BACnet大中华及亚洲协会理事，致力于BAC标准的推广应用。2013年，开始创立深圳市的万千楼宇自控设备有限公司；2016年推出SmartIO思麦尔团队，以“新星”的面貌合体出现，汇聚了楼宇自控行业资深技术精英，整体拥有30多年行业经验的沉淀。
             </p>
             <h3>基于BACnet标准，实现多品牌互连互通</h3>
-            <p>近年来，智能建筑概念不断深化，智能化的设备也越来越多，楼宇自控系统渐渐成了智能建筑下的一个子系统。这些子系统庞大且复杂，而且由于各系统之间还普遍存在协议不兼容的现象，建筑系统集成仍然面临着重大挑战。在采访中李平中提到，为解决这个问题，SmartIO思麦尔所有设备遵循BACnet标准，在遵循BACnet标准的品牌厂商之间实现了互连互通，同时也与BACnet大中华及亚洲协会一起推动BACnet标准的应用和发展。</p>
-            <p>此外，由于市面上众多品牌的智能建筑设备都是非BACnet标准，SmartIO思麦尔开发一款专门适用市面上常用协议楼宇自控标准以外的适用众多设备数据管理器，它能将众多设备非BACnet标准设备转化为符BACnet标准。 </p>
+            <p>
+                近年来，智能建筑概念不断深化，智能化的设备也越来越多，楼宇自控系统渐渐成了智能建筑下的一个子系统。这些子系统庞大且复杂，而且由于各系统之间还普遍存在协议不兼容的现象，建筑系统集成仍然面临着重大挑战。在采访中李平中提到，为解决这个问题，SmartIO思麦尔所有设备遵循BACnet标准，在遵循BACnet标准的品牌厂商之间实现了互连互通，同时也与BACnet大中华及亚洲协会一起推动BACnet标准的应用和发展。</p>
+            <p>
+                此外，由于市面上众多品牌的智能建筑设备都是非BACnet标准，SmartIO思麦尔开发一款专门适用市面上常用协议楼宇自控标准以外的适用众多设备数据管理器，它能将众多设备非BACnet标准设备转化为符BACnet标准。 </p>
             <p>“随着Zigbee加入BACnet大家庭，成为BACnet的子协议，将来会有更多的楼宇自控厂商和智能设备制造商生产出更互连互通，相互操作的智能设备。”</p>
             <h3>完全开放的SmartIO思麦尔设备HTML5编程工具</h3>
-            <p>近几年，随着霍尼韦尔C-bus协议、江森的N2协议的退出，国际主流厂商的目光也已经转到BACnet标准上来。江森BCM系统的推出就是一个很好例证，它淘态掉了一些非标准的FEC模块，新推出的设备都符合MS/TP标准，其中自然也包括SmartIO设备。
+            <p>
+                近几年，随着霍尼韦尔C-bus协议、江森的N2协议的退出，国际主流厂商的目光也已经转到BACnet标准上来。江森BCM系统的推出就是一个很好例证，它淘态掉了一些非标准的FEC模块，新推出的设备都符合MS/TP标准，其中自然也包括SmartIO设备。
             </p>
-            <p>SmartIO思麦尔设备HTML5编程工具的应用，所有用户、工程师都不需要专门的编程软件，打开浏览器直接编程，保存就可以运行。将复杂的编程工作简单化、易用化，从而解决了SmartIO思麦尔楼宇自控设备在其它品牌系统中不能编程控制的难题。
+            <p>
+                SmartIO思麦尔设备HTML5编程工具的应用，所有用户、工程师都不需要专门的编程软件，打开浏览器直接编程，保存就可以运行。将复杂的编程工作简单化、易用化，从而解决了SmartIO思麦尔楼宇自控设备在其它品牌系统中不能编程控制的难题。
             </p>
-            <p>SmartIO思麦尔将HTML5编程工具植入到设备中，它遵循的是HTML5标准，不受硬件不同，CPU型号不同影响，也不受windows，linux，android，IOS平台影响，编程工具的版本不同也不会影响用使用。不管将SmartIO思麦尔设备应用到霍尼韦尔、江森、西门子现有的系统中还是新建的系统中，都可以通过两种方法实现：一、BACnet协议底层数据读写，互相操作。二、 HTML5浏览器访问，包括访问编程工具，图形中心组态工具。
+            <p>
+                SmartIO思麦尔将HTML5编程工具植入到设备中，它遵循的是HTML5标准，不受硬件不同，CPU型号不同影响，也不受windows，linux，android，IOS平台影响，编程工具的版本不同也不会影响用使用。不管将SmartIO思麦尔设备应用到霍尼韦尔、江森、西门子现有的系统中还是新建的系统中，都可以通过两种方法实现：一、BACnet协议底层数据读写，互相操作。二、
+                HTML5浏览器访问，包括访问编程工具，图形中心组态工具。
             </p>
             <h3>舍弃传统数据传递模式，应用新技术
             </h3>
             <p>楼宇自控系统越大，数据反应的速度就越迟缓,这是行业的一大困扰。传统数据传送的方法是读取---应答，又叫轮询，这是一问一答方式，完成了一个数据访问，再进行下一个数据讯问。
             </p>
-            <p>对于SmartIO思麦尔来说，通过应用新技术，改变了数据交换的方式。其一：在设备端遵循BACnet的订阅---变化传送方式（COV），它的原理是设备启动时向数据源提交订单，哪些数据变化了发送给提交订单的设备，实现平时不用传数据，而一旦数据发生变化了就能马上发给过去，这样就把通讯带宽全用上了扩展到极致。其二：数据库端也用了一个订阅和发布，它们是写入发布，每一个数据写入时发出一个广播，每一个要用数据的设备、客户都可以依据自已需要订阅和接收，客户再多也不影响系统速度。
-                “这技术已很成熟，微博、微信、QQ用的都是相同的东西，SmartIO将这门技术内嵌到BACnet路由器，数据管理器和图形中心，完全放弃了传统数据传递模式。” 李平中说，“这就是SmartIO思麦尔新技术应用，也是SmartIO技术亮点。”</p>
+            <p>
+                对于SmartIO思麦尔来说，通过应用新技术，改变了数据交换的方式。其一：在设备端遵循BACnet的订阅---变化传送方式（COV），它的原理是设备启动时向数据源提交订单，哪些数据变化了发送给提交订单的设备，实现平时不用传数据，而一旦数据发生变化了就能马上发给过去，这样就把通讯带宽全用上了扩展到极致。其二：数据库端也用了一个订阅和发布，它们是写入发布，每一个数据写入时发出一个广播，每一个要用数据的设备、客户都可以依据自已需要订阅和接收，客户再多也不影响系统速度。
+                “这技术已很成熟，微博、微信、QQ用的都是相同的东西，SmartIO将这门技术内嵌到BACnet路由器，数据管理器和图形中心，完全放弃了传统数据传递模式。”
+                李平中说，“这就是SmartIO思麦尔新技术应用，也是SmartIO技术亮点。”</p>
             <h3>结 语
             </h3>
-            <p>2016年SmartIO思麦尔团队虽然以“新星”的面貌合体出现，其在浏览器HTML5上整合了编程工具、网络管理器、数据管理器等方面的新技术，引领域楼宇自控行业发展的新方向，并获得了集成商、工程商、专家学者一致好一评，让人耳目一新。在未来，SmartIO思麦尔将通过与本科院校楼宇自控专业的合作、加快推进SmartIO思麦尔全国众多地产商品牌库入库工作、通过与智能建筑O2O集成平台联营合作，建立线上线下的服务体系。等三个方面的战略布局，进一步推广楼宇自控互连互通，相互操作的理念。</p>
-<a target="_blank" href="http://www.qianjia.com/qjhkt/956/" >完全开放，解决楼控行业困惑的新思路——专访SmartIO思麦尔楼宇自控CEO李平中</a>
+            <p>
+                2016年SmartIO思麦尔团队虽然以“新星”的面貌合体出现，其在浏览器HTML5上整合了编程工具、网络管理器、数据管理器等方面的新技术，引领域楼宇自控行业发展的新方向，并获得了集成商、工程商、专家学者一致好一评，让人耳目一新。在未来，SmartIO思麦尔将通过与本科院校楼宇自控专业的合作、加快推进SmartIO思麦尔全国众多地产商品牌库入库工作、通过与智能建筑O2O集成平台联营合作，建立线上线下的服务体系。等三个方面的战略布局，进一步推广楼宇自控互连互通，相互操作的理念。</p>
+            <a target="_blank" href="http://www.qianjia.com/qjhkt/956/">完全开放，解决楼控行业困惑的新思路——专访SmartIO思麦尔楼宇自控CEO李平中</a>
         </div>
     </div>
     <!--<img class="bac-img" src="img/home.png">
@@ -279,33 +297,66 @@
 </div>
 </body>
 <script>
-    $("#engineerLogin").click(function(){
+    $("#engineerLogin").click(function () {
         //var password = window.prompt("please input password")
-        //login("engineerLogin",password);
-        window.location.href="default.html"
+        //login("engineerLogin", password);
+        Ext.create("LoginWindow", {
+            callbackFn: function () {
+                window.location.href = "default.html"
+            }
+        })
     });
-    $("#userLogin").click(function(){
-        window.location.href="home"
+    $("#userLogin").click(function () {
+        Ext.create("LoginWindow", {
+            callbackFn: function () {
+                window.location.href = "home"
+            }
+        })
         //var password = window.prompt("please input password")
-        //login("userLogin",password);
+        //window.location.href="default.html"
+        //login("userLogin", password);
     })
 
-    function login(loginText,password){
+    Ext.onReady(function () {
+        var win = Ext.create("LoginWindow", {
+            callbackFn: function (resJson) {
+                Ext.get("userManager").show();
+                Ext.get("outLogin").show();
+                win.close();
+            }
+        })
+    })
+
+    $("#userManager").click(function () {
+        Ext.create("UserManager")
+    })
+
+    $("#outLogin").click(function () {
+        Ext.Ajax.request({
+            url: "php/login.php?par=outLogin",
+            success: function () {
+                Ext.get('userManager').hide();
+                Ext.get('outLogin').hide();
+                window.location.href = 'index.html';
+            }
+        })
+    })
+    function login(loginText, password) {
         $.ajax({
             type: "POST",
-            url: "php/login.php?login="+loginText,
+            url: "php/login.php?login=" + loginText,
             async: false,
-            data: {password:password},
-            success: function(res){
-                if(res==1){
-                    if(loginText=="engineerLogin"){
-                        window.location.href="default.html"
+            data: {password: password},
+            success: function (res) {
+                if (res == 1) {
+                    if (loginText == "engineerLogin") {
+                        window.location.href = "default.html"
                     }
-                    if(loginText=="userLogin"){
-                        window.location.href="home"
+                    if (loginText == "userLogin") {
+                        window.location.href = "home"
                     }
                     return;
-                }else{
+                } else {
                     window.alert("password error ")
                 }
             }
@@ -318,7 +369,7 @@
 
         function setPic() {
             var aPic = ['img/1.PNG', "img/2.jpg", 'img/3.jpg'];
-            $("#changePicImg").attr("src", aPic[count%aPic.length]);
+            $("#changePicImg").attr("src", aPic[count % aPic.length]);
             $("#changePicImg").fadeIn();
             count++;
             setTimeout(clearPic, 3000);
@@ -326,12 +377,159 @@
 
         function clearPic() {
             $("#changePicImg").fadeOut()
-
             setTimeout(setPic, 3000)
         }
 
         setPic()
     })()
+
+</script>
+
+<script>
+
+
+    Ext.define("UserManager", {
+        extend: "Ext.window.Window",
+        autoShow: true,
+        title: "User Manager",
+        width: 400,
+        deleteUser: function () {
+            var me = this;
+            var combo = me.down('combo');
+            Ext.Msg.show({
+                title: 'Delete User',
+                message: 'Do you want to delete this user ' + combo.value + ' ？',
+                buttons: Ext.Msg.YESNOCANCEL,
+                icon: Ext.Msg.QUESTION,
+                fn: function (btn) {
+                    if (btn === 'yes') {
+                        Ext.Ajax.request({
+                            url: 'php/login.php?par=deleteUser' + '&username=' + combo.value,
+                            success: function (response) {
+                                try {
+                                    var resJson = Ext.decode(response.responseText);
+                                    Ext.Msg.alert("Massage", resJson.info)
+                                } catch (e) {
+                                    Ext.Msg.alert('error', e + response.responseText);
+                                    throw new Error(e);
+                                }
+                            }
+                        })
+                    }
+                }
+            });
+        },
+        bbar: [
+            {
+                text: "Add User", handler: function () {
+                var win = Ext.create("Ext.window.Window", {
+                    title: "Please input password and level .",
+                    autoShow: true,
+                    width: 300,
+                    resizeable: false,
+                    items: [
+                        {
+                            xtype: "form",
+                            defaults: {
+                                margin: 10,
+                                allowBlank: false
+                            },
+                            items: [
+                                {
+                                    xtype: "textfield",
+                                    fieldLabel: "username",
+                                    name: "username",
+                                    maxLength: 20,
+                                    minLength: 4
+                                },
+                                {
+                                    xtype: "textfield",
+                                    fieldLabel: "password",
+                                    name: "password",
+                                    inputType: "password",
+                                    maxLength: 16,
+                                    minLength: 4
+                                },
+                                {
+                                    xtype: "textfield",
+                                    fieldLabel: "Enter again",
+                                    inputType: "password",
+                                    name: "again",
+                                    maxLength: 16,
+                                    minLength: 4
+                                },
+                                {xtype: "numberfield", fieldLabel: "level", name: "level", minValue: 0, maxValue: 255},
+                            ],
+                            bbar: [
+                                {
+                                    text: "Ok", handler: function () {
+                                    var form = this.up("form");
+                                    if (form.isValid()) {
+                                        var values = form.getValues();
+                                        if (values.password != values.again) {
+                                            Ext.Msg.alert("Massage", "Two passwords are not consistent .")
+                                            return;
+                                        }
+                                        form.submit({
+                                            url: "php/login.php?par=addUser",
+                                            success: function (form, resonse) {
+                                                if (resonse.result.success) {
+                                                    Ext.Msg.alert("Massage", resonse.result.info);
+                                                }
+                                                console.log(arguments)
+                                            },
+                                            failure: function (form, response) {
+                                                Ext.Msg.alert("Massage", response.result.info)
+                                                console.log(arguments)
+                                            }
+                                        })
+                                    }
+                                }
+                                },
+                                {
+                                    text: "Cancel", handler: function () {
+                                    win.close();
+                                }
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }
+            },
+            {
+                text: "Delete User", handler: function (button) {
+                var win = button.up('window');
+                win.deleteUser();
+
+            }
+            },
+            {
+                text: "Change User", handler: function () {
+            }
+            }
+        ],
+        initComponent: function () {
+            var me = this;
+            var combo = Ext.create("Ext.form.field.ComboBox", {
+                store: Ext.create("Ext.data.Store", {
+                    fields: ["0"],
+                    autoLoad: true,
+                    proxy: {
+                        type: "ajax",
+                        url: "php/login.php?par=getAllUser",
+                        reader: {
+                            type: "json"
+                        }
+                    }
+                }),
+                displayField: "0",
+                valueField: "0"
+            })
+            me.items = [combo]
+            me.callParent();
+        }
+    })
 
 </script>
 </html>

@@ -132,6 +132,25 @@ function saveXml(fileName, success, content) {
         success: success
     });
 }
+function showFile(fileName, success) {
+    $.ajax({
+        type: "POST",
+        url: "php/file.php",
+        async: false,
+        data: "par=get&fileName=" + fileName,
+        success: success
+    });
+}
+//����һ���ļ�
+function saveFile(fileName, success, content) {
+    $.ajax({
+        type: "POST",
+        url: "php/file.php",
+        async: false,
+        data: "fileName=" + fileName + "&content=" + content + "&par=save",
+        success: success
+    });
+}
 function isIE() { //ie?
     if (!!window.ActiveXObject || "ActiveXObject" in window)
         return true;

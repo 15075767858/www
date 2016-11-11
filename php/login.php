@@ -1,40 +1,47 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: liuzhencai
- * Date: 16/8/11
- * Time: 下午4:10
- */
-$par=$_GET['login'];
-if($par=="userLogin"){
 
-    if(isset($_SESSION["userLogin"])){
-        echo 1;
-        //$_SESSION['userLogin']=1;
+include_once('user.php');
+$par = $_REQUEST['par'];
+session_start();
+
+
+if (isset($_SESSION['username'])) {
+    $user = new user($_SESSION['username']);
+}
+if ($par == 'login') {
+
+    echo json_encode(user::login());
+
+}
+if ($par == 'outLogin') {
+    echo json_encode(user::outLogin());
+}
+if ($par == 'addUser') {
+    $newUser = new user($_REQUEST['username']);
+    $newUser->username = $_REQUEST['username'];
+    $newUser->password = $_REQUEST['password'];
+    $newUser->level = $_REQUEST['level'];
+    if($_SESSION['isLogin']){
+        $user  = new user($_SESSION['username']);
+        echo json_encode($user->addUser($newUser));
     }else{
-        $password = $_POST["password"];
-        if($password=="Admin123"){
-            $_SESSION["userLogin"]=1;
-            echo 1;
-        }else{
-            echo 0;
-        }
+        echo json_encode(array('success'=>false,'info'=>"Not Landed ."));
     }
 }
-
-if($par=="engineerLogin"){
-
-    if(isset($_SESSION["engineerLogin"])){
-        echo 1;
-        //$_SESSION['userLogin']=1;
-    }else{
-        $password = $_POST["password"];
-        if($password=="SmartIO"){
-            $_SESSION["engineerLogin"]=1;
-            echo 1;
-        }else{
-            echo 0;
-        }
-    }
+if ($par == 'changeUser') {
+    $newUser = new user();
+    $newUser->username = $_REQUEST['username'];
+    $newUser->password = $_REQUEST['password'];
+    $newUser->level = $_REQUEST['level'];
+    $user->changeUser($newUser);
+}
+if ($par == 'deleteUser') {
+    $user->deleteUser(new user($_REQUEST['username']));
+}
+if ($par == 'getAllUser') {
+    echo json_encode(user::getUsers());
+}
+if($par=='getLoginInfo'){
+    echo json_encode($_SESSION);
 }
 ?>

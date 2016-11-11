@@ -245,7 +245,8 @@
                                id="concheck7_s"><span>feeddog&nbsp;Enable&nbsp;</span>
                         <input type="checkbox" id="concheck7">
                         <span>Global Enable</span>
-                    <input type="button" class="btn btn-success btn-sm small button_shadow" value="Export Global.xml" onclick="globalClick()">
+                        <input type="button" class="btn btn-success btn-sm small button_shadow"
+                               value="Export Global.xml" onclick="globalClick()">
                     </li>
                 </ul>
                 <input class='btn btn-info button_shadow' id="gloCon" data-toggle="modal" data-target="#myModal2"
@@ -576,8 +577,12 @@
                 if ($("#concheck1_s")[0].checked) {
                     isSelect = 1;
                 }
+                if ($("#concheck4")[0].checked){
+                    xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-server-modbus"/>';
+                }else{
+                    xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-server"/>';
 
-                xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-server"/>';
+                }
             }
             if ($("#concheck2")[0].checked) {
                 var isSelect = 0;
@@ -600,8 +605,7 @@
                     isSelect = 1;
                 }
                 xml += '\n' + '<driver feed_dog="' + isSelect + '" name="modbus.sh"/>';
-            }
-            ;
+            };
             xml += '\n' + '</root>';
             $(".modal-body textarea[data-id=modbus]").val(xml);
         });
