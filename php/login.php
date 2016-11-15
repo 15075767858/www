@@ -21,11 +21,11 @@ if ($par == 'addUser') {
     $newUser->username = $_REQUEST['username'];
     $newUser->password = $_REQUEST['password'];
     $newUser->level = $_REQUEST['level'];
-    if($_SESSION['isLogin']){
-        $user  = new user($_SESSION['username']);
+    if ($_SESSION['isLogin']) {
+        $user = new user($_SESSION['username']);
         echo json_encode($user->addUser($newUser));
-    }else{
-        echo json_encode(array('success'=>false,'info'=>"Not Landed ."));
+    } else {
+        echo json_encode(array('success' => false, 'info' => "Not Landed ."));
     }
 }
 if ($par == 'changeUser') {
@@ -36,12 +36,12 @@ if ($par == 'changeUser') {
     $user->changeUser($newUser);
 }
 if ($par == 'deleteUser') {
-    $user->deleteUser(new user($_REQUEST['username']));
+    echo json_encode($user->deleteUser(new user($_REQUEST['username'])));
 }
 if ($par == 'getAllUser') {
     echo json_encode(user::getUsers());
 }
-if($par=='getLoginInfo'){
+if ($par == 'getLoginInfo') {
     echo json_encode($_SESSION);
 }
 ?>

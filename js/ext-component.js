@@ -21,7 +21,7 @@ Ext.define('LoginWindow', {
                         me.callbackFn(resJson);
                         me.close()
                     }else{
-                        Ext.Msg.alert("Massage","login failure ." + resJson.info)
+                        Ext.Msg.alert("Massage","please login .<br>" + (resJson.info||" "))
                     }
                 } catch (e) {
                     Ext.Msg.alert('error', e + response.responseText);

@@ -30,15 +30,4 @@
         <password>123456</password>
         <level>90</level>
     </user>
-    <user>
-        <username>aaa</username>
-        <password>123456</password>
-        <level>90</level>
-    </user>
-
-    <user>
-        <username>ccc</username>
-        <password>bbb</password>
-        <level>100</level>
-    </user>
-<user><username>11111</username><password>1111</password><level>2</level></user><user><username>qwea</username><password>qwea</password><level>1</level></user><user><username>qqqqqq</username><password>qqqq</password><level>1</level></user><user><username>qqqqa</username><password>qqqqq</password><level>1</level></user><user><username>qqqqaq</username><password>qqqqq</password><level>1</level></user><user><username>qqqq</username><password>aaaa</password><level>1</level></user></Users>
+</Users>

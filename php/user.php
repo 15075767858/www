@@ -69,19 +69,29 @@ class user
 
             $doc = new DOMDocument();
             $doc->load($this->xmlPath);
+
             $users = $doc->getElementsByTagName('user');
             foreach ($users as $xmlUser) {
                 $username = $xmlUser->getElementsByTagName('username')->item(0);
-                $level =    $xmlUser->getElementsByTagName('level')->item(0);
-                $nodeValue = (string)$username->nodeValue;
-                if ($nodeValue == $user->username & $this->level>$level) {
-                    print_r($username->parentNode->parentNode->removeChild($username->parentNode));
-                }else{
-                    return array('success'=>false,'info'=>'Your permissions lack .');
+                $xmlUserName = (string)$username->nodeValue;
+                if ($xmlUserName == $user->username) {
+
+                    $level = (string)$xmlUser->getElementsByTagName('level')->item(0)->nodeValue;
+                    //echo "我的用户名".$this->username."我的用户等级" . $this->level;
+                    //echo "要删除的用户名".$user->username."要删除的用户等级" . $level;
+                    //echo "|".($this->level>$level)."|";
+                    //echo "<br>";
+                    if ($this->level > $level) {
+                        echo "执行删除";
+                        $username->parentNode->parentNode->removeChild($username->parentNode);
+                        $doc->save($this->xmlPath);
+                        return array('success' => true, 'info' => "delete user successfully .");
+                    } else {
+                        return array('success' => false, 'info' => 'Your permissions lack .');
+                    }
                 }
             }
-            $doc->save($this->xmlPath);
-            return array('success' => true, 'info' => "delay user successfully .");
+
         } else {
             return array('success' => false, 'info' => "the user does not exist .");
         }
@@ -109,8 +119,10 @@ class user
     public static function login()
     {
 
-        if (isset($_SESSION['isLogin']) & $_SESSION['isLogin']) {
-            return $_SESSION;
+        if (isset($_SESSION['isLogin'])) {
+            if ($_SESSION['isLogin']) {
+                return $_SESSION;
+            }
         }
 
         if (isset($_REQUEST['username']) and $_REQUEST['password']) {

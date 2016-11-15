@@ -4,8 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- TemplateParam name="class" type="URL" value="file:///F|/EM9460www/div-b" -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <!--避免IE使用兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--使用webkit内核-->
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="renderer" content="webkit">
+
     <title>BACnet Router&Control</title>
     <link rel="stylesheet" href="resources/theme-classic-all.css">
 
@@ -505,7 +509,81 @@
             }
             },
             {
-                text: "Change User", handler: function () {
+                text: "Change User",hidden:true, handler: function () {
+                var win = Ext.create("Ext.window.Window", {
+                    title: "Please input password and level .",
+                    autoShow: true,
+                    width: 300,
+                    resizeable: false,
+                    items: [
+                        {
+                            xtype: "form",
+                            defaults: {
+                                margin: 10,
+                                allowBlank: false
+                            },
+                            items: [
+                                {
+                                    xtype: "textfield",
+                                    fieldLabel: "username",
+                                    name: "username",
+                                    maxLength: 20,
+                                    minLength: 4,
+                                    hidden:true
+                                },
+                                {
+                                    xtype: "textfield",
+                                    fieldLabel: "password",
+                                    name: "password",
+                                    inputType: "password",
+                                    maxLength: 16,
+                                    minLength: 4
+                                },
+                                {
+                                    xtype: "textfield",
+                                    fieldLabel: "Enter again",
+                                    inputType: "password",
+                                    name: "again",
+                                    maxLength: 16,
+                                    minLength: 4
+                                },
+                                {xtype: "numberfield", fieldLabel: "level", name: "level", minValue: 0, maxValue: 255},
+                            ],
+                            bbar: [
+                                {
+                                    text: "Ok", handler: function () {
+                                    var form = this.up("form");
+                                    if (form.isValid()) {
+                                        var values = form.getValues();
+                                        if (values.password != values.again) {
+                                            Ext.Msg.alert("Massage", "Two passwords are not consistent .")
+                                            return;
+                                        }
+                                        form.submit({
+                                            url: "php/login.php?par=addUser",
+                                            success: function (form, resonse) {
+                                                if (resonse.result.success) {
+                                                    Ext.Msg.alert("Massage", resonse.result.info);
+                                                }
+                                                console.log(arguments)
+                                            },
+                                            failure: function (form, response) {
+                                                Ext.Msg.alert("Massage", response.result.info)
+                                                console.log(arguments)
+                                            }
+                                        })
+                                    }
+                                }
+                                },
+                                {
+                                    text: "Cancel", handler: function () {
+                                    win.close();
+                                }
+                                }
+                            ]
+                        }
+                    ]
+                })
             }
             }
         ],

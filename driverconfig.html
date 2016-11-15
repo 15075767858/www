@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <!-- TemplateParam name="class" type="URL" value="file:///F|/EM9460www/div-b" -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="renderer" content="webkit">
+
     <META HTTP-EQUIV="pragma" CONTENT="no-cache"/>
     <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"/>
     <title>BACnet Router&Control</title>
@@ -273,7 +274,7 @@
                     <span>Delete</span>
                 </div>
                 <div class="d3">
-                    <input></input>
+                    <input/>
                     <select class="hide">
                         <option></option>
 
@@ -697,11 +698,57 @@
          console.log(arguments)
          })*/
         document.getElementById("updateDriveForm").onsubmit = function (e) {
-            console.log(this)
-            console.log(arguments)
-            testform = this;
-            doUpload()
             e.preventDefault()
+            var fileName = document.getElementById('driveName').value;
+            var file = document.getElementById("driveFile").files[0];
+            fileSliceUpload(file, fileName, "php/UpdateDrive.php");
+
+
+            function fileSliceUpload(file, fileName, url, callback) {
+                var singleSize = 10000;
+                var total = file.size / singleSize;
+                $.ajax({
+                    url: url + "?par=beforeUpload&fileName=" + fileName,
+                    async: false,
+                    success: function () {
+                        console.log(arguments)
+                    }
+                })
+
+                for (var i = 0; i < total; i++) {
+
+                    var subcontent = file.slice(i * singleSize, i * singleSize + singleSize);
+                    var fd = new FormData();
+                    fd.append("file", subcontent);
+
+                    $.ajax({
+                        url: url + "?par=upload&fileName=" + fileName,
+                        type: "post",
+                        async: false,
+                        cache: false,
+                        data: fd,
+                        contentType: false,
+                        processData: false,
+                        success: function (res) {
+                            console.log(res)
+
+                            /*i++;
+                             if (i < total) {
+                             setTimeout(function () {
+                             console.log(subcontent.length)
+                             fileSliceUpload(file, fileName, i, callback)
+                             })
+                             } else {
+                             console.log("完成", '总长度' + file.size, "当前是" + i + "次", "总共是" + total + "次")
+                             }*/
+                        }
+                    })
+
+                }
+
+
+            }
+
         }
 
         function doUpload() {
@@ -724,7 +771,6 @@
             });
         }
     })()
-
 
     var pidJson = {
         "bip-client": "bip_client.pid",

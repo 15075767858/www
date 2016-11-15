@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--避免IE使用兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!--使用webkit内核-->
+    <meta name="renderer" content="webkit|ie-comp|ie-stand"/>
+    <meta name="renderer" content="webkit"/>
+
+    <title></title>
+</head>
+<body>
+<form id="form">
+    <input type="file" id="file">
+    <input type="submit">
+</form>
+</body>
+<script type="text/javascript" src="http://jquery.cuishifeng.cn/js/jquery-2.1.4.min.js?v=20160719"></script>
+<script type="text/javascript">
+    var f = document.getElementById("form");
+    f.onsubmit = function (e) {
+        e.preventDefault()
+
+        var fd = new FormData(f);
+        var file = document.getElementById('file');
+
+        $.ajax({
+            url: "php/UpdateDrive.php",
+            method: "POST",
+            data: fd,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            //contentType: "multipart/form-data",
+            success: function () {
+
+            }
+        })
+
+    }
+
+</script>
+</html>
