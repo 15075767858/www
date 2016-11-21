@@ -3,7 +3,11 @@
 $par = $_REQUEST['par'];
 
 if ($par == 'beforeUpload') {
-
+    $path = "/mnt/nandflash/".$_REQUEST['fileName'];
+    //unset($path);
+    $str= 'rm -rf '.$path;
+    echo $str;
+    echo exec($str);
     $pids = array("bip-client" => "bip_client.pid",
         "bac-logic" => "logic.pid",
         "bac-mrouter" => "router.pid",
@@ -22,8 +26,7 @@ if ($par == 'beforeUpload') {
         exec($test, $array);
     }
 
-    $path = "/mnt/nandflash/".$_REQUEST['fileName'];
-    unset($path);
+
 }
 
 if($par=='upload'){

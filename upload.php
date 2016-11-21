@@ -14,7 +14,11 @@ if($par=="upload"){
     echo $str3;
     echo $str4;
      excuteTelnetCommand(array($str1,$str2,$str3,$str4));
+}
 
+
+if($par=='uploadAppendFile'){
+    echo file_put_contents('../'.$_REQUEST['fileName'], file_get_contents($_FILES['file']['tmp_name']), FILE_APPEND);
 }
 
 if($par=='beforeUploadGraph'){

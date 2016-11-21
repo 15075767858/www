@@ -21,7 +21,7 @@ Ext.define('LoginWindow', {
                         me.callbackFn(resJson);
                         me.close()
                     }else{
-                        Ext.Msg.alert("Massage","please login .<br>" + (resJson.info||" "))
+                        //Ext.Msg.alert("Massage","please login .<br>" + (resJson.info||" "))
                     }
                 } catch (e) {
                     Ext.Msg.alert('error', e + response.responseText);
@@ -42,6 +42,7 @@ Ext.define('LoginWindow', {
                         name: 'username',
                         emptyText: 'user name',
                         queryMode: "local",
+                        value:"mngr",
                         store: Ext.create("Ext.data.Store", {
                             fields: ["0"],
                             autoLoad: true,
@@ -60,6 +61,7 @@ Ext.define('LoginWindow', {
                         xtype: "textfield",
                         allowBlank: false,
                         fieldLabel: 'Password',
+                        value:"mngr0",
                         name: 'password',
                         emptyText: 'password',
                         inputType: 'password'
@@ -69,11 +71,13 @@ Ext.define('LoginWindow', {
                     anchor: '100%',
                     labelWidth: 120,
                     listeners: {
+
                         focus: function (field) {
                             var keybord = Ext.getCmp("win" + field.id)
                             if (keybord) {
                                 keybord.close()
                             }
+
                             Ext.create("editpic.view.ux.KeyBoard", {
                                 id: "win" + field.id,
                                 x: me.getX() + me.getWidth() + 5,
@@ -82,7 +86,11 @@ Ext.define('LoginWindow', {
                                     field.setValue(value)
                                 }
                             })
+                            if(Ext.getCmp('win'+field.id)){
+                                field.focus();
+                            }
                         }
+
                     }
                 }
             }
@@ -411,7 +419,7 @@ function userLogin() {
                 emptyText: 'password',
                 inputType: 'password',
                 listeners: {
-                    focus: My.textfieldFocus
+                    click: My.textfieldFocus
                 }
             },
             {

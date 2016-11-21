@@ -701,7 +701,29 @@
             e.preventDefault()
             var fileName = document.getElementById('driveName').value;
             var file = document.getElementById("driveFile").files[0];
-            fileSliceUpload(file, fileName, "php/UpdateDrive.php");
+
+            Ext.MessageBox.confirm('Massage', 'Do you want to overwrite the driver file <div style="color:red">' + fileName + "?" + "</div>", function (ms) {
+                if (ms == 'yes') {
+
+                    /* var p = Ext.create('Ext.ProgressBar', {
+                     renderTo: Ext.getBody(),
+                     width: 300
+                     });
+                     Ext.create("Ext.window.Window",{
+                     autoShow:true,
+                     items:p,
+                     title:"uploading ..."
+                     })*/
+
+
+// Wait for 5 seconds, then update the status el (progress bar will auto-reset)
+
+                    fileSliceUpload(file, fileName, "php/UpdateDrive.php", function (total, i) {
+                        //p.updateProgress(i/total , "uploading ...")
+
+                    });
+                }
+            }, this);
 
 
             function fileSliceUpload(file, fileName, url, callback) {
@@ -731,7 +753,7 @@
                         processData: false,
                         success: function (res) {
                             console.log(res)
-
+                            callback(total, i)
                             /*i++;
                              if (i < total) {
                              setTimeout(function () {
