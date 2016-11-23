@@ -181,8 +181,8 @@ function FrameJsonToXml(node) {
     for (var i = 0; i < nodes.length; i++) {
         if (!nodes[i].data.leaf) {
             tag.appendChild(FrameJsonToXml(nodes[i]))
-        }else{
-            tag.innerHTML=nodes[i].data.text;
+        } else {
+            tag.innerHTML = nodes[i].data.text;
         }
     }
     return tag;
@@ -325,3 +325,5 @@ function getPrefix(prefixIndex) {
 String.prototype.replaceAll = function (s1, s2) {
     return this.replace(new RegExp(s1, "gm"), s2);
 }
+
+

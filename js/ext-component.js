@@ -1,3 +1,180 @@
+Ext.define("UpdateWWW", {
+    extend: "Ext.window.Window",
+    autoShow: true,
+    //width: 400,
+    titlePosition: "left",
+    width: 600,
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+
+    defaults: {
+        xtype: 'form',
+        layout: 'anchor',
+
+        bodyPadding: 10,
+        style: {
+            'margin-bottom': '20px'
+        },
+        defaults: {
+            anchor: '100%'
+        }
+    },
+    bodyPadding: '10 10 0',
+    initComponent: function () {
+        var me = this;
+        me.items = [
+            {
+                xtype: 'component',
+                html: [
+                    '<h3>Update</h3>',
+                    '<p>This is a simple update program for updating and upgrading your program directory.',
+                    'Please select the update program provided by <code>Smartio</code> to update <code>www.tar.gz</code>.  ',
+                    'Thank you.</p>'
+                ]
+            }, {
+                xtype: 'filefield',
+                hideLabel: true,
+                reference: 'basicFile',
+                listeners: {
+                    change: function () {
+                        var file = this.fileInputEl.dom.files[0]
+                        me.setFile(file)
+                    }
+                }
+            }, {
+                xtype: "progressbar",
+                hidden: true,
+                value: 0.5,
+                listeners: {
+                    render: function (progressbar) {
+                        this.mySetText = function (currentSize, allSize, singleSize) {
+                            console.log(this)
+                            if(currentSize>allSize){
+                                currentSize=allSize;
+                            }
+                            this.setValue(currentSize / allSize);
+                            var percent = Ext.util.Format.percent(currentSize / allSize);
+                            var currentSize = Ext.util.Format.fileSize(currentSize);
+                            var allSize = Ext.util.Format.fileSize(allSize);
+                            var singleSize = Ext.util.Format.fileSize(singleSize || 0);
+
+                            this.updateText(currentSize + "/" + allSize + "  " + singleSize + "/s " + percent);
+                        }
+                    }
+                }
+            }, {
+                xtype: 'button',
+                text: 'Start Updating',
+                handler: function (button) {
+                    if (me.file) {
+                        me.uploadBigFile(me.file)
+                    }
+                }
+            }
+        ]
+        me.callParent();
+    },
+    setFile: function (file) {
+        var me = this;
+        var progressbar = me.down("progressbar")
+        if (file) {
+            var filename = file.name;
+            //if (filename.substr(filename.indexOf('.'), filename.length) != ".tar.gz") {
+            //    Ext.Msg.alert('Massage', "The extension should be <code>.tar.gz</code> !")
+            //}
+            progressbar.mySetText(0, file.size);
+            me.file = file;
+            progressbar.show()
+        } else {
+            me.file = false;
+            progressbar.hide()
+        }
+    },
+    uploadBigFile: function (file, callback) {
+        var me = this;
+        var url = 'upload.php';
+        var progressbar = me.down("progressbar");
+        var singleSize = 1024 * 1024;
+        var total = file.size / singleSize;
+        $.ajax({
+            url: url + "?par=beforeUploadBigFile&fileName=" + file.name,
+            async: false,
+            success: function (response) {
+                console.log(arguments)
+            }
+        })
+        uploadFile(file, 0);
+
+        function uploadFile(file, i) {
+            var currentSize = i * singleSize;
+            var nextSize = i * singleSize + singleSize;
+            if (nextSize > file.size) {
+                nextSize = file.size;
+            }
+            var subcontent = file.slice(currentSize, nextSize);
+            var fd = new FormData();
+            fd.append("file", subcontent);
+            $.ajax({
+                url: url + "?par=uploadFodlerWWW&fileName=" + file.name,
+                type: "post",
+                async: false,
+                cache: false,
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: function (res) {
+                    if (isNaN(res)) {
+                        Ext.Msg.alert("Message", res)
+                    } else {
+
+                        progressbar.mySetText(currentSize, file.size, singleSize)
+
+                        i++;
+                        setTimeout(function () {
+                            if (currentSize >= file.size) {
+                                return;
+                            } else {
+                                uploadFile(file, i);
+                            }
+                        }, 1)
+                    }
+                }
+            })
+        }
+
+        /*for (var i = 0; i < total; i++) {
+
+         var subcontent = file.slice(i * singleSize, i * singleSize + singleSize);
+         var fd = new FormData();
+         fd.append("file", subcontent);
+         $.ajax({
+         url: url + "?par=uploadFodlerWWW&fileName=" + file.name,
+         type: "post",
+         async: false,
+         cache: false,
+         data: fd,
+         contentType: false,
+         processData: false,
+         success: function (res) {
+         if(res){
+         Ext.Msg.alert("Message",res)
+         }else{
+
+         }
+         progressbar.mySetText(i * singleSize, file.size)
+         console.log(arguments)
+
+         }
+         })
+
+         }
+         */
+    }
+
+})
+
 Ext.define('LoginWindow', {
     extend: 'Ext.window.Window',
     autoShow: true,
@@ -6,10 +183,10 @@ Ext.define('LoginWindow', {
     height: 155,
     x: 50,
 
-    callbackFn:null,//这是个方法用来回调登陆成功事件
+    callbackFn: null,//这是个方法用来回调登陆成功事件
 
     login: function (params) {
-        var me=this;
+        var me = this;
         Ext.Ajax.request({
             url: "php/login.php?par=login",
             method: "post",
@@ -20,7 +197,7 @@ Ext.define('LoginWindow', {
                     if (resJson.isLogin) {
                         me.callbackFn(resJson);
                         me.close()
-                    }else{
+                    } else {
                         //Ext.Msg.alert("Massage","please login .<br>" + (resJson.info||" "))
                     }
                 } catch (e) {
@@ -42,7 +219,7 @@ Ext.define('LoginWindow', {
                         name: 'username',
                         emptyText: 'user name',
                         queryMode: "local",
-                        value:"mngr",
+                        value: "mngr",
                         store: Ext.create("Ext.data.Store", {
                             fields: ["0"],
                             autoLoad: true,
@@ -61,7 +238,7 @@ Ext.define('LoginWindow', {
                         xtype: "textfield",
                         allowBlank: false,
                         fieldLabel: 'Password',
-                        value:"mngr0",
+                        value: "mngr0",
                         name: 'password',
                         emptyText: 'password',
                         inputType: 'password'
@@ -86,7 +263,7 @@ Ext.define('LoginWindow', {
                                     field.setValue(value)
                                 }
                             })
-                            if(Ext.getCmp('win'+field.id)){
+                            if (Ext.getCmp('win' + field.id)) {
                                 field.focus();
                             }
                         }
@@ -139,7 +316,7 @@ Ext.define('editpic.view.ux.KeyBoard', {
             width: "97%",
             height: 50,
             margin: 5,
-            inputType:"password",
+            inputType: "password",
             value: me.inputValue
         });
 
