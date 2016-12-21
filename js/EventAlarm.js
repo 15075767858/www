@@ -23,7 +23,6 @@
 Ext.define("MonitorModel", {
     extend: "Ext.data.Model",
     fields: [
-        {name: "id", mapping: "@id"},
         {
             name: "ip", type: "string", defaultValue: location.host
         }, {
@@ -46,7 +45,7 @@ Ext.define("MonitorModel", {
     getPresentValue: function () {
         var __this = this;
         Ext.Ajax.request({
-            url: "/graph/resources/main.php",
+            url: "php/EventAlarm.php",
             params: {
                 par: "gettypevalue",
                 ip: __this.get("ip"),
@@ -67,7 +66,7 @@ Ext.define("MonitorModel", {
         var __this = this;
         //console.log(__this.getValidation())
         Ext.Ajax.request({
-            url: "/graph/resources/main.php",
+            url: "php/EventAlarm.php",
             params: {
                 par: "gettypevalue",
                 ip: __this.get("ip"),
@@ -112,9 +111,12 @@ Ext.define("AddMonitor", {
             {
                 text: "Ok", handler: function () {
                 var form = me.down("form")
+                console.log(form.getValues())
                 var mm = Ext.create("MonitorModel", form.getValues())
                 if (form.isValid()) {
                     me.callback(mm);
+                }else{
+                    Ext.Msg.alert("Massage","valid")
                 }
             }
             },
@@ -128,9 +130,11 @@ Ext.define("AddMonitor", {
     },
     items: {
         xtype: "form",
+
         defaults: {
             margin: 10
         },
+        scrollable: "y",
 
         listeners: {
             boxready: function (form) {
@@ -211,8 +215,10 @@ Ext.define("SelectKeyWinodw", {
                     setTimeout(function () {
 
                         var node = treePanel.store.findNode('value', me.key)
-                        var path = node.getPath()
-                        treePanel.selectPath(path)
+                        if (node) {
+                            var path = node.getPath()
+                            treePanel.selectPath(path)
+                        }
                     }, 1000)
                 }
             },
@@ -279,6 +285,7 @@ Ext.define("SelectKeyWinodw", {
 Ext.define("EventAlarmSetting", {
     extend: "Ext.window.Window",
     autoShow: true,
+    collapsible: true,
     title: "Event Alarm Setting",
     width: 600,
     layout: "auto",
@@ -287,6 +294,10 @@ Ext.define("EventAlarmSetting", {
         var me = this;
 
         var grid = Ext.create("Ext.grid.Panel", {
+            height: 390,
+            maxHeight: 390,
+            scrollable: "y",
+
             listeners: {
                 boxready: function () {
                     grid.features[0].expandAll();
@@ -337,6 +348,11 @@ Ext.define("EventAlarmSetting", {
                     var responseText = response.responseText;
                     if (responseText == xmlstr.length) {
                         Ext.Msg.alert("Massage", "save ok . " + responseText);
+
+                        Ext.Ajax.request({
+                            url: "php/EventAlarm.php?par=saveAlarmhisJson"
+                        })
+
                     } else {
                         Ext.Msg.alert("Massage", "Error" + responseText)
                     }
@@ -346,6 +362,7 @@ Ext.define("EventAlarmSetting", {
             buttons: [
                 {
                     text: "Ok", handler: function () {
+
 
                     grid.saveXml()
                 }
@@ -418,6 +435,7 @@ Ext.define("EventAlarmSetting", {
                         Ext.create("AddMonitor", {
                             callback: function (model) {
                                 grid.store.add(model)
+                                teststore = grid.store;
                                 Ext.Msg.alert("Massage", "ok , add Monitor")
                             }
                         })
@@ -471,7 +489,16 @@ Ext.define("EventAlarmSetting", {
 
         me.callParent();
     },
-
+    listeners: {
+        boxready: function (window) {
+            setTimeout(function () {
+                window.collapse()
+            }, 1000)
+        },
+        collapse: function (window) {
+            window.setPosition(0, 0, true)
+        }
+    }
 })
 
 Ext.define("ListenModel", {
@@ -484,81 +511,145 @@ Ext.define("ListenModel", {
         {name: "presentvalue", type: "string"},
         {name: "alarmtxt", type: "string"},
         {name: "normaltxt", type: "string"},
-        {name: "time", type: "date"}
-    ]
-})
-Ext.define("ListenStore", {
-    extend: "Ext.data.XmlStore",
-    model: Ext.create("ListenModel"),
-    autoLoad:true,
-    proxy: {
-        type: 'ajax',
-        url: "/graph/alarmhis.xml",
-        reader: {
-            type: 'xml',
-            record: "logs",
-            rootProperty: "root"
+        {
+            name: "time", type: "int"
         }
-    },
-})
-var s = Ext.create("ListenStore")
-console.log(s)
-Ext.define("ListenGrid", {
-    extend: "Ext.grid.Panel",
-    columns: [
-        {text: "ip", dataIndex: "ip"},
-        {text: "port", dataIndex: "port"},
-        {text: "key", dataIndex: "key"},
-        {text: "present value", dataIndex: "presentvalue"},
-        {text: "time", dataIndex: "time"},
-    ]
+    ],
+    proxy: {
+        type: 'rest',
+        url: "php/EventAlarm.php?par=addLog"
+    }
 })
 
-Ext.define("ListenEventAlarm", {
-    extend: "Ext.window.Window",
-    autoShow: true,
-    width: 600,
-    layout: "hbox",
+function test() {
+    Ext.onReady(function () {
+        var lm = new ListenModel()
+        lm.save({
+            callback: function (record, operation, success) {
+                if (success) {
+
+                } else {
+                    Ext.Msg.alert("Maasage", operation.error)
+                }
+            }
+        });
+    })
+}
+
+Ext.define("ListenGrid", {
+    extend: "Ext.grid.Panel",
+    height: 400,
+    maxHeight: 400,
     initComponent: function () {
         var me = this;
 
 
-        me.callParent();
+        me.initStore()
         me.audioInit();
+        me.callParent()
         me.runListen();
-
-        //me.getOldJson();
-        //me.serverSaveAlarmEventfunction();
-        //me.playAlarm();
-        //me.playEvent();
     },
+    initStore: function () {
+        var me = this
+        me.store = Ext.create("Ext.data.XmlStore", {
+            model: Ext.create("ListenModel"),
+            autoLoad: true,
+            sorters: [
+                {
+                    property: 'time',
+                    direction: 'DESC'
+                }
+            ],
+            proxy: {
+                type: 'ajax',
+                url: "/graph/alarmhis.xml",
+                reader: {
+                    type: 'xml',
+                    record: "log",
+                    rootProperty: "logs"
+                }
+            },
+            listeners: {
+                add: function () {
+                    me.playAlarm()
+                    console.log(this)
+                    console.log(arguments)
+                }
+            }
+        })
+    },
+    tbar: [
+        {
+            text: "STOP", icon: "/graph/resources/icons/alarm_24px.png", handler: function (button) {
+            button.up("grid").pauseAlarm()
+        }
+        }, "->"
+        , {
+            text: "Event Alarm Setting", handler: function () {
+                Ext.create("EventAlarmSetting")
+            }
+        }
+    ],
+    listeners: {
+        boxready: function (grid) {
+        }
+    },
+
     runListen: function () {
         var me = this;
+        setInterval(function () {
+            me.getDiffJson()
+        }, 3000)
+    },
+    getDiffJson: function () {
+        var me = this;
         me.getAlarmconfJson(function (oldArr) {
+
             me.saveAlarmhisJsonfunction(function (length) {
+
                 me.getAlarmconfJson(function (newArr) {
                     var diffArr = [];
                     for (var i = 0; i < oldArr.length; i++) {
                         newArr.find(function (json, index) {
-                            if (json.ip == oldArr[i].ip & json.port == oldArr[i].port & json.key == oldArr[i].key & json.value != oldArr[i].value) {
+                            if (json.ip == oldArr[i].ip & json.port == oldArr[i].port & json.key == oldArr[i].key & json.presentvalue != oldArr[i].presentvalue) {
                                 diffArr.push(json);
+                                console.log(json)
                             }
                         })
                     }
-
+                    if (diffArr.length > 0) {
+                        console.log(diffArr)
+                        me.addListenModels(diffArr)
+                    }
                     console.log(diffArr)
                 })
             })
         })
-        var inter = setInterval(function () {
-
-        }, 3000)
-
     },
-    saveDiff: function () {
-        var filePath = "/graph/Alarmhis.xml"
+    addListenModels: function (arr) {
+        var me = this;
+        for (var i = 0; i < arr.length; i++) {
+            me.addListenModel(arr[i])
+        }
     },
-
+    addListenModel: function (json) {
+        var me = this;
+        json.time = new Date().getTime();
+        var lm = Ext.create("ListenModel", json);
+        console.log(lm)
+        lm.save({
+            callback: function (record, operation, success) {
+                if (success) {
+                    me.store.insert(0, record)
+                    //me.playAlarm();
+                } else {
+                    Ext.Msg.alert("Maasage", operation.error)
+                }
+                console.log(arguments)
+                // do something whether the save succeeded or failed
+            }
+        })
+    },
     saveAlarmhisJsonfunction: function (success) {
         Ext.Ajax.request({
             url: "php/EventAlarm.php",
@@ -570,6 +661,7 @@ Ext.define("ListenEventAlarm", {
         })
     },
     getAlarmconfJson: function (success) {
+        var me = this;
         Ext.Ajax.request({
             url: "/graph/alarmconf.json",
         }).then(function (response) {
@@ -583,7 +675,18 @@ Ext.define("ListenEventAlarm", {
             }
         })
     },
-
+    columns: [
+        {text: "ip", dataIndex: "ip", flex: 1},
+        {text: "port", dataIndex: "port", flex: 1},
+        {text: "key", dataIndex: "key", flex: 1},
+        {text: "object name", dataIndex: "objectname", flex: 1},
+        {text: "present value", dataIndex: "presentvalue", flex: 1},
+        {
+            text: "time", dataIndex: "time", flex: 2, renderer: function (v) {
+            return new Date(v).toLocaleString()
+        }
+        }
+    ],
     audioInit: function () {
         var me = this;
         var alarmAudio = document.createElement("audio")
@@ -600,22 +703,146 @@ Ext.define("ListenEventAlarm", {
         me.eventAudio = eventAudio;
     },
     playAlarm: function () {
-        var me = this;
-        me.alarmAudio.play()
+        this.alarmAudio.play()
+    },
+    pauseAlarm: function () {
+        this.alarmAudio.pause()
     },
     playEvent: function () {
+        this.eventAudio.play()
+    },
+    pauseEvent: function () {
+        this.alarmAudio.pause()
+    },
+})
+
+Ext.define("ListenEventAlarm", {
+    collapsible: true,
+    extend: "Ext.window.Window",
+    autoShow: true,
+    title: "Listen Event Alarm",
+    width: 800,
+    y: 100,
+    initComponent: function () {
         var me = this;
-        me.eventAudio.play()
+        me.initItemsListen()
+        me.callParent();
+    },
+    initItemsListen: function () {
+        var me = this;
+        var form = Ext.create("Ext.form.Panel", {
+            layout: "hbox",
+            viewModel: Ext.create("Ext.app.ViewModel", {}),
+            url: "php/EventAlarm.php?par=setSaveTime",
+            items: [
+                {
+                    xtype: 'fieldcontainer',
+                    fieldLabel: 'alarmhis.xml',
+                    defaultType: 'radiofield',
+                    padding: 10,
+                    defaults: {
+                        flex: 1,
+                        margin: "0 10 0 10"
+                    },
+                    layout: 'hbox',
+                    items: [
+                        {
+                            xtype: "radiofield",
+                            reference: "alarmhis",
+                            boxLabel: "disable",
+                            name: "alarmhis",
+                            inputValue: false,
+
+                        },
+                        {
+                            xtype: "radiofield",
+                            reference: "alarmhis",
+                            boxLabel: "enable",
+                            name: "alarmhis",
+                            inputValue: true,
+                            listeners: {
+                                boxready: function (redio) {
+                                    redio.setValue(true)
+                                }
+                            }
+                        },
+                        {
+                            xtype: "combo",
+                            bind: {
+                                disabled: "{!alarmhis.checked}",
+                            },
+                            displayField: "name",
+                            valueField: "value",
+                            editable: false,
+                            name: "savetime",
+                            store: Ext.create("Ext.data.Store", {
+                                fields: ["name", "value"],
+                                data: [
+                                    {name: "7 days", value: 604800000},
+                                    {name: "30 days", value: 2592000000}
+                                ]
+                            }),
+                            listeners: {
+                                boxready: function (combo) {
+                                    console.log(combo.setValue(combo.store.getAt(0)))
+                                }
+                            }
+                        }, {
+                            xtype: "button", text: "Ok", handler: function () {
+
+
+                                form.submit({
+                                    success: function (form, response) {
+                                        Ext.Msg.alert("Massage", "Save ok " + response.result.info)
+                                        console.log(arguments)
+                                    }
+                                })
+                            }
+                        }
+                    ]
+                },
+
+            ]
+        })
+        var grid = Ext.create("ListenGrid", {
+            scrollable: true,
+
+        })
+        me.items = [form, grid]
+    },
+    listeners: {
+        boxready: function (window) {
+            Ext.Ajax.request({
+                url: "php/EventAlarm.php",
+                params: {
+                    par: "removeTimeoutTag",
+                    curtime: new Date().getTime()
+                }
+            }).then(function () {
+                console.log(arguments)
+            })
+            setTimeout(function () {
+                window.collapse()
+            }, 1000)
+        },
+        collapse: function (window) {
+            window.setPosition(0, 0, true)
+        }
     },
     buttons: [
         {
-            text: "submit", handler: function () {
-
+            text: "close", handler: function (button) {
+            button.up("window").close()
         }
         }
     ]
 });
+Ext.onReady(function () {
 
+    Ext.create("ListenEventAlarm")
+    Ext.create("EventAlarmSetting")
+
+})
 
 /*
  var IPCombo = Ext.create("Ext.form.field.Tag", {

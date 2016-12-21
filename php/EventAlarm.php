@@ -15,6 +15,60 @@ class EventAlarm
 
     }
 
+    public function setSaveTime($time = 0)
+    {
+        $dom = new DOMDocument('1.0', 'UTF-8');
+        $dom->formatOutput = true;
+        $dom->load($this::alarmhisXml);
+        $savetime = $dom->getElementsByTagName("savetime");
+        $savetime[0]->nodeValue = $time;
+
+        return $dom->save($this::alarmhisXml);
+    }
+
+    public function addLog($arr)
+    {
+        $dom = new DOMDocument('1.0', 'UTF-8');
+        $dom->formatOutput = true;
+        $dom->load($this::alarmhisXml);
+        $logs = $dom->getElementsByTagName('logs');
+        $types = array("ip", "port", "key", "objectname", "presentvalue", "alarmtxt", "normaltxt", "time");
+        $log = $dom->createElement("log");
+        foreach ($types as $value) {
+
+            $nodeValue = isset($arr->$value) ? $arr->$value : "";
+            $tag = $this->createXmlNode($dom, $value, $nodeValue);
+            $log->appendChild($tag);
+        }
+        $logs[0]->appendChild($log);
+        return $dom->save($this::alarmhisXml, LIBXML_NOEMPTYTAG);
+    }
+
+    public function removeTimeoutTag($curtime)
+    {
+        $dom = new DOMDocument('1.0', 'UTF-8');
+        $dom->formatOutput = true;
+        $dom->load($this::alarmhisXml);
+        $timeout = $dom->getElementsByTagName("savetime")[0]->nodeValue or 0;
+        $logs = $dom->getElementsByTagName("log");
+        for ($i = $logs->length; $i > 0; $i--) {
+            $log = $logs[$i - 1];
+            $time = $log->getElementsByTagName("time")[0]->nodeValue;
+            if ($time + $timeout < $curtime) {
+                $log->parentNode->removeChild($log);
+            }
+        }
+
+        return $dom->save($this::alarmhisXml);
+    }
+
+    public function createXmlNode($dom, $nodeName, $nodeValue)
+    {
+        $tag = $dom->createElement($nodeName);
+        $tag->nodeValue = $nodeValue;
+        return $tag;
+    }
+
     public function saveAlarmconfXml($content)
     {
         $dom = new DOMDocument('1.0', 'UTF-8');
@@ -44,9 +98,11 @@ class EventAlarm
             $ip = $item->getElementsByTagName("ip")[0]->nodeValue;
             $port = $item->getElementsByTagName("port")[0]->nodeValue;
             $key = $item->getElementsByTagName("key")[0]->nodeValue;
+
             //if ($this->isListen($ip, $port, $key)) {
             $value = $this->getTypeValue($ip, $port, $key, $this::ListenType);
-            array_push($saveArray, array("ip" => $ip, "port" => $port, "key" => $key, "value" => $value));
+            $objectname = $item->getElementsByTagName("objectname")[0]->nodeValue;;
+            array_push($saveArray, array("ip" => $ip, "port" => $port, "key" => $key, "presentvalue" => $value, "objectname" => $objectname));
             //}
         }
 
@@ -202,10 +258,37 @@ if ($par == "getAlarmEventString") {
     echo $eventAlarm->getAlarmEventString();
 }
 
+
 if ($par == "diffAlarmEvent") {
     echo $eventAlarm->diffAlarmEvent();
+}
+if ($par == "gettypevalue") {
+
+    echo $eventAlarm->gettypevalue($_REQUEST['ip'], $_REQUEST['port'], $_REQUEST['nodename'], $_REQUEST['type']);
 }
 
 if ($par == "saveAlarmEvent") {
     echo $eventAlarm->saveAlarmEvent();
+}
+if ($par == "addLog") {
+    $array = file_get_contents("php://input");
+    $array = json_decode($array);
+    $size = $eventAlarm->addLog($array);
+    echo "{success:true,info:$size}";
+}
+if ($par == "setSaveTime") {
+    if ($_REQUEST['alarmhis'] == "true") {
+        $time = $_REQUEST['savetime'];
+        $size = $eventAlarm->setSaveTime($time);
+        echo "{success:true,info:$size}";
+    } else {
+        $time = 0;
+        $size = $eventAlarm->setSaveTime($time);
+        echo "{success:true,info:$size}";
+    }
+}
+if ($par == "removeTimeoutTag") {
+    $curtime = $_REQUEST['curtime'];
+    $size = $eventAlarm->removeTimeoutTag($curtime);
+    echo "{success:true,info:$size}";
 }
