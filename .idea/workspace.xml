@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="633d9224-d895-4f36-981f-81e88d16658e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/EventAlarm.js" afterPath="$PROJECT_DIR$/js/EventAlarm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/EventAlarm.php" afterPath="$PROJECT_DIR$/php/EventAlarm.php" />
     </list>
@@ -25,31 +25,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EventAlarm.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EventAlarm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/EventAlarm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="579" column="6" selection-start-line="579" selection-start-column="6" selection-end-line="579" selection-end-column="6" />
+            <state relative-caret-position="490">
+              <caret line="649" column="10" selection-start-line="649" selection-start-column="10" selection-end-line="649" selection-end-column="10" />
               <folding>
                 <element signature="e#1084#1702#0" expanded="false" />
                 <element signature="e#1735#2393#0" expanded="false" />
-                <element signature="e#4960#6153#0" expanded="false" />
-                <element signature="e#14709#14841#0" expanded="false" />
-                <element signature="e#15757#15972#0" expanded="false" />
-                <element signature="e#23713#26886#0" expanded="false" />
-                <element signature="e#27458#27591#0" expanded="false" />
-                <marker date="1482337316000" expanded="false" signature="28763:28828" ph="{...}" />
-                <marker date="1482337316000" expanded="false" signature="28881:29111" ph="{...}" />
+                <element signature="e#4963#6156#0" expanded="false" />
+                <element signature="e#14729#14861#0" expanded="false" />
+                <element signature="e#15777#15992#0" expanded="false" />
+                <element signature="e#24117#27290#0" expanded="false" />
+                <element signature="e#27862#27995#0" expanded="false" />
+                <marker date="1482344906000" expanded="false" signature="29167:29232" ph="{...}" />
+                <marker date="1482344906000" expanded="false" signature="29285:29515" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventAlarm.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventAlarm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/EventAlarm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="271" column="1" selection-start-line="271" selection-start-column="1" selection-end-line="271" selection-end-column="1" />
+            <state relative-caret-position="433">
+              <caret line="308" column="19" selection-start-line="308" selection-start-column="13" selection-end-line="308" selection-end-column="19" />
               <folding>
                 <element signature="n#__construct#0;n#EventAlarm#0;n#!!top" expanded="false" />
                 <element signature="n#getAllAlarmEvent#0;n#EventAlarm#0;n#!!top" expanded="false" />
@@ -117,6 +117,8 @@
         <option value="$PROJECT_DIR$/php/user.php" />
         <option value="$PROJECT_DIR$/php/test.xml" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/graph/alarmhis.xml" />
+        <option value="$PROJECT_DIR$/graph/alarmconf.json" />
         <option value="$PROJECT_DIR$/php/EventAlarm.php" />
         <option value="$PROJECT_DIR$/js/EventAlarm.js" />
       </list>
@@ -205,7 +207,21 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graph" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -341,12 +357,12 @@
       <workItem from="1481679642963" duration="12380000" />
       <workItem from="1482050567091" duration="27981000" />
       <workItem from="1482192892549" duration="37940000" />
-      <workItem from="1482281664143" duration="34075000" />
+      <workItem from="1482281664143" duration="39352000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262123000" />
+    <option name="totallyTimeSpent" value="267400000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="491" y="64" width="1418" height="947" extended-state="0" />
@@ -389,36 +405,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="111" selection-start-line="30" selection-start-column="111" selection-end-line="30" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ext-component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2735#3329#0" expanded="false" />
-            <element signature="e#15963#20044#0" expanded="false" />
-            <element signature="e#20087#29477#0" expanded="false" />
-            <element signature="n#!!block;n#userLogin#0" expanded="false" />
-            <marker date="1482136289000" expanded="false" signature="6164:6798" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4560">
-          <caret line="304" column="4" selection-start-line="304" selection-start-column="4" selection-end-line="304" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/ConfigUtil.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3180">
@@ -791,6 +777,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/graph/alarmhis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/php/test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -799,33 +793,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/EventAlarm.js">
+    <entry file="file://$PROJECT_DIR$/graph/alarmconf.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="579" column="6" selection-start-line="579" selection-start-column="6" selection-end-line="579" selection-end-column="6" />
-          <folding>
-            <element signature="e#1084#1702#0" expanded="false" />
-            <element signature="e#1735#2393#0" expanded="false" />
-            <element signature="e#4960#6153#0" expanded="false" />
-            <element signature="e#14709#14841#0" expanded="false" />
-            <element signature="e#15757#15972#0" expanded="false" />
-            <element signature="e#23713#26886#0" expanded="false" />
-            <element signature="e#27458#27591#0" expanded="false" />
-            <marker date="1482337316000" expanded="false" signature="28763:28828" ph="{...}" />
-            <marker date="1482337316000" expanded="false" signature="28881:29111" ph="{...}" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph/alarmconf.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/EventAlarm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="271" column="1" selection-start-line="271" selection-start-column="1" selection-end-line="271" selection-end-column="1" />
+        <state relative-caret-position="433">
+          <caret line="308" column="19" selection-start-line="308" selection-start-column="13" selection-end-line="308" selection-end-column="19" />
           <folding>
             <element signature="n#__construct#0;n#EventAlarm#0;n#!!top" expanded="false" />
             <element signature="n#getAllAlarmEvent#0;n#EventAlarm#0;n#!!top" expanded="false" />
             <element signature="n#getAlarmEventPoint#0;n#EventAlarm#0;n#!!top" expanded="false" />
             <element signature="n#getAlarmEventArray#0;n#EventAlarm#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/EventAlarm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="649" column="10" selection-start-line="649" selection-start-column="10" selection-end-line="649" selection-end-column="10" />
+          <folding>
+            <element signature="e#1084#1702#0" expanded="false" />
+            <element signature="e#1735#2393#0" expanded="false" />
+            <element signature="e#4963#6156#0" expanded="false" />
+            <element signature="e#14729#14861#0" expanded="false" />
+            <element signature="e#15777#15992#0" expanded="false" />
+            <element signature="e#24117#27290#0" expanded="false" />
+            <element signature="e#27862#27995#0" expanded="false" />
+            <marker date="1482344906000" expanded="false" signature="29167:29232" ph="{...}" />
+            <marker date="1482344906000" expanded="false" signature="29285:29515" ph="{...}" />
           </folding>
         </state>
       </provider>

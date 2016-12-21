@@ -2,10 +2,10 @@
 
 class EventAlarm
 {
-    const AlarmEventFile = "../../AlarmEvent.json";
-    const alarmconfXml = "../../graph/alarmconf.xml";
-    const alarmconfJson = "../../graph/alarmconf.json";
-    const alarmhisXml = "../../graph/alarmhis.xml";
+    const AlarmEventFile = "../AlarmEvent.json";
+    const alarmconfXml = "../graph/alarmconf.xml";
+    const alarmconfJson = "../graph/alarmconf.json";
+    const alarmhisXml = "../graph/alarmhis.xml";
 
     const LookType = "Alarm";
     const ListenType = "Present_Value";
@@ -14,6 +14,21 @@ class EventAlarm
     {
 
     }
+
+    public function getAlarmconfXml()
+    {
+        if (file_exists($this::alarmconfXml)) {
+            return file_get_contents($this::alarmconfXml);
+        } else {
+            $dom = new DOMDocument('1.0', 'UTF-8');
+            $dom->formatOutput = true;
+            $root = $dom->createElement('root');//新建节点
+            $dom->appendChild($root);//设置root为跟节点
+            $dom->save($this::alarmconfXml, LIBXML_NOEMPTYTAG);
+            return file_get_contents($this::alarmconfXml);
+        }
+    }
+
 
     public function setSaveTime($time = 0)
     {
@@ -44,8 +59,27 @@ class EventAlarm
         return $dom->save($this::alarmhisXml, LIBXML_NOEMPTYTAG);
     }
 
+    public function getAlarmhisXml()
+    {
+        if (!file_exists($this::alarmhisXml)) {
+            $dom = new DOMDocument('1.0', 'UTF-8');
+            $dom->formatOutput = true;
+            $root = $dom->createElement('root');//新建节点
+            $dom->appendChild($root);//设置root为跟节点
+            $savetime = $dom->createElement('savetime');//新建节点
+            $savetime->nodeValue = 0;
+            $root->appendChild($savetime);
+            $logs = $dom->createElement('logs');//新建节点
+            $root->appendChild($logs);
+            $dom->save($this::alarmhisXml);
+            return file_get_contents($this::alarmhisXml);
+        }
+    }
+
     public function removeTimeoutTag($curtime)
     {
+        $this->getAlarmhisXml();
+
         $dom = new DOMDocument('1.0', 'UTF-8');
         $dom->formatOutput = true;
         $dom->load($this::alarmhisXml);
@@ -71,6 +105,9 @@ class EventAlarm
 
     public function saveAlarmconfXml($content)
     {
+        if (!file_exists($this::alarmconfXml)) {
+            file_put_contents($this::alarmconfXml, $content);
+        }
         $dom = new DOMDocument('1.0', 'UTF-8');
         $dom->formatOutput = true;
         $dom->loadXML($content);
@@ -98,7 +135,6 @@ class EventAlarm
             $ip = $item->getElementsByTagName("ip")[0]->nodeValue;
             $port = $item->getElementsByTagName("port")[0]->nodeValue;
             $key = $item->getElementsByTagName("key")[0]->nodeValue;
-
             //if ($this->isListen($ip, $port, $key)) {
             $value = $this->getTypeValue($ip, $port, $key, $this::ListenType);
             $objectname = $item->getElementsByTagName("objectname")[0]->nodeValue;;
@@ -271,6 +307,7 @@ if ($par == "saveAlarmEvent") {
     echo $eventAlarm->saveAlarmEvent();
 }
 if ($par == "addLog") {
+
     $array = file_get_contents("php://input");
     $array = json_decode($array);
     $size = $eventAlarm->addLog($array);
@@ -292,3 +329,14 @@ if ($par == "removeTimeoutTag") {
     $size = $eventAlarm->removeTimeoutTag($curtime);
     echo "{success:true,info:$size}";
 }
+
+if ($par == "getAlarmconfXml") {
+    header('Content-type: text/xml');
+    echo $eventAlarm->getAlarmconfXml();
+}
+
+if ($par == "getAlarmhisXml") {
+    header('Content-type: text/xml');
+    echo $eventAlarm->getAlarmhisXml();
+}
+

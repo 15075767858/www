@@ -115,8 +115,8 @@ Ext.define("AddMonitor", {
                 var mm = Ext.create("MonitorModel", form.getValues())
                 if (form.isValid()) {
                     me.callback(mm);
-                }else{
-                    Ext.Msg.alert("Massage","valid")
+                } else {
+                    Ext.Msg.alert("Massage", "valid")
                 }
             }
             },
@@ -248,7 +248,7 @@ Ext.define("SelectKeyWinodw", {
                 url: "resources/main.php?par=nodes",
                 proxy: {
                     type: "ajax",
-                    url: "/graph/resources/main.php?par=nodes&ip=" + me.ip + "&port=" + me.port + "",
+                    url: "graph/resources/main.php?par=nodes&ip=" + me.ip + "&port=" + me.port + "",
                     reader: {
                         type: "json"
                     }
@@ -381,7 +381,7 @@ Ext.define("EventAlarmSetting", {
                 idPath: 'ASIN',
                 proxy: {
                     type: 'ajax',
-                    url: "/graph/alarmconf.xml",
+                    url: "php/EventAlarm.php?par=getAlarmconfXml",
                     reader: {
                         type: 'xml',
                         record: "item",
@@ -516,7 +516,7 @@ Ext.define("ListenModel", {
         }
     ],
     proxy: {
-        type: 'rest',
+        type: 'post',
         url: "php/EventAlarm.php?par=addLog"
     }
 })
@@ -562,7 +562,7 @@ Ext.define("ListenGrid", {
             ],
             proxy: {
                 type: 'ajax',
-                url: "/graph/alarmhis.xml",
+                url: "php/EventAlarm.php?par=getAlarmhisXml",
                 reader: {
                     type: 'xml',
                     record: "log",
@@ -580,7 +580,7 @@ Ext.define("ListenGrid", {
     },
     tbar: [
         {
-            text: "STOP", icon: "/graph/resources/icons/alarm_24px.png", handler: function (button) {
+            text: "STOP", icon: "graph/resources/icons/alarm_24px.png", handler: function (button) {
             button.up("grid").pauseAlarm()
         }
         }, "->"
@@ -636,11 +636,22 @@ Ext.define("ListenGrid", {
         var me = this;
         json.time = new Date().getTime();
         var lm = Ext.create("ListenModel", json);
-        console.log(lm)
-        lm.save({
+        Ext.Ajax.request({
+            url: "php/EventAlarm.php?par=addLog",
+            params: json
+        }).then(function (response) {
+            console.log(response);
+            try {
+                var resJson = Ext.decode(response.responseText);
+                me.store.insert(0, lm)
+            } catch (e) {
+                Ext.Msg.alert("Maasage", e)
+            }
+        })
+        /*lm.save({
             callback: function (record, operation, success) {
                 if (success) {
-                    me.store.insert(0, record)
+                    me.store.insert(0, lm)
                     //me.playAlarm();
                 } else {
                     Ext.Msg.alert("Maasage", operation.error)
@@ -648,7 +659,7 @@ Ext.define("ListenGrid", {
                 console.log(arguments)
                 // do something whether the save succeeded or failed
             }
-        })
+        })*/
     },
     saveAlarmhisJsonfunction: function (success) {
         Ext.Ajax.request({
@@ -663,7 +674,7 @@ Ext.define("ListenGrid", {
     getAlarmconfJson: function (success) {
         var me = this;
         Ext.Ajax.request({
-            url: "/graph/alarmconf.json",
+            url: "graph/alarmconf.json",
         }).then(function (response) {
             try {
                 var resArr = Ext.decode(response.responseText);
