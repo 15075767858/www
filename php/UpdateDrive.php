@@ -16,17 +16,13 @@ if ($par == 'beforeUpload') {
         "bac-server-modbus" => "bac-server-modbus.pid",
         "bac-client" => "bac_client.pid",
         "bac-server" => "bac_server.pid");
-
     $pidFile = "/var/run/" . $pids[$_REQUEST['fileName']];
-
     if (file_exists($pidFile)) {
         $myfile = fopen($pidFile, "r");
         $jc = fgets($myfile);
         $test = "kill " . $jc;
         exec($test, $array);
     }
-
-
 }
 
 if($par=='upload'){

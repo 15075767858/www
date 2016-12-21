@@ -1,3 +1,6 @@
+
+
+
 Ext.define("UpdateWWW", {
     extend: "Ext.window.Window",
     autoShow: true,
@@ -30,7 +33,7 @@ Ext.define("UpdateWWW", {
                 html: [
                     '<h3>Update</h3>',
                     '<p>This is a simple update program for updating and upgrading your program directory.',
-                    'Please select the update program provided by <code>Smartio</code> to update <code>www.tar.gz</code>.  ',
+                    'Please select the update program provided by <code>Smartio</code> to update <code>.tar.bz2</code>.  ',
                     'Thank you.</p>'
                 ]
             }, {
@@ -47,24 +50,27 @@ Ext.define("UpdateWWW", {
                 xtype: "progressbar",
                 hidden: true,
                 value: 0.5,
+                itemId: "updatePregress",
                 listeners: {
                     render: function (progressbar) {
                         this.mySetText = function (currentSize, allSize, singleSize) {
                             console.log(this)
-                            if(currentSize>allSize){
-                                currentSize=allSize;
+                            if (currentSize > allSize) {
+                                currentSize = allSize;
                             }
                             this.setValue(currentSize / allSize);
                             var percent = Ext.util.Format.percent(currentSize / allSize);
                             var currentSize = Ext.util.Format.fileSize(currentSize);
                             var allSize = Ext.util.Format.fileSize(allSize);
                             var singleSize = Ext.util.Format.fileSize(singleSize || 0);
-
                             this.updateText(currentSize + "/" + allSize + "  " + singleSize + "/s " + percent);
+
                         }
                     }
                 }
-            }, {
+            },
+
+            {
                 xtype: 'button',
                 text: 'Start Updating',
                 handler: function (button) {
@@ -78,7 +84,8 @@ Ext.define("UpdateWWW", {
     },
     setFile: function (file) {
         var me = this;
-        var progressbar = me.down("progressbar")
+        //var progressbar = me.down("progressbar")
+        var progressbar = me.getComponent("updatePregress");
         if (file) {
             var filename = file.name;
             //if (filename.substr(filename.indexOf('.'), filename.length) != ".tar.gz") {
@@ -95,7 +102,9 @@ Ext.define("UpdateWWW", {
     uploadBigFile: function (file, callback) {
         var me = this;
         var url = 'upload.php';
-        var progressbar = me.down("progressbar");
+//        var progressbar = me.down("progressbar");
+        var progressbar = me.getComponent("updatePregress");
+
         var singleSize = 1024 * 1024;
         var total = file.size / singleSize;
         $.ajax({
@@ -105,7 +114,33 @@ Ext.define("UpdateWWW", {
                 console.log(arguments)
             }
         })
+
         uploadFile(file, 0);
+        function installPackage(filename) {
+
+            $.ajax({
+                url: url + "?par=installPackage&fileName=" + filename,
+                async: true,
+                timeout: 0,
+                success: function (response) {
+                    try {
+                        var res = Ext.decode(response);
+                        Ext.Msg.alert("Massage", "ok ");
+                    } catch (e) {
+                        Ext.Msg.alert("Massage", "info " + response)
+                    }
+                },
+                failure: function (response) {
+                    try {
+                        var res = Ext.decode(response);
+                        Ext.Msg.alert("Massage", "ok ");
+                    } catch (e) {
+                        Ext.Msg.alert("Massage", "info " + response)
+                    }
+                }
+
+            })
+        }
 
         function uploadFile(file, i) {
             var currentSize = i * singleSize;
@@ -134,6 +169,8 @@ Ext.define("UpdateWWW", {
                         i++;
                         setTimeout(function () {
                             if (currentSize >= file.size) {
+                                installPackage(file.name);
+
                                 return;
                             } else {
                                 uploadFile(file, i);
@@ -173,6 +210,223 @@ Ext.define("UpdateWWW", {
          */
     }
 
+})
+
+Ext.define("UserManager", {
+    extend: "Ext.window.Window",
+    autoShow: true,
+    title: "User Manager",
+    width: 400,
+    deleteUser: function () {
+        var me = this;
+        var combo = me.down('combo');
+        Ext.Msg.show({
+            title: 'Delete User',
+            message: 'Do you want to delete this user ' + combo.value + ' ？',
+            buttons: Ext.Msg.YESNOCANCEL,
+            icon: Ext.Msg.QUESTION,
+            fn: function (btn) {
+                if (btn === 'yes') {
+                    Ext.Ajax.request({
+                        url: 'php/login.php?par=deleteUser' + '&username=' + combo.value,
+                        success: function (response) {
+                            try {
+                                var resJson = Ext.decode(response.responseText);
+                                Ext.Msg.alert("Massage", resJson.info)
+                            } catch (e) {
+                                Ext.Msg.alert('error', e + response.responseText);
+                                throw new Error(e);
+                            }
+                        }
+                    })
+                }
+            }
+        });
+    },
+    bbar: [
+        {
+            text: "Add User", handler: function () {
+            var win = Ext.create("Ext.window.Window", {
+                title: "Please input password and level .",
+                autoShow: true,
+                width: 300,
+                resizeable: false,
+                items: [
+                    {
+                        xtype: "form",
+                        defaults: {
+                            margin: 10,
+                            allowBlank: false
+                        },
+                        items: [
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "username",
+                                name: "username",
+                                maxLength: 20,
+                                minLength: 4
+                            },
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "password",
+                                name: "password",
+                                inputType: "password",
+                                maxLength: 16,
+                                minLength: 4
+                            },
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "Enter again",
+                                inputType: "password",
+                                name: "again",
+                                maxLength: 16,
+                                minLength: 4
+                            },
+                            {xtype: "numberfield", fieldLabel: "level", name: "level", minValue: 0, maxValue: 255},
+                        ],
+                        bbar: [
+                            {
+                                text: "Ok", handler: function () {
+                                var form = this.up("form");
+                                if (form.isValid()) {
+                                    var values = form.getValues();
+                                    if (values.password != values.again) {
+                                        Ext.Msg.alert("Massage", "Two passwords are not consistent .")
+                                        return;
+                                    }
+                                    form.submit({
+                                        url: "php/login.php?par=addUser",
+                                        success: function (form, resonse) {
+                                            if (resonse.result.success) {
+                                                Ext.Msg.alert("Massage", resonse.result.info);
+                                            }
+                                            console.log(arguments)
+                                        },
+                                        failure: function (form, response) {
+                                            Ext.Msg.alert("Massage", response.result.info)
+                                            console.log(arguments)
+                                        }
+                                    })
+                                }
+                            }
+                            },
+                            {
+                                text: "Cancel", handler: function () {
+                                win.close();
+                            }
+                            }
+                        ]
+                    }
+                ]
+            })
+        }
+        },
+        {
+            text: "Delete User", handler: function (button) {
+            var win = button.up('window');
+            win.deleteUser();
+
+        }
+        },
+        {
+            text: "Change User", hidden: true, handler: function () {
+            var win = Ext.create("Ext.window.Window", {
+                title: "Please input password and level .",
+                autoShow: true,
+                width: 300,
+                resizeable: false,
+                items: [
+                    {
+                        xtype: "form",
+                        defaults: {
+                            margin: 10,
+                            allowBlank: false
+                        },
+                        items: [
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "username",
+                                name: "username",
+                                maxLength: 20,
+                                minLength: 4,
+                                hidden: true
+                            },
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "password",
+                                name: "password",
+                                inputType: "password",
+                                maxLength: 16,
+                                minLength: 4
+                            },
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "Enter again",
+                                inputType: "password",
+                                name: "again",
+                                maxLength: 16,
+                                minLength: 4
+                            },
+                            {xtype: "numberfield", fieldLabel: "level", name: "level", minValue: 0, maxValue: 255},
+                        ],
+                        bbar: [
+                            {
+                                text: "Ok", handler: function () {
+                                var form = this.up("form");
+                                if (form.isValid()) {
+                                    var values = form.getValues();
+                                    if (values.password != values.again) {
+                                        Ext.Msg.alert("Massage", "Two passwords are not consistent .")
+                                        return;
+                                    }
+                                    form.submit({
+                                        url: "php/login.php?par=addUser",
+                                        success: function (form, resonse) {
+                                            if (resonse.result.success) {
+                                                Ext.Msg.alert("Massage", resonse.result.info);
+                                            }
+                                            console.log(arguments)
+                                        },
+                                        failure: function (form, response) {
+                                            Ext.Msg.alert("Massage", response.result.info)
+                                            console.log(arguments)
+                                        }
+                                    })
+                                }
+                            }
+                            },
+                            {
+                                text: "Cancel", handler: function () {
+                                win.close();
+                            }
+                            }
+                        ]
+                    }
+                ]
+            })
+        }
+        }
+    ],
+    initComponent: function () {
+        var me = this;
+        var combo = Ext.create("Ext.form.field.ComboBox", {
+            store: Ext.create("Ext.data.Store", {
+                fields: ["0"],
+                autoLoad: true,
+                proxy: {
+                    type: "ajax",
+                    url: "php/login.php?par=getAllUser",
+                    reader: {
+                        type: "json"
+                    }
+                }
+            }),
+            displayField: "0",
+            valueField: "0"
+        })
+        me.items = [combo]
+        me.callParent();
+    }
 })
 
 Ext.define('LoginWindow', {
@@ -248,13 +502,11 @@ Ext.define('LoginWindow', {
                     anchor: '100%',
                     labelWidth: 120,
                     listeners: {
-
                         focus: function (field) {
                             var keybord = Ext.getCmp("win" + field.id)
                             if (keybord) {
                                 keybord.close()
                             }
-
                             Ext.create("editpic.view.ux.KeyBoard", {
                                 id: "win" + field.id,
                                 x: me.getX() + me.getWidth() + 5,
@@ -300,7 +552,6 @@ Ext.define('LoginWindow', {
         me.callParent();
     }
 });
-
 
 Ext.define('editpic.view.ux.KeyBoard', {
     extend: 'Ext.window.Window',

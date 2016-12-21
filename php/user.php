@@ -10,6 +10,7 @@ class user
     public $xmlPath = '../passwd.xml';
     public static $xmlFileName = '../passwd.xml';
 
+
     public function __construct($username = null)
     {
         //$this->password=$password;
