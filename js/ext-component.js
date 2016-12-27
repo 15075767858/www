@@ -33,7 +33,7 @@ Ext.define("UpdateWWW", {
                 html: [
                     '<h3>Update</h3>',
                     '<p>This is a simple update program for updating and upgrading your program directory.',
-                    'Please select the update program provided by <code>Smartio</code> to update <code>.tar.bz2</code>.  ',
+                    'Please select the update program provided by <code class="smartiologo">Smartio</code> to update <code>.tar.bz2</code>.  ',
                     'Thank you.</p>'
                 ]
             }, {

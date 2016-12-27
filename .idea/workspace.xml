@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="633d9224-d895-4f36-981f-81e88d16658e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/changeIP.html" afterPath="$PROJECT_DIR$/changeIP.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/default.html" afterPath="$PROJECT_DIR$/default.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/EventAlarm.js" afterPath="$PROJECT_DIR$/js/EventAlarm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/EventAlarm.php" afterPath="$PROJECT_DIR$/php/EventAlarm.php" />
     </list>
@@ -24,53 +27,7 @@
     <favorites_list name="www" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EventAlarm.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/EventAlarm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="649" column="10" selection-start-line="649" selection-start-column="10" selection-end-line="649" selection-end-column="10" />
-              <folding>
-                <element signature="e#1084#1702#0" expanded="false" />
-                <element signature="e#1735#2393#0" expanded="false" />
-                <element signature="e#4963#6156#0" expanded="false" />
-                <element signature="e#14729#14861#0" expanded="false" />
-                <element signature="e#15777#15992#0" expanded="false" />
-                <element signature="e#24117#27290#0" expanded="false" />
-                <element signature="e#27862#27995#0" expanded="false" />
-                <marker date="1482344906000" expanded="false" signature="29167:29232" ph="{...}" />
-                <marker date="1482344906000" expanded="false" signature="29285:29515" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventAlarm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/EventAlarm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="308" column="19" selection-start-line="308" selection-start-column="13" selection-end-line="308" selection-end-column="19" />
-              <folding>
-                <element signature="n#__construct#0;n#EventAlarm#0;n#!!top" expanded="false" />
-                <element signature="n#getAllAlarmEvent#0;n#EventAlarm#0;n#!!top" expanded="false" />
-                <element signature="n#getAlarmEventPoint#0;n#EventAlarm#0;n#!!top" expanded="false" />
-                <element signature="n#getAlarmEventArray#0;n#EventAlarm#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/test.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="576" column="14" selection-start-line="576" selection-start-column="14" selection-end-line="576" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -101,13 +58,10 @@
         <option value="$PROJECT_DIR$/php/bac-logic" />
         <option value="$PROJECT_DIR$/php/bip-client" />
         <option value="$PROJECT_DIR$/php/graph1.tar.gz" />
-        <option value="$PROJECT_DIR$/default.html" />
         <option value="$PROJECT_DIR$/passwd.xml" />
         <option value="$PROJECT_DIR$/php/login.php" />
         <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/changeIP.html" />
         <option value="$PROJECT_DIR$/php/UpdateDrive.php" />
-        <option value="$PROJECT_DIR$/driverconfig.html" />
         <option value="$PROJECT_DIR$/js/ConfigUtil.js" />
         <option value="$PROJECT_DIR$/upload.php" />
         <option value="$PROJECT_DIR$/js/main.js" />
@@ -116,11 +70,14 @@
         <option value="$PROJECT_DIR$/js/ext-component.js" />
         <option value="$PROJECT_DIR$/php/user.php" />
         <option value="$PROJECT_DIR$/php/test.xml" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/graph/alarmhis.xml" />
         <option value="$PROJECT_DIR$/graph/alarmconf.json" />
-        <option value="$PROJECT_DIR$/php/EventAlarm.php" />
         <option value="$PROJECT_DIR$/js/EventAlarm.js" />
+        <option value="$PROJECT_DIR$/php/EventAlarm.php" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/changeIP.html" />
+        <option value="$PROJECT_DIR$/default.html" />
+        <option value="$PROJECT_DIR$/driverconfig.html" />
       </list>
     </option>
   </component>
@@ -135,10 +92,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="491" />
-    <option name="y" value="64" />
-    <option name="width" value="1418" />
-    <option name="height" value="947" />
+    <option name="x" value="-1513" />
+    <option name="y" value="-196" />
+    <option name="width" value="1513" />
+    <option name="height" value="927" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -165,6 +122,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -193,7 +152,21 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="php" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -211,24 +184,8 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graph" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -357,24 +314,30 @@
       <workItem from="1481679642963" duration="12380000" />
       <workItem from="1482050567091" duration="27981000" />
       <workItem from="1482192892549" duration="37940000" />
-      <workItem from="1482281664143" duration="39352000" />
+      <workItem from="1482281664143" duration="42033000" />
+      <workItem from="1482348976722" duration="77000" />
+      <workItem from="1482349294772" duration="193000" />
+      <workItem from="1482349801920" duration="83000" />
+      <workItem from="1482374272357" duration="3869000" />
+      <workItem from="1482393505787" duration="7000" />
+      <workItem from="1482395096617" duration="31000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267400000" />
+    <option name="totallyTimeSpent" value="274341000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="491" y="64" width="1418" height="947" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1513" y="-196" width="1513" height="927" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18168604" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16383412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944608" sideWeight="0.50385356" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23973364" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15204678" sideWeight="0.49614644" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11137725" sideWeight="0.49614644" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -400,45 +363,19 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/ConfigUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3180">
-          <caret line="212" column="34" selection-start-line="212" selection-start-column="34" selection-end-line="212" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="29" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ext-component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2735#3329#0" expanded="false" />
-            <element signature="e#15963#20044#0" expanded="false" />
-            <element signature="e#20087#29477#0" expanded="false" />
-            <element signature="n#!!block;n#userLogin#0" expanded="false" />
-            <marker date="1482136289000" expanded="false" signature="6164:6798" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4560">
           <caret line="304" column="4" selection-start-line="304" selection-start-column="4" selection-end-line="304" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#1;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -460,7 +397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="32" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -489,7 +425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -504,7 +439,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5055">
           <caret line="337" column="16" selection-start-line="337" selection-start-column="11" selection-end-line="337" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#1;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -533,7 +471,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5055">
           <caret line="337" column="16" selection-start-line="337" selection-start-column="11" selection-end-line="337" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#1;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -562,7 +503,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5055">
           <caret line="337" column="16" selection-start-line="337" selection-start-column="11" selection-end-line="337" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#1;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -602,19 +546,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/driverconfig.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="256" column="69" selection-start-line="256" selection-start-column="69" selection-end-line="256" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/upload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -622,7 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8460">
           <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -630,7 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="500" column="9" selection-start-line="500" selection-start-column="9" selection-end-line="500" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,7 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,10 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="275" column="43" selection-start-line="275" selection-start-column="40" selection-end-line="275" selection-end-column="43" />
-          <folding>
-            <marker date="1481681769000" expanded="true" signature="14223:14613" ph="..." />
-            <marker date="1481681769000" expanded="true" signature="14490:14606" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -692,9 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1464838092000" expanded="true" signature="266:275" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -702,7 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,7 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-890">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -725,7 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -733,7 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -749,7 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="240" column="9" selection-start-line="240" selection-start-column="9" selection-end-line="240" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -757,7 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -765,77 +684,107 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6680">
           <caret line="1746" column="27" selection-start-line="1746" selection-start-column="27" selection-end-line="1746" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="304" column="0" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph/alarmhis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/graph/alarmhis.xml" />
     <entry file="file://$PROJECT_DIR$/php/test.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
+        <state relative-caret-position="8640">
           <caret line="576" column="14" selection-start-line="576" selection-start-column="14" selection-end-line="576" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graph/alarmconf.xml">
+    <entry file="file://$PROJECT_DIR$/graph/alarmconf.xml" />
+    <entry file="file://$PROJECT_DIR$/graph/alarmconf.json" />
+    <entry file="file://$PROJECT_DIR$/php/EventAlarm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="30">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding>
+            <element signature="n#__construct#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#setSaveTime#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#getAlarmhisXml#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#removeTimeoutTag#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#createXmlNode#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#saveAlarmconfXml#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#saveAlarmhisXml#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#alarmhisLoadJson#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#isListen#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#getTypeValue#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#saveAlarmEvent#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#getAllAlarmEvent#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#getAlarmEventPoint#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#diffAlarmEvent#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#getAlarmEventArray#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#getAlarmEventString#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#saveAllAlarm#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <element signature="n#getRedisConnect#0;n#EventAlarm#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/changeIP.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="703" column="0" selection-start-line="703" selection-start-column="0" selection-end-line="703" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graph/alarmconf.json">
+    <entry file="file://$PROJECT_DIR$/default.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="570">
+          <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/download.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1845">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/EventAlarm.php">
+    <entry file="file://$PROJECT_DIR$/driverconfig.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="308" column="19" selection-start-line="308" selection-start-column="13" selection-end-line="308" selection-end-column="19" />
+        <state relative-caret-position="570">
+          <caret line="806" column="0" selection-start-line="806" selection-start-column="0" selection-end-line="806" selection-end-column="0" />
           <folding>
-            <element signature="n#__construct#0;n#EventAlarm#0;n#!!top" expanded="false" />
-            <element signature="n#getAllAlarmEvent#0;n#EventAlarm#0;n#!!top" expanded="false" />
-            <element signature="n#getAlarmEventPoint#0;n#EventAlarm#0;n#!!top" expanded="false" />
-            <element signature="n#getAlarmEventArray#0;n#EventAlarm#0;n#!!top" expanded="false" />
+            <marker date="1482395116000" expanded="true" signature="26671:26680" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="301" column="7" selection-start-line="301" selection-start-column="7" selection-end-line="301" selection-end-column="7" />
+          <folding>
+            <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#1;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/EventAlarm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="649" column="10" selection-start-line="649" selection-start-column="10" selection-end-line="649" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1084#1702#0" expanded="false" />
-            <element signature="e#1735#2393#0" expanded="false" />
-            <element signature="e#4963#6156#0" expanded="false" />
-            <element signature="e#14729#14861#0" expanded="false" />
-            <element signature="e#15777#15992#0" expanded="false" />
-            <element signature="e#24117#27290#0" expanded="false" />
-            <element signature="e#27862#27995#0" expanded="false" />
-            <marker date="1482344906000" expanded="false" signature="29167:29232" ph="{...}" />
-            <marker date="1482344906000" expanded="false" signature="29285:29515" ph="{...}" />
+            <element signature="e#1284#1971#0" expanded="false" />
+            <element signature="e#2008#2739#0" expanded="false" />
+            <element signature="e#3671#4303#0" expanded="false" />
+            <element signature="e#11255#12691#0" expanded="false" />
+            <element signature="e#16670#16814#0" expanded="false" />
+            <element signature="e#17822#18065#0" expanded="false" />
+            <element signature="e#19334#19902#0" expanded="false" />
+            <element signature="e#31565#31722#0" expanded="false" />
+            <marker date="1482379057000" expanded="false" signature="32871:32936" ph="{...}" />
+            <marker date="1482379057000" expanded="false" signature="32989:33219" ph="{...}" />
           </folding>
         </state>
       </provider>
