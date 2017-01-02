@@ -86,6 +86,10 @@
                 aria-label="Left Align">
             <span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span> Download
         </button>
+        <button type="button" class="btn btn-primary btn-lg button_shadow" onclick="backup()"
+                aria-label="Left Align">
+            <span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span> Binupdae
+        </button>
         <button type="button" class="btn btn-warning btn-lg button_shadow" onclick="location.href='index.html'"
                 aria-label="Left Align">
             <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Exit
@@ -369,9 +373,11 @@
 <script src="js/ConfigUtil.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
+<script src="js/ext-component.js"></script>
 <script type="text/javascript">
-
+function backup(){
+    Ext.widget('backup');
+}
     (function () {
         var NetCount = 1100;
         for (var i = 0; i < 89; i++) {
