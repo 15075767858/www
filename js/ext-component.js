@@ -1,6 +1,3 @@
-
-
-
 Ext.define("UpdateWWW", {
     extend: "Ext.window.Window",
     autoShow: true,
@@ -28,6 +25,7 @@ Ext.define("UpdateWWW", {
     initComponent: function () {
         var me = this;
         me.items = [
+
             {
                 xtype: 'component',
                 html: [
@@ -36,7 +34,18 @@ Ext.define("UpdateWWW", {
                     'Please select the update program provided by <code class="smartiologo">Smartio</code> to update <code>.tar.bz2</code>.  ',
                     'Thank you.</p>'
                 ]
-            }, {
+            },
+            {
+                xtype: "progressbar",
+                itemId: "waitProgress",
+                text: "Wait 10 minute ...",
+                listeners:{
+                    render:function (waitProgress) {
+                        testProgress=waitProgress
+                    }
+                }
+            },
+            {
                 xtype: 'filefield',
                 hideLabel: true,
                 reference: 'basicFile',
@@ -86,6 +95,8 @@ Ext.define("UpdateWWW", {
         var me = this;
         //var progressbar = me.down("progressbar")
         var progressbar = me.getComponent("updatePregress");
+        var waitProgress = me.getComponent("waitProgress");
+
         if (file) {
             var filename = file.name;
             //if (filename.substr(filename.indexOf('.'), filename.length) != ".tar.gz") {
@@ -103,6 +114,7 @@ Ext.define("UpdateWWW", {
         var me = this;
         var url = 'upload.php';
         var progressbar = me.getComponent("updatePregress");
+        var waitProgress = me.getComponent("waitProgress");
 
         var singleSize = 1024 * 1024;
         var total = file.size / singleSize;
@@ -124,6 +136,8 @@ Ext.define("UpdateWWW", {
                 success: function (response) {
                     try {
                         var res = Ext.decode(response);
+                        waitProgress.hide()
+
                         Ext.Msg.alert("Massage", "ok ");
                     } catch (e) {
                         Ext.Msg.alert("Massage", "info " + response)
@@ -132,6 +146,8 @@ Ext.define("UpdateWWW", {
                 failure: function (response) {
                     try {
                         var res = Ext.decode(response);
+                        waitProgress.hide()
+
                         Ext.Msg.alert("Massage", "ok ");
                     } catch (e) {
                         Ext.Msg.alert("Massage", "info " + response)
@@ -161,6 +177,7 @@ Ext.define("UpdateWWW", {
                 success: function (res) {
                     if (isNaN(res)) {
                         Ext.Msg.alert("Message", res)
+
                     } else {
 
                         progressbar.mySetText(currentSize, file.size, singleSize)
@@ -169,7 +186,9 @@ Ext.define("UpdateWWW", {
                         setTimeout(function () {
                             if (currentSize >= file.size) {
                                 installPackage(file.name);
-
+                                waitProgress.wait({
+                                    interval: 1000
+                                });
                                 return;
                             } else {
                                 uploadFile(file, i);
@@ -929,7 +948,7 @@ Ext.define('program.view.grid.BackupGrid', {
         {
             text: "File Name", dataIndex: "src", flex: 1,
             renderer: function (val, b, record) {
-                val="/program/"+val;
+                val = "/program/" + val;
                 return "<a class='adownload' download=" + val + " target='_black' href=" + val + ">" + record.data.name + "<span class='x-col-move-top'></span></a>";
             }
         },
@@ -998,29 +1017,28 @@ Ext.define('program.view.grid.BackupGrid', {
                         fn: function (btn) {
                             if (btn === 'yes') {
                                 Ext.Ajax.request({
-                                    url:"/program/resources/test1.php",
-                                    params:{
+                                    url: "/program/resources/test1.php",
+                                    params: {
                                         par: "system",
-                                    command: "rm " + fileJson.filesStr
+                                        command: "rm " + fileJson.filesStr
                                     }
-                                }).then(function(){
+                                }).then(function () {
                                     Ext.MessageBox.close();
                                     grid.store.load();
                                     console.log(arguments)
                                 })
                                 /*myAjax("/program/resources/test1.php", function () {
-                                    Ext.MessageBox.close();
-                                    grid.store.load();
-                                    console.log(arguments)
-                                }, {
-                                    par: "system",
-                                    command: "rm " + fileJson.filesStr
-                                })*/
+                                 Ext.MessageBox.close();
+                                 grid.store.load();
+                                 console.log(arguments)
+                                 }, {
+                                 par: "system",
+                                 command: "rm " + fileJson.filesStr
+                                 })*/
                                 console.log('Yes pressed');
                             }
                         }
                     });
-
 
 
                 }
@@ -1058,15 +1076,15 @@ Ext.define('program.view.grid.BackupGrid', {
                     setTimeout(function () {
 
                         Ext.Ajax.request({
-                            url:"/program/resources/test1.php",
-                            params:{
-                                 par: "system",
-                            command: "tar czvf pragramBackup.tar.gz " + fileNames
+                            url: "/program/resources/test1.php",
+                            params: {
+                                par: "system",
+                                command: "tar czvf pragramBackup.tar.gz " + fileNames
                             }
-                        }).then(function(){
+                        }).then(function () {
                             location.href = "/program/resources/pragramBackup.tar.gz";
                         })
-                       
+
 
                         Ext.MessageBox.close();
                         win.close();
@@ -1078,14 +1096,14 @@ Ext.define('program.view.grid.BackupGrid', {
 });
 Ext.define('program.view.window.Backup', {
     extend: 'Ext.window.Window',
-    xtype:"backup",
+    xtype: "backup",
     autoShow: true,
     frame: true,
     width: 800,
     height: 600,
     title: "Backup •••",
     layout: "hbox",
-    
+
     defaults: {
         flex: 1,
         border: true
@@ -1093,13 +1111,13 @@ Ext.define('program.view.window.Backup', {
     items: [
         {
             xtype: "backupgrid",
-            folder:"devsinfo",
-            margin:"0 5 0 0"
+            folder: "devsinfo",
+            margin: "0 5 0 0"
 
         }, {
             xtype: "backupgrid",
-            folder:"devxml",
-            margin:"0 0 0 5"
+            folder: "devxml",
+            margin: "0 0 0 5"
         }
     ]
 });
