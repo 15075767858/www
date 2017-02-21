@@ -39,9 +39,9 @@ Ext.define("UpdateWWW", {
                 xtype: "progressbar",
                 itemId: "waitProgress",
                 text: "Wait 10 minute ...",
-                listeners:{
-                    render:function (waitProgress) {
-                        testProgress=waitProgress
+                listeners: {
+                    render: function (waitProgress) {
+                        testProgress = waitProgress
                     }
                 }
             },
@@ -134,24 +134,28 @@ Ext.define("UpdateWWW", {
                 async: true,
                 timeout: 0,
                 success: function (response) {
+                    waitProgress.hide()
+                    console.log(response)
                     try {
                         var res = Ext.decode(response);
-                        waitProgress.hide()
 
                         Ext.Msg.alert("Massage", "ok ");
                     } catch (e) {
                         Ext.Msg.alert("Massage", "info " + response)
                     }
+
                 },
                 failure: function (response) {
+                    waitProgress.hide()
+                    console.log(response)
                     try {
                         var res = Ext.decode(response);
-                        waitProgress.hide()
 
                         Ext.Msg.alert("Massage", "ok ");
                     } catch (e) {
                         Ext.Msg.alert("Massage", "info " + response)
                     }
+
                 }
 
             })
@@ -447,16 +451,25 @@ Ext.define("UserManager", {
     }
 })
 
+
+function popUpdate(){
+        //var password = window.prompt("please input password")
+        //login("engineerLogin", password);
+        Ext.create("LoginWindow", {
+            callbackFn: function () {
+                Ext.create("UpdateWWW")
+            }
+        })
+}
 Ext.define('LoginWindow', {
     extend: 'Ext.window.Window',
     autoShow: true,
     width: 400,
     title: "Login",
     height: 155,
-    x: 50,
-
+    x: 288,
+    y:88,
     callbackFn: null,//这是个方法用来回调登陆成功事件
-
     login: function (params) {
         var me = this;
         Ext.Ajax.request({
@@ -483,6 +496,9 @@ Ext.define('LoginWindow', {
         var me = this;
         var loginForm = Ext.create("Ext.form.Panel", {
                 bodyPadding: 10,
+                bodyStyle:{
+                  background:"cornflowerblue"
+                },
                 items: [
                     {
                         xtype: "combo",
@@ -492,6 +508,7 @@ Ext.define('LoginWindow', {
                         emptyText: 'user name',
                         queryMode: "local",
                         value: "mngr",
+                        height:35,
                         store: Ext.create("Ext.data.Store", {
                             fields: ["0"],
                             autoLoad: true,
@@ -513,32 +530,34 @@ Ext.define('LoginWindow', {
                         value: "mngr0",
                         name: 'password',
                         emptyText: 'password',
-                        inputType: 'password'
+                        inputType: 'password',
+                        height:35,
+                        listeners: {
+                            focus: function (field) {
+                                var keybord = Ext.getCmp("win" + field.id)
+                                if (keybord) {
+                                    return
+                                    //keybord.close()
+                                }
+                                Ext.create("editpic.view.ux.KeyBoard", {
+                                    id: "win" + field.id,
+                                    x: me.getX() + me.getWidth() + 5,
+                                    inputValue: field.getValue(),
+                                    okFn: function (value) {
+                                        field.setValue(value)
+                                    }
+                                })
+                                if (Ext.getCmp('win' + field.id)) {
+                                    field.focus();
+                                }
+                            }
+
+                        }
                     }
                 ],
                 defaults: {
                     anchor: '100%',
-                    labelWidth: 120,
-                    listeners: {
-                        focus: function (field) {
-                            var keybord = Ext.getCmp("win" + field.id)
-                            if (keybord) {
-                                keybord.close()
-                            }
-                            Ext.create("editpic.view.ux.KeyBoard", {
-                                id: "win" + field.id,
-                                x: me.getX() + me.getWidth() + 5,
-                                inputValue: field.getValue(),
-                                okFn: function (value) {
-                                    field.setValue(value)
-                                }
-                            })
-                            if (Ext.getCmp('win' + field.id)) {
-                                field.focus();
-                            }
-                        }
-
-                    }
+                    labelWidth: 120
                 }
             }
         )
@@ -678,7 +697,7 @@ Ext.define('editpic.view.ux.KeyBoard', {
                 me.getButton({glyph: 55, inputValue: "7"}),
                 me.getButton({glyph: 56, inputValue: "8"}),
                 me.getButton({glyph: 57, inputValue: "9"}),
-                me.getButton({text: "⌫", inputValue: "{del}"}),
+                me.getButton({text: "C", inputValue: "{del}"}),
                 me.getButton({glyph: 52, inputValue: "4"}),
                 me.getButton({glyph: 53, inputValue: "5"}),
                 me.getButton({glyph: 54, inputValue: "6"}),
@@ -729,7 +748,7 @@ Ext.define('editpic.view.ux.KeyBoard', {
                 me.getButton({glyph: 105 - isCase, inputValue: isCase ? "I" : "i"}),
                 me.getButton({glyph: 111 - isCase, inputValue: isCase ? "O" : "o"}),
                 me.getButton({glyph: 112 - isCase, inputValue: isCase ? "P" : "p"}),
-                me.getButton({text: "⌫", inputValue: "{del}"}),
+                me.getButton({text: "C"||"⌫", inputValue: "{del}"}),
                 {},
                 me.getButton({glyph: 97 - isCase, inputValue: isCase ? "A" : "a"}),
                 me.getButton({glyph: 115 - isCase, inputValue: isCase ? "S" : "s"}),

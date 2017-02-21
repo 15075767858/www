@@ -182,10 +182,10 @@
     <img src="img/logo.png" class="logo smartiologo">
     <ul class="navlink">
         <li><a id="engineerLogin">Engineer</a></li>
-        <li><a id="userLogin">用户入口</a></li>
-        <li><a id="Update">Update</a></li>
+        <li><a id="userLogin">User</a></li>
+        <!--<li><a id="Update" onclick="popUpdate()">Update</a></li>-->
         <li><a id="userManager" style="display: none">用户管理</a></li>
-        <li><a id="outLogin" style="display: none">退出登陆</a></li>
+        <li><a id="outLogin" style="">Login Out</a></li>
         <!-- <li>
          <button type="button" id="engineerLogin" class="btn btn-success btn-lg button_shadow"
                  data-whatever="@mdo" aria-label="Left Align">
@@ -307,15 +307,7 @@
 
     //teststore.load({url:"/graph/alarmconf.xml"})
 
-    $("#Update").click(function () {
-        //var password = window.prompt("please input password")
-        //login("engineerLogin", password);
-        Ext.create("LoginWindow", {
-            callbackFn: function () {
-                Ext.create("UpdateWWW")
-            }
-        })
-    });
+
     $("#engineerLogin").click(function () {
         //var password = window.prompt("please input password")
         //login("engineerLogin", password);
@@ -336,7 +328,7 @@
         //login("userLogin", password);
     })
 
-    Ext.onReady(function () {
+    /*Ext.onReady(function () {
         var win = Ext.create("LoginWindow", {
             callbackFn: function (resJson) {
                 Ext.get("userManager").show();
@@ -344,18 +336,27 @@
                 win.close();
             }
         })
-    })
+    })*/
 
-    $("#userManager").click(function () {
+    /*$("#userManager").click(function () {
         Ext.create("UserManager")
-    })
+    })*/
 
     $("#outLogin").click(function () {
         Ext.Ajax.request({
             url: "php/login.php?par=outLogin",
-            success: function () {
-                Ext.get('userManager').hide();
-                Ext.get('outLogin').hide();
+            success: function (response) {
+                var resData;
+                try{
+                    resData = Ext.decode(response.responseText)
+                    if(resData.success){
+                        alert("Login Out Success")
+                    }
+                }catch (e){
+                    alert("Error "+ response.responseText)
+                }
+                //Ext.get('userManager').hide();
+                //Ext.get('outLogin').hide();
                 window.location.href = 'index.html';
             }
         })

@@ -163,6 +163,7 @@ class user
         $_SESSION['isLogin'] = false;
         $_SESSION['username'] = null;
         $_SESSION['password'] = null;
+        $_SESSION['level'] = 0;
         return $_SESSION;
     }
 }
