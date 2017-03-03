@@ -3,6 +3,7 @@
 $par = $_REQUEST['par'];
 
 if ($par == 'beforeUpload') {
+    exit;
     $path = "/mnt/nandflash/".$_REQUEST['fileName'];
     //unset($path);
     $str= 'rm -rf '.$path;

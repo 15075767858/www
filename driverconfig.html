@@ -182,6 +182,7 @@
             position: absolute;
             left: 770px;
             top: 600px;
+            width:500px;
         }
 
     </style>
@@ -328,6 +329,11 @@
                         <input type="submit"/>
                         <div style="clear:both"></div>
                     </ul>
+                </div>
+                <div class="progress" id="updateDrivePress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                        <span class="">0% Complete</span>
+                    </div>
                 </div>
             </form>
         </div>
@@ -652,6 +658,8 @@
                 if ($("#concheck4_s")[0].checked) {
                     isSelect = 1;
                 }
+                xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-server-modbus"/>';
+
                 xml += '\n' + '<driver feed_dog="' + isSelect + '" name="modbus.sh"/>';
             }
             ;
@@ -720,6 +728,22 @@
 
                     fileSliceUpload(file, fileName, "php/UpdateDrive.php", function (total, i) {
                         //p.updateProgress(i/total , "uploading ...")
+                        var pressbar = $("#updateDrivePress .progress-bar")
+                        var formatV = Ext.util.Format.percent(i/total);
+
+                        pressbar[0].style.width=formatV
+
+
+                        if(i>total){
+                            pressbar.html("done!");
+                        }else{
+                            pressbar.html(formatV + " Complete");
+                        }
+
+
+
+                        //0% Complete
+                        console.log(arguments)
 
                     });
                 }
@@ -727,7 +751,7 @@
 
 
             function fileSliceUpload(file, fileName, url, callback) {
-                var singleSize = 10000;
+                var singleSize = 1024*1024;
                 var total = file.size / singleSize;
                 $.ajax({
                     url: url + "?par=beforeUpload&fileName=" + fileName,
@@ -739,32 +763,28 @@
 
                 for (var i = 0; i < total; i++) {
 
-                    var subcontent = file.slice(i * singleSize, i * singleSize + singleSize);
-                    var fd = new FormData();
-                    fd.append("file", subcontent);
+                    (function(i){
+                        setTimeout(function(){
 
-                    $.ajax({
-                        url: url + "?par=upload&fileName=" + fileName,
-                        type: "post",
-                        async: false,
-                        cache: false,
-                        data: fd,
-                        contentType: false,
-                        processData: false,
-                        success: function (res) {
-                            console.log(res)
-                            callback(total, i)
-                            /*i++;
-                             if (i < total) {
-                             setTimeout(function () {
-                             console.log(subcontent.length)
-                             fileSliceUpload(file, fileName, i, callback)
-                             })
-                             } else {
-                             console.log("完成", '总长度' + file.size, "当前是" + i + "次", "总共是" + total + "次")
-                             }*/
-                        }
-                    })
+                            var subcontent = file.slice(i * singleSize, i * singleSize + singleSize);
+                            var fd = new FormData();
+                            fd.append("file", subcontent);
+                            $.ajax({
+                                url: url + "?par=upload&fileName=" + fileName,
+                                type: "post",
+                                async: false,
+                                cache: false,
+                                data: fd,
+                                contentType: false,
+                                processData: false,
+                                success: function (res) {
+                                    callback(total, i+1)
+                                }
+                            })
+
+                        },i*1000)
+                    })(i)
+
 
                 }
 
