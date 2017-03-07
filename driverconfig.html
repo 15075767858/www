@@ -182,12 +182,12 @@
             position: absolute;
             left: 770px;
             top: 600px;
-            width:500px;
+            width: 500px;
         }
 
     </style>
     <link rel="stylesheet" type="text/css" href="css/smartiologo.css">
-    
+
 </head>
 
 <body>
@@ -300,7 +300,7 @@
         <div class="panel-heading">update drive</div>
         <div class="panel-body">
             <form id="updateDriveForm" enctype="multipart/form-data" action="php/UpdateDrive.php" method="post">
-                <div class="form-group">
+                <div class="form-group " id="updateDriveStep1">
                     <label for="message-text" class="control-label">drive name</label>
                     <ul class="inputgroup">
                         <select id="driveName" name="driveName" style="width:294px;height:24px;">
@@ -316,25 +316,38 @@
                         <div style="clear:both"></div>
                     </ul>
                 </div>
-                <div class="form-group">
+                <div class="form-group hide" id="updateDriveStep2">
                     <label for="message-text" class="control-label">select file</label>
                     <ul class="inputgroup">
                         <input id="driveFile" name="driveFile" type="file"/>
                         <div style="clear:both"></div>
                     </ul>
                 </div>
-                <div class="form-group">
+                <div class="form-group hide" id="updateDriveStep3">
                     <label for="message-text" class="control-label">submit</label>
                     <ul class="inputgroup">
                         <input type="submit"/>
                         <div style="clear:both"></div>
                     </ul>
                 </div>
-                <div class="progress" id="updateDrivePress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                <div class="progress hide" id="updateDriveStep4">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                         aria-valuemax="100" style="width: 0%;">
                         <span class="">0% Complete</span>
                     </div>
                 </div>
+
+
+                <div id="updateDriveStep5"  class="hide">
+                    <img class="" src="img/success.png">
+                </div>
+                <button type="button" class="btn btn-default " id="updateDriveStepBt1" onclick="updateDrive(0)">
+                    Go Back
+                </button>
+                <button type="button" class="btn btn-default" id="updateDriveStepBt2" onclick="updateDrive(1)">
+                    Continue
+                </button>
+                <!--Go Back Continue-->
             </form>
         </div>
     </div>
@@ -714,7 +727,15 @@
 
             Ext.MessageBox.confirm('Massage', 'Do you want to overwrite the driver file <div style="color:red">' + fileName + "?" + "</div>", function (ms) {
                 if (ms == 'yes') {
-
+                    var st3 = $("#updateDriveStep3");
+                    var st4 = $("#updateDriveStep4");
+                    var st5 = $("#updateDriveStep5");
+                    var backBt = $("#updateDriveStepBt1");
+                    var nextBt = $("#updateDriveStepBt2");
+                    st4.removeClass("hide")
+                    st3.addClass("hide")
+                    backBt.addClass("hide")
+                    nextBt.addClass("hide")
                     /* var p = Ext.create('Ext.ProgressBar', {
                      renderTo: Ext.getBody(),
                      width: 300
@@ -728,18 +749,22 @@
 
                     fileSliceUpload(file, fileName, "php/UpdateDrive.php", function (total, i) {
                         //p.updateProgress(i/total , "uploading ...")
-                        var pressbar = $("#updateDrivePress .progress-bar")
-                        var formatV = Ext.util.Format.percent(i/total);
-
-                        pressbar[0].style.width=formatV
-
-
-                        if(i>total){
+                        var pressbar = $("#updateDriveStep4 .progress-bar")
+                        var formatV = Ext.util.Format.percent(i / total);
+                        pressbar[0].style.width = formatV
+                        if (i > total) {
                             pressbar.html("done!");
-                        }else{
+                            st4.addClass("hide")
+                            st5.removeClass("hide")
+                            st5.animate({
+                                marginLeft:"230px"
+                                //height: "3%",
+                                //fontSize: "10em",
+                                //borderWidth: 50
+                            }, 1000 );
+                        } else {
                             pressbar.html(formatV + " Complete");
                         }
-
 
 
                         //0% Complete
@@ -751,7 +776,7 @@
 
 
             function fileSliceUpload(file, fileName, url, callback) {
-                var singleSize = 1024*1024;
+                var singleSize = 1024 * 1024;
                 var total = file.size / singleSize;
                 $.ajax({
                     url: url + "?par=beforeUpload&fileName=" + fileName,
@@ -763,8 +788,8 @@
 
                 for (var i = 0; i < total; i++) {
 
-                    (function(i){
-                        setTimeout(function(){
+                    (function (i) {
+                        setTimeout(function () {
 
                             var subcontent = file.slice(i * singleSize, i * singleSize + singleSize);
                             var fd = new FormData();
@@ -778,11 +803,12 @@
                                 contentType: false,
                                 processData: false,
                                 success: function (res) {
-                                    callback(total, i+1)
+                                    console.log(res)
+                                    callback(total, i + 1)
                                 }
                             })
 
-                        },i*1000)
+                        }, i * 1000)
                     })(i)
 
 
@@ -824,7 +850,42 @@
         "bac-client": "bac_client.pid",
         "bac-server": "bac_server.pid",
     }
+    function updateDrive(go) {
+        var st1 = $("#updateDriveStep1");
+        var st2 = $("#updateDriveStep2");
+        var st3 = $("#updateDriveStep3");
 
+
+        var stepArr = [st1, st2, st3];
+
+        for (var i = 0; i < stepArr.length; i++) {
+
+            if(!stepArr[i].hasClass("hide")){
+
+                if (go) {
+                    if(i!=stepArr.length-1){
+                        stepArr[i].addClass("hide")
+                        stepArr[i+1].removeClass("hide")
+                    }
+                }else {
+                    if(i!=0){
+                        stepArr[i].addClass("hide")
+                        stepArr[i-1].removeClass("hide")
+                    }
+                }
+
+                break;
+            }
+
+        }
+
+
+
+
+
+
+
+    }
 </script>
 
 </html>
