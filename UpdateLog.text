@@ -1,0 +1,23 @@
+1. 修改Schudle week 按钮ui
+2. 修复Schdule week 单个时间点时会出错问题
+3. 修改Schdule insert 为插入单个时间点
+4. 标题中的Graphtools改为Graphictools 
+所有属性写入时，修改数据库属性Update_Time
+要准备软件逻辑图，附中文说明，开发工具、开发环境等说明书和软件，要申请知识产权了，林工都已开始写逻辑图了。
+要写文档的。不仅仅是这个逻辑，其它一起写。
+搭建开发环境的软件和方法图解先写出来，办公室先试下能不能搭建环境。
+open permission 隐藏
+delay图标也改改DelayOn
+not图标缩小
+hy全称改为Hysteresis
+ 颜色根据 设备号的801的当前值来设定 做成一下库，所有用到这种树时都会自动变色，且每还会订阅数据库的801发布。
+
+
+3月8日更新记录
+1. driverconfig.html 页面 BACnet IP 下的Modbus Enable选中后 增加<driver feed_dog="0" name="modbus.sh"/>
+2. driverconfig.html 页面 上传驱动，改成流程式，加了进度条。
+3. program 修改所有 icons工具的大小写格式，Mul，Aver，图标重做。
+4. program Inactive增加一个工具树，和一个空标签。
+5. 修改展示device的样式成两行，增加单个device的一列Update。
+6. 判断设备号，自动寻找xml，找到以后在后台自动更新属性到数据库。
+

@@ -338,7 +338,7 @@
                 </div>
 
 
-                <div id="updateDriveStep5"  class="hide">
+                <div id="updateDriveStep5" class="hide">
                     <img class="" src="img/success.png">
                 </div>
                 <button type="button" class="btn btn-default " id="updateDriveStepBt1" onclick="updateDrive(0)">
@@ -468,15 +468,88 @@
         $(".feeddogselect").hide();
         $(".feeddogselect").next().hide();
 
+        function progress60s() {
+            var progress = Ext.create("Ext.ProgressBar")
+
+            var win = Ext.create("Ext.window.Window", {
+                autoShow: true,
+                title: "Service Starting ...",
+                width: 580,
+                bodyPadding: 5,
+                items: [
+                    progress
+                ]
+            })
+            var i = 0;
+            var inter = setInterval(function () {
+                i++
+                var count = i / 60;
+                console.log(count)
+
+                if (count == 1) {
+                    clearInterval(inter)
+
+                    setTimeout(function () {
+                        progress.setValue(1);
+                        win.setTitle("Service start complete");
+                    }, 1000)
+
+                } else {
+                    progress.setValue(count);
+
+                }
+
+            }, 1000)
+        }
+
 
         $("#modbuscommit").on("click", function () {
             //  var fileName = $("#xmlpan .panel-heading").text();
             var fileName = "../../guard.xml";
             var content = $(".modal-body textarea[data-id=modbus]").val();
+            console.log(content)
+            if (content.indexOf("modbus.sh") >= 0 & content.indexOf("modbus.sh") >= 0 & content.indexOf("modbus.sh") >= 0) {
+                progress60s()
+                $.ajax({
+                    url: "upload.php",
+                    data: {
+                        par: "system",
+                        command: "sh /mnt/nandflash/modbus.sh"
+                    },
+                    success: function (data) {
+                        console.log(arguments)
+                    }
+                })
+                setTimeout(function () {
+                    $.ajax({
+                        url: "upload.php",
+                        data: {
+                            par: "system",
+                            command: "sh /mnt/nandflash/bac-logic-modbus"
+                        },
+                        success: function (data) {
+                            console.log(arguments)
+                        }
+                    })
+                }, 30000)
+                setTimeout(function () {
+                    $.ajax({
+                        url: "upload.php",
+                        data: {
+                            par: "system",
+                            command: "sh /mnt/nandflash/bac-server-modbus"
+                        },
+                        success: function (data) {
+                            console.log(arguments)
+                        }
+                    })
+                }, 60000)
+            }
             saveXml(fileName, function () {
-                alert("ok")
-            }, content);
+                alert("save ok")}, content);
             showXml(fileName, function (res) {
+                console.log(res)
+
                 $("#xmlpan .panel-heading").html("guard");
                 $("#xmlpan .panel-body *").text(res);
             });
@@ -671,9 +744,9 @@
                 if ($("#concheck4_s")[0].checked) {
                     isSelect = 1;
                 }
-                xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-server-modbus"/>';
-
                 xml += '\n' + '<driver feed_dog="' + isSelect + '" name="modbus.sh"/>';
+                xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-logic-modbus"/>';
+                xml += '\n' + '<driver feed_dog="1" name="bac-server-modbus"/>';
             }
             ;
             xml += '\n' + '</root>';
@@ -757,11 +830,11 @@
                             st4.addClass("hide")
                             st5.removeClass("hide")
                             st5.animate({
-                                marginLeft:"230px"
+                                marginLeft: "230px"
                                 //height: "3%",
                                 //fontSize: "10em",
                                 //borderWidth: 50
-                            }, 1000 );
+                            }, 1000);
                         } else {
                             pressbar.html(formatV + " Complete");
                         }
@@ -860,17 +933,17 @@
 
         for (var i = 0; i < stepArr.length; i++) {
 
-            if(!stepArr[i].hasClass("hide")){
+            if (!stepArr[i].hasClass("hide")) {
 
                 if (go) {
-                    if(i!=stepArr.length-1){
+                    if (i != stepArr.length - 1) {
                         stepArr[i].addClass("hide")
-                        stepArr[i+1].removeClass("hide")
+                        stepArr[i + 1].removeClass("hide")
                     }
-                }else {
-                    if(i!=0){
+                } else {
+                    if (i != 0) {
                         stepArr[i].addClass("hide")
-                        stepArr[i-1].removeClass("hide")
+                        stepArr[i - 1].removeClass("hide")
                     }
                 }
 
@@ -878,11 +951,6 @@
             }
 
         }
-
-
-
-
-
 
 
     }
