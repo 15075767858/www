@@ -132,7 +132,23 @@
                                 <div style="clear:both"></div>
                             </ul>
                         </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">Com</label>
+                            <ul class="inputgroup">
+                                <select id="ComNumber" style="width:294px;height:24px;">
+                                    <option value="1">Com 1</option>
+                                    <option value="2">Com 2</option>
+                                    <option value="3">Com 3</option>
+                                    <option value="4">Com 4</option>
+                                    <option value="5">Com 5</option>
+                                    <option value="6">Com 6</option>
+                                    <option value="7">Com 7</option>
+                                    <option value="8">Com 8</option>
+                                </select>
 
+                                <div style="clear:both"></div>
+                            </ul>
+                        </div>
                         <div class="form-group">
                             <label for="message-text" class="control-label">RemotePort</label>
                             <ul class="inputgroup">
@@ -674,6 +690,8 @@ function backup(){
 
                 $("#DeviceName").val(xml.find("root name").text());
                 $("#NetNumber").val(xml.find("root net").text());
+                $("#ComNumber").val(xml.find("root com").text());
+
                 $("#RemotePort").val(xml.find("root lport").text());
                 $("#DevicePort").val(xml.find("root rport").text());
 
@@ -682,6 +700,8 @@ function backup(){
                 $("#saveBACnetConfig").click(function () {
                     xml.find("root name").text($("#DeviceName").val());
                     xml.find("root net").text($("#NetNumber").val());
+                    xml.find("root com").text($("#ComNumber").val());
+
                     xml.find("root lport").text($("#RemotePort").val());
                     xml.find("root rport").text($("#DevicePort").val());
 

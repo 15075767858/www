@@ -232,6 +232,10 @@
                             class="visibility">feeddog&nbsp;Enable&nbsp;</span>
                         <input type="checkbox" id="concheck4">
                         <span>Modbus Enable</span></li>
+                    <li><input type="checkbox" class="feeddogselect" id="concheck8_s"><span
+                            class="visibility">feeddog&nbsp;Enable&nbsp;</span>
+                        <input type="checkbox" id="concheck8">
+                        <span>ModbusTCP Enable</span></li>
                 </ul>
                 <input class='btn btn-info button_shadow' id="modCon" data-toggle="modal" data-target="#myModal1"
                        type="button"
@@ -244,6 +248,7 @@
                     <span>BACnet Router</span>
                 </div>
                 <ul>
+
                     <li><input type="checkbox" class="feeddogselect"
                                id="concheck5_s"><span>feeddog&nbsp;Enable&nbsp;</span>
                         <input type="checkbox" id="concheck5">
@@ -252,6 +257,10 @@
                                id="concheck6_s"><span>feeddog&nbsp;Enable&nbsp;</span>
                         <input type="checkbox" id="concheck6">
                         <span>Progarm Enable</span></li>
+                    <li><input type="checkbox" class="feeddogselect" id="concheck9_s"><span
+                            class="visibility">feeddog&nbsp;Enable&nbsp;</span>
+                        <input type="checkbox" id="concheck9">
+                        <span>ModbusTCP Enable</span></li>
                     <li><input type="checkbox" class="feeddogselect"
                                id="concheck7_s"><span>feeddog&nbsp;Enable&nbsp;</span>
                         <input type="checkbox" id="concheck7">
@@ -458,7 +467,7 @@
             $("#concheck1").trigger("click");
             $("#concheck2").trigger("click");
             $("#conRadio2").trigger("click");
-            //$("#concheck3_s").trigger("click");
+            //$("#concheck8_s").trigger("click");
             //$("#concheck5").trigger("click");
             //$("#concheck6_s").trigger("click");
             //$("#concheck7_s").trigger("click");
@@ -492,6 +501,9 @@
                     setTimeout(function () {
                         progress.setValue(1);
                         win.setTitle("Service start complete");
+                        setTimeout(function(){
+                            win.close();
+                        },1000)
                     }, 1000)
 
                 } else {
@@ -540,6 +552,7 @@
                             command: "cd /mnt/nandflash\n ./bac-server-modbus"
                         },
                         success: function (data) {
+
                             console.log(arguments)
                         }
                     })
@@ -749,6 +762,13 @@
                 xml += '\n' + '<driver feed_dog="1" name="bac-server-modbus"/>';
             }
             ;
+            if ($("#concheck8")[0].checked) {
+                var isSelect = 0;
+                if ($("#concheck8_s")[0].checked) {
+                    isSelect = 1;
+                }
+                xml += '\n' + '<driver feed_dog="' + 0 + '" name="modbus-tcp-server"/>';
+            }
             xml += '\n' + '</root>';
             $(".modal-body textarea[data-id=modbus]").val(xml);
         });
@@ -777,6 +797,13 @@
                     isSelect = 1;
                 }
                 xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-global"/>';
+            }
+            if ($("#concheck9")[0].checked) {
+                var isSelect = 0;
+                if ($("#concheck9_s")[0].checked) {
+                    isSelect = 1;
+                }
+                xml += '\n' + '<driver feed_dog="' + 0 + '" name="modbus-tcp-server"/>';
             }
             xml += '\n' + '</root>';
             $(".modal-body textarea[data-id=global]").val(xml);
