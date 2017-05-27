@@ -1,19 +1,26 @@
+更新日志 
+
+1. 修改graph,program 的修改属性，会更新key 的 Update_Time属性
+2. 修改graph,program 的 schdule 的时间的排序
+3. 优化program 左侧树载入过慢问题
+4. 优化program deviceinforamaition 载入慢问题
+5. 优化program references 载入慢问题
+
+
+
 1. 修改Schudle week 按钮ui
 2. 修复Schdule week 单个时间点时会出错问题
 3. 修改Schdule insert 为插入单个时间点
-4. 标题中的Graphtools改为Graphictools 
-所有属性写入时，修改数据库属性Update_Time
-要准备软件逻辑图，附中文说明，开发工具、开发环境等说明书和软件，要申请知识产权了，林工都已开始写逻辑图了。
-要写文档的。不仅仅是这个逻辑，其它一起写。
-搭建开发环境的软件和方法图解先写出来，办公室先试下能不能搭建环境。
-open permission 隐藏
-delay图标也改改DelayOn
-not图标缩小
-hy全称改为Hysteresis
- 颜色根据 设备号的801的当前值来设定 做成一下库，所有用到这种树时都会自动变色，且每还会订阅数据库的801发布。
+4. 标题中的Graphtools改为Graphictools
+5. 制作graph edit菜单
+6. not图标缩小
+7. hy全称改为Hysteresis
+8. open permission 隐藏
+9. delay图标也改改DelayOn
+10. graph replace工具改为所有对象列表吧，然后查找代换。
+11. Modbus Enable 启动 modbus.sh，再延时30秒bac-logic-modbus，再延时30秒bac-server-modbus
 
 
-3月8日更新记录
 1. driverconfig.html 页面 BACnet IP 下的Modbus Enable选中后 增加<driver feed_dog="0" name="modbus.sh"/>
 2. driverconfig.html 页面 上传驱动，改成流程式，加了进度条。
 3. program 修改所有 icons工具的大小写格式，Mul，Aver，图标重做。

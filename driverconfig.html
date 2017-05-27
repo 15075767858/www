@@ -525,7 +525,7 @@
                         url: "upload.php",
                         data: {
                             par: "system",
-                            command: "sh /mnt/nandflash/bac-logic-modbus"
+                            command: "cd /mnt/nandflash\n ./bac-logic-modbus"
                         },
                         success: function (data) {
                             console.log(arguments)
@@ -537,7 +537,7 @@
                         url: "upload.php",
                         data: {
                             par: "system",
-                            command: "sh /mnt/nandflash/bac-server-modbus"
+                            command: "cd /mnt/nandflash\n ./bac-server-modbus"
                         },
                         success: function (data) {
                             console.log(arguments)
