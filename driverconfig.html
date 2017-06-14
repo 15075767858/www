@@ -2,15 +2,15 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <!-- TemplateParam name="class" type="URL" value="file:///F|/EM9460www/div-b" -->
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta name="renderer" content="webkit">
 
-    <META HTTP-EQUIV="pragma" CONTENT="no-cache"/>
-    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"/>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate" />
     <title>BACnet Router&Control</title>
     <link rel="stylesheet" href="resources/theme-classic-all.css">
     <style type="text/css">
@@ -36,13 +36,13 @@
             visibility: hidden;
         }
 
-        .toolbar > button {
+        .toolbar>button {
             width: 160px;
             margin: 0px 22px;
             color: white;
         }
 
-        .toolbar > button:hover {
+        .toolbar>button:hover {
             color: blue;
         }
 
@@ -70,41 +70,41 @@
             height: 130px;
         }
 
-        .row3 > ul {
+        .row3>ul {
             display: block;
         }
 
-        .row3 > * {
+        .row3>* {
             width: 30%;
             float: left;
         }
 
-        .row3 > div {
+        .row3>div {
             width: 25%;
         }
 
-        .row3 > ul {
+        .row3>ul {
             width: 20%;
             margin-left: 50px;
         }
 
-        .row3 > ul > li > span:nth-child(2) {
+        .row3>ul>li>span:nth-child(2) {
 
             display: -moz-inline-box;
             display: inline-block;
             width: 125px;
         }
 
-        .row3 > div:nth-child(1) > span {
+        .row3>div:nth-child(1)>span {
             font-size: 18px;
         }
 
-        .row3:nth-child(1) > input {
+        .row3:nth-child(1)>input {
             margin-top: 63px;
             margin-left: 70px;
         }
 
-        .row3:nth-child(3) > input {
+        .row3:nth-child(3)>input {
             margin-top: 40px;
             margin-left: 70px;
         }
@@ -113,33 +113,33 @@
             margin-top: 22px;
         }
 
-        .row2 > div {
+        .row2>div {
             border: 0px solid red;
         }
 
-        .row2 > .d1 {
+        .row2>.d1 {
             display: block;
             float: left;
             width: 29%;
         }
 
-        .row2 > .d2 {
+        .row2>.d2 {
             display: block;
             float: left;
             width: 29%;
         }
 
-        .row2 > .d3 {
+        .row2>.d3 {
             width: 42%;
             float: left;
         }
 
-        .row2 > .d3 select {
+        .row2>.d3 select {
             width: 200px;
             height: 24px;
         }
 
-        .row2 > .d3 input {
+        .row2>.d3 input {
             width: 200px;
             height: 24px;
         }
@@ -155,8 +155,7 @@
             height: 300px;
         }
 
-        .modal-footer button {
-        }
+        .modal-footer button {}
 
         input[type=radio]:checked {
             /* background: red;*/
@@ -175,7 +174,8 @@
 
         #xmlpan .panel-body * {
             color: white;
-            background: brown;;
+            background: brown;
+            ;
         }
 
         #updateDrive {
@@ -184,135 +184,120 @@
             top: 600px;
             width: 500px;
         }
-
     </style>
     <link rel="stylesheet" type="text/css" href="css/smartiologo.css">
 
 </head>
 
 <body>
-<div class="smartiologo"><img clss="titleimg smartiologo" src="img/title.png" width="960" height="200"/></div>
+    <div class="smartiologo"><img clss="titleimg smartiologo" src="img/title.png" width="960" height="200" /></div>
 
-<div class="toolbar">
-    <!-- Large button group -->
-    <button type="button" class="btn btn-danger btn-lg button_shadow" aria-label="Left Align" id="reboot">
+    <div class="toolbar">
+        <!-- Large button group -->
+        <button type="button" class="btn btn-danger btn-lg button_shadow" aria-label="Left Align" id="reboot">
         <span class="glyphicon glyphicon-refresh " aria-hidden="true"></span> Reboot
     </button>
-    <button type="button" class="btn btn-warning btn-lg button_shadow" onclick="location.href='default.html'"
-            aria-label="Left Align">
+        <button type="button" class="btn btn-warning btn-lg button_shadow" onclick="location.href='default.html'" aria-label="Left Align">
         <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Exit
     </button>
 
-</div>
-<div class="main">
-    <div class="panel panel-primary">
-        <!-- Default panel contents -->
-        <div class="panel-heading">driver config</div>
-        <div class="panel-body configcontent">
-            <div class="row3 ">
-                <div>
-                    <input type="radio" checked data-name="modbus" name="BACnet" id="conRadio1">
-                    <span>BACnet IP</span>
+    </div>
+    <div class="main">
+        <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading">driver config</div>
+            <div class="panel-body configcontent">
+                <div class="row3 ">
+                    <div>
+                        <input type="radio" checked data-name="modbus" name="BACnet" id="conRadio1">
+                        <span>BACnet IP</span>
+                    </div>
+                    <ul>
+                        <li><input type="checkbox" class="feeddogselect" id="concheck1_s"><span>feeddog&nbsp;Enable&nbsp;</span>
+                            <input type="checkbox" id="concheck1">
+                            <span>MS/TP Client</span></li>
+
+                        <li><input type="checkbox" class="feeddogselect" id="concheck2_s"><span>feeddog&nbsp;Enable&nbsp;</span>
+                            <input type="checkbox" id="concheck2">
+                            <span>Progarm Enable</span></li>
+                        <li><input type="checkbox" class="feeddogselect" id="concheck3_s"><span>feeddog&nbsp;Enable&nbsp;</span>
+                            <input type="checkbox" id="concheck3">
+                            <span>Global Enable</span></li>
+                        <li><input type="checkbox" class="feeddogselect visibility" id="concheck4_s"><span class="visibility">feeddog&nbsp;Enable&nbsp;</span>
+                            <input type="checkbox" id="concheck4">
+                            <span>Modbus Enable</span></li>
+                        <li><input type="checkbox" class="feeddogselect" id="concheck8_s"><span class="visibility">feeddog&nbsp;Enable&nbsp;</span>
+                            <input type="checkbox" id="concheck8">
+                            <span>ModbusTCP Enable</span></li>
+                    </ul>
+                    <input class='btn btn-info button_shadow' id="modCon" data-toggle="modal" data-target="#myModal1" type="button" value="OK">
                 </div>
-                <ul>
-                    <li><input type="checkbox" class="feeddogselect"
-                               id="concheck1_s"><span>feeddog&nbsp;Enable&nbsp;</span>
-                        <input type="checkbox" id="concheck1">
-                        <span>MS/TP Client</span></li>
-
-                    <li><input type="checkbox" class="feeddogselect"
-                               id="concheck2_s"><span>feeddog&nbsp;Enable&nbsp;</span>
-                        <input type="checkbox" id="concheck2">
-                        <span>Progarm Enable</span></li>
-                    <li><input type="checkbox" class="feeddogselect"
-                               id="concheck3_s"><span>feeddog&nbsp;Enable&nbsp;</span>
-                        <input type="checkbox" id="concheck3">
-                        <span>Global Enable</span></li>
-                    <li><input type="checkbox" class="feeddogselect visibility" id="concheck4_s"><span
-                            class="visibility">feeddog&nbsp;Enable&nbsp;</span>
-                        <input type="checkbox" id="concheck4">
-                        <span>Modbus Enable</span></li>
-                    <li><input type="checkbox" class="feeddogselect" id="concheck8_s"><span
-                            class="visibility">feeddog&nbsp;Enable&nbsp;</span>
-                        <input type="checkbox" id="concheck8">
-                        <span>ModbusTCP Enable</span></li>
-                </ul>
-                <input class='btn btn-info button_shadow' id="modCon" data-toggle="modal" data-target="#myModal1"
-                       type="button"
-                       value="OK">
-            </div>
-            <div style="clear:both;"></div>
-            <div class="row3 ccrow1">
-                <div>
-                    <input type="radio" data-name="global" name="BACnet" id="conRadio2">
-                    <span>BACnet Router</span>
-                </div>
-                <ul>
-
-                    <li><input type="checkbox" class="feeddogselect"
-                               id="concheck5_s"><span>feeddog&nbsp;Enable&nbsp;</span>
-                        <input type="checkbox" id="concheck5">
-                        <span>BACnet Router</span></li>
-                    <li><input type="checkbox" class="feeddogselect"
-                               id="concheck6_s"><span>feeddog&nbsp;Enable&nbsp;</span>
-                        <input type="checkbox" id="concheck6">
-                        <span>Progarm Enable</span></li>
-                    <li><input type="checkbox" class="feeddogselect" id="concheck9_s"><span
-                            class="visibility">feeddog&nbsp;Enable&nbsp;</span>
-                        <input type="checkbox" id="concheck9">
-                        <span>ModbusTCP Enable</span></li>
-                    <li><input type="checkbox" class="feeddogselect"
-                               id="concheck7_s"><span>feeddog&nbsp;Enable&nbsp;</span>
-                        <input type="checkbox" id="concheck7">
-                        <span>Global Enable</span>
-                        <input type="button" class="btn btn-success btn-sm small button_shadow"
-                               value="Export Global.xml" onclick="globalClick()">
-                    </li>
-                </ul>
-                <input class='btn btn-info button_shadow' id="gloCon" data-toggle="modal" data-target="#myModal2"
-                       type="button"
-                       value="OK">
-
                 <div style="clear:both;"></div>
-            </div>
-            <div style="clear:both;"></div>
-            <div class="row2" id="addRadio">
-                <div class="d1">
-                    <input type="radio" checked value="Add" name="AD" id="AddItem">
-                    <span>Add</span>
+                <div class="row3 ccrow1">
+                    <div>
+                        <input type="radio" data-name="global" name="BACnet" id="conRadio2">
+                        <span>BACnet Router</span>
+                    </div>
+                    <ul>
+
+                        <li><input type="checkbox" class="feeddogselect" id="concheck5_s"><span>feeddog&nbsp;Enable&nbsp;</span>
+                            <input type="checkbox" id="concheck5">
+                            <span>BACnet Router</span></li>
+                        <li><input type="checkbox" class="feeddogselect" id="concheck6_s"><span>feeddog&nbsp;Enable&nbsp;</span>
+                            <input type="checkbox" id="concheck6">
+                            <span>Progarm Enable</span></li>
+                        <li><input type="checkbox" class="feeddogselect" id="concheck9_s"><span class="visibility">feeddog&nbsp;Enable&nbsp;</span>
+                            <input type="checkbox" id="concheck9">
+                            <span>ModbusTCP Enable</span></li>
+                        <input type="button" class="btn btn-success btn-sm small button_shadow" value="Modbus Config" onclick="modbusXml()">
+                        <li><input type="checkbox" class="feeddogselect" id="concheck7_s"><span>feeddog&nbsp;Enable&nbsp;</span>
+                            <input type="checkbox" id="concheck7">
+                            <span>Global Enable</span>
+                            <input type="button" class="btn btn-success btn-sm small button_shadow" value="Export Global.xml" onclick="globalClick()">
+                        </li>
+                    </ul>
+                    <input class='btn btn-info button_shadow' id="gloCon" data-toggle="modal" data-target="#myModal2" type="button" value="OK">
+
+                    <div style="clear:both;"></div>
                 </div>
-                <div class="d2">
-                    <input type="radio" value="Delete" name="AD" id="DeleteItem">
-                    <span>Delete</span>
-                </div>
-                <div class="d3">
-                    <input/>
-                    <select class="hide">
+                <div style="clear:both;"></div>
+                <div class="row2" id="addRadio">
+                    <div class="d1">
+                        <input type="radio" checked value="Add" name="AD" id="AddItem">
+                        <span>Add</span>
+                    </div>
+                    <div class="d2">
+                        <input type="radio" value="Delete" name="AD" id="DeleteItem">
+                        <span>Delete</span>
+                    </div>
+                    <div class="d3">
+                        <input/>
+                        <select class="hide">
                         <option></option>
 
                     </select>
-                    <a class="btn btn-danger btn-xs" id="ok"> Ok </a>
-                    <a class="btn btn-danger btn-xs " href=""> cancle </a>
+                        <a class="btn btn-danger btn-xs" id="ok"> Ok </a>
+                        <a class="btn btn-danger btn-xs " href=""> cancle </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <div id="xmlpan" class="panel panel-default">
-        <div class="panel-heading">XML Loding...</div>
-        <div class="panel-body">
-            <pre></pre>
+        <div id="xmlpan" class="panel panel-default">
+            <div class="panel-heading">XML Loding...</div>
+            <div class="panel-body">
+                <pre></pre>
+            </div>
         </div>
-    </div>
-    <div id="updateDrive" class="panel panel-default">
-        <div class="panel-heading">update drive</div>
-        <div class="panel-body">
-            <form id="updateDriveForm" enctype="multipart/form-data" action="php/UpdateDrive.php" method="post">
-                <div class="form-group " id="updateDriveStep1">
-                    <label for="message-text" class="control-label">drive name</label>
-                    <ul class="inputgroup">
-                        <select id="driveName" name="driveName" style="width:294px;height:24px;">
+        <div id="updateDrive" class="panel panel-default">
+            <div class="panel-heading">update drive</div>
+            <div class="panel-body">
+                <form id="updateDriveForm" enctype="multipart/form-data" action="php/UpdateDrive.php" method="post">
+                    <div class="form-group " id="updateDriveStep1">
+                        <label for="message-text" class="control-label">drive name</label>
+                        <ul class="inputgroup">
+                            <select id="driveName" name="driveName" style="width:294px;height:24px;">
                             <option value="bip-client">bip-client</option>
                             <option value="bac-logic">bac-logic</option>
                             <option value="bac-mrouter">bac-mrouter</option>
@@ -322,46 +307,45 @@
                             <option value="bac-client">bac-client</option>
                             <option value="bac-server">bac-server</option>
                         </select>
-                        <div style="clear:both"></div>
-                    </ul>
-                </div>
-                <div class="form-group hide" id="updateDriveStep2">
-                    <label for="message-text" class="control-label">select file</label>
-                    <ul class="inputgroup">
-                        <input id="driveFile" name="driveFile" type="file"/>
-                        <div style="clear:both"></div>
-                    </ul>
-                </div>
-                <div class="form-group hide" id="updateDriveStep3">
-                    <label for="message-text" class="control-label">submit</label>
-                    <ul class="inputgroup">
-                        <input type="submit"/>
-                        <div style="clear:both"></div>
-                    </ul>
-                </div>
-                <div class="progress hide" id="updateDriveStep4">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                         aria-valuemax="100" style="width: 0%;">
-                        <span class="">0% Complete</span>
+                            <div style="clear:both"></div>
+                        </ul>
                     </div>
-                </div>
+                    <div class="form-group hide" id="updateDriveStep2">
+                        <label for="message-text" class="control-label">select file</label>
+                        <ul class="inputgroup">
+                            <input id="driveFile" name="driveFile" type="file" />
+                            <div style="clear:both"></div>
+                        </ul>
+                    </div>
+                    <div class="form-group hide" id="updateDriveStep3">
+                        <label for="message-text" class="control-label">submit</label>
+                        <ul class="inputgroup">
+                            <input type="submit" />
+                            <div style="clear:both"></div>
+                        </ul>
+                    </div>
+                    <div class="progress hide" id="updateDriveStep4">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                            <span class="">0% Complete</span>
+                        </div>
+                    </div>
 
 
-                <div id="updateDriveStep5" class="hide">
-                    <img class="" src="img/success.png">
-                </div>
-                <button type="button" class="btn btn-default " id="updateDriveStepBt1" onclick="updateDrive(0)">
+                    <div id="updateDriveStep5" class="hide">
+                        <img class="" src="img/success.png">
+                    </div>
+                    <button type="button" class="btn btn-default " id="updateDriveStepBt1" onclick="updateDrive(0)">
                     Go Back
                 </button>
-                <button type="button" class="btn btn-default" id="updateDriveStepBt2" onclick="updateDrive(1)">
+                    <button type="button" class="btn btn-default" id="updateDriveStepBt2" onclick="updateDrive(1)">
                     Continue
                 </button>
-                <!--Go Back Continue-->
-            </form>
+                    <!--Go Back Continue-->
+                </form>
+            </div>
         </div>
     </div>
-</div>
-<!--<form method="post" action="http://192.168.253.253/php/xmlRW.php" >
+    <!--<form method="post" action="http://192.168.253.253/php/xmlRW.php" >
 <input name="rw" value="w">
 <input name="fileName" value="../../global.xml">
 <input name="content" value="aaaaaaaaa">
@@ -419,10 +403,91 @@
 <script src="js/selectivizr.js"></script>
 <script src="js/ext-all.js"></script>
 <script src="js/main.js"></script>
+<script src="js/ext-component.js"></script>
+
 <script type="text/javascript">
     //modbus
 
     //setTimeout(aa(),500);
+
+
+    function modbusXml() {
+        var IPCombo = Ext.create("Ext.form.field.ComboBox", {
+            fieldLabel: "Sources IP",
+            store: ['127.0.0.1', window.location.hostname,  "192.168.253.253"],
+            labelWidth: 70,
+            maxWidth: 300,
+            queryMode: 'local',
+            hideTrigger: false,
+            //value: location.hostname
+        });
+        var PortCombo = Ext.create("Ext.form.field.ComboBox", {
+            fieldLabel: "port number",
+            store: ["6379"],
+            value: "6379"
+        });
+        var formPanel = Ext.create("Ext.form.Panel", {
+            region: "north",
+            width:"100%",
+            items: {
+                xtype: "fieldset",
+                title: "link option",
+                layout: "hbox",
+                defaults: {
+                    //margin: 10
+                },
+                items: [
+                    IPCombo, PortCombo
+                ]
+            }
+        })
+        
+        var modbusSetWin = Ext.create("Ext.window.Window", {
+            autoShow: true,
+            title: "Modbus Setting",
+            width: 600,
+            maxHeight: 500,
+            scrollable: true,
+            items: [
+                //formPanel,
+                {
+                    xtype: "modbusConfig",
+                    ip:IPCombo.value,
+                    port:PortCombo.value
+                }
+            ],
+            buttons: [
+                {
+                    text: "Ok", handler: function () {
+                        var xmlstr = modbusSetWin.down("grid").generateModbusXml();
+                        Ext.Ajax.request({
+                            url: "php/file.php",
+                            method: "POST",
+                            params: {
+                                par: "save",
+                                fileName: "/mnt/nandflash/modbusID.xml",
+                                content: xmlstr
+                            }
+                        }).then(function (response) {
+                            if (isNaN(response.responseText)) {
+                                Ext.Msg.alert("info ", "save file done " + response.responseText)
+                            } else {
+                                Ext.Msg.alert("info ", "save file ok " + response.responseText)
+                            }
+                            console.log(response)
+                        })
+                    }
+                },
+                {
+                    text: "Cancel", handler: function () {
+                        modbusSetWin.close();
+                    }
+                }
+            ]
+        })
+
+    }
+
 
     var fName = "../../guard.xml";
     (function () {
@@ -501,9 +566,9 @@
                     setTimeout(function () {
                         progress.setValue(1);
                         win.setTitle("Service start complete");
-                        setTimeout(function(){
+                        setTimeout(function () {
                             win.close();
-                        },1000)
+                        }, 1000)
                     }, 1000)
 
                 } else {
@@ -559,7 +624,8 @@
                 }, 60000)
             }
             saveXml(fileName, function () {
-                alert("save ok")}, content);
+                alert("save ok")
+            }, content);
             showXml(fileName, function (res) {
                 console.log(res)
 
@@ -845,7 +911,7 @@
                      items:p,
                      title:"uploading ..."
                      })*/
-// Wait for 5 seconds, then update the status el (progress bar will auto-reset)
+                    // Wait for 5 seconds, then update the status el (progress bar will auto-reset)
 
                     fileSliceUpload(file, fileName, "php/UpdateDrive.php", function (total, i) {
                         //p.updateProgress(i/total , "uploading ...")
@@ -981,6 +1047,7 @@
 
 
     }
+
 </script>
 
 </html>
