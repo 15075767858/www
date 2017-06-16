@@ -407,14 +407,10 @@
 
 <script type="text/javascript">
     //modbus
-
-    //setTimeout(aa(),500);
-
-
     function modbusXml() {
         var IPCombo = Ext.create("Ext.form.field.ComboBox", {
             fieldLabel: "Sources IP",
-            store: ['127.0.0.1', window.location.hostname,  "192.168.253.253"],
+            store: ['127.0.0.1', window.location.hostname, "192.168.253.253"],
             labelWidth: 70,
             maxWidth: 300,
             queryMode: 'local',
@@ -428,7 +424,7 @@
         });
         var formPanel = Ext.create("Ext.form.Panel", {
             region: "north",
-            width:"100%",
+            width: "100%",
             items: {
                 xtype: "fieldset",
                 title: "link option",
@@ -441,7 +437,7 @@
                 ]
             }
         })
-        
+
         var modbusSetWin = Ext.create("Ext.window.Window", {
             autoShow: true,
             title: "Modbus Setting",
@@ -452,11 +448,21 @@
                 //formPanel,
                 {
                     xtype: "modbusConfig",
-                    ip:IPCombo.value,
-                    port:PortCombo.value
+                    ip: IPCombo.value,
+                    port: PortCombo.value
                 }
             ],
             buttons: [
+                {
+                    text: "Add", handler: function () {
+                        modbusSetWin.down("grid").addModbus()
+                    }
+                }, {
+                    text: "Delete", handler: function () {
+                        modbusSetWin.down("grid").deleteModbus()
+                    }
+                },
+                "->",
                 {
                     text: "Ok", handler: function () {
                         var xmlstr = modbusSetWin.down("grid").generateModbusXml();
@@ -481,6 +487,7 @@
                 {
                     text: "Cancel", handler: function () {
                         modbusSetWin.close();
+                        
                     }
                 }
             ]

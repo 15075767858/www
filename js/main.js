@@ -65,17 +65,17 @@ function centerConfig(xmlFile) {
                     items: [
                         {
                             text: "Add Node", handler: function () {
-                            record.set("leaf", false)
-                            for (var i = 0; i < record.childNodes.length; i++) {
-                                if (record.childNodes[i].data.leaf == true) {
-                                    record.childNodes[i].remove()
+                                record.set("leaf", false)
+                                for (var i = 0; i < record.childNodes.length; i++) {
+                                    if (record.childNodes[i].data.leaf == true) {
+                                        record.childNodes[i].remove()
+                                    }
                                 }
+                                record.appendChild({
+                                    text: "new node",
+                                    leaf: false
+                                })
                             }
-                            record.appendChild({
-                                text: "new node",
-                                leaf: false
-                            })
-                        }
                         }, {
                             text: "Add Value", handler: function () {
                                 record.removeAll();
@@ -87,32 +87,32 @@ function centerConfig(xmlFile) {
                         },
                         {
                             text: "Delete Node", handler: function () {
-                            record.remove()
-                        }
+                                record.remove()
+                            }
                         },
                         {
                             text: "Rename", handler: function () {
-                            var tempWin = Ext.create("Ext.window.Window", {
-                                width: 300,
-                                bodyPadding: 10,
-                                title: "Set Node Parameter",
-                                layout: "auto",
-                                modal: true,
-                                autoShow: true,
-                                items: {
-                                    xtype: "textfield",
-                                    fieldLabel: "Input Node Info",
-                                    value: record.data.text
-                                },
-                                buttons: [{
-                                    text: "Ok",
-                                    handler: function () {
-                                        record.set("text", tempWin.items.items[0].value)
-                                        tempWin.close()
-                                    }
-                                }]
-                            })
-                        }
+                                var tempWin = Ext.create("Ext.window.Window", {
+                                    width: 300,
+                                    bodyPadding: 10,
+                                    title: "Set Node Parameter",
+                                    layout: "auto",
+                                    modal: true,
+                                    autoShow: true,
+                                    items: {
+                                        xtype: "textfield",
+                                        fieldLabel: "Input Node Info",
+                                        value: record.data.text
+                                    },
+                                    buttons: [{
+                                        text: "Ok",
+                                        handler: function () {
+                                            record.set("text", tempWin.items.items[0].value)
+                                            tempWin.close()
+                                        }
+                                    }]
+                                })
+                            }
                         }
                     ]
                 })
@@ -149,7 +149,24 @@ function centerConfig(xmlFile) {
 
 }
 
-
+function getRedisValue(ip, port, key, type) {
+    var data = "";
+    Ext.Ajax.request({
+        url: "php/main.php",
+        async: false,
+        params: {
+            par: "getNodeTypeValue",
+            ip: ip,
+            port: port,
+            nodename: key,
+            type: type
+        },
+        success: function (response) {
+            data = response.responseText;
+        }
+    })
+    return data;
+}
 function globalClick() {
 
     var IPCombo = Ext.create("Ext.form.field.Tag", {

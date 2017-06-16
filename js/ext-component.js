@@ -1115,7 +1115,8 @@ Ext.define('program.view.grid.BackupGrid', {
                 }, 1000)
 
             }
-        }]
+        }
+    ]
 });
 Ext.define('program.view.window.Backup', {
     extend: 'Ext.window.Window',
@@ -1270,12 +1271,29 @@ Ext.define("modbusConfig", {
         var store = grid.store;
         var items = store.data.items;
         var root = document.createElement("root");
+        var aiOffsetEl = document.createElement("aiOffset");
+        aiOffsetEl.innerHTML = grid.aiOffset;
+        root.appendChild(aiOffsetEl)
+
+        var aoOffsetEl = document.createElement("aoOffset");
+        aoOffsetEl.innerHTML = grid.aoOffset;
+        root.appendChild(aoOffsetEl)
+
+        var diOffsetEl = document.createElement("diOffset");
+        diOffsetEl.innerHTML = grid.diOffset;
+        root.appendChild(diOffsetEl)
+
+        var doOffsetEl = document.createElement("doOffset");
+        doOffsetEl.innerHTML = grid.doOffset;
+        root.appendChild(doOffsetEl)
+
         for (var i = 0; i < items.length; i++) {
             var key = document.createElement("key");
             console.log(items[i])
             key.setAttribute("slavenumber", items[i].data.slavenumber)
-            key.setAttribute("pointnumber", items[i].data.pointnumber)
             key.setAttribute("key", items[i].data.key)
+           
+            key.setAttribute("pointnumber", items[i].data.pointnumber)
             key.innerHTML = items[i].data.objectname
             root.appendChild(key);
         }
@@ -1286,20 +1304,51 @@ Ext.define("modbusConfig", {
     loadModbusXml: function (xmlstr) {
         var grid = this;
         var store = grid.store;
+
+        var aiOffset = $(xmlstr).find("aiOffset")[0];
+        if (aiOffset) {
+            grid.aiOffset = aiOffset.innerHTML;
+        } else {
+            grid.aiOffset = 0
+        }
+
+        var aoOffset = $(xmlstr).find("aoOffset")[0];
+        if (aoOffset) {
+            grid.aoOffset = aoOffset.innerHTML;
+        } else {
+            grid.aoOffset = 0
+        }
+
+        var diOffset = $(xmlstr).find("diOffset")[0];
+        if (diOffset) {
+            grid.diOffset = diOffset.innerHTML;
+        } else {
+            grid.diOffset = 0
+        }
+
+        var doOffset = $(xmlstr).find("doOffset")[0];
+        if (doOffset) {
+            grid.doOffset = doOffset.innerHTML;
+        } else {
+            grid.doOffset = 0
+        }
         var keys = $(xmlstr).find("key");
-        var arr =[];
+        var arr = [];
         for (var i = 0; i < keys.length; i++) {
-            arr[i]={
+            arr[i] = {
                 slavenumber: keys[i].getAttribute("slavenumber"),
                 pointnumber: keys[i].getAttribute("pointnumber"),
                 key: keys[i].getAttribute("key"),
                 objectname: keys[i].innerHTML
             }
         }
+
+        console.log("arr")
         store.add(arr)
     },
     listeners: {
         boxready: function (grid) {
+            console.log(grid.store.removeAll())
             Ext.Ajax.request({
                 url: "php/file.php",
                 params: {
@@ -1317,29 +1366,241 @@ Ext.define("modbusConfig", {
             clicksToEdit: 1
         })
     ],
+    addModbus: function () {
+        var grid = this;
+        var selArr = grid.getSelection();
+        var model, data;
+        if (selArr[0]) {
+            model = selArr[0];
+        } else {
+            model = grid.store.getAt(grid.store.data.length - 1)
+            console.log(model)
+        }
+        if (model) {
+            data = {
+                slavenumber: model.data.slavenumber,
+                pointnumber: parseInt(model.data.pointnumber) + 1,
+                pointtype: model.data.pointtype,
+                key: parseInt(model.data.key) + 1
+            }
+        } else {
+            data = {}
+        }
+        var setkeywin = Ext.create("Ext.window.Window", {
+            text: "Settings",
+            autoShow: true,
+            width: 300,
+            height: 215,
+            buttons: [
+                {
+                    text: "select",
+                    handler: function () {
+                        var form = setkeywin.down("form");
+                        var keyfield = form.getComponent("key")
+                        var objname = form.getComponent("objname")
+                        var win = Ext.create("SelectKeyWinodw", {
+                            ip: "127.0.0.1",
+                            port: "6379",
+                            callback: function (selectArr) {
+                                console.log(arguments)
+                                if (selectArr[0]) {
+                                    var key = selectArr[0].data.value;
+                                    var text = selectArr[0].data.text;
+                                    if (key[4] == 4 || key[4] == 3 || key[4] == 1 || key[4] == 0) {
+                                        keyfield.setValue(key);
+                                        objname.setValue(text);
+                                    } else {
+                                        Ext.Msg.alert("info ", "please select AI,AV,DI,DO");
+                                    }
+                                }
+                                win.close()
+                            }
+                        })
+                    }
+                },
+                "->",
+                {
+                    text: "Ok",
+                    handler: function () {
+                        var win = this.up("window")
+                        var form = win.down("form");
+                        grid.store.add(form.getValues())
+                        win.close();
+                    }
+                },
+                {
+                    text: "Cancel", handler: function () {
+                        this.up("window").close()
+                    }
+                }
+            ],
+            items: [
+                {
+                    xtype: "form",
+                    defaultType: 'textfield',
+                    //margin:10,
+                    width: "100%",
+                    height: "100%",
+                    defaults: {
+                        margin: 10,
+                        allowBlank: false
+                    },
+                    listeners: {
+                        boxready: function (form) {
+                            form.form.setValues(data)
+                            //form.loadRecord(rec)
+                        }
+                    },
+                    items: [
+                        {
+                            fieldLabel: 'Key',
+                            name: 'key',
+                            itemId: "key",
+                            listeners: {
+                                change: function (field, newValue, oldValue) {
+                                    var win = field.up("window")
+                                    var ip = win.ip;
+                                    var port = win.port;
+                                    var objname = field.up().getComponent("objname")
+                                    if (newValue.length == 7) {
+                                        Ext.Ajax.request({
+                                            url: "php/main.php",
+                                            async: false,
+                                            params: {
+                                                par: "getNodeTypeValue",
+                                                ip: "127.0.0.1",
+                                                port: "6379",
+                                                nodename: newValue,
+                                                type: "Object_Name"
+                                            },
+                                            success: function (response) {
+                                                objname.setValue(response.responseText)
+                                            }
+                                        })
+                                    }
+                                },
+
+                            }
+                        },
+
+                        {
+                            fieldLabel: 'Object Name',
+                            name: 'objectname',
+                            itemId: "objname",
+                            allowBlank: true
+                        },
+                        {
+                            fieldLabel: "Slave Number",
+                            name: "slavenumber",
+                            xtype: "numberfield",
+                            //maxValue: 99,
+                            minValue: 1
+                        },
+                        {
+                            fieldLabel: "Point Number",
+                            name: "pointnumber",
+                            xtype: "numberfield",
+                            //maxValue: 99,
+                            minValue: 1
+                        }
+                    ],
+                }
+            ]
+        })
+    },
+    deleteModbus: function () {
+        var grid = this;
+        var selArr = grid.getSelection();
+        if (selArr[0]) {
+            grid.store.remove(selArr[0])
+        }
+    },
+
     tbar: [
         {
             text: "Add", handler: function () {
                 var grid = this.up("grid");
-
-                var model = grid.store.getAt(grid.store.data.length - 1)
-                var data = {
-                    slavenumber: model.data.slavenumber,
-                    pointnumber: parseInt(model.data.pointnumber) + 1,
-                    pointtype: model.data.pointtype,
-                    key: parseInt(model.data.key) + 1
-                }
-                grid.store.add(data);
-                console.log(grid)
+                grid.addModbus();
             }
         },
         {
             text: "Delete", handler: function () {
                 var grid = this.up("grid");
-                var selArr = grid.getSelection();
-                if (selArr[0]) {
-                    grid.store.remove(selArr[0])
-                }
+                grid.deleteModbus()
+            }
+        },
+        {
+            text: "offset", hidden: false, handler: function () {
+                var grid = this.up("grid");
+
+                Ext.create("Ext.window.Window", {
+                    text: "Settings",
+                    autoShow: true,
+                    width: 300,
+                    height: 215,
+                    buttons: [
+                        {
+                            text: "Ok",
+                            handler: function () {
+                                var win = this.up("window")
+                                var form = win.down("form");
+                                var values = form.getValues();
+                                grid.aiOffset = values.aiOffset
+                                grid.aoOffset = values.aoOffset
+                                grid.diOffset = values.diOffset
+                                grid.doOffset = values.doOffset
+                                //rec.set(form.getValues());
+                                win.close();
+                            }
+                        },
+                        {
+                            text: "Cancel", handler: function () {
+                                this.up("window").close()
+                            }
+                        }
+                    ],
+                    items: [
+                        {
+                            xtype: "form",
+                            defaultType: 'textfield',
+                            //margin:10,
+                            width: "100%",
+                            height: "100%",
+                            defaults: {
+                                margin: 10,
+                                allowBlank: false
+                            },
+                            listeners: {
+                                boxready: function (form) {
+                                    //form.loadRecord(rec)
+                                }
+                            },
+                            items: [
+                                {
+                                    xtype: "numberfield",
+                                    value: grid.aiOffset||0,
+                                    fieldLabel: 'AI',
+                                    name: 'aiOffset'
+                                }, {
+                                    xtype: "numberfield",
+                                    value: grid.aoOffset||0,
+                                    fieldLabel: 'AO',
+                                    name: 'aoOffset'
+                                }, {
+                                    xtype: "numberfield",
+                                    value: grid.diOffset||0,
+                                    fieldLabel: 'DI',
+                                    name: 'diOffset'
+                                }, {
+                                    xtype: "numberfield",
+                                    value: grid.doOffset||0,
+                                    fieldLabel: 'DO',
+                                    name: 'doOffset'
+                                },
+                            ],
+                        }
+                    ]
+                })
             }
         }
     ],
@@ -1386,14 +1647,14 @@ Ext.define("modbusConfig", {
             },
             {
                 text: "Object_Name", dataIndex: "objectname", flex: 2,
-                editor: {
-                    xtype: 'textfield',
-                    allowBlank: false
-                },
+                // editor: {
+                //     xtype: 'textfield',
+                //     allowBlank: false
+                // },
                 renderer: function (und, ele, model) {
                     var key = model.data.key
                     //console.log(arguments)
-                    if(und!=""){
+                    if (und != "") {
                         return und;
                     }
                     if (key) {
@@ -1427,105 +1688,12 @@ Ext.define("modbusConfig", {
             {
                 xtype: 'actioncolumn',
                 text: "Setting",
+                hidden: true,
                 width: 60,
                 items: [{
                     icon: "resources/setting_24px.png",
                     tooltip: 'Edit',
-                    handler: function (grid, rowIndex, colIndex) {
-                        var rec = grid.getStore().getAt(rowIndex);
-                        console.log(rec)
-                        //alert("Edit " + rec.get('firstname'));
-                        Ext.create("Ext.window.Window", {
-                            text: "Settings",
-                            autoShow: true,
-                            width: 300,
-                            height: 215,
-                            buttons: [
-                                {
-                                    text: "Ok",
-                                    handler: function () {
-                                        var win = this.up("window")
-                                        var form = win.down("form");
-                                        rec.set(form.getValues());
-                                        win.close();
-                                    }
-                                },
-                                {
-                                    text: "Cancel", handler: function () {
-                                        this.up("window").close()
-                                    }
-                                }
-                            ],
-                            items: [
-                                {
-                                    xtype: "form",
-                                    defaultType: 'textfield',
-                                    //margin:10,
-                                    width: "100%",
-                                    height: "100%",
-                                    defaults: {
-                                        margin: 10,
-                                        allowBlank: false
-                                    },
-                                    listeners: {
-                                        boxready: function (form) {
-                                            form.loadRecord(rec)
-                                        }
-                                    },
-                                    items: [
-                                        {
-                                            fieldLabel: 'Key',
-                                            name: 'key',
-                                            listeners: {
-                                                focus: function (field) {
 
-                                                    var objname = field.up().getComponent("objname")
-                                                    var win = Ext.create("SelectKeyWinodw", {
-                                                        ip: "127.0.0.1",
-                                                        port: "6379",
-                                                        callback: function (selectArr) {
-                                                            console.log(arguments)
-                                                            if (selectArr[0]) {
-                                                                var key = selectArr[0].data.value;
-                                                                var text = selectArr[0].data.text;
-                                                                if (key[4] == 4 || key[4] == 3 || key[4] == 1 || key[4] == 0) {
-                                                                    field.setValue(key);
-                                                                    objname.setValue(text);
-                                                                } else {
-                                                                    Ext.Msg.alert("info ", "please select AI,AV,DI,DO");
-                                                                }
-                                                            }
-                                                            win.close()
-                                                        }
-                                                    })
-                                                }
-                                            }
-                                        }, {
-                                            fieldLabel: 'Object Name',
-                                            name: 'objectname',
-                                            itemId: "objname",
-                                            allowBlank: true
-                                        },
-                                        {
-                                            fieldLabel: "Slave Number",
-                                            name: "slavenumber",
-                                            xtype: "numberfield",
-                                            //maxValue: 99,
-                                            minValue: 1
-                                        },
-                                        {
-                                            fieldLabel: "Point Number",
-                                            name: "pointnumber",
-                                            xtype: "numberfield",
-                                            //maxValue: 99,
-                                            minValue: 1
-                                        }
-                                    ],
-                                }
-                            ]
-                        })
-
-                    }
                 }]
             }
         ]
@@ -1539,8 +1707,8 @@ Ext.define("modbusConfig", {
                 //console.log(this);
                 //var startingBonus = val * .1;
                 var key = model.data.key;
-                if(key)
-                return key[4];
+                if (key)
+                    return key[4];
                 return null;
             }
         }, "objectname", "key"],
