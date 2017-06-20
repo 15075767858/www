@@ -3,7 +3,6 @@
 $par = $_REQUEST['par'];
 
 if ($par == 'beforeUpload') {
-    exit;
     $path = "/mnt/nandflash/".$_REQUEST['fileName'];
     //unset($path);
     $str= 'rm -rf '.$path;
@@ -16,13 +15,16 @@ if ($par == 'beforeUpload') {
         "bac-logic-modbus" => "logic-modbus.pid",
         "bac-server-modbus" => "bac-server-modbus.pid",
         "bac-client" => "bac_client.pid",
-        "bac-server" => "bac_server.pid");
+        "bac-server" => "bac_server.pid",
+        "modbus-tcp-server" => "modbus-tcp-server.pid"
+        );
     $pidFile = "/var/run/" . $pids[$_REQUEST['fileName']];
     if (file_exists($pidFile)) {
         $myfile = fopen($pidFile, "r");
         $jc = fgets($myfile);
         $test = "kill " . $jc;
         exec($test, $array);
+        var_dump($array);
     }
 }
 

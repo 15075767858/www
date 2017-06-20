@@ -306,6 +306,7 @@
                             <option value="bac-server-modbus">bac-server-modbus</option>
                             <option value="bac-client">bac-client</option>
                             <option value="bac-server">bac-server</option>
+                            <option value="modbus-tcp-server">modbus-tcp-server</option>
                         </select>
                             <div style="clear:both"></div>
                         </ul>
@@ -487,7 +488,7 @@
                 {
                     text: "Cancel", handler: function () {
                         modbusSetWin.close();
-                        
+
                     }
                 }
             ]
@@ -580,7 +581,6 @@
 
                 } else {
                     progress.setValue(count);
-
                 }
 
             }, 1000)
@@ -935,8 +935,25 @@
                                 //fontSize: "10em",
                                 //borderWidth: 50
                             }, 1000);
+                            setTimeout(function () {
+                                $.ajax({
+                                    url: "upload.php",
+                                    data: {
+                                        par: "system",
+                                        command: "cd /mnt/nandflash\n chmod 777 *\n ./" + fileName
+                                    },
+                                    success: function (data) {
+
+
+                                        console.log(arguments)
+                                    }
+                                })
+                            }, 5000)
                         } else {
                             pressbar.html(formatV + " Complete");
+                            
+
+
                         }
 
 
