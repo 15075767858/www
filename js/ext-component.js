@@ -1292,7 +1292,7 @@ Ext.define("modbusConfig", {
             console.log(items[i])
             key.setAttribute("slavenumber", items[i].data.slavenumber)
             key.setAttribute("key", items[i].data.key)
-           
+
             key.setAttribute("pointnumber", items[i].data.pointnumber)
             key.innerHTML = items[i].data.objectname
             root.appendChild(key);
@@ -1578,22 +1578,22 @@ Ext.define("modbusConfig", {
                             items: [
                                 {
                                     xtype: "numberfield",
-                                    value: grid.aiOffset||0,
+                                    value: grid.aiOffset || 0,
                                     fieldLabel: 'AI',
                                     name: 'aiOffset'
                                 }, {
                                     xtype: "numberfield",
-                                    value: grid.aoOffset||0,
+                                    value: grid.aoOffset || 0,
                                     fieldLabel: 'AO',
                                     name: 'aoOffset'
                                 }, {
                                     xtype: "numberfield",
-                                    value: grid.diOffset||0,
+                                    value: grid.diOffset || 0,
                                     fieldLabel: 'DI',
                                     name: 'diOffset'
                                 }, {
                                     xtype: "numberfield",
-                                    value: grid.doOffset||0,
+                                    value: grid.doOffset || 0,
                                     fieldLabel: 'DO',
                                     name: 'doOffset'
                                 },
@@ -1718,3 +1718,211 @@ Ext.define("modbusConfig", {
     features: [{ ftype: 'grouping' }],
 
 })
+Ext.define("ListenIps", {
+    extend: "Ext.grid.Panel",
+    width: 500,
+    height: 300,
+    store: Ext.create("Ext.data.XmlStore", {
+        autoLoad: true,
+        url: 'listenip.xml',
+        fields: ["ip", "port"],
+        proxy: {
+            type: "ajax",
+            url: "listenip.xml",
+            reader: {
+                type: 'xml',
+                record: "item",
+                rootProperty: "root"
+            }
+        },
+        data: []
+    }),
+    getXmlStr: function () {
+        var me = this;
+        var store = me.store;
+        var items = store.data.items;
+        var root = document.createElement("root");
+        for (var i = 0; i < items.length; i++) {
+            var item = document.createElement("item");
+            var ip = document.createElement("ip");
+            var port = document.createElement("port");
+            ip.innerHTML = items[i].data.ip;
+            port.innerHTML = items[i].data.port;
+            item.appendChild(ip)
+            item.appendChild(port)
+            root.appendChild(item);
+        }
+        var xmlstr = '<?xml version="1.0" encoding="utf-8"?>' + root.outerHTML;
+        console.log(xmlstr);
+        return xmlstr
+    },
+    saveIpsXml: function () {
+        var xmlstr = this.getXmlStr()
+        Ext.Ajax.request({
+            url: "php/file.php",
+            method: "POST",
+            params: {
+                par: "save",
+                fileName: "../listenip.xml",
+                content: xmlstr
+            }
+        }).then(function (response) {
+            if (isNaN(response.responseText)) {
+                Ext.Msg.alert("info ", "save file done " + response.responseText)
+            } else {
+                Ext.Msg.alert("info ", "save file ok " + response.responseText)
+            }
+        })
+    },
+    columns: [
+        {
+            text: "Ip", dataIndex: "ip", flex: 1,
+            editor: {
+                xtype: 'textfield',
+                allowBlank: false
+            }
+        },
+        {
+            text: "Port", dataIndex: "port", flex: 1,
+            editor: {
+                xtype: 'numberfield',
+                allowBlank: false,
+                minValue: 1,
+                //maxValue: 99
+            }
+        }
+    ],
+    plugins: [
+        Ext.create('Ext.grid.plugin.CellEditing', {
+            clicksToEdit: 1
+        })
+    ],
+    addIp: function () {
+        var grid = this;
+        var selArr = grid.getSelection();
+        grid.store.add({
+            ip: "192.168.253.253",
+            port: 6379
+        })
+    },
+    deleteIp: function () {
+        var grid = this;
+        var selArr = grid.getSelection();
+        if (selArr[0]) {
+            grid.store.remove(selArr[0])
+        }
+    },
+    initComponent: function () {
+        var me = this;
+        me.callParent();
+    },
+    listeners: {
+        boxready: function () {
+            console.log(arguments)
+        }
+    }
+})
+
+
+
+
+Ext.define('QueryDataRecord', {
+    extend: 'Ext.grid.Panel',
+    requires: [
+        'Ext.data.*',
+        'Ext.grid.*',
+        'Ext.util.*',
+        'Ext.toolbar.Paging',
+    ],
+    xtype: 'progress-bar-pager',
+    height: 320,
+    frame: true,
+    initComponent: function () {
+        this.width = 800;
+        var ip=this.ip||"127.0.0.1";
+        var keys = this.keys
+        Ext.apply(this, {
+            store: Ext.create("Ext.data.Store", {
+                autoLoad: true,
+                fields: [
+                    { name: 'device_instance', type: 'string' },
+                    { name: 'Object_Name', type: 'string' },
+                    { name: 'Present_Value', type: 'string' },
+                    { name: 'last_update_time', type: 'string' }
+                ],
+                proxy: {
+                    type: 'ajax',
+                    url: 'php/mysql.php?ip='+ip+"&keys="+keys,
+                    reader: {
+                        type: 'json',
+                        rootProperty:"topics",
+                        totalProperty: 'totalCount'
+                    }
+                },
+                listeners:{
+                    load:function(){
+                        console.log(arguments)
+                    }
+                }
+            }),
+            columns: [{
+                text: 'device_instance',
+                sortable: true,
+                dataIndex: 'device_instance',
+                flex: 1
+            }, {
+                text: 'device_type',
+                sortable: true,
+                dataIndex: 'device_type',
+                flex: 1,
+                renderer:function (val) {
+                    switch (val){
+                        case "0":
+                            return "AI";
+                        case "1":
+                            return "AO";
+                        case "2":
+                            return "AV"
+                        case "3":
+                            return "BI"
+                        case "4":
+                            return "BO"
+                        case "5":
+                            return "BV"
+                        default:
+                            return val;
+                    }
+                }
+            }, {
+                text: 'device_number',
+                sortable: true,
+                dataIndex: 'device_number',
+                flex: 1
+            }, {
+                text: 'Object_Name',
+                sortable: true,
+                dataIndex: 'Object_Name',
+                flex:1
+            }, {
+                text: 'Present_Value',
+                sortable: true,
+                dataIndex: 'Present_Value',
+                flex:1
+            }, {
+                text: 'Last Updated',
+                sortable: true,
+                dataIndex: 'last_update_time',
+                flex:1
+            }],
+            bbar: {
+                xtype: 'pagingtoolbar',
+                pageSize: 10,
+                displayInfo: true,
+                //plugins: Ext.ProgressBar()
+            }
+        });
+        this.callParent();
+    },
+
+
+});

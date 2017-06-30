@@ -228,7 +228,7 @@
                             <span>Modbus Enable</span></li>
                         <li><input type="checkbox" class="feeddogselect" id="concheck8_s"><span class="visibility">feeddog&nbsp;Enable&nbsp;</span>
                             <input type="checkbox" id="concheck8">
-                            <span>ModbusTCP Enable</span></li>
+                            <span>Modbus server Enable</span></li>
                     </ul>
                     <input class='btn btn-info button_shadow' id="modCon" data-toggle="modal" data-target="#myModal1" type="button" value="OK">
                 </div>
@@ -248,7 +248,7 @@
                             <span>Progarm Enable</span></li>
                         <li><input type="checkbox" class="feeddogselect" id="concheck9_s"><span class="visibility">feeddog&nbsp;Enable&nbsp;</span>
                             <input type="checkbox" id="concheck9">
-                            <span>ModbusTCP Enable</span></li>
+                            <span>Modbus server Enable</span></li>
                         <input type="button" class="btn btn-success btn-sm small button_shadow" value="Modbus Config" onclick="modbusXml()">
                         <li><input type="checkbox" class="feeddogselect" id="concheck7_s"><span>feeddog&nbsp;Enable&nbsp;</span>
                             <input type="checkbox" id="concheck7">
@@ -1044,14 +1044,9 @@
         var st1 = $("#updateDriveStep1");
         var st2 = $("#updateDriveStep2");
         var st3 = $("#updateDriveStep3");
-
-
         var stepArr = [st1, st2, st3];
-
         for (var i = 0; i < stepArr.length; i++) {
-
             if (!stepArr[i].hasClass("hide")) {
-
                 if (go) {
                     if (i != stepArr.length - 1) {
                         stepArr[i].addClass("hide")

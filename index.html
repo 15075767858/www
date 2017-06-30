@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -20,7 +21,6 @@
             height: 2000px;
             background: url(http://imgm.photophoto.cn/064/121/007/1210070163.jpg) no-repeat;
             background-size: 100% 100%;
-
         }
 
         .header {
@@ -69,16 +69,13 @@
         .content {
             /*
             */
-
             background-size: 100% 100%;
             text-align: center;
             height: 740px;
-
         }
 
         .content .bac-img {
             width: 800px;
-
         }
 
         #changePic {
@@ -172,9 +169,9 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ext-all.js"></script>
-
     <script src="js/ext-component.js"></script>
 </head>
+
 <body>
 
 <link rel="stylesheet" href="css/css/bootstrap.min.css">
@@ -187,17 +184,17 @@
         <li><a id="userManager" style="display: none">用户管理</a></li>
         <li><a id="outLogin" style="">Login Out</a></li>
         <!-- <li>
-         <button type="button" id="engineerLogin" class="btn btn-success btn-lg button_shadow"
-                 data-whatever="@mdo" aria-label="Left Align">
-             <span class=" glyphicon glyphicon-cog" aria-hidden="true"></span> Engineer
-         </button>
+     <button type="button" id="engineerLogin" class="btn btn-success btn-lg button_shadow"
+             data-whatever="@mdo" aria-label="Left Align">
+         <span class=" glyphicon glyphicon-cog" aria-hidden="true"></span> Engineer
+     </button>
 
-         </li>
-         <li>
-         <button type="button" class="btn btn-info btn-lg button_shadow" id="userLogin" aria-label="Left Align">
-             <span class="glyphicon glyphicon-open" aria-hidden="true"></span> 用户入口
-         </button>
-         </li>-->
+     </li>
+     <li>
+     <button type="button" class="btn btn-info btn-lg button_shadow" id="userLogin" aria-label="Left Align">
+         <span class="glyphicon glyphicon-open" aria-hidden="true"></span> 用户入口
+     </button>
+     </li>-->
     </ul>
 </div>
 <style>
@@ -241,7 +238,7 @@
     }
 </style>
 <link rel="stylesheet" type="text/css" href="css/smartiologo.css">
-    
+
 <div class="content smartiologo">
 
     <img id="changePicImg">
@@ -281,7 +278,8 @@
             <p>
                 对于SmartIO思麦尔来说，通过应用新技术，改变了数据交换的方式。其一：在设备端遵循BACnet的订阅---变化传送方式（COV），它的原理是设备启动时向数据源提交订单，哪些数据变化了发送给提交订单的设备，实现平时不用传数据，而一旦数据发生变化了就能马上发给过去，这样就把通讯带宽全用上了扩展到极致。其二：数据库端也用了一个订阅和发布，它们是写入发布，每一个数据写入时发出一个广播，每一个要用数据的设备、客户都可以依据自已需要订阅和接收，客户再多也不影响系统速度。
                 “这技术已很成熟，微博、微信、QQ用的都是相同的东西，SmartIO将这门技术内嵌到BACnet路由器，数据管理器和图形中心，完全放弃了传统数据传递模式。”
-                李平中说，“这就是SmartIO思麦尔新技术应用，也是SmartIO技术亮点。”</p>
+                李平中说，“这就是SmartIO思麦尔新技术应用，也是SmartIO技术亮点。”
+            </p>
             <h3>结 语
             </h3>
             <p>
@@ -290,7 +288,7 @@
         </div>
     </div>
     <!--<img class="bac-img" src="img/home.png">
-    -->
+-->
 
 </div>
 <div class="footer">
@@ -303,8 +301,6 @@
 </div>
 </body>
 <script>
-
-
     //teststore.load({url:"/graph/alarmconf.xml"})
 
 
@@ -329,31 +325,31 @@
     })
 
     /*Ext.onReady(function () {
-        var win = Ext.create("LoginWindow", {
-            callbackFn: function (resJson) {
-                Ext.get("userManager").show();
-                Ext.get("outLogin").show();
-                win.close();
-            }
-        })
-    })*/
+     var win = Ext.create("LoginWindow", {
+     callbackFn: function (resJson) {
+     Ext.get("userManager").show();
+     Ext.get("outLogin").show();
+     win.close();
+     }
+     })
+     })*/
 
     /*$("#userManager").click(function () {
-        Ext.create("UserManager")
-    })*/
+     Ext.create("UserManager")
+     })*/
 
     $("#outLogin").click(function () {
         Ext.Ajax.request({
             url: "php/login.php?par=outLogin",
             success: function (response) {
                 var resData;
-                try{
+                try {
                     resData = Ext.decode(response.responseText)
-                    if(resData.success){
+                    if (resData.success) {
                         alert("Login Out Success")
                     }
-                }catch (e){
-                    alert("Error "+ response.responseText)
+                } catch (e) {
+                    alert("Error " + response.responseText)
                 }
                 //Ext.get('userManager').hide();
                 //Ext.get('outLogin').hide();
@@ -382,6 +378,7 @@
             }
         });
     }
+
 </script>
 <script>
     (function () {
@@ -405,5 +402,167 @@
 
 </script>
 
+<script>
+    Ext.onReady(function () {
+        //DataRecord
+
+        function setIpsWindow() {
+            Ext.create("Ext.window.Window", {
+                width: 500,
+                height: 300,
+                title: "Setting Listen Ip",
+                autoShow: true,
+                scrollable: "y",
+                items: [
+                    Ext.create("ListenIps", {})
+                ],
+                buttons: [
+                    {
+                        text: "Add", handler: function () {
+                        var grid = this.up("window").down("grid")
+                        grid.addIp()
+                    }
+                    },
+                    {
+                        text: "Delete", handler: function () {
+                        var grid = this.up("window").down("grid")
+                        grid.deleteIp();
+                    }
+                    },
+                    "->",
+                    {
+                        text: "save", handler: function () {
+                        var grid = this.up("window").down("grid")
+                        console.log(grid)
+                        grid.saveIpsXml();
+                    }
+                    },
+                    {
+                        text: "Cancel", handler: function () {
+                        this.up("window").close()
+                    }
+                    }
+                ]
+            })
+        }
+
+
+        showDataRecordWindow()
+        function showDataRecordWindow() {
+            var IPCombo = Ext.create("Ext.form.field.ComboBox", {
+                fieldLabel: "Sources IP",
+                store: ['127.0.0.1', window.location.hostname, "192.168.253.253"],
+                labelWidth: 70,
+                maxWidth: 300,
+                //value: location.hostname
+            });
+            var PortCombo = Ext.create("Ext.form.field.ComboBox", {
+                fieldLabel: "port number",
+                store: ["6379"],
+                value: "6379"
+            });
+            var formPanel = Ext.create("Ext.form.Panel", {
+                region: "north",
+                items: {
+                    xtype: "fieldset",
+                    title: "link option",
+                    layout: "hbox",
+                    defaults: {
+                        margin: 10
+                    },
+                    items: [
+                        IPCombo, PortCombo,
+                        {
+                            xtype: "button",
+                            text: "link",
+                            handler: function () {
+                                var treeStore = Ext.create("Ext.data.TreeStore", {
+                                    fields: ["text"],
+                                    proxy: {
+                                        type: "ajax",
+                                        autoLoad: true,
+                                        url: "php/globalTree.php?ip=" + IPCombo.value + "&port=" + PortCombo.value,
+                                        reader: {
+                                            type: "json"
+                                        }
+                                    },
+                                    root: {
+                                        text: "root"
+                                    }
+                                })
+
+                                treePanel.setStore(treeStore);
+                            }
+                        }
+                    ]
+                }
+            })
+            var treePanel = Ext.create("Ext.tree.Panel", {
+                region: "center",
+                useArrows: true,
+                animate: true,
+                checkPropagation: "both",
+                rootVisible: false,
+                bufferedRenderer: false,
+                tbar: [{
+                    text: 'Expand All',
+                    scope: this,
+                    handler: function (th) {
+                        treePanel.expandAll()
+                    }
+                }, {
+                    text: 'Collapse All',
+                    scope: this,
+                    handler: function (th) {
+                        treePanel.collapseAll()
+                    }
+                }, "->", {
+                    text: "config Listeners Ip", handler: function () {
+                        setIpsWindow()
+                    }
+                }]
+            })
+            Ext.create("Ext.window.Window", {
+                height: 500,
+                width: 700,
+                title: "Data Record",
+                autoShow: true,
+                renderTo: Ext.getBody(),
+                layout: "border",
+                items: [formPanel, treePanel],
+                buttons: [
+                    {
+                        text: "show ", handler: function () {
+                        var checkeds = treePanel.getChecked();
+                        var keysArr = [];
+                        for(var i=0;i<checkeds.length;i++){
+                            if(checkeds[i].data.depth==4){
+                                keysArr.push(checkeds[i].data.text)
+                            }
+                        }
+                        console.log()
+                        Ext.create("Ext.window.Window", {
+                            title: "Show Data Record",
+                            autoShow: true,
+                            scrollable: "y",
+                            items: [
+                                Ext.create("QueryDataRecord", {
+                                    ip: IPCombo.value,
+                                    keys:keysArr.join(",")
+                                })
+                            ]
+                        })
+                        console.log(checkeds)
+
+                    }
+                    }
+                ]
+
+            })
+        }
+
+    })
+
+</script>
 
 </html>
