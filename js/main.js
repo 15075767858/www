@@ -327,7 +327,7 @@ function globalClick() {
                         autoShow: true,
                         items: {
                             xtype: "combo",
-                            fieldLabel: "Remote Ip",
+                            fieldLabel: "Destination Ip",
                             store: [window.location.hostname, "192.168.253.253"],
                             value: window.location.hostname
                         },
@@ -339,9 +339,7 @@ function globalClick() {
                                 //console.log(childNodes)
                                 var checkeds = treePanel.getChecked();
                                 var root = document.createElement("root");
-
                                 for (var i = 0; i < childNodes.length; i++) {
-
                                     var device = document.createElement("device");
                                     device.setAttribute("ip", childNodes[i].data.text)
                                     device.setAttribute("address", "25")
@@ -350,20 +348,18 @@ function globalClick() {
                                     device.setAttribute("timeout", "1000");
                                     for (var j = 0; j < checkeds.length; j++) {
                                         if (checkeds[j].data.leaf) {
-                                            var data = checkeds[j].parentNode.parentNode.parentNode.data
+                                            var data = checkeds[j].parentNode.parentNode.parentNode.data;
                                             if (data.text == childNodes[i].data.text) {
                                                 console.log(data)
                                                 var point = document.createElement("point");
-                                                point.setAttribute("key", data.text)
-                                                point.setAttribute("type", data.text.substr(4, 1))
+                                                point.setAttribute("key", checkeds[j].data.key)
+                                                point.setAttribute("type", checkeds[j].data.key.substr(4, 1))
                                                 device.appendChild(point)
-
                                             }
                                         }
                                     }
                                     root.appendChild(device)
                                     var remoteIp = win.down("combo").value.trim()
-
                                     var content = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\r\n' + formatXml(root.outerHTML)
                                     console.log(content)
                                     if (remoteIp == location.hostname) {
@@ -372,7 +368,6 @@ function globalClick() {
                                         }, content)
                                         return
                                     } else {
-
                                         var form = $('<form method="post" action="http://' + remoteIp + '/php/xmlRW.php" >\
                                         <input name="rw" value="w">\
                                         <input name="fileName" value="../../global.xml">\

@@ -1,6 +1,3 @@
-
-
-
 Ext.define("UpdateWWW", {
     extend: "Ext.window.Window",
     autoShow: true,
@@ -140,12 +137,13 @@ Ext.define("UpdateWWW", {
                     waitProgress.hide()
                     console.log(response)
                     try {
-                        var res = Ext.decode(response);
-
+                        //var res = Ext.decode(response);
                         Ext.Msg.alert("Massage", "ok ");
                     } catch (e) {
                         Ext.Msg.alert("Massage", "info " + response)
                     }
+                    me.close()
+
 
                 },
                 failure: function (response) {
@@ -271,165 +269,165 @@ Ext.define("UserManager", {
     bbar: [
         {
             text: "Add User", handler: function () {
-                var win = Ext.create("Ext.window.Window", {
-                    title: "Please input password and level .",
-                    autoShow: true,
-                    width: 300,
-                    resizeable: false,
-                    items: [
-                        {
-                            xtype: "form",
-                            defaults: {
-                                margin: 10,
-                                allowBlank: false
+            var win = Ext.create("Ext.window.Window", {
+                title: "Please input password and level .",
+                autoShow: true,
+                width: 300,
+                resizeable: false,
+                items: [
+                    {
+                        xtype: "form",
+                        defaults: {
+                            margin: 10,
+                            allowBlank: false
+                        },
+                        items: [
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "username",
+                                name: "username",
+                                maxLength: 20,
+                                minLength: 4
                             },
-                            items: [
-                                {
-                                    xtype: "textfield",
-                                    fieldLabel: "username",
-                                    name: "username",
-                                    maxLength: 20,
-                                    minLength: 4
-                                },
-                                {
-                                    xtype: "textfield",
-                                    fieldLabel: "password",
-                                    name: "password",
-                                    inputType: "password",
-                                    maxLength: 16,
-                                    minLength: 4
-                                },
-                                {
-                                    xtype: "textfield",
-                                    fieldLabel: "Enter again",
-                                    inputType: "password",
-                                    name: "again",
-                                    maxLength: 16,
-                                    minLength: 4
-                                },
-                                { xtype: "numberfield", fieldLabel: "level", name: "level", minValue: 0, maxValue: 255 },
-                            ],
-                            bbar: [
-                                {
-                                    text: "Ok", handler: function () {
-                                        var form = this.up("form");
-                                        if (form.isValid()) {
-                                            var values = form.getValues();
-                                            if (values.password != values.again) {
-                                                Ext.Msg.alert("Massage", "Two passwords are not consistent .")
-                                                return;
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "password",
+                                name: "password",
+                                inputType: "password",
+                                maxLength: 16,
+                                minLength: 4
+                            },
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "Enter again",
+                                inputType: "password",
+                                name: "again",
+                                maxLength: 16,
+                                minLength: 4
+                            },
+                            {xtype: "numberfield", fieldLabel: "level", name: "level", minValue: 0, maxValue: 255},
+                        ],
+                        bbar: [
+                            {
+                                text: "Ok", handler: function () {
+                                var form = this.up("form");
+                                if (form.isValid()) {
+                                    var values = form.getValues();
+                                    if (values.password != values.again) {
+                                        Ext.Msg.alert("Massage", "Two passwords are not consistent .")
+                                        return;
+                                    }
+                                    form.submit({
+                                        url: "php/login.php?par=addUser",
+                                        success: function (form, resonse) {
+                                            if (resonse.result.success) {
+                                                Ext.Msg.alert("Massage", resonse.result.info);
                                             }
-                                            form.submit({
-                                                url: "php/login.php?par=addUser",
-                                                success: function (form, resonse) {
-                                                    if (resonse.result.success) {
-                                                        Ext.Msg.alert("Massage", resonse.result.info);
-                                                    }
-                                                    console.log(arguments)
-                                                },
-                                                failure: function (form, response) {
-                                                    Ext.Msg.alert("Massage", response.result.info)
-                                                    console.log(arguments)
-                                                }
-                                            })
+                                            console.log(arguments)
+                                        },
+                                        failure: function (form, response) {
+                                            Ext.Msg.alert("Massage", response.result.info)
+                                            console.log(arguments)
                                         }
-                                    }
-                                },
-                                {
-                                    text: "Cancel", handler: function () {
-                                        win.close();
-                                    }
+                                    })
                                 }
-                            ]
-                        }
-                    ]
-                })
-            }
+                            }
+                            },
+                            {
+                                text: "Cancel", handler: function () {
+                                win.close();
+                            }
+                            }
+                        ]
+                    }
+                ]
+            })
+        }
         },
         {
             text: "Delete User", handler: function (button) {
-                var win = button.up('window');
-                win.deleteUser();
+            var win = button.up('window');
+            win.deleteUser();
 
-            }
+        }
         },
         {
             text: "Change User", hidden: true, handler: function () {
-                var win = Ext.create("Ext.window.Window", {
-                    title: "Please input password and level .",
-                    autoShow: true,
-                    width: 300,
-                    resizeable: false,
-                    items: [
-                        {
-                            xtype: "form",
-                            defaults: {
-                                margin: 10,
-                                allowBlank: false
+            var win = Ext.create("Ext.window.Window", {
+                title: "Please input password and level .",
+                autoShow: true,
+                width: 300,
+                resizeable: false,
+                items: [
+                    {
+                        xtype: "form",
+                        defaults: {
+                            margin: 10,
+                            allowBlank: false
+                        },
+                        items: [
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "username",
+                                name: "username",
+                                maxLength: 20,
+                                minLength: 4,
+                                hidden: true
                             },
-                            items: [
-                                {
-                                    xtype: "textfield",
-                                    fieldLabel: "username",
-                                    name: "username",
-                                    maxLength: 20,
-                                    minLength: 4,
-                                    hidden: true
-                                },
-                                {
-                                    xtype: "textfield",
-                                    fieldLabel: "password",
-                                    name: "password",
-                                    inputType: "password",
-                                    maxLength: 16,
-                                    minLength: 4
-                                },
-                                {
-                                    xtype: "textfield",
-                                    fieldLabel: "Enter again",
-                                    inputType: "password",
-                                    name: "again",
-                                    maxLength: 16,
-                                    minLength: 4
-                                },
-                                { xtype: "numberfield", fieldLabel: "level", name: "level", minValue: 0, maxValue: 255 },
-                            ],
-                            bbar: [
-                                {
-                                    text: "Ok", handler: function () {
-                                        var form = this.up("form");
-                                        if (form.isValid()) {
-                                            var values = form.getValues();
-                                            if (values.password != values.again) {
-                                                Ext.Msg.alert("Massage", "Two passwords are not consistent .")
-                                                return;
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "password",
+                                name: "password",
+                                inputType: "password",
+                                maxLength: 16,
+                                minLength: 4
+                            },
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "Enter again",
+                                inputType: "password",
+                                name: "again",
+                                maxLength: 16,
+                                minLength: 4
+                            },
+                            {xtype: "numberfield", fieldLabel: "level", name: "level", minValue: 0, maxValue: 255},
+                        ],
+                        bbar: [
+                            {
+                                text: "Ok", handler: function () {
+                                var form = this.up("form");
+                                if (form.isValid()) {
+                                    var values = form.getValues();
+                                    if (values.password != values.again) {
+                                        Ext.Msg.alert("Massage", "Two passwords are not consistent .")
+                                        return;
+                                    }
+                                    form.submit({
+                                        url: "php/login.php?par=addUser",
+                                        success: function (form, resonse) {
+                                            if (resonse.result.success) {
+                                                Ext.Msg.alert("Massage", resonse.result.info);
                                             }
-                                            form.submit({
-                                                url: "php/login.php?par=addUser",
-                                                success: function (form, resonse) {
-                                                    if (resonse.result.success) {
-                                                        Ext.Msg.alert("Massage", resonse.result.info);
-                                                    }
-                                                    console.log(arguments)
-                                                },
-                                                failure: function (form, response) {
-                                                    Ext.Msg.alert("Massage", response.result.info)
-                                                    console.log(arguments)
-                                                }
-                                            })
+                                            console.log(arguments)
+                                        },
+                                        failure: function (form, response) {
+                                            Ext.Msg.alert("Massage", response.result.info)
+                                            console.log(arguments)
                                         }
-                                    }
-                                },
-                                {
-                                    text: "Cancel", handler: function () {
-                                        win.close();
-                                    }
+                                    })
                                 }
-                            ]
-                        }
-                    ]
-                })
-            }
+                            }
+                            },
+                            {
+                                text: "Cancel", handler: function () {
+                                win.close();
+                            }
+                            }
+                        ]
+                    }
+                ]
+            })
+        }
         }
     ],
     initComponent: function () {
@@ -498,71 +496,71 @@ Ext.define('LoginWindow', {
     initComponent: function () {
         var me = this;
         var loginForm = Ext.create("Ext.form.Panel", {
-            bodyPadding: 10,
-            bodyStyle: {
-                background: "cornflowerblue"
-            },
-            items: [
-                {
-                    xtype: "combo",
-                    allowBlank: false,
-                    fieldLabel: 'User Name',
-                    name: 'username',
-                    emptyText: 'user name',
-                    queryMode: "local",
-                    value: "mngr",
-                    height: 35,
-                    store: Ext.create("Ext.data.Store", {
-                        fields: ["0"],
-                        autoLoad: true,
-                        proxy: {
-                            type: "ajax",
-                            url: "php/login.php?par=getAllUser",
-                            reader: {
-                                type: "json"
-                            }
-                        }
-                    }),
-                    displayField: "0",
-                    valueField: "0"
+                bodyPadding: 10,
+                bodyStyle: {
+                    background: "cornflowerblue"
                 },
-                {
-                    xtype: "textfield",
-                    allowBlank: false,
-                    fieldLabel: 'Password',
-                    value: "mngr0",
-                    name: 'password',
-                    emptyText: 'password',
-                    inputType: 'password',
-                    height: 35,
-                    listeners: {
-                        focus: function (field) {
-                            var keybord = Ext.getCmp("win" + field.id)
-                            if (keybord) {
-                                return
-                                //keybord.close()
-                            }
-                            Ext.create("editpic.view.ux.KeyBoard", {
-                                id: "win" + field.id,
-                                x: me.getX() + me.getWidth() + 5,
-                                inputValue: field.getValue(),
-                                okFn: function (value) {
-                                    field.setValue(value)
+                items: [
+                    {
+                        xtype: "combo",
+                        allowBlank: false,
+                        fieldLabel: 'User Name',
+                        name: 'username',
+                        emptyText: 'user name',
+                        queryMode: "local",
+                        value: "mngr",
+                        height: 35,
+                        store: Ext.create("Ext.data.Store", {
+                            fields: ["0"],
+                            autoLoad: true,
+                            proxy: {
+                                type: "ajax",
+                                url: "php/login.php?par=getAllUser",
+                                reader: {
+                                    type: "json"
                                 }
-                            })
-                            if (Ext.getCmp('win' + field.id)) {
-                                field.focus();
                             }
-                        }
+                        }),
+                        displayField: "0",
+                        valueField: "0"
+                    },
+                    {
+                        xtype: "textfield",
+                        allowBlank: false,
+                        fieldLabel: 'Password',
+                        value: "mngr0",
+                        name: 'password',
+                        emptyText: 'password',
+                        inputType: 'password',
+                        height: 35,
+                        listeners: {
+                            focus: function (field) {
+                                var keybord = Ext.getCmp("win" + field.id)
+                                if (keybord) {
+                                    return
+                                    //keybord.close()
+                                }
+                                Ext.create("editpic.view.ux.KeyBoard", {
+                                    id: "win" + field.id,
+                                    x: me.getX() + me.getWidth() + 5,
+                                    inputValue: field.getValue(),
+                                    okFn: function (value) {
+                                        field.setValue(value)
+                                    }
+                                })
+                                if (Ext.getCmp('win' + field.id)) {
+                                    field.focus();
+                                }
+                            }
 
+                        }
                     }
+                ],
+                defaults: {
+                    anchor: '100%',
+                    labelWidth: 120
                 }
-            ],
-            defaults: {
-                anchor: '100%',
-                labelWidth: 120
             }
-        }
         )
         me.listeners = {
             boxready: function () {
@@ -573,18 +571,18 @@ Ext.define('LoginWindow', {
         me.buttons = [
             {
                 text: 'Login', handler: function () {
-                    var values = loginForm.getValues();
-                    me.login(values)
-                    /*
-                     if (My.isLogin()) {
-                     Ext.Msg.alert("Massage", "login success .")
-    
-                     } else {
-                     Ext.Msg.alert("Massage", 'login failure !')
-                     return;
-                     }*/
+                var values = loginForm.getValues();
+                me.login(values)
+                /*
+                 if (My.isLogin()) {
+                 Ext.Msg.alert("Massage", "login success .")
 
-                }
+                 } else {
+                 Ext.Msg.alert("Massage", 'login failure !')
+                 return;
+                 }*/
+
+            }
             }
         ]
 
@@ -638,25 +636,25 @@ Ext.define('editpic.view.ux.KeyBoard', {
     getButton: function (data) {
         var me = this;
         var button = Ext.create("Ext.button.Button", Ext.apply(data, {
-            //ui: "keyboard",
-            style: {
-                backgroundColor: "blue"
-            },
-            bodyStyle: {
-                backgroundColor: "blue"
-            },
-            //cls: "opacity1",
-            scale: 'large',
+                //ui: "keyboard",
+                style: {
+                    backgroundColor: "blue"
+                },
+                bodyStyle: {
+                    backgroundColor: "blue"
+                },
+                //cls: "opacity1",
+                scale: 'large',
 
-            handler: function (field) {
-                var me = this.up("window");
+                handler: function (field) {
+                    var me = this.up("window");
 
-                //var controller=this;
-                me.eventFn(field)
+                    //var controller=this;
+                    me.eventFn(field)
+                }
+
             }
-
-        }
-        )
+            )
         )
         return button;
     },
@@ -697,21 +695,21 @@ Ext.define('editpic.view.ux.KeyBoard', {
                     style: 'padding: 5px;'
                 }
             }, items: [
-                me.getButton({ glyph: 55, inputValue: "7" }),
-                me.getButton({ glyph: 56, inputValue: "8" }),
-                me.getButton({ glyph: 57, inputValue: "9" }),
-                me.getButton({ text: "C", inputValue: "{del}" }),
-                me.getButton({ glyph: 52, inputValue: "4" }),
-                me.getButton({ glyph: 53, inputValue: "5" }),
-                me.getButton({ glyph: 54, inputValue: "6" }),
-                me.getButton({ text: "→", inputValue: "{right}" }),
-                me.getButton({ glyph: 49, inputValue: "1" }),
-                me.getButton({ glyph: 50, inputValue: "2" }),
-                me.getButton({ glyph: 51, inputValue: "3" }),
-                me.getButton({ text: "←", inputValue: "{left}" }),
-                me.getButton({ glyph: 48, inputValue: "0" }),
-                me.getButton({ glyph: 46, inputValue: "." }),
-                me.getButton({ text: "Enter", inputValue: "{Enter}", colspan: 2, width: "100%" }),
+                me.getButton({glyph: 55, inputValue: "7"}),
+                me.getButton({glyph: 56, inputValue: "8"}),
+                me.getButton({glyph: 57, inputValue: "9"}),
+                me.getButton({text: "C", inputValue: "{del}"}),
+                me.getButton({glyph: 52, inputValue: "4"}),
+                me.getButton({glyph: 53, inputValue: "5"}),
+                me.getButton({glyph: 54, inputValue: "6"}),
+                me.getButton({text: "→", inputValue: "{right}"}),
+                me.getButton({glyph: 49, inputValue: "1"}),
+                me.getButton({glyph: 50, inputValue: "2"}),
+                me.getButton({glyph: 51, inputValue: "3"}),
+                me.getButton({text: "←", inputValue: "{left}"}),
+                me.getButton({glyph: 48, inputValue: "0"}),
+                me.getButton({glyph: 46, inputValue: "."}),
+                me.getButton({text: "Enter", inputValue: "{Enter}", colspan: 2, width: "100%"}),
                 me.getButton({
                     text: "abc",
                     colspan: 3,
@@ -741,28 +739,28 @@ Ext.define('editpic.view.ux.KeyBoard', {
                     style: 'padding: 5px;'
                 }
             }, items: [
-                me.getButton({ glyph: 113 - isCase, inputValue: isCase ? "Q" : "q" }),
-                me.getButton({ glyph: 119 - isCase, inputValue: isCase ? "W" : "w" }),
-                me.getButton({ glyph: 101 - isCase, inputValue: isCase ? "E" : "e" }),
-                me.getButton({ glyph: 114 - isCase, inputValue: isCase ? "R" : "r" }),
-                me.getButton({ glyph: 116 - isCase, inputValue: isCase ? "T" : "t" }),
-                me.getButton({ glyph: 121 - isCase, inputValue: isCase ? "Y" : "y" }),
-                me.getButton({ glyph: 117 - isCase, inputValue: isCase ? "U" : "u" }),
-                me.getButton({ glyph: 105 - isCase, inputValue: isCase ? "I" : "i" }),
-                me.getButton({ glyph: 111 - isCase, inputValue: isCase ? "O" : "o" }),
-                me.getButton({ glyph: 112 - isCase, inputValue: isCase ? "P" : "p" }),
-                me.getButton({ text: "C" || "⌫", inputValue: "{del}" }),
+                me.getButton({glyph: 113 - isCase, inputValue: isCase ? "Q" : "q"}),
+                me.getButton({glyph: 119 - isCase, inputValue: isCase ? "W" : "w"}),
+                me.getButton({glyph: 101 - isCase, inputValue: isCase ? "E" : "e"}),
+                me.getButton({glyph: 114 - isCase, inputValue: isCase ? "R" : "r"}),
+                me.getButton({glyph: 116 - isCase, inputValue: isCase ? "T" : "t"}),
+                me.getButton({glyph: 121 - isCase, inputValue: isCase ? "Y" : "y"}),
+                me.getButton({glyph: 117 - isCase, inputValue: isCase ? "U" : "u"}),
+                me.getButton({glyph: 105 - isCase, inputValue: isCase ? "I" : "i"}),
+                me.getButton({glyph: 111 - isCase, inputValue: isCase ? "O" : "o"}),
+                me.getButton({glyph: 112 - isCase, inputValue: isCase ? "P" : "p"}),
+                me.getButton({text: "C" || "⌫", inputValue: "{del}"}),
                 {},
-                me.getButton({ glyph: 97 - isCase, inputValue: isCase ? "A" : "a" }),
-                me.getButton({ glyph: 115 - isCase, inputValue: isCase ? "S" : "s" }),
-                me.getButton({ glyph: 100 - isCase, inputValue: isCase ? "D" : "d" }),
-                me.getButton({ glyph: 102 - isCase, inputValue: isCase ? "F" : "f" }),
-                me.getButton({ glyph: 103 - isCase, inputValue: isCase ? "G" : "g" }),
-                me.getButton({ glyph: 104 - isCase, inputValue: isCase ? "H" : "h" }),
-                me.getButton({ glyph: 106 - isCase, inputValue: isCase ? "J" : "j" }),
-                me.getButton({ glyph: 107 - isCase, inputValue: isCase ? "K" : "k" }),
-                me.getButton({ glyph: 108 - isCase, inputValue: isCase ? "L" : "l" }),
-                me.getButton({ text: "→", inputValue: "{right}" }),
+                me.getButton({glyph: 97 - isCase, inputValue: isCase ? "A" : "a"}),
+                me.getButton({glyph: 115 - isCase, inputValue: isCase ? "S" : "s"}),
+                me.getButton({glyph: 100 - isCase, inputValue: isCase ? "D" : "d"}),
+                me.getButton({glyph: 102 - isCase, inputValue: isCase ? "F" : "f"}),
+                me.getButton({glyph: 103 - isCase, inputValue: isCase ? "G" : "g"}),
+                me.getButton({glyph: 104 - isCase, inputValue: isCase ? "H" : "h"}),
+                me.getButton({glyph: 106 - isCase, inputValue: isCase ? "J" : "j"}),
+                me.getButton({glyph: 107 - isCase, inputValue: isCase ? "K" : "k"}),
+                me.getButton({glyph: 108 - isCase, inputValue: isCase ? "L" : "l"}),
+                me.getButton({text: "→", inputValue: "{right}"}),
                 me.getButton({
                     text: "CapsLock",
                     inputValue: "{bksp}",
@@ -770,18 +768,18 @@ Ext.define('editpic.view.ux.KeyBoard', {
                     xtype: "segmentedbutton",
                     width: "100%"
                 }),
-                me.getButton({ glyph: 122 - isCase, inputValue: isCase ? "Z" : "z" }),
-                me.getButton({ glyph: 120 - isCase, inputValue: isCase ? "X" : "x" }),
-                me.getButton({ glyph: 99 - isCase, inputValue: isCase ? "C" : "c" }),
-                me.getButton({ glyph: 118 - isCase, inputValue: isCase ? "V" : "v" }),
-                me.getButton({ glyph: 98 - isCase, inputValue: isCase ? "B" : "b" }),
-                me.getButton({ glyph: 110 - isCase, inputValue: isCase ? "N" : "n" }),
-                me.getButton({ glyph: 109 - isCase, inputValue: isCase ? "M" : "m" }),
-                me.getButton({ glyph: 46, inputValue: "." }),
-                me.getButton({ text: "←", inputValue: "{left}" }),
-                me.getButton({ text: "123", inputValue: "{123}", colspan: 2, width: "100%" }),
-                me.getButton({ text: " ", inputValue: " ", colspan: 7, width: "100%" }),
-                me.getButton({ text: "Enter", inputValue: "{Enter}", colspan: 2, width: "100%" })
+                me.getButton({glyph: 122 - isCase, inputValue: isCase ? "Z" : "z"}),
+                me.getButton({glyph: 120 - isCase, inputValue: isCase ? "X" : "x"}),
+                me.getButton({glyph: 99 - isCase, inputValue: isCase ? "C" : "c"}),
+                me.getButton({glyph: 118 - isCase, inputValue: isCase ? "V" : "v"}),
+                me.getButton({glyph: 98 - isCase, inputValue: isCase ? "B" : "b"}),
+                me.getButton({glyph: 110 - isCase, inputValue: isCase ? "N" : "n"}),
+                me.getButton({glyph: 109 - isCase, inputValue: isCase ? "M" : "m"}),
+                me.getButton({glyph: 46, inputValue: "."}),
+                me.getButton({text: "←", inputValue: "{left}"}),
+                me.getButton({text: "123", inputValue: "{123}", colspan: 2, width: "100%"}),
+                me.getButton({text: " ", inputValue: " ", colspan: 7, width: "100%"}),
+                me.getButton({text: "Enter", inputValue: "{Enter}", colspan: 2, width: "100%"})
             ]
         })
         return container
@@ -903,16 +901,16 @@ function userLogin() {
              },*/
             {
                 text: 'Login', handler: function () {
-                    var values = loginForm.getValues();
-                    if (values['remember']) {
-                        localStorage.setItem("loginUserName", values['username']);
-                        localStorage.setItem("loginRemember", values['remember']);
-                    }
-                    loginForm.submit({
-                        success: loginFn,
-                        failure: loginFn
-                    });
+                var values = loginForm.getValues();
+                if (values['remember']) {
+                    localStorage.setItem("loginUserName", values['username']);
+                    localStorage.setItem("loginRemember", values['remember']);
                 }
+                loginForm.submit({
+                    success: loginFn,
+                    failure: loginFn
+                });
+            }
             }
         ],
         defaults: {
@@ -974,13 +972,13 @@ Ext.define('program.view.grid.BackupGrid', {
                 return "<a class='adownload' download=" + val + " target='_black' href=" + val + ">" + record.data.name + "<span class='x-col-move-top'></span></a>";
             }
         },
-        { text: "Last Post", dataIndex: "lasttime", flex: 2 },
-        { text: "File Type", dataIndex: "filetype", flex: 1 },
+        {text: "Last Post", dataIndex: "lasttime", flex: 2},
+        {text: "File Type", dataIndex: "filetype", flex: 1},
         {
             text: "File Size", dataIndex: "size", flex: 1, renderer: function (val) {
-                //console.log(arguments)
-                return Ext.util.Format.fileSize(val)
-            }
+            //console.log(arguments)
+            return Ext.util.Format.fileSize(val)
+        }
         }
     ],
     listeners: {
@@ -1013,7 +1011,7 @@ Ext.define('program.view.grid.BackupGrid', {
             Ext.Msg.alert('Status', 'Select a file please.');
             return null;
         }
-        Ext.MessageBox.progress('please wait', { msg: 'Server Ready ...' });
+        Ext.MessageBox.progress('please wait', {msg: 'Server Ready ...'});
 
         var fileNames = "";
         var files = []
@@ -1022,7 +1020,7 @@ Ext.define('program.view.grid.BackupGrid', {
             fileNames += grid.folder + "/" + records[i].data.name + " ";
             files.push(grid.folder + "/" + records[i].data.name + " ")
         }
-        return { filesArr: files, filesStr: fileNames };
+        return {filesArr: files, filesStr: fileNames};
     },
     buttons: [
         {
@@ -1081,7 +1079,7 @@ Ext.define('program.view.grid.BackupGrid', {
                     return;
                 }
 
-                Ext.MessageBox.progress('please wait', { msg: 'Server Ready ...' });
+                Ext.MessageBox.progress('please wait', {msg: 'Server Ready ...'});
 
 
                 for (var i = 0; i < records.length; i++) {
@@ -1145,9 +1143,6 @@ Ext.define('program.view.window.Backup', {
         }
     ]
 });
-
-
-
 
 
 Ext.define('SelectKeyWinodw',
@@ -1232,9 +1227,9 @@ Ext.define('SelectKeyWinodw',
                     }
                 },
                 columns: [
-                    { xtype: "treecolumn", dataIndex: "text", flex: 1 },
-                    { text: "object name", dataIndex: "text", flex: 1 },
-                    { text: "key", dataIndex: "value", flex: 1 },
+                    {xtype: "treecolumn", dataIndex: "text", flex: 1},
+                    {text: "object name", dataIndex: "text", flex: 1},
+                    {text: "key", dataIndex: "value", flex: 1},
                 ]
             }]
             me.buttons = [{
@@ -1430,8 +1425,8 @@ Ext.define("modbusConfig", {
                 },
                 {
                     text: "Cancel", handler: function () {
-                        this.up("window").close()
-                    }
+                    this.up("window").close()
+                }
                 }
             ],
             items: [
@@ -1519,89 +1514,89 @@ Ext.define("modbusConfig", {
     tbar: [
         {
             text: "Add", handler: function () {
-                var grid = this.up("grid");
-                grid.addModbus();
-            }
+            var grid = this.up("grid");
+            grid.addModbus();
+        }
         },
         {
             text: "Delete", handler: function () {
-                var grid = this.up("grid");
-                grid.deleteModbus()
-            }
+            var grid = this.up("grid");
+            grid.deleteModbus()
+        }
         },
         {
             text: "offset", hidden: false, handler: function () {
-                var grid = this.up("grid");
+            var grid = this.up("grid");
 
-                Ext.create("Ext.window.Window", {
-                    text: "Settings",
-                    autoShow: true,
-                    width: 300,
-                    height: 215,
-                    buttons: [
-                        {
-                            text: "Ok",
-                            handler: function () {
-                                var win = this.up("window")
-                                var form = win.down("form");
-                                var values = form.getValues();
-                                grid.aiOffset = values.aiOffset
-                                grid.aoOffset = values.aoOffset
-                                grid.diOffset = values.diOffset
-                                grid.doOffset = values.doOffset
-                                //rec.set(form.getValues());
-                                win.close();
+            Ext.create("Ext.window.Window", {
+                text: "Settings",
+                autoShow: true,
+                width: 300,
+                height: 215,
+                buttons: [
+                    {
+                        text: "Ok",
+                        handler: function () {
+                            var win = this.up("window")
+                            var form = win.down("form");
+                            var values = form.getValues();
+                            grid.aiOffset = values.aiOffset
+                            grid.aoOffset = values.aoOffset
+                            grid.diOffset = values.diOffset
+                            grid.doOffset = values.doOffset
+                            //rec.set(form.getValues());
+                            win.close();
+                        }
+                    },
+                    {
+                        text: "Cancel", handler: function () {
+                        this.up("window").close()
+                    }
+                    }
+                ],
+                items: [
+                    {
+                        xtype: "form",
+                        defaultType: 'textfield',
+                        //margin:10,
+                        width: "100%",
+                        height: "100%",
+                        defaults: {
+                            margin: 10,
+                            allowBlank: false
+                        },
+                        listeners: {
+                            boxready: function (form) {
+                                //form.loadRecord(rec)
                             }
                         },
-                        {
-                            text: "Cancel", handler: function () {
-                                this.up("window").close()
-                            }
-                        }
-                    ],
-                    items: [
-                        {
-                            xtype: "form",
-                            defaultType: 'textfield',
-                            //margin:10,
-                            width: "100%",
-                            height: "100%",
-                            defaults: {
-                                margin: 10,
-                                allowBlank: false
+                        items: [
+                            {
+                                xtype: "numberfield",
+                                value: grid.aiOffset || 0,
+                                fieldLabel: 'AI',
+                                name: 'aiOffset'
+                            }, {
+                                xtype: "numberfield",
+                                value: grid.aoOffset || 0,
+                                fieldLabel: 'AO',
+                                name: 'aoOffset'
+                            }, {
+                                xtype: "numberfield",
+                                value: grid.diOffset || 0,
+                                fieldLabel: 'DI',
+                                name: 'diOffset'
+                            }, {
+                                xtype: "numberfield",
+                                value: grid.doOffset || 0,
+                                fieldLabel: 'DO',
+                                name: 'doOffset'
                             },
-                            listeners: {
-                                boxready: function (form) {
-                                    //form.loadRecord(rec)
-                                }
-                            },
-                            items: [
-                                {
-                                    xtype: "numberfield",
-                                    value: grid.aiOffset || 0,
-                                    fieldLabel: 'AI',
-                                    name: 'aiOffset'
-                                }, {
-                                    xtype: "numberfield",
-                                    value: grid.aoOffset || 0,
-                                    fieldLabel: 'AO',
-                                    name: 'aoOffset'
-                                }, {
-                                    xtype: "numberfield",
-                                    value: grid.diOffset || 0,
-                                    fieldLabel: 'DI',
-                                    name: 'diOffset'
-                                }, {
-                                    xtype: "numberfield",
-                                    value: grid.doOffset || 0,
-                                    fieldLabel: 'DO',
-                                    name: 'doOffset'
-                                },
-                            ],
-                        }
-                    ]
-                })
-            }
+                        ],
+                    }
+                ]
+            })
+        }
         }
     ],
     initComponent: function () {
@@ -1715,7 +1710,7 @@ Ext.define("modbusConfig", {
         groupField: 'pointtype',
         data: []
     }),
-    features: [{ ftype: 'grouping' }],
+    features: [{ftype: 'grouping'}],
 
 })
 Ext.define("ListenIps", {
@@ -1724,11 +1719,10 @@ Ext.define("ListenIps", {
     height: 300,
     store: Ext.create("Ext.data.XmlStore", {
         autoLoad: true,
-        url: 'listenip.xml',
         fields: ["ip", "port"],
         proxy: {
+            url: "php/file.php?fileName=/mnt/nandflash/listenip.xml&par=get",
             type: "ajax",
-            url: "listenip.xml",
             reader: {
                 type: 'xml',
                 record: "item",
@@ -1737,6 +1731,7 @@ Ext.define("ListenIps", {
         },
         data: []
     }),
+
     getXmlStr: function () {
         var me = this;
         var store = me.store;
@@ -1763,7 +1758,7 @@ Ext.define("ListenIps", {
             method: "POST",
             params: {
                 par: "save",
-                fileName: "../listenip.xml",
+                fileName: "/mnt/nandflash/listenip.xml",
                 content: xmlstr
             }
         }).then(function (response) {
@@ -1817,13 +1812,12 @@ Ext.define("ListenIps", {
         me.callParent();
     },
     listeners: {
-        boxready: function () {
+        boxready: function (grid) {
+            testgrid = grid
             console.log(arguments)
         }
     }
 })
-
-
 
 
 Ext.define('QueryDataRecord', {
@@ -1839,28 +1833,28 @@ Ext.define('QueryDataRecord', {
     frame: true,
     initComponent: function () {
         this.width = 800;
-        var ip=this.ip||"127.0.0.1";
+        var ip = this.ip || "127.0.0.1";
         var keys = this.keys
         Ext.apply(this, {
             store: Ext.create("Ext.data.Store", {
                 autoLoad: true,
                 fields: [
-                    { name: 'device_instance', type: 'string' },
-                    { name: 'Object_Name', type: 'string' },
-                    { name: 'Present_Value', type: 'string' },
-                    { name: 'last_update_time', type: 'string' }
+                    {name: 'device_instance', type: 'string'},
+                    {name: 'Object_Name', type: 'string'},
+                    {name: 'Present_Value', type: 'string'},
+                    {name: 'last_update_time', type: 'string'}
                 ],
                 proxy: {
                     type: 'ajax',
-                    url: 'php/mysql.php?ip='+ip+"&keys="+keys,
+                    url: 'php/mysql.php?ip=' + ip + "&keys=" + keys,
                     reader: {
                         type: 'json',
-                        rootProperty:"topics",
+                        rootProperty: "topics",
                         totalProperty: 'totalCount'
                     }
                 },
-                listeners:{
-                    load:function(){
+                listeners: {
+                    load: function () {
                         console.log(arguments)
                     }
                 }
@@ -1875,8 +1869,8 @@ Ext.define('QueryDataRecord', {
                 sortable: true,
                 dataIndex: 'device_type',
                 flex: 1,
-                renderer:function (val) {
-                    switch (val){
+                renderer: function (val) {
+                    switch (val) {
                         case "0":
                             return "AI";
                         case "1":
@@ -1902,17 +1896,17 @@ Ext.define('QueryDataRecord', {
                 text: 'Object_Name',
                 sortable: true,
                 dataIndex: 'Object_Name',
-                flex:1
+                flex: 1
             }, {
                 text: 'Present_Value',
                 sortable: true,
                 dataIndex: 'Present_Value',
-                flex:1
+                flex: 1
             }, {
                 text: 'Last Updated',
                 sortable: true,
                 dataIndex: 'last_update_time',
-                flex:1
+                flex: 1
             }],
             bbar: {
                 xtype: 'pagingtoolbar',
@@ -1926,3 +1920,288 @@ Ext.define('QueryDataRecord', {
 
 
 });
+
+
+function setIpsWindow() {
+    Ext.create("Ext.window.Window", {
+        width: 500,
+        height: 300,
+        title: "Setting Listen Ip",
+        autoShow: true,
+        scrollable: "y",
+        items: [
+            Ext.create("ListenIps", {})
+        ],
+        buttons: [
+            {
+                text: "Add", handler: function () {
+                var grid = this.up("window").down("grid")
+                grid.addIp()
+            }
+            },
+            {
+                text: "Delete", handler: function () {
+                var grid = this.up("window").down("grid")
+                grid.deleteIp();
+            }
+            },
+            "->",
+            {
+                text: "Ok", handler: function () {
+                var grid = this.up("window").down("grid")
+                console.log(grid)
+                grid.saveIpsXml();
+            }
+            },
+            {
+                text: "Cancel", handler: function () {
+                this.up("window").close()
+            }
+            }
+        ]
+    })
+}
+
+
+function showDataRecordWindow() {
+    var IPCombo = Ext.create("Ext.form.field.ComboBox", {
+        fieldLabel: "Sources IP",
+        store: ['127.0.0.1', window.location.hostname, "192.168.253.253"],
+        labelWidth: 70,
+        maxWidth: 300,
+        //value: location.hostname
+    });
+    var PortCombo = Ext.create("Ext.form.field.ComboBox", {
+        fieldLabel: "port number",
+        store: ["6379"],
+        value: "6379"
+    });
+    var formPanel = Ext.create("Ext.form.Panel", {
+        region: "north",
+        items: {
+            xtype: "fieldset",
+            title: "link option",
+            layout: "hbox",
+            defaults: {
+                margin: 10
+            },
+            items: [
+                IPCombo, PortCombo,
+                {
+                    xtype: "button",
+                    text: "link",
+                    handler: function () {
+                        var treeStore = Ext.create("Ext.data.TreeStore", {
+                            fields: ["text"],
+                            proxy: {
+                                type: "ajax",
+                                autoLoad: true,
+                                url: "php/globalTree.php?ip=" + IPCombo.value + "&port=" + PortCombo.value,
+                                reader: {
+                                    type: "json"
+                                }
+                            },
+                            root: {
+                                text: "root"
+                            }
+                        })
+
+                        treePanel.setStore(treeStore);
+                    }
+                }
+            ]
+        }
+    })
+    var treePanel = Ext.create("Ext.tree.Panel", {
+        region: "center",
+        useArrows: true,
+        animate: true,
+        checkPropagation: "both",
+        rootVisible: false,
+        bufferedRenderer: false,
+        tbar: [{
+            text: 'Expand All',
+            scope: this,
+            handler: function (th) {
+                treePanel.expandAll()
+            }
+        }, {
+            text: 'Collapse All',
+            scope: this,
+            handler: function (th) {
+                treePanel.collapseAll()
+            }
+        }, "->", {
+            text: "config database", handler: function () {
+                var win = Ext.create("Ext.window.Window", {
+                    title: "Config database .",
+                    autoShow: true,
+                    width: 300,
+                    resizeable: false,
+                    items: [
+                        {
+                            xtype: "form",
+                            defaults: {
+                                margin: 10,
+                                allowBlank: false
+                            },
+                            items: [
+                                {
+                                    xtype: "textfield",
+                                    fieldLabel: "Database host",
+                                    name: "host",
+                                    value: "127.0.0.1"
+                                },
+                                {
+                                    xtype: "textfield",
+                                    fieldLabel: "username",
+                                    name: "username",
+                                    value: "root"
+                                },
+                                {
+                                    xtype: "textfield",
+                                    fieldLabel: "password",
+                                    name: "password",
+                                    inputType: "password",
+                                    value: "root"
+                                },
+                                {
+                                    xtype: "textfield",
+                                    fieldLabel: "Database name",
+                                    name: "databasename",
+                                    value: "smartio_db"
+                                }, {
+                                    xtype: "button",
+                                    text: "create ", handler: function () {
+                                        var form = this.up("form");
+                                        form.submit({
+                                            url: "php/mysqlInit.php?par=createTable",
+                                            success: function (form, action) {
+                                                Ext.Msg.alert('Info ', action.response.responseText);
+                                            },
+                                            failure: function (form, action) {
+                                                Ext.Msg.alert('Info ', action.response.responseText);
+                                            }
+                                        })
+                                    }
+                                }
+                            ],
+                            listeners: {
+                                boxready: function (form) {
+                                    Ext.Ajax.request({
+                                        url: "php/mysqlInit.php?par=getConfig",
+                                        success: function (response) {
+                                            var xml = $(response.responseText);
+                                            var host = xml.find("host").text()
+                                            var username = xml.find("username").text()
+                                            var password = xml.find("password").text()
+                                            var databasename = xml.find("databasename").text()
+                                            var ojson = {
+                                                host: host,
+                                                username: username,
+                                                password: password,
+                                                databasename: databasename
+                                            }
+                                            form.getForm().setValues(ojson)
+                                        }
+                                    })
+                                }
+                            },
+                            buttons: [
+                                {
+                                    text: "Test Connect", handler: function () {
+                                    var form = this.up("form");
+                                    form.submit({
+                                        url: "php/mysqlInit.php?par=testConnect",
+                                        success: function (form, action) {
+                                            Ext.Msg.alert('Info ', action.response.responseText);
+                                        },
+                                        failure: function (form, action) {
+                                            Ext.Msg.alert('Info ', action.response.responseText);
+                                        }
+                                    })
+
+                                }
+                                },
+                                "->",
+                                {
+                                    text: "Ok", handler: function () {
+                                    var form = this.up("form");
+                                    if (form.isValid()) {
+                                        var values = form.getValues();
+                                        form.submit({
+                                            url: "php/mysqlInit.php?par=saveConfig",
+                                            success: function (form, action) {
+                                                Ext.Msg.alert('Info ', action.response.responseText);
+                                            },
+                                            failure: function (form, action) {
+                                                Ext.Msg.alert('Info ', action.response.responseText);
+                                            }
+                                        })
+                                    }
+                                }
+                                },
+                                {
+                                    text: "Cancel", handler: function () {
+                                    win.close();
+                                }
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }
+        }, {
+            text: "config Listeners Ip", handler: function () {
+                setIpsWindow()
+            }
+        }]
+    })
+    Ext.create("Ext.window.Window", {
+        height: 500,
+        width: 700,
+        title: "Data Record",
+        autoShow: true,
+        renderTo: Ext.getBody(),
+        layout: "border",
+        items: [formPanel, treePanel],
+        buttons: [
+            {
+                text: "Run/Restart", handler: function () {
+                Ext.Ajax.request({
+                    url:"php/mysqlinit.php?par=runListen"
+                }).then(function (response) {
+                    Ext.Msg.alert("info",response.responseText+" ok .")
+                })
+            }
+            },
+            "->",
+            {
+                text: "Show", handler: function () {
+                var checkeds = treePanel.getChecked();
+                var keysArr = [];
+                for (var i = 0; i < checkeds.length; i++) {
+                    if (checkeds[i].data.depth == 4) {
+                        keysArr.push(checkeds[i].data.key)
+                    }
+                }
+                console.log()
+                Ext.create("Ext.window.Window", {
+                    title: "Show Data Record",
+                    autoShow: true,
+                    scrollable: "y",
+                    items: [
+                        Ext.create("QueryDataRecord", {
+                            ip: IPCombo.value,
+                            keys: keysArr.join(",")
+                        })
+                    ]
+                })
+                console.log(checkeds)
+
+            }
+            }
+        ]
+
+    })
+}

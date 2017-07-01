@@ -7,6 +7,9 @@ if ($par == 'save') {
     echo file_put_contents($fn, $content);
 }
 if ($par == 'get') {
+    if (substr($fn, -3) == "xml") {
+        header("Content-type:text/xml");
+    }
     echo file_get_contents($fn);
 }
 ?>

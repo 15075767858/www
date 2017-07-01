@@ -21,8 +21,6 @@ foreach($ips as $value){
 echo json_encode($resArr);
 
 
-
-
 function getTreeData($ip, $port)
 {
 
@@ -71,7 +69,7 @@ function getDevNodeTypeByDevName($devName, $redis)
         $keys = $redis->keys($key);
         sort($keys);
 
-        $arr1['children'] = keysToNodeName($keys);
+        $arr1['children'] = keysToNodeName($keys,$redis);
         $arr1['checked'] = false;
         if (count($keys) > 0) {
             array_push($arr, $arr1);
@@ -81,18 +79,30 @@ function getDevNodeTypeByDevName($devName, $redis)
     return $arr;
 }
 
-function keysToNodeName($arr)
+function keysToNodeName($arr,$redis)
 {
     $nodeNameArr = array();
     foreach ($arr as $key => $value) {
         $tempArr = array();
-        $tempArr["text"] = $value;
+        $tempArr["text"] = hGet($redis,$value,"Object_Name");
+        $tempArr["key"] = $value;
+
         $tempArr["leaf"] = true;
         $tempArr['checked'] = false;
         array_push($nodeNameArr, $tempArr);
     }
     return $nodeNameArr;
 }
+function hGet($redis, $nodename, $type)
+{
+    $value = $redis->hGet($nodename, $type);
 
+    if (preg_match("/[\x7f-\xff]/", $value)) {  //判断字符串中是否有中文
+        return "base64=" . base64_encode($value);
+    } else {
+        return $value;
+    }
+    //return mb_convert_encoding($value, "UTF-8", "GBK");
+}
 
 ?>

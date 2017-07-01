@@ -8,7 +8,7 @@ CREATE TABLE `smartio_device` (
 
 `port` int UNSIGNED NULL,
 
-PRIMARY KEY (`id`) 
+PRIMARY KEY (`id`)
 
 );
 
@@ -114,7 +114,7 @@ CREATE TABLE `smartio_key` (
 
 `Alarm_Value` varchar(64) NULL,
 
-PRIMARY KEY (`id`) 
+PRIMARY KEY (`id`)
 
 );
 
