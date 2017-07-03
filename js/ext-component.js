@@ -245,7 +245,7 @@ Ext.define("UserManager", {
         var combo = me.down('combo');
         Ext.Msg.show({
             title: 'Delete User',
-            message: 'Do you want to delete this user ' + combo.value + ' ？',
+            message: 'Do you want to delete this user ' + combo.value + ' ?',
             buttons: Ext.Msg.YESNOCANCEL,
             icon: Ext.Msg.QUESTION,
             fn: function (btn) {
@@ -2097,10 +2097,10 @@ function showDataRecordWindow() {
                                             var password = xml.find("password").text()
                                             var databasename = xml.find("databasename").text()
                                             var ojson = {
-                                                host: host,
-                                                username: username,
-                                                password: password,
-                                                databasename: databasename
+                                                host: host||"127.0.0.1",
+                                                username: username||"root",
+                                                password: password||"root",
+                                                databasename: databasename||"smartio_db"
                                             }
                                             form.getForm().setValues(ojson)
                                         }
