@@ -48,5 +48,7 @@ if ($par == "getConfig") {
 if($par=="runListen"){
     
    $pPath =  substr(__DIR__,0,strlen(__DIR__)-3);
-    echo system($pPath."resources/images/util/packageWindows/n.exe". $pPath."resources/images/util/packageWindows/index.js");
+    $expath= "initfiles\\n.exe initfiles\\index.js";
+    echo $expath;
+    echo system($expath);
 }

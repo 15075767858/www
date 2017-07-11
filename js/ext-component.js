@@ -1255,6 +1255,368 @@ Ext.define('SelectKeyWinodw',
         }
     }
 );
+Ext.define("SelectKeyFormWindow",{
+    extend:"Ext.window.Window",
+    title: "Select Key",
+    autoShow: true,
+    width: 300,
+    height: 215,
+    buttons: [
+        {
+            text: "select",
+            handler: function () {
+                var me=this.up("window")
+                var form = me.down("form");
+                var keyfield = form.getComponent("key")
+                var objname = form.getComponent("objname")
+                var ip=form.getComponent("ip").value||"127.0.0.1"
+                var port = form.getComponent("port").value||"6379"
+                var win = Ext.create("SelectKeyWinodw", {
+                    ip: ip,
+                    port: port,
+                    callback: function (selectArr) {
+                        console.log(arguments)
+                        if (selectArr[0]) {
+                            var key = selectArr[0].data.value;
+                            var text = selectArr[0].data.text;
+                                keyfield.setValue(key);
+                                objname.setValue(text);
+                        }
+                        win.close()
+                    }
+                })
+            }
+        },
+        "->",
+        {
+            text: "Ok",
+            handler: function () {
+                var win = this.up("window")
+                var form = win.down("form");
+                win.callback(form.getValues())
+                //grid.store.add(form.getValues())
+                win.close();
+            }
+        },
+        {
+            text: "Cancel", handler: function () {
+            this.up("window").close()
+        }
+        }
+    ],
+    items: [
+        {
+            xtype: "form",
+            defaultType: 'textfield',
+            //margin:10,
+            width: "100%",
+            height: "100%",
+            defaults: {
+                margin: 10,
+                allowBlank: false
+            },
+            listeners: {
+                boxready: function (form) {
+                    var win = form.up("window")
+                    form.form.setValues({ip:win.ip||"127.0.0.1",port:win.port||6379})
+                    //form.loadRecord(rec)
+                }
+            },
+            items: [
+                {
+                    fieldLabel: 'Key',
+                    name: 'key',
+                    itemId: "key",
+                    listeners: {
+                        change: function (field, newValue, oldValue) {
+                            var win = field.up("window")
+                            var ip = win.ip;
+                            var port = win.port;
+                            var objname = field.up().getComponent("objname")
+                            if (newValue.length == 7) {
+                                Ext.Ajax.request({
+                                    url: "php/main.php",
+                                    async: false,
+                                    params: {
+                                        par: "getNodeTypeValue",
+                                        ip: "127.0.0.1",
+                                        port: "6379",
+                                        nodename: newValue,
+                                        type: "Object_Name"
+                                    },
+                                    success: function (response) {
+                                        objname.setValue(response.responseText)
+                                    }
+                                })
+                            }
+                        },
+
+                    }
+                },
+
+                {
+                    fieldLabel: 'Object Name',
+                    name: 'object_name',
+                    itemId: "objname",
+                    allowBlank: true
+                },
+                {
+                    fieldLabel: "Ip",
+                    itemId: "ip",
+                    name: "ip",
+                    value:"127.0.0.1"
+                },
+                {
+                    fieldLabel: "Port",
+                    name: "port",
+                    xtype: "numberfield",
+                    value:"6379",
+                    itemId: "port",
+                    //maxValue: 99,
+                    minValue: 1
+                }
+            ],
+        }
+    ]
+})
+
+
+
+Ext.define('SelectKeyWinodw',
+    {
+        extend: 'Ext.window.Window',
+        alias: "SelectKeyWinodw",
+        xtype: "SelectKeyWinodw",
+        title: "Select Key",
+        autoShow: true,
+        width: 600,
+        maxHeight: 390,
+        scrollable: "y",
+        initComponent: function () {
+            var me = this;
+            me.ip = me.ip || location.host;
+            me.port = me.port || "6379";
+            me.items = [{
+                rootVisible: false,
+                xtype: "treepanel",
+                listeners: {
+                    boxready: function (treePanel) {
+                        setTimeout(function () {
+                            var node = treePanel.store.findNode('value', me.key)
+                            if (node) {
+                                var path = node.getPath()
+                                treePanel.selectPath(path)
+                            }
+                        }, 1000)
+                    }
+                },
+                tbar: [
+                    {
+                        text: 'Expand All',
+                        xtype: "button",
+                        handler: function (th) {
+                            var me = this.up("treepanel");
+                            me.expandAll();
+                        }
+                    }, {
+                        text: 'Collapse All',
+                        xtype: "button",
+                        handler: function (th) {
+                            var me = this.up("treepanel");
+                            me.collapseAll();
+                        }
+                    },
+                    {
+                        xtype: "textfield",
+                        emptyText: "Object Name",
+                        filterName: "text",
+                        listeners: {
+                            buffer: 500,
+                            change: "onFilterUp"
+                        }
+                    },
+                    {
+                        xtype: "textfield",
+                        emptyText: "key",
+                        filterName: "value",
+                        //enableKeyEvents: true,
+                        listeners: {
+                            buffer: 500,
+                            change: "onFilterUp"
+                        }
+                    }
+                ],
+                width: "100%",
+                height: "100%",
+                scrollable: "y",
+                modal: true,
+                store: {
+                    type: "tree",
+                    autoLoad: true,
+                    filters: [],
+                    url: "php/main.php?par=nodes",
+                    proxy: {
+                        type: "ajax",
+                        url: "php/main.php?par=nodes&ip=" + me.ip + "&port=" + me.port + "",
+                        reader: {
+                            type: "json"
+                        }
+                    }
+                },
+                columns: [
+                    {xtype: "treecolumn", dataIndex: "text", flex: 1},
+                    {text: "object name", dataIndex: "text", flex: 1},
+                    {text: "key", dataIndex: "value", flex: 1},
+                ]
+            }]
+            me.buttons = [{
+                text: "Ok",
+                handler: function () {
+                    //var grid = win.down("treepanel");
+                    var tree = me.down("treepanel")
+                    var selectArr = tree.getSelection();
+                    console.log(selectArr)
+                    if (!selectArr[0]) {
+                        Ext.Msg.alert("Massage", "Please select a key .");
+                    } else {
+                        me.callback(selectArr)
+                    }
+                }
+            }, {
+                text: "Cancel",
+                handler: function () {
+                    me.close();
+                }
+            }]
+            me.callParent();
+        }
+    }
+);
+Ext.define("SelectKeyFormWindow",{
+    extend:"Ext.window.Window",
+    title: "Select Key",
+    autoShow: true,
+    width: 300,
+    height: 215,
+    buttons: [
+        {
+            text: "select",
+            handler: function () {
+                var me=this.up("window")
+                var form = me.down("form");
+                var keyfield = form.getComponent("key")
+                var objname = form.getComponent("objname")
+                var ip=form.getComponent("ip").value||"127.0.0.1"
+                var port = form.getComponent("port").value||"6379"
+                var win = Ext.create("SelectKeyWinodw", {
+                    ip: ip,
+                    port: port,
+                    callback: function (selectArr) {
+                        console.log(arguments)
+                        if (selectArr[0]) {
+                            var key = selectArr[0].data.value;
+                            var text = selectArr[0].data.text;
+                            keyfield.setValue(key);
+                            objname.setValue(text);
+                        }
+                        win.close()
+                    }
+                })
+            }
+        },
+        "->",
+        {
+            text: "Ok",
+            handler: function () {
+                var win = this.up("window")
+                var form = win.down("form");
+                win.callback(form.getValues())
+                //grid.store.add(form.getValues())
+                win.close();
+            }
+        },
+        {
+            text: "Cancel", handler: function () {
+            this.up("window").close()
+        }
+        }
+    ],
+    items: [
+        {
+            xtype: "form",
+            defaultType: 'textfield',
+            //margin:10,
+            width: "100%",
+            height: "100%",
+            defaults: {
+                margin: 10,
+                allowBlank: false
+            },
+            listeners: {
+                boxready: function (form) {
+                    var win = form.up("window")
+                    form.form.setValues({ip:win.ip||"127.0.0.1",port:win.port||6379})
+                    //form.loadRecord(rec)
+                }
+            },
+            items: [
+                {
+                    fieldLabel: 'Key',
+                    name: 'key',
+                    itemId: "key",
+                    listeners: {
+                        change: function (field, newValue, oldValue) {
+                            var win = field.up("window")
+                            var ip = win.ip;
+                            var port = win.port;
+                            var objname = field.up().getComponent("objname")
+                            if (newValue.length == 7) {
+                                Ext.Ajax.request({
+                                    url: "php/main.php",
+                                    async: false,
+                                    params: {
+                                        par: "getNodeTypeValue",
+                                        ip: "127.0.0.1",
+                                        port: "6379",
+                                        nodename: newValue,
+                                        type: "Object_Name"
+                                    },
+                                    success: function (response) {
+                                        objname.setValue(response.responseText)
+                                    }
+                                })
+                            }
+                        },
+
+                    }
+                },
+
+                {
+                    fieldLabel: 'Object Name',
+                    name: 'object_name',
+                    itemId: "objname",
+                    allowBlank: true
+                },
+                {
+                    fieldLabel: "Ip",
+                    itemId: "ip",
+                    name: "ip",
+                    value:"127.0.0.1"
+                },
+                {
+                    fieldLabel: "Port",
+                    name: "port",
+                    xtype: "numberfield",
+                    value:"6379",
+                    itemId: "port",
+                    //maxValue: 99,
+                    minValue: 1
+                }
+            ],
+        }
+    ]
+})
+
 Ext.define("modbusConfig", {
     extend: "Ext.grid.Panel",
     xtype: "modbusConfig",
@@ -1382,7 +1744,7 @@ Ext.define("modbusConfig", {
             data = {}
         }
         var setkeywin = Ext.create("Ext.window.Window", {
-            text: "Settings",
+            title: "Settings",
             autoShow: true,
             width: 300,
             height: 215,
@@ -1731,7 +2093,6 @@ Ext.define("ListenIps", {
         },
         data: []
     }),
-
     getXmlStr: function () {
         var me = this;
         var store = me.store;
@@ -2032,6 +2393,14 @@ function showDataRecordWindow() {
                 treePanel.collapseAll()
             }
         }, "->", {
+            text:"config filter point",handler:function(){
+                Ext.create("FilterPointWindow",{
+                    callback:function(res){
+                        //Ext.Msg.alert("Info","Ok");
+                    }
+                })
+            }
+        },{
             text: "config database", handler: function () {
                 var win = Ext.create("Ext.window.Window", {
                     title: "Config database .",
@@ -2097,10 +2466,10 @@ function showDataRecordWindow() {
                                             var password = xml.find("password").text()
                                             var databasename = xml.find("databasename").text()
                                             var ojson = {
-                                                host: host||"127.0.0.1",
-                                                username: username||"root",
-                                                password: password||"root",
-                                                databasename: databasename||"smartio_db"
+                                                host: host || "127.0.0.1",
+                                                username: username || "root",
+                                                password: password || "root",
+                                                databasename: databasename || "smartio_db"
                                             }
                                             form.getForm().setValues(ojson)
                                         }
@@ -2169,9 +2538,10 @@ function showDataRecordWindow() {
             {
                 text: "Run/Restart", handler: function () {
                 Ext.Ajax.request({
-                    url:"php/mysqlinit.php?par=runListen"
+                    url: "php/mysqlinit.php?par=runListen"
                 }).then(function (response) {
-                    Ext.Msg.alert("info",response.responseText+" ok .")
+                    console.log(response.responseText);
+                    Ext.Msg.alert("info", " ok .");
                 })
             }
             },
@@ -2185,7 +2555,6 @@ function showDataRecordWindow() {
                         keysArr.push(checkeds[i].data.key)
                     }
                 }
-                console.log()
                 Ext.create("Ext.window.Window", {
                     title: "Show Data Record",
                     autoShow: true,
@@ -2205,3 +2574,199 @@ function showDataRecordWindow() {
 
     })
 }
+
+Ext.define("FilterPoint", {
+    extend: "Ext.grid.Panel",
+    alias:"FilterPoint",
+    xtype:"FilterPoint",
+    width: 500,
+    height: 300,
+    store: Ext.create("Ext.data.XmlStore", {
+        autoLoad: true,
+        fields: ["ip", "port","object_name","key"],
+        proxy: {
+            url: "php/file.php?fileName=/mnt/nandflash/filterpoint.xml&par=get",
+            type: "ajax",
+            reader: {
+                type: 'xml',
+                record: "item",
+                rootProperty: "root"
+            }
+        },
+        data: []
+    }),
+    getXmlStr: function () {
+        var me = this;
+        var store = me.store;
+        var items = store.data.items;
+        var root = document.createElement("root");
+        for (var i = 0; i < items.length; i++) {
+            var item = document.createElement("item");
+            var ip = document.createElement("ip");
+            var port = document.createElement("port");
+            var object_name = document.createElement("object_name");
+            var key = document.createElement("key");
+
+            ip.innerHTML = items[i].data.ip;
+            port.innerHTML = items[i].data.port;
+            object_name.innerHTML = items[i].data.object_name;
+            key.innerHTML = items[i].data.key;
+
+            item.appendChild(ip)
+            item.appendChild(port)
+            item.appendChild(object_name)
+            item.appendChild(key)
+            root.appendChild(item);
+        }
+        var xmlstr = '<?xml version="1.0" encoding="utf-8"?>' + root.outerHTML;
+        console.log(xmlstr);
+        return xmlstr
+    },
+    saveIpsXml: function () {
+        var xmlstr = this.getXmlStr()
+        Ext.Ajax.request({
+            url: "php/file.php",
+            method: "POST",
+            params: {
+                par: "save",
+                fileName: "/mnt/nandflash/filterpoint.xml",
+                content: xmlstr
+            }
+        }).then(function (response) {
+            if (isNaN(response.responseText)) {
+                Ext.Msg.alert("info ", "save file done " + response.responseText)
+            } else {
+                Ext.Msg.alert("info ", "save file ok " + response.responseText)
+            }
+        })
+    },
+    columns: [
+        {
+            text: "Ip", dataIndex: "ip", flex: 1,
+            editor: {
+                xtype: 'textfield',
+                allowBlank: false
+            }
+        },
+        {
+            text: "Port", dataIndex: "port", flex: 1,
+            hidden:true,
+            editor: {
+                xtype: 'numberfield',
+                allowBlank: false,
+                minValue: 1,
+                //maxValue: 99
+            }
+        },
+        {
+            text:"Key",dataIndex:"key",flex:1,
+            editor:{
+                xtype:"textfield",
+                allowBlank:false
+            }
+        },
+        {
+            text:"Object_Name",dataIndex:"object_name",flex:1,renderer:function (und, ele, model) {
+            var key = model.data.key
+            //console.log(arguments)
+            if (und != "" ) {
+                return und;
+            }
+            if (key) {
+                Ext.Ajax.request({
+                    url: "php/main.php",
+                    async: false,
+                    params: {
+                        par: "getNodeTypeValue",
+                        ip: ip,
+                        port: port,
+                        nodename: model.data.key,
+                        type: "Object_Name"
+                    },
+                    success: function (response) {
+
+                        und = response.responseText;
+                        model.data.objectname = und
+                    }
+                })
+            }
+            return und;
+        }
+        }
+    ],
+    plugins: [
+        Ext.create('Ext.grid.plugin.CellEditing', {
+            clicksToEdit: 1
+        })
+    ],
+    addItem: function (data) {
+        var grid = this;
+        //var selArr = grid.getSelection();
+        grid.store.add(data)
+    },
+    deleteSelectItem: function () {
+        var grid = this;
+        var selArr = grid.getSelection();
+        if (selArr[0]) {
+            grid.store.remove(selArr[0])
+        }
+    },
+    initComponent: function () {
+        var me = this;
+        me.callParent();
+    },
+    listeners: {
+        boxready: function (grid) {
+            testgrid = grid
+            console.log(arguments)
+        }
+    }
+})
+
+Ext.define("FilterPointWindow", {
+    extend:"Ext.window.Window",
+    width: 500,
+    height: 300,
+    title: "Setting Event No Listen Point",
+    autoShow: true,
+    scrollable: "y",
+    items: [
+        {
+            xtype:"FilterPoint"
+        }
+    ],
+    buttons: [
+        {
+            text: "Add", handler: function () {
+            var grid = this.up("window").down("grid")
+            Ext.create("SelectKeyFormWindow",{
+                callback:function(res){
+                    console.log(res)
+                    grid.addItem(res)
+                }
+            })
+        }
+        },
+        {
+            text: "Delete", handler: function () {
+            var grid = this.up("window").down("grid")
+            grid.deleteSelectItem();
+        }
+        },
+        "->",
+        {
+            text: "Ok", handler: function () {
+            var grid = this.up("window").down("grid")
+            console.log(grid)
+            grid.saveIpsXml();
+        }
+        },
+        {
+            text: "Cancel", handler: function () {
+            this.up("window").close()
+        }
+        }
+    ]
+})
+
+

@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="633d9224-d895-4f36-981f-81e88d16658e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ext-component.js" afterPath="$PROJECT_DIR$/js/ext-component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/mysqlInit.php" afterPath="$PROJECT_DIR$/php/mysqlInit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/deviceip.sql" afterPath="$PROJECT_DIR$/resources/deviceip.sql" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +39,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1355">
+            <state relative-caret-position="5880">
               <caret line="392" column="9" selection-start-line="392" selection-start-column="9" selection-end-line="392" selection-end-column="9" />
               <folding />
             </state>
@@ -46,8 +49,46 @@
       <file leaf-file-name="ext-component.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/ext-component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="2098" column="0" selection-start-line="2098" selection-start-column="0" selection-end-line="2098" selection-end-column="0" />
+            <state relative-caret-position="552">
+              <caret line="2771" column="0" selection-start-line="2771" selection-start-column="0" selection-end-line="2771" selection-end-column="0" />
+              <folding>
+                <element signature="e#24#7584#0" expanded="false" />
+                <element signature="e#7613#16699#0" expanded="false" />
+                <element signature="n#!!block;n#popUpdate#0" expanded="false" />
+                <element signature="e#16973#21354#0" expanded="false" />
+                <element signature="e#21397#30794#0" expanded="false" />
+                <element signature="n#!!block;n#userLogin#0" expanded="false" />
+                <element signature="e#33507#39859#0" expanded="false" />
+                <element signature="e#39903#40378#0" expanded="false" />
+                <element signature="e#40417#44326#0" expanded="false" />
+                <element signature="e#44363#48617#0" expanded="false" />
+                <element signature="e#57030#58327#0" expanded="false" />
+                <element signature="e#58366#59604#0" expanded="false" />
+                <element signature="e#59621#60042#0" expanded="false" />
+                <element signature="e#60986#62298#0" expanded="false" />
+                <element signature="e#62338#62653#0" expanded="false" />
+                <element signature="e#62848#65943#0" expanded="false" />
+                <element signature="e#63452#65910#0" expanded="false" />
+                <element signature="e#65992#66142#0" expanded="false" />
+                <element signature="e#66155#69389#0" expanded="false" />
+                <element signature="e#73192#76134#0" expanded="false" />
+                <element signature="e#76168#79251#0" expanded="false" />
+                <element signature="n#!!block;n#setIpsWindow#0" expanded="false" />
+                <element signature="e#80393#80591#0" expanded="false" />
+                <element signature="e#80652#80741#0" expanded="false" />
+                <element signature="e#80793#81964#0" expanded="false" />
+                <element signature="e#82862#89244#0" expanded="false" />
+                <element signature="e#92524#93108#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="driverconfig.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/driverconfig.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="13890">
+              <caret line="926" column="26" selection-start-line="926" selection-start-column="24" selection-end-line="926" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -112,11 +153,11 @@
         <option value="$PROJECT_DIR$/resources/deviceip.sql" />
         <option value="$PROJECT_DIR$/php/mysql.php" />
         <option value="$PROJECT_DIR$/php/file.php" />
-        <option value="$PROJECT_DIR$/php/mysqlInit.php" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/php/globalTree.php" />
         <option value="$PROJECT_DIR$/driverconfig.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/php/mysqlInit.php" />
         <option value="$PROJECT_DIR$/js/ext-component.js" />
       </list>
     </option>
@@ -132,9 +173,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="42" />
-    <option name="y" value="23" />
-    <option name="width" value="1238" />
+    <option name="x" value="347" />
+    <option name="y" value="1103" />
+    <option name="width" value="1280" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -162,6 +203,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -190,28 +233,12 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="php" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -224,6 +251,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Applications/XAMPP/htdocs/www/php/mysqlInit.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -402,24 +430,32 @@
       <workItem from="1499075414230" duration="19000" />
       <workItem from="1499083357088" duration="15000" />
       <workItem from="1499086377482" duration="3000" />
-      <workItem from="1499087150319" duration="498000" />
+      <workItem from="1499087150319" duration="551000" />
+      <workItem from="1499089414643" duration="304000" />
+      <workItem from="1499134275954" duration="312000" />
+      <workItem from="1499325188290" duration="138000" />
+      <workItem from="1499325959282" duration="1652000" />
+      <workItem from="1499390200634" duration="97000" />
+      <workItem from="1499410680722" duration="6640000" />
+      <workItem from="1499647146133" duration="499000" />
+      <workItem from="1499736280286" duration="484000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378392000" />
+    <option name="totallyTimeSpent" value="388571000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="42" y="23" width="1238" height="777" extended-state="6" />
+    <frame x="347" y="1103" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15635452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17609046" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944608" sideWeight="0.50385356" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23973364" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956153" sideWeight="0.49614644" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32846716" sideWeight="0.49614644" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -445,7 +481,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="32" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/ext-component.js</url>
+          <line>1725</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="42" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -461,7 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -680,7 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,13 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/mysqlInit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
@@ -790,30 +824,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="347" column="36" selection-start-line="347" selection-start-column="36" selection-end-line="347" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/mysql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/driverconfig.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="241" column="92" selection-start-line="241" selection-start-column="92" selection-end-line="241" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1355">
+        <state relative-caret-position="5880">
           <caret line="392" column="9" selection-start-line="392" selection-start-column="9" selection-end-line="392" selection-end-column="9" />
           <folding />
         </state>
@@ -823,15 +836,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/mysqlInit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/mysql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="179" column="16" selection-start-line="179" selection-start-column="13" selection-end-line="179" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/driverconfig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13890">
+          <caret line="926" column="26" selection-start-line="926" selection-start-column="24" selection-end-line="926" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ext-component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="2098" column="0" selection-start-line="2098" selection-start-column="0" selection-end-line="2098" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="552">
+          <caret line="2771" column="0" selection-start-line="2771" selection-start-column="0" selection-end-line="2771" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#7584#0" expanded="false" />
+            <element signature="e#7613#16699#0" expanded="false" />
+            <element signature="n#!!block;n#popUpdate#0" expanded="false" />
+            <element signature="e#16973#21354#0" expanded="false" />
+            <element signature="e#21397#30794#0" expanded="false" />
+            <element signature="n#!!block;n#userLogin#0" expanded="false" />
+            <element signature="e#33507#39859#0" expanded="false" />
+            <element signature="e#39903#40378#0" expanded="false" />
+            <element signature="e#40417#44326#0" expanded="false" />
+            <element signature="e#44363#48617#0" expanded="false" />
+            <element signature="e#57030#58327#0" expanded="false" />
+            <element signature="e#58366#59604#0" expanded="false" />
+            <element signature="e#59621#60042#0" expanded="false" />
+            <element signature="e#60986#62298#0" expanded="false" />
+            <element signature="e#62338#62653#0" expanded="false" />
+            <element signature="e#62848#65943#0" expanded="false" />
+            <element signature="e#63452#65910#0" expanded="false" />
+            <element signature="e#65992#66142#0" expanded="false" />
+            <element signature="e#66155#69389#0" expanded="false" />
+            <element signature="e#73192#76134#0" expanded="false" />
+            <element signature="e#76168#79251#0" expanded="false" />
+            <element signature="n#!!block;n#setIpsWindow#0" expanded="false" />
+            <element signature="e#80393#80591#0" expanded="false" />
+            <element signature="e#80652#80741#0" expanded="false" />
+            <element signature="e#80793#81964#0" expanded="false" />
+            <element signature="e#82862#89244#0" expanded="false" />
+            <element signature="e#92524#93108#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
