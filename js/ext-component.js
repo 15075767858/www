@@ -1255,8 +1255,8 @@ Ext.define('SelectKeyWinodw',
         }
     }
 );
-Ext.define("SelectKeyFormWindow",{
-    extend:"Ext.window.Window",
+Ext.define("SelectKeyFormWindow", {
+    extend: "Ext.window.Window",
     title: "Select Key",
     autoShow: true,
     width: 300,
@@ -1265,12 +1265,12 @@ Ext.define("SelectKeyFormWindow",{
         {
             text: "select",
             handler: function () {
-                var me=this.up("window")
+                var me = this.up("window")
                 var form = me.down("form");
                 var keyfield = form.getComponent("key")
                 var objname = form.getComponent("objname")
-                var ip=form.getComponent("ip").value||"127.0.0.1"
-                var port = form.getComponent("port").value||"6379"
+                var ip = form.getComponent("ip").value || "127.0.0.1"
+                var port = form.getComponent("port").value || "6379"
                 var win = Ext.create("SelectKeyWinodw", {
                     ip: ip,
                     port: port,
@@ -1279,8 +1279,8 @@ Ext.define("SelectKeyFormWindow",{
                         if (selectArr[0]) {
                             var key = selectArr[0].data.value;
                             var text = selectArr[0].data.text;
-                                keyfield.setValue(key);
-                                objname.setValue(text);
+                            keyfield.setValue(key);
+                            objname.setValue(text);
                         }
                         win.close()
                     }
@@ -1318,7 +1318,7 @@ Ext.define("SelectKeyFormWindow",{
             listeners: {
                 boxready: function (form) {
                     var win = form.up("window")
-                    form.form.setValues({ip:win.ip||"127.0.0.1",port:win.port||6379})
+                    form.form.setValues({ip: win.ip || "127.0.0.1", port: win.port || 6379})
                     //form.loadRecord(rec)
                 }
             },
@@ -1364,13 +1364,13 @@ Ext.define("SelectKeyFormWindow",{
                     fieldLabel: "Ip",
                     itemId: "ip",
                     name: "ip",
-                    value:"127.0.0.1"
+                    value: "127.0.0.1"
                 },
                 {
                     fieldLabel: "Port",
                     name: "port",
                     xtype: "numberfield",
-                    value:"6379",
+                    value: "6379",
                     itemId: "port",
                     //maxValue: 99,
                     minValue: 1
@@ -1379,7 +1379,6 @@ Ext.define("SelectKeyFormWindow",{
         }
     ]
 })
-
 
 
 Ext.define('SelectKeyWinodw',
@@ -1492,8 +1491,8 @@ Ext.define('SelectKeyWinodw',
         }
     }
 );
-Ext.define("SelectKeyFormWindow",{
-    extend:"Ext.window.Window",
+Ext.define("SelectKeyFormWindow", {
+    extend: "Ext.window.Window",
     title: "Select Key",
     autoShow: true,
     width: 300,
@@ -1502,12 +1501,12 @@ Ext.define("SelectKeyFormWindow",{
         {
             text: "select",
             handler: function () {
-                var me=this.up("window")
+                var me = this.up("window")
                 var form = me.down("form");
                 var keyfield = form.getComponent("key")
                 var objname = form.getComponent("objname")
-                var ip=form.getComponent("ip").value||"127.0.0.1"
-                var port = form.getComponent("port").value||"6379"
+                var ip = form.getComponent("ip").value || "127.0.0.1"
+                var port = form.getComponent("port").value || "6379"
                 var win = Ext.create("SelectKeyWinodw", {
                     ip: ip,
                     port: port,
@@ -1555,7 +1554,7 @@ Ext.define("SelectKeyFormWindow",{
             listeners: {
                 boxready: function (form) {
                     var win = form.up("window")
-                    form.form.setValues({ip:win.ip||"127.0.0.1",port:win.port||6379})
+                    form.form.setValues({ip: win.ip || "127.0.0.1", port: win.port || 6379})
                     //form.loadRecord(rec)
                 }
             },
@@ -1601,13 +1600,13 @@ Ext.define("SelectKeyFormWindow",{
                     fieldLabel: "Ip",
                     itemId: "ip",
                     name: "ip",
-                    value:"127.0.0.1"
+                    value: "127.0.0.1"
                 },
                 {
                     fieldLabel: "Port",
                     name: "port",
                     xtype: "numberfield",
-                    value:"6379",
+                    value: "6379",
                     itemId: "port",
                     //maxValue: 99,
                     minValue: 1
@@ -2187,15 +2186,17 @@ Ext.define('QueryDataRecord', {
         'Ext.data.*',
         'Ext.grid.*',
         'Ext.util.*',
-        'Ext.toolbar.Paging',
+        'Ext.toolbar.Paging'
     ],
     xtype: 'progress-bar-pager',
-    height: 320,
+    height: 360,
     frame: true,
     initComponent: function () {
         this.width = 800;
+        var me=this;
         var ip = this.ip || "127.0.0.1";
-        var keys = this.keys
+        var keys = this.keys;
+        var pageSize=25;
         Ext.apply(this, {
             store: Ext.create("Ext.data.Store", {
                 autoLoad: true,
@@ -2205,13 +2206,14 @@ Ext.define('QueryDataRecord', {
                     {name: 'Present_Value', type: 'string'},
                     {name: 'last_update_time', type: 'string'}
                 ],
+                pageSize: pageSize,
                 proxy: {
                     type: 'ajax',
-                    url: 'php/mysql.php?ip=' + ip + "&keys=" + keys,
+                    url: 'php/mysql.php?par=getDataRecord&ip=' + ip + "&keys=" + keys,
                     reader: {
                         type: 'json',
                         rootProperty: "topics",
-                        totalProperty: 'totalCount'
+                        totalProperty: 'totalCount',
                     }
                 },
                 listeners: {
@@ -2273,7 +2275,164 @@ Ext.define('QueryDataRecord', {
                 xtype: 'pagingtoolbar',
                 pageSize: 10,
                 displayInfo: true,
+                items: [
+                    "-", {
+                        listeners:{
+                            change:function (field,newV,oldV) {
+                                me.store.setPageSize(newV)
+                            }
+                        },
+                        value:pageSize,
+                        fieldLabel:"pageSize",
+                        xtype: "textfield",
+                        labelWidth:50,
+                        width:100
+                    }
+                ]
                 //plugins: Ext.ProgressBar()
+            }
+        });
+        this.callParent();
+    },
+
+
+});
+
+Ext.define('QueryEventRecord', {
+    extend: 'Ext.grid.Panel',
+    requires: [
+        'Ext.data.*',
+        'Ext.grid.*',
+        'Ext.util.*',
+        'Ext.toolbar.Paging',
+    ],
+    xtype: 'progress-bar-pager',
+    height: 360,
+    frame: true,
+    initComponent: function () {
+        var me=this;
+        this.width = 1000;
+        var ip = this.ip || "127.0.0.1";
+        var keys = this.keys;
+        var pageSize=25;
+        Ext.apply(this, {
+            store: Ext.create("Ext.data.Store", {
+                autoLoad: true,
+                fields: [
+                    {name: 'Object_Name', type: 'string'},
+                    {name: 'Description', type: "string"},
+                    {name: 'device_instance', type: 'string'},
+                    {name: 'device_number', type: 'string'},
+                    {name: 'Present_Value', type: 'string'},
+                    {name: 'message_number', type: 'string'},
+                    {name: 'last_update_time', type: 'string'}
+                ],
+                proxy: {
+                    type: 'ajax',
+                    url: 'php/mysql.php?par=getEventData&ip=' + ip + "&keys=" + keys,
+                    reader: {
+                        type: 'json',
+                        rootProperty: "topics",
+                        totalProperty: 'totalCount'
+                    }
+                },
+                listeners: {
+                    load: function () {
+                        console.log(arguments)
+                    }
+                }
+            }),
+            columns: [
+                {
+                    text: 'device_type',
+                    sortable: true,
+                    hidden: true,
+                    dataIndex: 'device_type',
+                    flex: 1,
+                    renderer: function (val) {
+                        switch (val) {
+                            case "0":
+                                return "AI";
+                            case "1":
+                                return "AO";
+                            case "2":
+                                return "AV"
+                            case "3":
+                                return "BI"
+                            case "4":
+                                return "BO"
+                            case "5":
+                                return "BV"
+                            default:
+                                return val;
+                        }
+                    }
+                },
+                {
+                    text: 'Object Name',
+                    sortable: true,
+                    dataIndex: 'Object_Name',
+                    flex: 2
+                },
+
+                {
+                    text: 'Description',
+                    sortable: true,
+                    dataIndex: 'Description',
+                    flex: 2
+                },
+                {
+                    text: 'device_instance',
+                    sortable: true,
+                    dataIndex: 'device_instance',
+                    flex: 1
+                },
+                {
+                    text: 'Device Number',
+                    sortable: true,
+                    dataIndex: 'device_number',
+                    flex: 1
+                }, {
+                    text: 'Present Value',
+                    sortable: true,
+                    dataIndex: 'Present_Value',
+                    flex: 1
+                },
+                {
+                    text: "Message",
+                    sortable: true,
+                    dataIndex: "message_number",
+                    flex: 2.5,
+                    renderer: function (val) {
+
+                        return "变化操作员（系统（" + val + ")/人工）";
+                    }
+                },
+                {
+                    text: 'Last Updated',
+                    sortable: true,
+                    dataIndex: 'last_update_time',
+                    flex: 2
+                }],
+            bbar: {
+                xtype: 'pagingtoolbar',
+                pageSize: 10,
+                displayInfo: true,
+                //plugins: Ext.ProgressBar()
+                items: [
+                    "-", {
+                        listeners:{
+                            change:function (field,newV,oldV) {
+                                me.store.setPageSize(newV)
+                            }
+                        },
+                        value:pageSize,
+                        fieldLabel:"pageSize",
+                        xtype: "textfield",
+                        labelWidth:50,
+                        width:100
+                    }
+                ]
             }
         });
         this.callParent();
@@ -2380,6 +2539,17 @@ function showDataRecordWindow() {
         checkPropagation: "both",
         rootVisible: false,
         bufferedRenderer: false,
+        getSelectPoints: function () {
+            var me = this;
+            var checkeds = me.getChecked();
+            var keysArr = [];
+            for (var i = 0; i < checkeds.length; i++) {
+                if (checkeds[i].data.depth == 4) {
+                    keysArr.push(checkeds[i].data.key)
+                }
+            }
+            return keysArr;
+        },
         tbar: [{
             text: 'Expand All',
             scope: this,
@@ -2393,14 +2563,14 @@ function showDataRecordWindow() {
                 treePanel.collapseAll()
             }
         }, "->", {
-            text:"config filter point",handler:function(){
-                Ext.create("FilterPointWindow",{
-                    callback:function(res){
+            text: "config filter point", handler: function () {
+                Ext.create("FilterPointWindow", {
+                    callback: function (res) {
                         //Ext.Msg.alert("Info","Ok");
                     }
                 })
             }
-        },{
+        }, {
             text: "config database", handler: function () {
                 var win = Ext.create("Ext.window.Window", {
                     title: "Config database .",
@@ -2547,14 +2717,24 @@ function showDataRecordWindow() {
             },
             "->",
             {
+                text: "Show Event", handler: function () {
+                var keysArr = treePanel.getSelectPoints();
+                Ext.create("Ext.window.Window", {
+                    title: "Show Data Record",
+                    autoShow: true,
+                    scrollable: "y",
+                    items: [
+                        Ext.create("QueryEventRecord", {
+                            ip: IPCombo.value,
+                            keys: keysArr.join(",")
+                        })
+                    ]
+                })
+            }
+            },
+            {
                 text: "Show", handler: function () {
-                var checkeds = treePanel.getChecked();
-                var keysArr = [];
-                for (var i = 0; i < checkeds.length; i++) {
-                    if (checkeds[i].data.depth == 4) {
-                        keysArr.push(checkeds[i].data.key)
-                    }
-                }
+                var keysArr = treePanel.getSelectPoints();
                 Ext.create("Ext.window.Window", {
                     title: "Show Data Record",
                     autoShow: true,
@@ -2566,8 +2746,6 @@ function showDataRecordWindow() {
                         })
                     ]
                 })
-                console.log(checkeds)
-
             }
             }
         ]
@@ -2577,13 +2755,13 @@ function showDataRecordWindow() {
 
 Ext.define("FilterPoint", {
     extend: "Ext.grid.Panel",
-    alias:"FilterPoint",
-    xtype:"FilterPoint",
+    alias: "FilterPoint",
+    xtype: "FilterPoint",
     width: 500,
     height: 300,
     store: Ext.create("Ext.data.XmlStore", {
         autoLoad: true,
-        fields: ["ip", "port","object_name","key"],
+        fields: ["ip", "port", "object_name", "key"],
         proxy: {
             url: "php/file.php?fileName=/mnt/nandflash/filterpoint.xml&par=get",
             type: "ajax",
@@ -2650,7 +2828,7 @@ Ext.define("FilterPoint", {
         },
         {
             text: "Port", dataIndex: "port", flex: 1,
-            hidden:true,
+            hidden: true,
             editor: {
                 xtype: 'numberfield',
                 allowBlank: false,
@@ -2659,17 +2837,17 @@ Ext.define("FilterPoint", {
             }
         },
         {
-            text:"Key",dataIndex:"key",flex:1,
-            editor:{
-                xtype:"textfield",
-                allowBlank:false
+            text: "Key", dataIndex: "key", flex: 1,
+            editor: {
+                xtype: "textfield",
+                allowBlank: false
             }
         },
         {
-            text:"Object_Name",dataIndex:"object_name",flex:1,renderer:function (und, ele, model) {
+            text: "Object_Name", dataIndex: "object_name", flex: 1, renderer: function (und, ele, model) {
             var key = model.data.key
             //console.log(arguments)
-            if (und != "" ) {
+            if (und != "") {
                 return und;
             }
             if (key) {
@@ -2724,7 +2902,7 @@ Ext.define("FilterPoint", {
 })
 
 Ext.define("FilterPointWindow", {
-    extend:"Ext.window.Window",
+    extend: "Ext.window.Window",
     width: 500,
     height: 300,
     title: "Setting Event No Listen Point",
@@ -2732,15 +2910,15 @@ Ext.define("FilterPointWindow", {
     scrollable: "y",
     items: [
         {
-            xtype:"FilterPoint"
+            xtype: "FilterPoint"
         }
     ],
     buttons: [
         {
             text: "Add", handler: function () {
             var grid = this.up("window").down("grid")
-            Ext.create("SelectKeyFormWindow",{
-                callback:function(res){
+            Ext.create("SelectKeyFormWindow", {
+                callback: function (res) {
                     console.log(res)
                     grid.addItem(res)
                 }
@@ -2768,5 +2946,118 @@ Ext.define("FilterPointWindow", {
         }
     ]
 })
-
-
+// Ext.onReady(function(){
+//
+//     Ext.create("Ext.window.Window",{
+//         autoShow:true,
+//         width:800,
+//         height:600,
+//         items:Ext.create({
+//             xtype: 'cartesian',
+//             width: 600,
+//             height: 400,
+//             insetPadding: 40,
+//             store: Ext.create("Ext.data.Store", {
+//                 autoLoad: true,
+//                 fields: [
+//                     {name: 'device_instance', type: 'string'},
+//                     {name: 'Object_Name', type: 'string'},
+//                     {name: 'Present_Value', type: 'number'},
+//                     {name: 'last_update_time', type: 'date'}
+//                 ],
+//                 proxy: {
+//                     type: 'ajax',
+//                     url: 'php/mysql.php?par=getDataRecord&ip=' + "127.0.0.1"+ "&keys=" + "1001201,1001202",
+//                     reader: {
+//                         type: 'json',
+//                         rootProperty: "topics",
+//                         totalProperty: 'totalCount',
+//                     }
+//                 },
+//                 listeners: {
+//                     load: function () {
+//                         console.log(arguments)
+//                     }
+//                 }
+//             }),
+//             // store: {
+//             //     fields: ['name', 'data1', 'data2'],
+//             //     data: [{
+//             //         'name': 'metric one',
+//             //         'data1': 10,
+//             //         'data2': 14
+//             //     }, {
+//             //         'name': 'metric two',
+//             //         'data1': 7,
+//             //         'data2': 16
+//             //     }, {
+//             //         'name': 'metric three',
+//             //         'data1': 5,
+//             //         'data2': 14
+//             //     }, {
+//             //         'name': 'metric four',
+//             //         'data1': 2,
+//             //         'data2': 6
+//             //     }, {
+//             //         'name': 'metric five',
+//             //         'data1': 27,
+//             //         'data2': 36
+//             //     }]
+//             // },
+//             axes: [{
+//                 type: 'numeric',
+//                 position: 'left',
+//                 fields: ['Present_Value'],
+//                 title: {
+//                     text: 'Sample Values',
+//                     fontSize: 15
+//                 },
+//                 grid: true,
+//                 minimum: 0
+//             }, {
+//                 type: 'time',
+//                 dateFormat: 'Y-m-d',
+//                 visibleRange: [0, 1],
+//                 position: 'bottom',
+//                 fields: ['last_update_time'],
+//                 titleMargin: 12,
+//                 title: {
+//                     text: 'Date'
+//                 }
+//             }],
+//             series: [{
+//                 type: 'line',
+//                 style: {
+//                     stroke: '#30BDA7',
+//                     lineWidth: 2
+//                 },
+//                 xField: 'name',
+//                 yField: 'data1',
+//                 marker: {
+//                     type: 'path',
+//                     path: ['M', - 4, 0, 0, 4, 4, 0, 0, - 4, 'Z'],
+//                     stroke: '#30BDA7',
+//                     lineWidth: 2,
+//                     fill: 'white'
+//                 }
+//             }, {
+//                 type: 'line',
+//                 fill: true,
+//                 style: {
+//                     fill: '#96D4C6',
+//                     fillOpacity: .6,
+//                     stroke: '#0A3F50',
+//                     strokeOpacity: .6,
+//                 },
+//                 xField: 'name',
+//                 yField: 'data2',
+//                 marker: {
+//                     type: 'circle',
+//                     radius: 4,
+//                     lineWidth: 2,
+//                     fill: 'white'
+//                 }
+//             }]
+//         })
+//     })
+// })
