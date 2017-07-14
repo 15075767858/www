@@ -2193,10 +2193,11 @@ Ext.define('QueryDataRecord', {
     frame: true,
     initComponent: function () {
         this.width = 800;
-        var me=this;
+        var me = this;
         var ip = this.ip || "127.0.0.1";
         var keys = this.keys;
-        var pageSize=25;
+        var pageSize = 25;
+
         Ext.apply(this, {
             store: Ext.create("Ext.data.Store", {
                 autoLoad: true,
@@ -2204,7 +2205,7 @@ Ext.define('QueryDataRecord', {
                     {name: 'device_instance', type: 'string'},
                     {name: 'Object_Name', type: 'string'},
                     {name: 'Present_Value', type: 'string'},
-                    {name: 'last_update_time', type: 'string'}
+                    {name: 'last_update_time', type: 'date'}
                 ],
                 pageSize: pageSize,
                 proxy: {
@@ -2223,12 +2224,12 @@ Ext.define('QueryDataRecord', {
                 }
             }),
             columns: [{
-                text: 'device_instance',
+                text: 'Device Instance',
                 sortable: true,
                 dataIndex: 'device_instance',
                 flex: 1
             }, {
-                text: 'device_type',
+                text: 'Device Type',
                 sortable: true,
                 dataIndex: 'device_type',
                 flex: 1,
@@ -2256,12 +2257,12 @@ Ext.define('QueryDataRecord', {
                 dataIndex: 'device_number',
                 flex: 1
             }, {
-                text: 'Object_Name',
+                text: 'Object Name',
                 sortable: true,
                 dataIndex: 'Object_Name',
                 flex: 1
             }, {
-                text: 'Present_Value',
+                text: 'Present Value',
                 sortable: true,
                 dataIndex: 'Present_Value',
                 flex: 1
@@ -2277,21 +2278,23 @@ Ext.define('QueryDataRecord', {
                 displayInfo: true,
                 items: [
                     "-", {
-                        listeners:{
-                            change:function (field,newV,oldV) {
+                        listeners: {
+                            change: function (field, newV, oldV) {
                                 me.store.setPageSize(newV)
                             }
                         },
-                        value:pageSize,
-                        fieldLabel:"pageSize",
+                        value: pageSize,
+                        fieldLabel: "pageSize",
                         xtype: "textfield",
-                        labelWidth:50,
-                        width:100
+                        labelWidth: 50,
+                        width: 100
                     }
                 ]
                 //plugins: Ext.ProgressBar()
             }
         });
+
+
         this.callParent();
     },
 
@@ -2310,11 +2313,11 @@ Ext.define('QueryEventRecord', {
     height: 360,
     frame: true,
     initComponent: function () {
-        var me=this;
+        var me = this;
         this.width = 1000;
         var ip = this.ip || "127.0.0.1";
         var keys = this.keys;
-        var pageSize=25;
+        var pageSize = 25;
         Ext.apply(this, {
             store: Ext.create("Ext.data.Store", {
                 autoLoad: true,
@@ -2325,7 +2328,7 @@ Ext.define('QueryEventRecord', {
                     {name: 'device_number', type: 'string'},
                     {name: 'Present_Value', type: 'string'},
                     {name: 'message_number', type: 'string'},
-                    {name: 'last_update_time', type: 'string'}
+                    {name: 'last_update_time', type: 'date'}
                 ],
                 proxy: {
                     type: 'ajax',
@@ -2344,7 +2347,7 @@ Ext.define('QueryEventRecord', {
             }),
             columns: [
                 {
-                    text: 'device_type',
+                    text: 'Device Type',
                     sortable: true,
                     hidden: true,
                     dataIndex: 'device_type',
@@ -2382,7 +2385,7 @@ Ext.define('QueryEventRecord', {
                     flex: 2
                 },
                 {
-                    text: 'device_instance',
+                    text: 'Device Instance',
                     sortable: true,
                     dataIndex: 'device_instance',
                     flex: 1
@@ -2403,10 +2406,7 @@ Ext.define('QueryEventRecord', {
                     sortable: true,
                     dataIndex: "message_number",
                     flex: 2.5,
-                    renderer: function (val) {
 
-                        return "变化操作员（系统（" + val + ")/人工）";
-                    }
                 },
                 {
                     text: 'Last Updated',
@@ -2421,16 +2421,16 @@ Ext.define('QueryEventRecord', {
                 //plugins: Ext.ProgressBar()
                 items: [
                     "-", {
-                        listeners:{
-                            change:function (field,newV,oldV) {
+                        listeners: {
+                            change: function (field, newV, oldV) {
                                 me.store.setPageSize(newV)
                             }
                         },
-                        value:pageSize,
-                        fieldLabel:"pageSize",
+                        value: pageSize,
+                        fieldLabel: "pageSize",
                         xtype: "textfield",
-                        labelWidth:50,
-                        width:100
+                        labelWidth: 50,
+                        width: 100
                     }
                 ]
             }
@@ -2719,32 +2719,41 @@ function showDataRecordWindow() {
             {
                 text: "Show Event", handler: function () {
                 var keysArr = treePanel.getSelectPoints();
+
+                var qdr = Ext.create("QueryEventRecord", {
+                    ip:  IPCombo.value,
+                    keys:keysArr.join(",")
+                })
+                // var cdr = Ext.create("ChartDataRecord", {
+                //     store: qdr.store
+                // })
+
                 Ext.create("Ext.window.Window", {
                     title: "Show Data Record",
                     autoShow: true,
                     scrollable: "y",
-                    items: [
-                        Ext.create("QueryEventRecord", {
-                            ip: IPCombo.value,
-                            keys: keysArr.join(",")
-                        })
-                    ]
+                    items: [ qdr]
                 })
+
+
             }
             },
             {
                 text: "Show", handler: function () {
                 var keysArr = treePanel.getSelectPoints();
+                var qdr = Ext.create("QueryDataRecord", {
+                    ip: IPCombo.value,
+                    keys: keysArr.join(",")
+                })
+                var cdr = Ext.create("ChartDataRecord", {
+                    store: qdr.store
+                })
+
                 Ext.create("Ext.window.Window", {
                     title: "Show Data Record",
                     autoShow: true,
                     scrollable: "y",
-                    items: [
-                        Ext.create("QueryDataRecord", {
-                            ip: IPCombo.value,
-                            keys: keysArr.join(",")
-                        })
-                    ]
+                    items: [cdr, qdr]
                 })
             }
             }
@@ -2946,118 +2955,186 @@ Ext.define("FilterPointWindow", {
         }
     ]
 })
-// Ext.onReady(function(){
-//
-//     Ext.create("Ext.window.Window",{
-//         autoShow:true,
-//         width:800,
-//         height:600,
-//         items:Ext.create({
-//             xtype: 'cartesian',
-//             width: 600,
-//             height: 400,
-//             insetPadding: 40,
-//             store: Ext.create("Ext.data.Store", {
-//                 autoLoad: true,
-//                 fields: [
-//                     {name: 'device_instance', type: 'string'},
-//                     {name: 'Object_Name', type: 'string'},
-//                     {name: 'Present_Value', type: 'number'},
-//                     {name: 'last_update_time', type: 'date'}
-//                 ],
-//                 proxy: {
-//                     type: 'ajax',
-//                     url: 'php/mysql.php?par=getDataRecord&ip=' + "127.0.0.1"+ "&keys=" + "1001201,1001202",
-//                     reader: {
-//                         type: 'json',
-//                         rootProperty: "topics",
-//                         totalProperty: 'totalCount',
-//                     }
-//                 },
-//                 listeners: {
-//                     load: function () {
-//                         console.log(arguments)
-//                     }
-//                 }
-//             }),
-//             // store: {
-//             //     fields: ['name', 'data1', 'data2'],
-//             //     data: [{
-//             //         'name': 'metric one',
-//             //         'data1': 10,
-//             //         'data2': 14
-//             //     }, {
-//             //         'name': 'metric two',
-//             //         'data1': 7,
-//             //         'data2': 16
-//             //     }, {
-//             //         'name': 'metric three',
-//             //         'data1': 5,
-//             //         'data2': 14
-//             //     }, {
-//             //         'name': 'metric four',
-//             //         'data1': 2,
-//             //         'data2': 6
-//             //     }, {
-//             //         'name': 'metric five',
-//             //         'data1': 27,
-//             //         'data2': 36
-//             //     }]
-//             // },
-//             axes: [{
-//                 type: 'numeric',
-//                 position: 'left',
-//                 fields: ['Present_Value'],
-//                 title: {
-//                     text: 'Sample Values',
-//                     fontSize: 15
-//                 },
-//                 grid: true,
-//                 minimum: 0
-//             }, {
-//                 type: 'time',
-//                 dateFormat: 'Y-m-d',
-//                 visibleRange: [0, 1],
-//                 position: 'bottom',
-//                 fields: ['last_update_time'],
-//                 titleMargin: 12,
-//                 title: {
-//                     text: 'Date'
-//                 }
-//             }],
-//             series: [{
-//                 type: 'line',
-//                 style: {
-//                     stroke: '#30BDA7',
-//                     lineWidth: 2
-//                 },
-//                 xField: 'name',
-//                 yField: 'data1',
-//                 marker: {
-//                     type: 'path',
-//                     path: ['M', - 4, 0, 0, 4, 4, 0, 0, - 4, 'Z'],
-//                     stroke: '#30BDA7',
-//                     lineWidth: 2,
-//                     fill: 'white'
-//                 }
-//             }, {
-//                 type: 'line',
-//                 fill: true,
-//                 style: {
-//                     fill: '#96D4C6',
-//                     fillOpacity: .6,
-//                     stroke: '#0A3F50',
-//                     strokeOpacity: .6,
-//                 },
-//                 xField: 'name',
-//                 yField: 'data2',
-//                 marker: {
-//                     type: 'circle',
-//                     radius: 4,
-//                     lineWidth: 2,
-//                     fill: 'white'
-//                 }
-//             }]
-//         })
-//     })
-// })
+Ext.define("ChartDataRecord", {
+    extend: "Ext.chart.CartesianChart",
+    //xtype: 'cartesian',
+    reference: 'chart',
+    width: "100%",
+    height: 500,
+    insetPadding: 40,
+    innerPadding: {
+        left: 18,
+        right: 18,
+        top: 18
+    },
+    sprites: [{
+        type: 'text',
+        text: 'SmartIO Tools Data Record ',
+        fontSize: 22,
+        width: 100,
+        height: 30,
+        x: 40, // the sprite x position
+        y: 30  // the sprite y position
+    }],
+
+    tbar: {
+        itemId: "toolbar",
+        items: [
+            '->',
+            {
+                hidden: true,
+                text: 'Refresh',
+                handler: 'onRefresh'
+            },
+            {
+                hidden: true,
+                text: 'Switch Theme',
+                handler: 'onThemeSwitch'
+            },
+            {
+                text: 'Reset pan/zoom',
+                handler: function () {
+                    console.log(arguments)
+                    console.log(this)
+                    console.log(this.up("cartesian"))
+                    var chart = this.up("cartesian"),
+                        axes = chart.getAxes();
+                    axes[0].setVisibleRange([0, 1]);
+                    axes[1].setVisibleRange([0, 1]);
+                    chart.redraw();
+                }
+            },
+            ""
+        ]
+    },
+    interactions: [
+        {
+            type: 'panzoom',
+            zoomOnPan: true
+        }
+        //'itemhighlight'
+    ],
+    animation: {
+        duration: 200
+    },
+
+    listeners: {
+        itemhighlightchange: function (chart, newHighlightItem, oldHighlightItem) {
+            this.setSeriesLineWidth(newHighlightItem, 3, "#FF1111");
+            this.setSeriesLineWidth(oldHighlightItem, 2, "#30BDA7");
+            //console.log(arguments)
+        },
+        afterrender: function () {
+            //console.log(this)
+            var chart = this;
+            var toolbar = this.getComponent('toolbar');
+            console.log(toolbar)
+            var panzoom = chart.getInteractions()[0];
+            panzoom.getModeToggleButton()
+
+            toolbar.add(panzoom.getModeToggleButton());
+        }
+    },
+    setSeriesLineWidth: function (item, lineWidth, stroke) {
+        if (item) {
+            item.series.setStyle({
+                lineWidth: lineWidth,
+                //stroke:stroke
+            });
+        }
+    },
+    axes: [{
+        type: 'numeric',
+        position: 'left',
+        fields: ['Present_Value'],
+        title: {
+            //text: 'SmartIO Data Record ',
+            text: "Present Value",
+            fontSize: 15
+        },
+        grid: true,
+    }, {
+        type: 'time',
+        grid: true,
+        //dateFormat: 'Y-m-d',
+        //visibleRange: [0, 1],
+        position: 'bottom',
+        fields: ['last_update_time', "Object_Name"],
+        titleMargin: 12,
+        title: {
+            text: 'Time'
+        }
+    }],
+    series: [{
+        type: 'line',
+        style: {
+            stroke: 'rgba(0,0,0,0.8)',
+            lineWidth: 1
+        },
+        highlightCfg: {
+            scaling: 2
+        },
+        xField: 'last_update_time',
+        yField: 'Present_Value',
+
+        label: {
+            field: 'Object_Name',
+            display: 'over',
+            fontSize: 10,
+            translateY: 5, // lower label closer to the marker
+            renderer: function (val) {
+                //console.log(arguments)
+                return val
+            }
+        },
+        marker: {
+            type: 'circle',
+            fill: "white",
+            fx: {
+                duration: 200,
+                easing: 'backOut'
+            }
+        },
+        tooltip: {
+            trackMouse: true,
+            showDelay: 0,
+            dismissDelay: 0,
+            hideDelay: 0,
+            renderer: function (tooltip, record, item) {
+                var arr = ["Object Name :" + record.data.Object_Name,
+                    "Device Instance :" + record.data.device_instance,
+                    "Device Type :" + record.data.device_type,
+                    "Device Number :" + record.data.device_number,
+                    "Present Value :" + record.data.Present_Value,
+                    "Time :" + new Date(record.data.last_update_time).toLocaleString()]
+                if (record.data.message_number) {
+                    arr.push("message :"+record.data.message_number+"");
+                }
+                tooltip.setHtml(arr.join("<br>"))
+            }
+        }
+    }]
+})
+Ext.onReady(function () {
+    // var qdr = Ext.create("QueryEventRecord", {
+    //     ip: "127.0.0.1",
+    //     keys: "1001201,1001202,1001203,1001205"
+    // })
+    // var cdr = Ext.create("ChartDataRecord", {
+    //     store: qdr.store
+    // })
+    //
+    // Ext.create("Ext.window.Window", {
+    //     title: "Show Data Record",
+    //     autoShow: true,
+    //     scrollable: "y",
+    //     items: [cdr, qdr]
+    // })
+
+    // Ext.create("Ext.window.Window", {
+    //     autoShow: true,
+    //     width: 800,
+    //     height: 600,
+    //     items: Ext.create("ChartDataRecord")
+    // })
+})

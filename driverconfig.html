@@ -194,7 +194,7 @@
 
     <div class="toolbar">
         <!-- Large button group -->
-        <button type="button" class="btn btn-success btn-lg button_shadow" title="Listen Config" data-toggle="modal"
+        <button type="button" class="hide btn btn-success btn-lg button_shadow" title="Listen Config" data-toggle="modal"
                onclick="showDataRecordWindow()" aria-label="Left Align">
             <span class=" glyphicon glyphicon-cog" aria-hidden="true"></span> Listen Config
         </button>
@@ -406,13 +406,19 @@
 <script src="js/ConfigUtil.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/selectivizr.js"></script>
-<script src="js/ext-all-rtl.js"></script>
+<script src="js/ext-all.js"></script>
 <script src="js/charts.js"></script>
 
-<script src="js/main.js"></script>
-<script src="js/ext-component.js"></script>
+<!--<script src="js/main.js"></script>
+<script src="js/ext-component.js"></script>-->
 
 <script type="text/javascript">
+    var jsArr=['js/main.js','js/ext-component.js']
+    for(var i=0;i<jsArr.length;i++){
+        var script = document.createElement("script")
+        script.src=jsArr[i]+"?"+Math.random()
+        document.getElementsByTagName("body")[0].append(script)
+    }
     //modbus
     function modbusXml() {
         var IPCombo = Ext.create("Ext.form.field.ComboBox", {
@@ -1069,6 +1075,7 @@
             }
         }
     }
+
 
 </script>
 
