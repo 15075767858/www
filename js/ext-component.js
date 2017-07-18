@@ -127,6 +127,7 @@ Ext.define("UpdateWWW", {
         })
 
         uploadFile(file, 0);
+
         function installPackage(filename) {
 
             $.ajax({
@@ -266,23 +267,21 @@ Ext.define("UserManager", {
             }
         });
     },
-    bbar: [
-        {
-            text: "Add User", handler: function () {
-            var win = Ext.create("Ext.window.Window", {
-                title: "Please input password and level .",
-                autoShow: true,
-                width: 300,
-                resizeable: false,
-                items: [
-                    {
+    bbar: [{
+            text: "Add User",
+            handler: function () {
+                var win = Ext.create("Ext.window.Window", {
+                    title: "Please input password and level .",
+                    autoShow: true,
+                    width: 300,
+                    resizeable: false,
+                    items: [{
                         xtype: "form",
                         defaults: {
                             margin: 10,
                             allowBlank: false
                         },
-                        items: [
-                            {
+                        items: [{
                                 xtype: "textfield",
                                 fieldLabel: "username",
                                 name: "username",
@@ -305,68 +304,75 @@ Ext.define("UserManager", {
                                 maxLength: 16,
                                 minLength: 4
                             },
-                            {xtype: "numberfield", fieldLabel: "level", name: "level", minValue: 0, maxValue: 255},
-                        ],
-                        bbar: [
                             {
-                                text: "Ok", handler: function () {
-                                var form = this.up("form");
-                                if (form.isValid()) {
-                                    var values = form.getValues();
-                                    if (values.password != values.again) {
-                                        Ext.Msg.alert("Massage", "Two passwords are not consistent .")
-                                        return;
-                                    }
-                                    form.submit({
-                                        url: "php/login.php?par=addUser",
-                                        success: function (form, resonse) {
-                                            if (resonse.result.success) {
-                                                Ext.Msg.alert("Massage", resonse.result.info);
-                                            }
-                                            console.log(arguments)
-                                        },
-                                        failure: function (form, response) {
-                                            Ext.Msg.alert("Massage", response.result.info)
-                                            console.log(arguments)
+                                xtype: "numberfield",
+                                fieldLabel: "level",
+                                name: "level",
+                                minValue: 0,
+                                maxValue: 255
+                            },
+                        ],
+                        bbar: [{
+                                text: "Ok",
+                                handler: function () {
+                                    var form = this.up("form");
+                                    if (form.isValid()) {
+                                        var values = form.getValues();
+                                        if (values.password != values.again) {
+                                            Ext.Msg.alert("Massage", "Two passwords are not consistent .")
+                                            return;
                                         }
-                                    })
+                                        form.submit({
+                                            url: "php/login.php?par=addUser",
+                                            success: function (form, resonse) {
+                                                if (resonse.result.success) {
+                                                    Ext.Msg.alert("Massage", resonse.result.info);
+                                                }
+                                                console.log(arguments)
+                                            },
+                                            failure: function (form, response) {
+                                                Ext.Msg.alert("Massage", response.result.info)
+                                                console.log(arguments)
+                                            }
+                                        })
+                                    }
                                 }
-                            }
                             },
                             {
-                                text: "Cancel", handler: function () {
-                                win.close();
-                            }
+                                text: "Cancel",
+                                handler: function () {
+                                    win.close();
+                                }
                             }
                         ]
-                    }
-                ]
-            })
-        }
+                    }]
+                })
+            }
         },
         {
-            text: "Delete User", handler: function (button) {
-            var win = button.up('window');
-            win.deleteUser();
+            text: "Delete User",
+            handler: function (button) {
+                var win = button.up('window');
+                win.deleteUser();
 
-        }
+            }
         },
         {
-            text: "Change User", hidden: true, handler: function () {
-            var win = Ext.create("Ext.window.Window", {
-                title: "Please input password and level .",
-                autoShow: true,
-                width: 300,
-                resizeable: false,
-                items: [
-                    {
+            text: "Change User",
+            hidden: true,
+            handler: function () {
+                var win = Ext.create("Ext.window.Window", {
+                    title: "Please input password and level .",
+                    autoShow: true,
+                    width: 300,
+                    resizeable: false,
+                    items: [{
                         xtype: "form",
                         defaults: {
                             margin: 10,
                             allowBlank: false
                         },
-                        items: [
-                            {
+                        items: [{
                                 xtype: "textfield",
                                 fieldLabel: "username",
                                 name: "username",
@@ -390,44 +396,50 @@ Ext.define("UserManager", {
                                 maxLength: 16,
                                 minLength: 4
                             },
-                            {xtype: "numberfield", fieldLabel: "level", name: "level", minValue: 0, maxValue: 255},
-                        ],
-                        bbar: [
                             {
-                                text: "Ok", handler: function () {
-                                var form = this.up("form");
-                                if (form.isValid()) {
-                                    var values = form.getValues();
-                                    if (values.password != values.again) {
-                                        Ext.Msg.alert("Massage", "Two passwords are not consistent .")
-                                        return;
-                                    }
-                                    form.submit({
-                                        url: "php/login.php?par=addUser",
-                                        success: function (form, resonse) {
-                                            if (resonse.result.success) {
-                                                Ext.Msg.alert("Massage", resonse.result.info);
-                                            }
-                                            console.log(arguments)
-                                        },
-                                        failure: function (form, response) {
-                                            Ext.Msg.alert("Massage", response.result.info)
-                                            console.log(arguments)
+                                xtype: "numberfield",
+                                fieldLabel: "level",
+                                name: "level",
+                                minValue: 0,
+                                maxValue: 255
+                            },
+                        ],
+                        bbar: [{
+                                text: "Ok",
+                                handler: function () {
+                                    var form = this.up("form");
+                                    if (form.isValid()) {
+                                        var values = form.getValues();
+                                        if (values.password != values.again) {
+                                            Ext.Msg.alert("Massage", "Two passwords are not consistent .")
+                                            return;
                                         }
-                                    })
+                                        form.submit({
+                                            url: "php/login.php?par=addUser",
+                                            success: function (form, resonse) {
+                                                if (resonse.result.success) {
+                                                    Ext.Msg.alert("Massage", resonse.result.info);
+                                                }
+                                                console.log(arguments)
+                                            },
+                                            failure: function (form, response) {
+                                                Ext.Msg.alert("Massage", response.result.info)
+                                                console.log(arguments)
+                                            }
+                                        })
+                                    }
                                 }
-                            }
                             },
                             {
-                                text: "Cancel", handler: function () {
-                                win.close();
-                            }
+                                text: "Cancel",
+                                handler: function () {
+                                    win.close();
+                                }
                             }
                         ]
-                    }
-                ]
-            })
-        }
+                    }]
+                })
+            }
         }
     ],
     initComponent: function () {
@@ -470,7 +482,7 @@ Ext.define('LoginWindow', {
     height: 155,
     x: 288,
     y: 88,
-    callbackFn: null,//这是个方法用来回调登陆成功事件
+    callbackFn: null, //这是个方法用来回调登陆成功事件
     login: function (params) {
         var me = this;
         Ext.Ajax.request({
@@ -496,81 +508,79 @@ Ext.define('LoginWindow', {
     initComponent: function () {
         var me = this;
         var loginForm = Ext.create("Ext.form.Panel", {
-                bodyPadding: 10,
-                bodyStyle: {
-                    background: "cornflowerblue"
-                },
-                items: [
-                    {
-                        xtype: "combo",
-                        allowBlank: false,
-                        fieldLabel: 'User Name',
-                        name: 'username',
-                        emptyText: 'user name',
-                        queryMode: "local",
-                        value: "mngr",
-                        height: 35,
-                        store: Ext.create("Ext.data.Store", {
-                            fields: ["0"],
-                            autoLoad: true,
-                            proxy: {
-                                type: "ajax",
-                                url: "php/login.php?par=getAllUser",
-                                reader: {
-                                    type: "json"
-                                }
+            bodyPadding: 10,
+            bodyStyle: {
+                background: "cornflowerblue"
+            },
+            items: [{
+                    xtype: "combo",
+                    allowBlank: false,
+                    fieldLabel: 'User Name',
+                    name: 'username',
+                    emptyText: 'user name',
+                    queryMode: "local",
+                    value: "mngr",
+                    height: 35,
+                    store: Ext.create("Ext.data.Store", {
+                        fields: ["0"],
+                        autoLoad: true,
+                        proxy: {
+                            type: "ajax",
+                            url: "php/login.php?par=getAllUser",
+                            reader: {
+                                type: "json"
                             }
-                        }),
-                        displayField: "0",
-                        valueField: "0"
-                    },
-                    {
-                        xtype: "textfield",
-                        allowBlank: false,
-                        fieldLabel: 'Password',
-                        value: "mngr0",
-                        name: 'password',
-                        emptyText: 'password',
-                        inputType: 'password',
-                        height: 35,
-                        listeners: {
-                            focus: function (field) {
-                                var keybord = Ext.getCmp("win" + field.id)
-                                if (keybord) {
-                                    return
-                                    //keybord.close()
-                                }
-                                Ext.create("editpic.view.ux.KeyBoard", {
-                                    id: "win" + field.id,
-                                    x: me.getX() + me.getWidth() + 5,
-                                    inputValue: field.getValue(),
-                                    okFn: function (value) {
-                                        field.setValue(value)
-                                    }
-                                })
-                                if (Ext.getCmp('win' + field.id)) {
-                                    field.focus();
-                                }
-                            }
-
                         }
+                    }),
+                    displayField: "0",
+                    valueField: "0"
+                },
+                {
+                    xtype: "textfield",
+                    allowBlank: false,
+                    fieldLabel: 'Password',
+                    value: "mngr0",
+                    name: 'password',
+                    emptyText: 'password',
+                    inputType: 'password',
+                    height: 35,
+                    listeners: {
+                        focus: function (field) {
+                            var keybord = Ext.getCmp("win" + field.id)
+                            if (keybord) {
+                                return
+                                //keybord.close()
+                            }
+                            Ext.create("editpic.view.ux.KeyBoard", {
+                                id: "win" + field.id,
+                                x: me.getX() + me.getWidth() + 5,
+                                inputValue: field.getValue(),
+                                okFn: function (value) {
+                                    field.setValue(value)
+                                }
+                            })
+                            if (Ext.getCmp('win' + field.id)) {
+                                field.focus();
+                            }
+                        }
+
                     }
-                ],
-                defaults: {
-                    anchor: '100%',
-                    labelWidth: 120
                 }
+            ],
+            defaults: {
+                anchor: '100%',
+                labelWidth: 120
             }
-        )
+        })
         me.listeners = {
             boxready: function () {
                 me.add(loginForm)
                 me.login()
             }
         }
-        me.buttons = [
-            {
-                text: 'Login', handler: function () {
+        me.buttons = [{
+            text: 'Login',
+            handler: function () {
                 var values = loginForm.getValues();
                 me.login(values)
                 /*
@@ -583,8 +593,7 @@ Ext.define('LoginWindow', {
                  }*/
 
             }
-            }
-        ]
+        }]
 
 
         me.callParent();
@@ -636,26 +645,24 @@ Ext.define('editpic.view.ux.KeyBoard', {
     getButton: function (data) {
         var me = this;
         var button = Ext.create("Ext.button.Button", Ext.apply(data, {
-                //ui: "keyboard",
-                style: {
-                    backgroundColor: "blue"
-                },
-                bodyStyle: {
-                    backgroundColor: "blue"
-                },
-                //cls: "opacity1",
-                scale: 'large',
+            //ui: "keyboard",
+            style: {
+                backgroundColor: "blue"
+            },
+            bodyStyle: {
+                backgroundColor: "blue"
+            },
+            //cls: "opacity1",
+            scale: 'large',
 
-                handler: function (field) {
-                    var me = this.up("window");
+            handler: function (field) {
+                var me = this.up("window");
 
-                    //var controller=this;
-                    me.eventFn(field)
-                }
-
+                //var controller=this;
+                me.eventFn(field)
             }
-            )
-        )
+
+        }))
         return button;
     },
     loadKeyBoard: function (keyboardType) {
@@ -694,22 +701,70 @@ Ext.define('editpic.view.ux.KeyBoard', {
                 tdAttrs: {
                     style: 'padding: 5px;'
                 }
-            }, items: [
-                me.getButton({glyph: 55, inputValue: "7"}),
-                me.getButton({glyph: 56, inputValue: "8"}),
-                me.getButton({glyph: 57, inputValue: "9"}),
-                me.getButton({text: "C", inputValue: "{del}"}),
-                me.getButton({glyph: 52, inputValue: "4"}),
-                me.getButton({glyph: 53, inputValue: "5"}),
-                me.getButton({glyph: 54, inputValue: "6"}),
-                me.getButton({text: "→", inputValue: "{right}"}),
-                me.getButton({glyph: 49, inputValue: "1"}),
-                me.getButton({glyph: 50, inputValue: "2"}),
-                me.getButton({glyph: 51, inputValue: "3"}),
-                me.getButton({text: "←", inputValue: "{left}"}),
-                me.getButton({glyph: 48, inputValue: "0"}),
-                me.getButton({glyph: 46, inputValue: "."}),
-                me.getButton({text: "Enter", inputValue: "{Enter}", colspan: 2, width: "100%"}),
+            },
+            items: [
+                me.getButton({
+                    glyph: 55,
+                    inputValue: "7"
+                }),
+                me.getButton({
+                    glyph: 56,
+                    inputValue: "8"
+                }),
+                me.getButton({
+                    glyph: 57,
+                    inputValue: "9"
+                }),
+                me.getButton({
+                    text: "C",
+                    inputValue: "{del}"
+                }),
+                me.getButton({
+                    glyph: 52,
+                    inputValue: "4"
+                }),
+                me.getButton({
+                    glyph: 53,
+                    inputValue: "5"
+                }),
+                me.getButton({
+                    glyph: 54,
+                    inputValue: "6"
+                }),
+                me.getButton({
+                    text: "→",
+                    inputValue: "{right}"
+                }),
+                me.getButton({
+                    glyph: 49,
+                    inputValue: "1"
+                }),
+                me.getButton({
+                    glyph: 50,
+                    inputValue: "2"
+                }),
+                me.getButton({
+                    glyph: 51,
+                    inputValue: "3"
+                }),
+                me.getButton({
+                    text: "←",
+                    inputValue: "{left}"
+                }),
+                me.getButton({
+                    glyph: 48,
+                    inputValue: "0"
+                }),
+                me.getButton({
+                    glyph: 46,
+                    inputValue: "."
+                }),
+                me.getButton({
+                    text: "Enter",
+                    inputValue: "{Enter}",
+                    colspan: 2,
+                    width: "100%"
+                }),
                 me.getButton({
                     text: "abc",
                     colspan: 3,
@@ -738,29 +793,93 @@ Ext.define('editpic.view.ux.KeyBoard', {
                 tdAttrs: {
                     style: 'padding: 5px;'
                 }
-            }, items: [
-                me.getButton({glyph: 113 - isCase, inputValue: isCase ? "Q" : "q"}),
-                me.getButton({glyph: 119 - isCase, inputValue: isCase ? "W" : "w"}),
-                me.getButton({glyph: 101 - isCase, inputValue: isCase ? "E" : "e"}),
-                me.getButton({glyph: 114 - isCase, inputValue: isCase ? "R" : "r"}),
-                me.getButton({glyph: 116 - isCase, inputValue: isCase ? "T" : "t"}),
-                me.getButton({glyph: 121 - isCase, inputValue: isCase ? "Y" : "y"}),
-                me.getButton({glyph: 117 - isCase, inputValue: isCase ? "U" : "u"}),
-                me.getButton({glyph: 105 - isCase, inputValue: isCase ? "I" : "i"}),
-                me.getButton({glyph: 111 - isCase, inputValue: isCase ? "O" : "o"}),
-                me.getButton({glyph: 112 - isCase, inputValue: isCase ? "P" : "p"}),
-                me.getButton({text: "C" || "⌫", inputValue: "{del}"}),
+            },
+            items: [
+                me.getButton({
+                    glyph: 113 - isCase,
+                    inputValue: isCase ? "Q" : "q"
+                }),
+                me.getButton({
+                    glyph: 119 - isCase,
+                    inputValue: isCase ? "W" : "w"
+                }),
+                me.getButton({
+                    glyph: 101 - isCase,
+                    inputValue: isCase ? "E" : "e"
+                }),
+                me.getButton({
+                    glyph: 114 - isCase,
+                    inputValue: isCase ? "R" : "r"
+                }),
+                me.getButton({
+                    glyph: 116 - isCase,
+                    inputValue: isCase ? "T" : "t"
+                }),
+                me.getButton({
+                    glyph: 121 - isCase,
+                    inputValue: isCase ? "Y" : "y"
+                }),
+                me.getButton({
+                    glyph: 117 - isCase,
+                    inputValue: isCase ? "U" : "u"
+                }),
+                me.getButton({
+                    glyph: 105 - isCase,
+                    inputValue: isCase ? "I" : "i"
+                }),
+                me.getButton({
+                    glyph: 111 - isCase,
+                    inputValue: isCase ? "O" : "o"
+                }),
+                me.getButton({
+                    glyph: 112 - isCase,
+                    inputValue: isCase ? "P" : "p"
+                }),
+                me.getButton({
+                    text: "C" || "⌫",
+                    inputValue: "{del}"
+                }),
                 {},
-                me.getButton({glyph: 97 - isCase, inputValue: isCase ? "A" : "a"}),
-                me.getButton({glyph: 115 - isCase, inputValue: isCase ? "S" : "s"}),
-                me.getButton({glyph: 100 - isCase, inputValue: isCase ? "D" : "d"}),
-                me.getButton({glyph: 102 - isCase, inputValue: isCase ? "F" : "f"}),
-                me.getButton({glyph: 103 - isCase, inputValue: isCase ? "G" : "g"}),
-                me.getButton({glyph: 104 - isCase, inputValue: isCase ? "H" : "h"}),
-                me.getButton({glyph: 106 - isCase, inputValue: isCase ? "J" : "j"}),
-                me.getButton({glyph: 107 - isCase, inputValue: isCase ? "K" : "k"}),
-                me.getButton({glyph: 108 - isCase, inputValue: isCase ? "L" : "l"}),
-                me.getButton({text: "→", inputValue: "{right}"}),
+                me.getButton({
+                    glyph: 97 - isCase,
+                    inputValue: isCase ? "A" : "a"
+                }),
+                me.getButton({
+                    glyph: 115 - isCase,
+                    inputValue: isCase ? "S" : "s"
+                }),
+                me.getButton({
+                    glyph: 100 - isCase,
+                    inputValue: isCase ? "D" : "d"
+                }),
+                me.getButton({
+                    glyph: 102 - isCase,
+                    inputValue: isCase ? "F" : "f"
+                }),
+                me.getButton({
+                    glyph: 103 - isCase,
+                    inputValue: isCase ? "G" : "g"
+                }),
+                me.getButton({
+                    glyph: 104 - isCase,
+                    inputValue: isCase ? "H" : "h"
+                }),
+                me.getButton({
+                    glyph: 106 - isCase,
+                    inputValue: isCase ? "J" : "j"
+                }),
+                me.getButton({
+                    glyph: 107 - isCase,
+                    inputValue: isCase ? "K" : "k"
+                }),
+                me.getButton({
+                    glyph: 108 - isCase,
+                    inputValue: isCase ? "L" : "l"
+                }),
+                me.getButton({
+                    text: "→",
+                    inputValue: "{right}"
+                }),
                 me.getButton({
                     text: "CapsLock",
                     inputValue: "{bksp}",
@@ -768,18 +887,60 @@ Ext.define('editpic.view.ux.KeyBoard', {
                     xtype: "segmentedbutton",
                     width: "100%"
                 }),
-                me.getButton({glyph: 122 - isCase, inputValue: isCase ? "Z" : "z"}),
-                me.getButton({glyph: 120 - isCase, inputValue: isCase ? "X" : "x"}),
-                me.getButton({glyph: 99 - isCase, inputValue: isCase ? "C" : "c"}),
-                me.getButton({glyph: 118 - isCase, inputValue: isCase ? "V" : "v"}),
-                me.getButton({glyph: 98 - isCase, inputValue: isCase ? "B" : "b"}),
-                me.getButton({glyph: 110 - isCase, inputValue: isCase ? "N" : "n"}),
-                me.getButton({glyph: 109 - isCase, inputValue: isCase ? "M" : "m"}),
-                me.getButton({glyph: 46, inputValue: "."}),
-                me.getButton({text: "←", inputValue: "{left}"}),
-                me.getButton({text: "123", inputValue: "{123}", colspan: 2, width: "100%"}),
-                me.getButton({text: " ", inputValue: " ", colspan: 7, width: "100%"}),
-                me.getButton({text: "Enter", inputValue: "{Enter}", colspan: 2, width: "100%"})
+                me.getButton({
+                    glyph: 122 - isCase,
+                    inputValue: isCase ? "Z" : "z"
+                }),
+                me.getButton({
+                    glyph: 120 - isCase,
+                    inputValue: isCase ? "X" : "x"
+                }),
+                me.getButton({
+                    glyph: 99 - isCase,
+                    inputValue: isCase ? "C" : "c"
+                }),
+                me.getButton({
+                    glyph: 118 - isCase,
+                    inputValue: isCase ? "V" : "v"
+                }),
+                me.getButton({
+                    glyph: 98 - isCase,
+                    inputValue: isCase ? "B" : "b"
+                }),
+                me.getButton({
+                    glyph: 110 - isCase,
+                    inputValue: isCase ? "N" : "n"
+                }),
+                me.getButton({
+                    glyph: 109 - isCase,
+                    inputValue: isCase ? "M" : "m"
+                }),
+                me.getButton({
+                    glyph: 46,
+                    inputValue: "."
+                }),
+                me.getButton({
+                    text: "←",
+                    inputValue: "{left}"
+                }),
+                me.getButton({
+                    text: "123",
+                    inputValue: "{123}",
+                    colspan: 2,
+                    width: "100%"
+                }),
+                me.getButton({
+                    text: " ",
+                    inputValue: " ",
+                    colspan: 7,
+                    width: "100%"
+                }),
+                me.getButton({
+                    text: "Enter",
+                    inputValue: "{Enter}",
+                    colspan: 2,
+                    width: "100%"
+                })
             ]
         })
         return container
@@ -900,17 +1061,18 @@ function userLogin() {
              text: 'Register'
              },*/
             {
-                text: 'Login', handler: function () {
-                var values = loginForm.getValues();
-                if (values['remember']) {
-                    localStorage.setItem("loginUserName", values['username']);
-                    localStorage.setItem("loginRemember", values['remember']);
+                text: 'Login',
+                handler: function () {
+                    var values = loginForm.getValues();
+                    if (values['remember']) {
+                        localStorage.setItem("loginUserName", values['username']);
+                        localStorage.setItem("loginRemember", values['remember']);
+                    }
+                    loginForm.submit({
+                        success: loginFn,
+                        failure: loginFn
+                    });
                 }
-                loginForm.submit({
-                    success: loginFn,
-                    failure: loginFn
-                });
-            }
             }
         ],
         defaults: {
@@ -954,31 +1116,43 @@ Ext.define('program.view.grid.BackupGrid', {
         var me = this;
 
         me.store = Ext.create("Ext.data.Store", {
-            fields: ["name", "lasttime", "size", "filetype"],
-            proxy: {
-                type: "ajax",
-                url: "/program/resources/test1.php?par=getbackupfiles&folder=" + me.folder
-            },
-            autoLoad: true
-        }),
+                fields: ["name", "lasttime", "size", "filetype"],
+                proxy: {
+                    type: "ajax",
+                    url: "/program/resources/test1.php?par=getbackupfiles&folder=" + me.folder
+                },
+                autoLoad: true
+            }),
 
             me.callParent();
     },
-    columns: [
-        {
-            text: "File Name", dataIndex: "src", flex: 1,
+    columns: [{
+            text: "File Name",
+            dataIndex: "src",
+            flex: 1,
             renderer: function (val, b, record) {
                 val = "/program/" + val;
                 return "<a class='adownload' download=" + val + " target='_black' href=" + val + ">" + record.data.name + "<span class='x-col-move-top'></span></a>";
             }
         },
-        {text: "Last Post", dataIndex: "lasttime", flex: 2},
-        {text: "File Type", dataIndex: "filetype", flex: 1},
         {
-            text: "File Size", dataIndex: "size", flex: 1, renderer: function (val) {
-            //console.log(arguments)
-            return Ext.util.Format.fileSize(val)
-        }
+            text: "Last Post",
+            dataIndex: "lasttime",
+            flex: 2
+        },
+        {
+            text: "File Type",
+            dataIndex: "filetype",
+            flex: 1
+        },
+        {
+            text: "File Size",
+            dataIndex: "size",
+            flex: 1,
+            renderer: function (val) {
+                //console.log(arguments)
+                return Ext.util.Format.fileSize(val)
+            }
         }
     ],
     listeners: {
@@ -1011,7 +1185,9 @@ Ext.define('program.view.grid.BackupGrid', {
             Ext.Msg.alert('Status', 'Select a file please.');
             return null;
         }
-        Ext.MessageBox.progress('please wait', {msg: 'Server Ready ...'});
+        Ext.MessageBox.progress('please wait', {
+            msg: 'Server Ready ...'
+        });
 
         var fileNames = "";
         var files = []
@@ -1020,10 +1196,12 @@ Ext.define('program.view.grid.BackupGrid', {
             fileNames += grid.folder + "/" + records[i].data.name + " ";
             files.push(grid.folder + "/" + records[i].data.name + " ")
         }
-        return {filesArr: files, filesStr: fileNames};
+        return {
+            filesArr: files,
+            filesStr: fileNames
+        };
     },
-    buttons: [
-        {
+    buttons: [{
             text: "delete",
             handler: function (button) {
                 var grid = this.up("grid");
@@ -1079,7 +1257,9 @@ Ext.define('program.view.grid.BackupGrid', {
                     return;
                 }
 
-                Ext.MessageBox.progress('please wait', {msg: 'Server Ready ...'});
+                Ext.MessageBox.progress('please wait', {
+                    msg: 'Server Ready ...'
+                });
 
 
                 for (var i = 0; i < records.length; i++) {
@@ -1130,139 +1310,150 @@ Ext.define('program.view.window.Backup', {
         flex: 1,
         border: true
     },
-    items: [
-        {
-            xtype: "backupgrid",
-            folder: "devsinfo",
-            margin: "0 5 0 0"
+    items: [{
+        xtype: "backupgrid",
+        folder: "devsinfo",
+        margin: "0 5 0 0"
 
-        }, {
-            xtype: "backupgrid",
-            folder: "devxml",
-            margin: "0 0 0 5"
-        }
-    ]
+    }, {
+        xtype: "backupgrid",
+        folder: "devxml",
+        margin: "0 0 0 5"
+    }]
 });
 
 
-Ext.define('SelectKeyWinodw',
-    {
-        extend: 'Ext.window.Window',
-        alias: "SelectKeyWinodw",
-        xtype: "SelectKeyWinodw",
-        title: "Select Key",
-        autoShow: true,
-        width: 600,
-        maxHeight: 390,
-        scrollable: "y",
-        initComponent: function () {
-            var me = this;
-            me.ip = me.ip || location.host;
-            me.port = me.port || "6379";
-            me.items = [{
-                rootVisible: false,
-                xtype: "treepanel",
-                listeners: {
-                    boxready: function (treePanel) {
-                        setTimeout(function () {
-                            var node = treePanel.store.findNode('value', me.key)
-                            if (node) {
-                                var path = node.getPath()
-                                treePanel.selectPath(path)
-                            }
-                        }, 1000)
+
+
+
+Ext.define('SelectKeyWinodw', {
+    extend: 'Ext.window.Window',
+    alias: "SelectKeyWinodw",
+    title: "Select Key",
+    autoShow: true,
+    width: 600,
+    maxHeight: 390,
+    scrollable: "y",
+    initComponent: function () {
+        var me = this;
+        me.ip = me.ip || location.host;
+        me.port = me.port || "6379";
+        me.items = [{
+            useArrows: true,
+            animate: true,
+            checkPropagation: "both",
+            bufferedRenderer: false,
+            rootVisible: false,
+            xtype: "treepanel",
+            listeners: {
+                boxready: function (treePanel) {
+                    setTimeout(function () {
+                        var node = treePanel.store.findNode('value', me.key)
+                        if (node) {
+                            var path = node.getPath()
+                            treePanel.selectPath(path)
+                        }
+                    }, 1000)
+                }
+            },
+            tbar: [{
+                    text: 'Expand All',
+                    xtype: "button",
+                    handler: function (th) {
+                        var me = this.up("treepanel");
+                        me.expandAll();
+                    }
+                }, {
+                    text: 'Collapse All',
+                    xtype: "button",
+                    handler: function (th) {
+                        var me = this.up("treepanel");
+                        me.collapseAll();
                     }
                 },
-                tbar: [
-                    {
-                        text: 'Expand All',
-                        xtype: "button",
-                        handler: function (th) {
-                            var me = this.up("treepanel");
-                            me.expandAll();
-                        }
-                    }, {
-                        text: 'Collapse All',
-                        xtype: "button",
-                        handler: function (th) {
-                            var me = this.up("treepanel");
-                            me.collapseAll();
-                        }
-                    },
-                    {
-                        xtype: "textfield",
-                        emptyText: "Object Name",
-                        filterName: "text",
-                        listeners: {
-                            buffer: 500,
-                            change: "onFilterUp"
-                        }
-                    },
-                    {
-                        xtype: "textfield",
-                        emptyText: "key",
-                        filterName: "value",
-                        //enableKeyEvents: true,
-                        listeners: {
-                            buffer: 500,
-                            change: "onFilterUp"
-                        }
-                    }
-                ],
-                width: "100%",
-                height: "100%",
-                scrollable: "y",
-                modal: true,
-                store: {
-                    type: "tree",
-                    autoLoad: true,
-                    filters: [],
-                    url: "php/main.php?par=nodes",
-                    proxy: {
-                        type: "ajax",
-                        url: "php/main.php?par=nodes&ip=" + me.ip + "&port=" + me.port + "",
-                        reader: {
-                            type: "json"
-                        }
+                {
+                    xtype: "textfield",
+                    emptyText: "Object Name",
+                    filterName: "text",
+                    listeners: {
+                        buffer: 500,
+                        change: "onFilterUp"
                     }
                 },
-                columns: [
-                    {xtype: "treecolumn", dataIndex: "text", flex: 1},
-                    {text: "object name", dataIndex: "text", flex: 1},
-                    {text: "key", dataIndex: "value", flex: 1},
-                ]
-            }]
-            me.buttons = [{
-                text: "Ok",
-                handler: function () {
-                    //var grid = win.down("treepanel");
-                    var tree = me.down("treepanel")
-                    var selectArr = tree.getSelection();
-                    console.log(selectArr)
-                    if (!selectArr[0]) {
-                        Ext.Msg.alert("Massage", "Please select a key .");
-                    } else {
-                        me.callback(selectArr)
+                {
+                    xtype: "textfield",
+                    emptyText: "key",
+                    filterName: "value",
+                    //enableKeyEvents: true,
+                    listeners: {
+                        buffer: 500,
+                        change: "onFilterUp"
                     }
                 }
-            }, {
-                text: "Cancel",
-                handler: function () {
-                    me.close();
+            ],
+            width: "100%",
+            height: "100%",
+            scrollable: "y",
+            modal: true,
+            store: {
+                type: "tree",
+                autoLoad: true,
+                filters: [],
+                url: "php/main.php?par=nodes",
+                proxy: {
+                    type: "ajax",
+                    url: "php/main.php?par=nodes&ip=" + me.ip + "&port=" + me.port + "",
+                    reader: {
+                        type: "json"
+                    }
                 }
-            }]
-            me.callParent();
-        }
+            },
+            columns: [{
+                    xtype: "treecolumn",
+                    dataIndex: "text",
+                    flex: 1
+                },
+                {
+                    text: "object name",
+                    dataIndex: "text",
+                    flex: 1
+                },
+                {
+                    text: "key",
+                    dataIndex: "value",
+                    flex: 1
+                },
+            ]
+        }]
+        me.buttons = [{
+            text: "Ok",
+            handler: function () {
+                //var grid = win.down("treepanel");
+                var tree = me.down("treepanel")
+                var selectArr = tree.getSelection();
+                console.log(selectArr)
+                if (!selectArr[0]) {
+                    Ext.Msg.alert("Massage", "Please select a key .");
+                } else {
+                    me.callback(selectArr)
+                }
+            }
+        }, {
+            text: "Cancel",
+            handler: function () {
+                me.close();
+            }
+        }]
+        me.callParent();
     }
-);
+});
 Ext.define("SelectKeyFormWindow", {
     extend: "Ext.window.Window",
     title: "Select Key",
     autoShow: true,
     width: 300,
     height: 215,
-    buttons: [
-        {
+    buttons: [{
             text: "select",
             handler: function () {
                 var me = this.up("window")
@@ -1299,321 +1490,86 @@ Ext.define("SelectKeyFormWindow", {
             }
         },
         {
-            text: "Cancel", handler: function () {
-            this.up("window").close()
-        }
+            text: "Cancel",
+            handler: function () {
+                this.up("window").close()
+            }
         }
     ],
-    items: [
-        {
-            xtype: "form",
-            defaultType: 'textfield',
-            //margin:10,
-            width: "100%",
-            height: "100%",
-            defaults: {
-                margin: 10,
-                allowBlank: false
-            },
-            listeners: {
-                boxready: function (form) {
-                    var win = form.up("window")
-                    form.form.setValues({ip: win.ip || "127.0.0.1", port: win.port || 6379})
-                    //form.loadRecord(rec)
-                }
-            },
-            items: [
-                {
-                    fieldLabel: 'Key',
-                    name: 'key',
-                    itemId: "key",
-                    listeners: {
-                        change: function (field, newValue, oldValue) {
-                            var win = field.up("window")
-                            var ip = win.ip;
-                            var port = win.port;
-                            var objname = field.up().getComponent("objname")
-                            if (newValue.length == 7) {
-                                Ext.Ajax.request({
-                                    url: "php/main.php",
-                                    async: false,
-                                    params: {
-                                        par: "getNodeTypeValue",
-                                        ip: "127.0.0.1",
-                                        port: "6379",
-                                        nodename: newValue,
-                                        type: "Object_Name"
-                                    },
-                                    success: function (response) {
-                                        objname.setValue(response.responseText)
-                                    }
-                                })
-                            }
-                        },
-
-                    }
-                },
-
-                {
-                    fieldLabel: 'Object Name',
-                    name: 'object_name',
-                    itemId: "objname",
-                    allowBlank: true
-                },
-                {
-                    fieldLabel: "Ip",
-                    itemId: "ip",
-                    name: "ip",
-                    value: "127.0.0.1"
-                },
-                {
-                    fieldLabel: "Port",
-                    name: "port",
-                    xtype: "numberfield",
-                    value: "6379",
-                    itemId: "port",
-                    //maxValue: 99,
-                    minValue: 1
-                }
-            ],
-        }
-    ]
-})
-
-
-Ext.define('SelectKeyWinodw',
-    {
-        extend: 'Ext.window.Window',
-        alias: "SelectKeyWinodw",
-        xtype: "SelectKeyWinodw",
-        title: "Select Key",
-        autoShow: true,
-        width: 600,
-        maxHeight: 390,
-        scrollable: "y",
-        initComponent: function () {
-            var me = this;
-            me.ip = me.ip || location.host;
-            me.port = me.port || "6379";
-            me.items = [{
-                rootVisible: false,
-                xtype: "treepanel",
-                listeners: {
-                    boxready: function (treePanel) {
-                        setTimeout(function () {
-                            var node = treePanel.store.findNode('value', me.key)
-                            if (node) {
-                                var path = node.getPath()
-                                treePanel.selectPath(path)
-                            }
-                        }, 1000)
-                    }
-                },
-                tbar: [
-                    {
-                        text: 'Expand All',
-                        xtype: "button",
-                        handler: function (th) {
-                            var me = this.up("treepanel");
-                            me.expandAll();
-                        }
-                    }, {
-                        text: 'Collapse All',
-                        xtype: "button",
-                        handler: function (th) {
-                            var me = this.up("treepanel");
-                            me.collapseAll();
-                        }
-                    },
-                    {
-                        xtype: "textfield",
-                        emptyText: "Object Name",
-                        filterName: "text",
-                        listeners: {
-                            buffer: 500,
-                            change: "onFilterUp"
-                        }
-                    },
-                    {
-                        xtype: "textfield",
-                        emptyText: "key",
-                        filterName: "value",
-                        //enableKeyEvents: true,
-                        listeners: {
-                            buffer: 500,
-                            change: "onFilterUp"
-                        }
-                    }
-                ],
-                width: "100%",
-                height: "100%",
-                scrollable: "y",
-                modal: true,
-                store: {
-                    type: "tree",
-                    autoLoad: true,
-                    filters: [],
-                    url: "php/main.php?par=nodes",
-                    proxy: {
-                        type: "ajax",
-                        url: "php/main.php?par=nodes&ip=" + me.ip + "&port=" + me.port + "",
-                        reader: {
-                            type: "json"
-                        }
-                    }
-                },
-                columns: [
-                    {xtype: "treecolumn", dataIndex: "text", flex: 1},
-                    {text: "object name", dataIndex: "text", flex: 1},
-                    {text: "key", dataIndex: "value", flex: 1},
-                ]
-            }]
-            me.buttons = [{
-                text: "Ok",
-                handler: function () {
-                    //var grid = win.down("treepanel");
-                    var tree = me.down("treepanel")
-                    var selectArr = tree.getSelection();
-                    console.log(selectArr)
-                    if (!selectArr[0]) {
-                        Ext.Msg.alert("Massage", "Please select a key .");
-                    } else {
-                        me.callback(selectArr)
-                    }
-                }
-            }, {
-                text: "Cancel",
-                handler: function () {
-                    me.close();
-                }
-            }]
-            me.callParent();
-        }
-    }
-);
-Ext.define("SelectKeyFormWindow", {
-    extend: "Ext.window.Window",
-    title: "Select Key",
-    autoShow: true,
-    width: 300,
-    height: 215,
-    buttons: [
-        {
-            text: "select",
-            handler: function () {
-                var me = this.up("window")
-                var form = me.down("form");
-                var keyfield = form.getComponent("key")
-                var objname = form.getComponent("objname")
-                var ip = form.getComponent("ip").value || "127.0.0.1"
-                var port = form.getComponent("port").value || "6379"
-                var win = Ext.create("SelectKeyWinodw", {
-                    ip: ip,
-                    port: port,
-                    callback: function (selectArr) {
-                        console.log(arguments)
-                        if (selectArr[0]) {
-                            var key = selectArr[0].data.value;
-                            var text = selectArr[0].data.text;
-                            keyfield.setValue(key);
-                            objname.setValue(text);
-                        }
-                        win.close()
-                    }
+    items: [{
+        xtype: "form",
+        defaultType: 'textfield',
+        //margin:10,
+        width: "100%",
+        height: "100%",
+        defaults: {
+            margin: 10,
+            allowBlank: false
+        },
+        listeners: {
+            boxready: function (form) {
+                var win = form.up("window")
+                form.form.setValues({
+                    ip: win.ip || "127.0.0.1",
+                    port: win.port || 6379
                 })
+                //form.loadRecord(rec)
             }
         },
-        "->",
-        {
-            text: "Ok",
-            handler: function () {
-                var win = this.up("window")
-                var form = win.down("form");
-                win.callback(form.getValues())
-                //grid.store.add(form.getValues())
-                win.close();
+        items: [{
+                fieldLabel: 'Key',
+                name: 'key',
+                itemId: "key",
+                listeners: {
+                    change: function (field, newValue, oldValue) {
+                        var win = field.up("window")
+                        var ip = win.ip;
+                        var port = win.port;
+                        var objname = field.up().getComponent("objname")
+                        if (newValue.length == 7) {
+                            Ext.Ajax.request({
+                                url: "php/main.php",
+                                async: false,
+                                params: {
+                                    par: "getNodeTypeValue",
+                                    ip: "127.0.0.1",
+                                    port: "6379",
+                                    nodename: newValue,
+                                    type: "Object_Name"
+                                },
+                                success: function (response) {
+                                    objname.setValue(response.responseText)
+                                }
+                            })
+                        }
+                    },
+
+                }
+            },
+
+            {
+                fieldLabel: 'Object Name',
+                name: 'object_name',
+                itemId: "objname",
+                allowBlank: true
+            },
+            {
+                fieldLabel: "Ip",
+                itemId: "ip",
+                name: "ip",
+                value: "127.0.0.1"
+            },
+            {
+                fieldLabel: "Port",
+                name: "port",
+                xtype: "numberfield",
+                value: "6379",
+                itemId: "port",
+                //maxValue: 99,
+                minValue: 1
             }
-        },
-        {
-            text: "Cancel", handler: function () {
-            this.up("window").close()
-        }
-        }
-    ],
-    items: [
-        {
-            xtype: "form",
-            defaultType: 'textfield',
-            //margin:10,
-            width: "100%",
-            height: "100%",
-            defaults: {
-                margin: 10,
-                allowBlank: false
-            },
-            listeners: {
-                boxready: function (form) {
-                    var win = form.up("window")
-                    form.form.setValues({ip: win.ip || "127.0.0.1", port: win.port || 6379})
-                    //form.loadRecord(rec)
-                }
-            },
-            items: [
-                {
-                    fieldLabel: 'Key',
-                    name: 'key',
-                    itemId: "key",
-                    listeners: {
-                        change: function (field, newValue, oldValue) {
-                            var win = field.up("window")
-                            var ip = win.ip;
-                            var port = win.port;
-                            var objname = field.up().getComponent("objname")
-                            if (newValue.length == 7) {
-                                Ext.Ajax.request({
-                                    url: "php/main.php",
-                                    async: false,
-                                    params: {
-                                        par: "getNodeTypeValue",
-                                        ip: "127.0.0.1",
-                                        port: "6379",
-                                        nodename: newValue,
-                                        type: "Object_Name"
-                                    },
-                                    success: function (response) {
-                                        objname.setValue(response.responseText)
-                                    }
-                                })
-                            }
-                        },
-
-                    }
-                },
-
-                {
-                    fieldLabel: 'Object Name',
-                    name: 'object_name',
-                    itemId: "objname",
-                    allowBlank: true
-                },
-                {
-                    fieldLabel: "Ip",
-                    itemId: "ip",
-                    name: "ip",
-                    value: "127.0.0.1"
-                },
-                {
-                    fieldLabel: "Port",
-                    name: "port",
-                    xtype: "numberfield",
-                    value: "6379",
-                    itemId: "port",
-                    //maxValue: 99,
-                    minValue: 1
-                }
-            ],
-        }
-    ]
+        ],
+    }]
 })
 
 Ext.define("modbusConfig", {
@@ -1627,6 +1583,10 @@ Ext.define("modbusConfig", {
         var store = grid.store;
         var items = store.data.items;
         var root = document.createElement("root");
+        //floatInvert
+        var float_invert_El = document.createElement("float_invert");
+        float_invert_El.innerHTML = grid.float_invert;
+        root.appendChild(float_invert_El)
         var aiOffsetEl = document.createElement("aiOffset");
         aiOffsetEl.innerHTML = grid.aiOffset;
         root.appendChild(aiOffsetEl)
@@ -1642,6 +1602,25 @@ Ext.define("modbusConfig", {
         var doOffsetEl = document.createElement("doOffset");
         doOffsetEl.innerHTML = grid.doOffset;
         root.appendChild(doOffsetEl)
+
+        var ai_map_reg_el = document.createElement("ai_map_reg");
+        ai_map_reg_el.innerHTML = grid.ai_map_reg;
+        root.appendChild(ai_map_reg_el);
+        var ao_map_reg_el = document.createElement("ao_map_reg");
+        ao_map_reg_el.innerHTML = grid.ao_map_reg;
+        root.appendChild(ao_map_reg_el);
+        var av_map_reg_el = document.createElement("av_map_reg");
+        av_map_reg_el.innerHTML = grid.av_map_reg;
+        root.appendChild(av_map_reg_el);
+        var bi_map_reg_el = document.createElement("bi_map_reg");
+        bi_map_reg_el.innerHTML = grid.bi_map_reg;
+        root.appendChild(bi_map_reg_el);
+        var bo_map_reg_el = document.createElement("bo_map_reg");
+        bo_map_reg_el.innerHTML = grid.bo_map_reg;
+        root.appendChild(bo_map_reg_el);
+        var bv_map_reg_el = document.createElement("bv_map_reg");
+        bv_map_reg_el.innerHTML = grid.bv_map_reg;
+        root.appendChild(bv_map_reg_el);
 
         for (var i = 0; i < items.length; i++) {
             var key = document.createElement("key");
@@ -1660,7 +1639,13 @@ Ext.define("modbusConfig", {
     loadModbusXml: function (xmlstr) {
         var grid = this;
         var store = grid.store;
-
+        //float_invert
+        var float_invert = $(xmlstr).find("float_invert")[0];
+        if (float_invert) {
+            grid.float_invert = float_invert.innerHTML;
+        } else {
+            grid.float_invert = 1
+        }
         var aiOffset = $(xmlstr).find("aiOffset")[0];
         if (aiOffset) {
             grid.aiOffset = aiOffset.innerHTML;
@@ -1674,19 +1659,53 @@ Ext.define("modbusConfig", {
         } else {
             grid.aoOffset = 0
         }
-
         var diOffset = $(xmlstr).find("diOffset")[0];
         if (diOffset) {
             grid.diOffset = diOffset.innerHTML;
         } else {
             grid.diOffset = 0
         }
-
         var doOffset = $(xmlstr).find("doOffset")[0];
         if (doOffset) {
             grid.doOffset = doOffset.innerHTML;
         } else {
             grid.doOffset = 0
+        }
+        var ai_map_reg = $(xmlstr).find("ai_map_reg")[0];
+        if (ai_map_reg) {
+            grid.ai_map_reg = ai_map_reg.innerHTML;
+        } else {
+            grid.ai_map_reg = 4;
+        }
+        var ao_map_reg = $(xmlstr).find("ao_map_reg")[0];
+        if (ao_map_reg) {
+            grid.ao_map_reg = ao_map_reg.innerHTML;
+        } else {
+            grid.ao_map_reg = 3;
+        }
+        var av_map_reg = $(xmlstr).find("av_map_reg")[0];
+        if (av_map_reg) {
+            grid.av_map_reg = av_map_reg.innerHTML;
+        } else {
+            grid.av_map_reg = 3;
+        }
+        var bi_map_reg = $(xmlstr).find("bi_map_reg")[0];
+        if (bi_map_reg) {
+            grid.bi_map_reg = bi_map_reg.innerHTML;
+        } else {
+            grid.bi_map_reg = 2;
+        }
+        var bo_map_reg = $(xmlstr).find("bo_map_reg")[0];
+        if (bo_map_reg) {
+            grid.bo_map_reg = bo_map_reg.innerHTML;
+        } else {
+            grid.bo_map_reg = 1;
+        }
+        var bv_map_reg = $(xmlstr).find("bv_map_reg")[0];
+        if (bv_map_reg) {
+            grid.bv_map_reg = bv_map_reg.innerHTML;
+        } else {
+            grid.bv_map_reg = 1;
         }
         var keys = $(xmlstr).find("key");
         var arr = [];
@@ -1722,6 +1741,51 @@ Ext.define("modbusConfig", {
             clicksToEdit: 1
         })
     ],
+    addModbusChange: function () {
+        var grid = this;
+
+        Ext.create("SelectKeyWinodw", {
+            callback: function (selectArr) {
+                var keys = this.down("treepanel").getChecked();
+                keys = keys.filter(function (val, index) {
+                    if (val.data.leaf) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                })
+                var arr = [
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ];
+                grid.store.removeAll()
+                for (var i = 0; i < keys.length; i++) {
+                    var key = keys[i].data.value;
+                    var obj = keys[i].data.text;
+                    var num = parseInt(key[4]);
+                    var pointnumber = arr[num].length + 1;
+                    if (key[4] == "2" || key[4] == "5") {
+                        pointnumber += arr[num - 1].length
+                    }
+                    var data = {
+                        slavenumber: 1,
+                        pointnumber: pointnumber,
+                        key: key,
+                        objectname: obj
+                    }
+                    arr[num].push(data);
+                    grid.store.add(data);
+                }
+                console.log(arr)
+            }
+        })
+
+
+    },
     addModbus: function () {
         var grid = this;
         var selArr = grid.getSelection();
@@ -1747,8 +1811,7 @@ Ext.define("modbusConfig", {
             autoShow: true,
             width: 300,
             height: 215,
-            buttons: [
-                {
+            buttons: [{
                     text: "select",
                     handler: function () {
                         var form = setkeywin.down("form");
@@ -1785,83 +1848,81 @@ Ext.define("modbusConfig", {
                     }
                 },
                 {
-                    text: "Cancel", handler: function () {
-                    this.up("window").close()
-                }
+                    text: "Cancel",
+                    handler: function () {
+                        this.up("window").close()
+                    }
                 }
             ],
-            items: [
-                {
-                    xtype: "form",
-                    defaultType: 'textfield',
-                    //margin:10,
-                    width: "100%",
-                    height: "100%",
-                    defaults: {
-                        margin: 10,
-                        allowBlank: false
-                    },
-                    listeners: {
-                        boxready: function (form) {
-                            form.form.setValues(data)
-                            //form.loadRecord(rec)
+            items: [{
+                xtype: "form",
+                defaultType: 'textfield',
+                //margin:10,
+                width: "100%",
+                height: "100%",
+                defaults: {
+                    margin: 10,
+                    allowBlank: false
+                },
+                listeners: {
+                    boxready: function (form) {
+                        form.form.setValues(data)
+                        //form.loadRecord(rec)
+                    }
+                },
+                items: [{
+                        fieldLabel: 'Key',
+                        name: 'key',
+                        itemId: "key",
+                        listeners: {
+                            change: function (field, newValue, oldValue) {
+                                var win = field.up("window")
+                                var ip = win.ip;
+                                var port = win.port;
+                                var objname = field.up().getComponent("objname")
+                                if (newValue.length == 7) {
+                                    Ext.Ajax.request({
+                                        url: "php/main.php",
+                                        async: false,
+                                        params: {
+                                            par: "getNodeTypeValue",
+                                            ip: "127.0.0.1",
+                                            port: "6379",
+                                            nodename: newValue,
+                                            type: "Object_Name"
+                                        },
+                                        success: function (response) {
+                                            objname.setValue(response.responseText)
+                                        }
+                                    })
+                                }
+                            },
+
                         }
                     },
-                    items: [
-                        {
-                            fieldLabel: 'Key',
-                            name: 'key',
-                            itemId: "key",
-                            listeners: {
-                                change: function (field, newValue, oldValue) {
-                                    var win = field.up("window")
-                                    var ip = win.ip;
-                                    var port = win.port;
-                                    var objname = field.up().getComponent("objname")
-                                    if (newValue.length == 7) {
-                                        Ext.Ajax.request({
-                                            url: "php/main.php",
-                                            async: false,
-                                            params: {
-                                                par: "getNodeTypeValue",
-                                                ip: "127.0.0.1",
-                                                port: "6379",
-                                                nodename: newValue,
-                                                type: "Object_Name"
-                                            },
-                                            success: function (response) {
-                                                objname.setValue(response.responseText)
-                                            }
-                                        })
-                                    }
-                                },
 
-                            }
-                        },
-
-                        {
-                            fieldLabel: 'Object Name',
-                            name: 'objectname',
-                            itemId: "objname",
-                            allowBlank: true
-                        },
-                        {
-                            fieldLabel: "Slave Number",
-                            name: "slavenumber",
-                            xtype: "numberfield",
-                            //maxValue: 99,
-                            minValue: 1
-                        },
-                        {
-                            fieldLabel: "Point Number",
-                            name: "pointnumber",
-                            xtype: "numberfield",
-                            //maxValue: 99,
-                            minValue: 1
-                        }
-                    ],
-                }
-            ]
+                    {
+                        fieldLabel: 'Object Name',
+                        name: 'objectname',
+                        itemId: "objname",
+                        allowBlank: true
+                    },
+                    {
+                        fieldLabel: "Slave Number",
+                        name: "slavenumber",
+                        xtype: "numberfield",
+                        //maxValue: 99,
+                        minValue: 1
+                    },
+                    {
+                        fieldLabel: "Point Number",
+                        name: "pointnumber",
+                        xtype: "numberfield",
+                        //maxValue: 99,
+                        minValue: 1
+                    }
+                ],
+            }]
         })
     },
     deleteModbus: function () {
@@ -1872,51 +1933,85 @@ Ext.define("modbusConfig", {
         }
     },
 
-    tbar: [
-        {
-            text: "Add", handler: function () {
-            var grid = this.up("grid");
-            grid.addModbus();
-        }
-        },
-        {
-            text: "Delete", handler: function () {
-            var grid = this.up("grid");
-            grid.deleteModbus()
-        }
-        },
-        {
-            text: "offset", hidden: false, handler: function () {
-            var grid = this.up("grid");
+    tbar: [{
+            text: "Change",
+            handler: function () {
+                var grid = this.up("grid");
+                grid.addModbusChange();
 
-            Ext.create("Ext.window.Window", {
-                text: "Settings",
-                autoShow: true,
-                width: 300,
-                height: 215,
-                buttons: [
-                    {
-                        text: "Ok",
-                        handler: function () {
-                            var win = this.up("window")
-                            var form = win.down("form");
-                            var values = form.getValues();
-                            grid.aiOffset = values.aiOffset
-                            grid.aoOffset = values.aoOffset
-                            grid.diOffset = values.diOffset
-                            grid.doOffset = values.doOffset
-                            //rec.set(form.getValues());
-                            win.close();
+            }
+        },
+        {
+            text: "Add",
+            handler: function () {
+                var grid = this.up("grid");
+                grid.addModbus();
+            }
+        },
+        {
+            text: "Delete",
+            handler: function () {
+                var grid = this.up("grid");
+                grid.deleteModbus()
+            }
+        },
+        {
+            text: "Settings",
+            hidden: false,
+            handler: function () {
+                var grid = this.up("grid");
+                Ext.define("RegisterStore", {
+                    extend: "Ext.data.Store",
+                    fields: ["name", "value"],
+                    data: [{
+                        name: "Coils 00001",
+                        value: 1
+                    }, {
+                        name: "Discrete Registers 10001",
+                        value: 2
+                    }, {
+                        name: "Holding Registers 40001",
+                        value: 4
+                    }, {
+                        name: "Input Registers 30001",
+                        value: 3
+                    }]
+                })
+                Ext.create("Ext.window.Window", {
+                    title: "Settings",
+                    autoShow: true,
+                    width: 330,
+                    //height: 215,
+                    buttons: [{
+                            text: "Ok",
+                            handler: function () {
+                                var win = this.up("window")
+                                var form = win.down("form");
+                                var values = form.getValues();
+                                console.log(values)
+                                grid.float_invert = values.float_invert;
+                                grid.aiOffset = values.aiOffset;
+                                grid.aoOffset = values.aoOffset;
+                                grid.diOffset = values.diOffset;
+                                grid.doOffset = values.doOffset;
+                                grid.ai_map_reg = values.ai_map_reg;
+                                grid.ao_map_reg = values.ao_map_reg;
+                                grid.av_map_reg = values.av_map_reg;
+                                grid.bi_map_reg = values.bi_map_reg;
+                                grid.bo_map_reg = values.bo_map_reg;
+                                grid.bv_map_reg = values.bv_map_reg;
+                                //rec.set(form.getValues());
+                                win.close();
+                            }
+                        },
+                        {
+                            text: "Cancel",
+                            handler: function () {
+                                this.up("window").close()
+                            }
                         }
-                    },
-                    {
-                        text: "Cancel", handler: function () {
-                        this.up("window").close()
-                    }
-                    }
-                ],
-                items: [
-                    {
+                    ],
+                    items: [{
                         xtype: "form",
                         defaultType: 'textfield',
                         //margin:10,
@@ -1931,42 +2026,105 @@ Ext.define("modbusConfig", {
                                 //form.loadRecord(rec)
                             }
                         },
-                        items: [
+                        items: [{
+                                xtype: "checkbox",
+                                fieldLabel: "Float Invert",
+                                inputValue: 1,
+                                uncheckedValue: 0,
+                                value: grid.float_invert,
+                                name: "float_invert"
+                            },
                             {
-                                xtype: "numberfield",
-                                value: grid.aiOffset || 0,
-                                fieldLabel: 'AI',
-                                name: 'aiOffset'
-                            }, {
-                                xtype: "numberfield",
-                                value: grid.aoOffset || 0,
-                                fieldLabel: 'AO',
-                                name: 'aoOffset'
-                            }, {
-                                xtype: "numberfield",
-                                value: grid.diOffset || 0,
-                                fieldLabel: 'DI',
-                                name: 'diOffset'
-                            }, {
-                                xtype: "numberfield",
-                                value: grid.doOffset || 0,
-                                fieldLabel: 'DO',
-                                name: 'doOffset'
+                                xtype: "fieldset",
+                                title: "map",
+                                hidden: true,
+                                defaults: {
+                                    xtype: "combo",
+                                    store: Ext.create("RegisterStore"),
+                                    displayField: "name",
+                                    valueField: "value",
+                                    width: 268
+                                },
+                                items: [{
+                                        fieldLabel: "AI",
+                                        value: grid.ai_map_reg || 4,
+                                        name: "ai_map_reg"
+                                    },
+                                    {
+                                        fieldLabel: "AO",
+                                        value: grid.ao_map_reg || 3,
+                                        name: "ao_map_reg"
+                                    },
+                                    {
+                                        fieldLabel: "AV",
+                                        value: grid.av_map_reg || 3,
+                                        name: "av_map_reg"
+                                    },
+                                    {
+                                        fieldLabel: "BI",
+                                        value: grid.bi_map_reg || 2,
+                                        name: "bi_map_reg"
+                                    },
+                                    {
+                                        fieldLabel: "BO",
+                                        value: grid.bo_map_reg || 1,
+                                        name: "bo_map_reg"
+                                    },
+                                    {
+                                        fieldLabel: "BV",
+                                        value: grid.bv_map_reg || 1,
+                                        name: "bv_map_reg"
+                                    }
+                                ]
+                            },
+                            {
+                                xtype: "fieldset",
+                                title: "Offset",
+                                items: [{
+                                        xtype: "numberfield",
+                                        value: grid.aiOffset || 0,
+                                        fieldLabel: 'AI',
+                                        name: 'aiOffset'
+                                    }, {
+                                        xtype: "numberfield",
+                                        value: grid.aoOffset || 0,
+                                        fieldLabel: 'AO',
+                                        name: 'aoOffset'
+                                    }, {
+                                        xtype: "numberfield",
+                                        value: grid.diOffset || 0,
+                                        fieldLabel: 'DI',
+                                        name: 'diOffset'
+                                    }, {
+                                        xtype: "numberfield",
+                                        value: grid.doOffset || 0,
+                                        fieldLabel: 'DO',
+                                        name: 'doOffset'
+                                    },
+
+                                ]
                             },
                         ],
-                    }
-                ]
-            })
-        }
+                    }]
+                })
+            }
+        },
+        "->",
+        {
+            text: "Export ...",
+            handler: function () {
+                open("php/file.php?par=get&fileName=/mnt/nandflash/modbusId.xml&header=Content-Disposition: attachment; filename=modbusId.xml");
+            }
         }
     ],
     initComponent: function () {
         var me = this;
         var ip = "127.0.0.1";
         var port = "6379";
-        me.columns = [
-            {
-                text: "Slave Number", dataIndex: "slavenumber", flex: 1,
+        me.columns = [{
+                text: "Slave Number",
+                dataIndex: "slavenumber",
+                flex: 1,
                 editor: {
                     xtype: 'numberfield',
                     allowBlank: false,
@@ -1975,7 +2133,9 @@ Ext.define("modbusConfig", {
                 }
             },
             {
-                text: "Point Number", dataIndex: "pointnumber", flex: 1,
+                text: "Point Number",
+                dataIndex: "pointnumber",
+                flex: 1,
                 editor: {
                     xtype: 'numberfield',
                     allowBlank: false,
@@ -1984,7 +2144,9 @@ Ext.define("modbusConfig", {
                 }
             },
             {
-                text: "type", dataIndex: "pointtype", width: 40,
+                text: "type",
+                dataIndex: "pointtype",
+                width: 40,
                 renderer: function (und, ele, model) {
                     var key = model.data.key
                     if (key) {
@@ -1993,16 +2155,22 @@ Ext.define("modbusConfig", {
                                 return "AI";
                             case "1":
                                 return "AO";
+                            case "2":
+                                return "AV";
                             case "3":
                                 return "BI";
                             case "4":
                                 return "BO";
+                            case "5":
+                                return "BV";
                         }
                     }
                 }
             },
             {
-                text: "Object_Name", dataIndex: "objectname", flex: 2,
+                text: "Object_Name",
+                dataIndex: "objectname",
+                flex: 2,
                 // editor: {
                 //     xtype: 'textfield',
                 //     allowBlank: false
@@ -2034,7 +2202,9 @@ Ext.define("modbusConfig", {
                 }
             },
             {
-                text: "Key", dataIndex: "key", flex: 1,
+                text: "Key",
+                dataIndex: "key",
+                flex: 1,
                 editor: {
                     xtype: 'textfield',
                     allowBlank: false
@@ -2071,7 +2241,9 @@ Ext.define("modbusConfig", {
         groupField: 'pointtype',
         data: []
     }),
-    features: [{ftype: 'grouping'}],
+    features: [{
+        ftype: 'grouping'
+    }],
 
 })
 Ext.define("ListenIps", {
@@ -2129,16 +2301,19 @@ Ext.define("ListenIps", {
             }
         })
     },
-    columns: [
-        {
-            text: "Ip", dataIndex: "ip", flex: 1,
+    columns: [{
+            text: "Ip",
+            dataIndex: "ip",
+            flex: 1,
             editor: {
                 xtype: 'textfield',
                 allowBlank: false
             }
         },
         {
-            text: "Port", dataIndex: "port", flex: 1,
+            text: "Port",
+            dataIndex: "port",
+            flex: 1,
             editor: {
                 xtype: 'numberfield',
                 allowBlank: false,
@@ -2201,11 +2376,22 @@ Ext.define('QueryDataRecord', {
         Ext.apply(this, {
             store: Ext.create("Ext.data.Store", {
                 autoLoad: true,
-                fields: [
-                    {name: 'device_instance', type: 'string'},
-                    {name: 'Object_Name', type: 'string'},
-                    {name: 'Present_Value', type: 'string'},
-                    {name: 'last_update_time', type: 'date'}
+                fields: [{
+                        name: 'device_instance',
+                        type: 'string'
+                    },
+                    {
+                        name: 'Object_Name',
+                        type: 'string'
+                    },
+                    {
+                        name: 'Present_Value',
+                        type: 'string'
+                    },
+                    {
+                        name: 'last_update_time',
+                        type: 'date'
+                    }
                 ],
                 pageSize: pageSize,
                 proxy: {
@@ -2321,14 +2507,34 @@ Ext.define('QueryEventRecord', {
         Ext.apply(this, {
             store: Ext.create("Ext.data.Store", {
                 autoLoad: true,
-                fields: [
-                    {name: 'Object_Name', type: 'string'},
-                    {name: 'Description', type: "string"},
-                    {name: 'device_instance', type: 'string'},
-                    {name: 'device_number', type: 'string'},
-                    {name: 'Present_Value', type: 'string'},
-                    {name: 'message_number', type: 'string'},
-                    {name: 'last_update_time', type: 'date'}
+                fields: [{
+                        name: 'Object_Name',
+                        type: 'string'
+                    },
+                    {
+                        name: 'Description',
+                        type: "string"
+                    },
+                    {
+                        name: 'device_instance',
+                        type: 'string'
+                    },
+                    {
+                        name: 'device_number',
+                        type: 'string'
+                    },
+                    {
+                        name: 'Present_Value',
+                        type: 'string'
+                    },
+                    {
+                        name: 'message_number',
+                        type: 'string'
+                    },
+                    {
+                        name: 'last_update_time',
+                        type: 'date'
+                    }
                 ],
                 proxy: {
                     type: 'ajax',
@@ -2345,8 +2551,7 @@ Ext.define('QueryEventRecord', {
                     }
                 }
             }),
-            columns: [
-                {
+            columns: [{
                     text: 'Device Type',
                     sortable: true,
                     hidden: true,
@@ -2413,7 +2618,8 @@ Ext.define('QueryEventRecord', {
                     sortable: true,
                     dataIndex: 'last_update_time',
                     flex: 2
-                }],
+                }
+            ],
             bbar: {
                 xtype: 'pagingtoolbar',
                 pageSize: 10,
@@ -2452,31 +2658,34 @@ function setIpsWindow() {
         items: [
             Ext.create("ListenIps", {})
         ],
-        buttons: [
-            {
-                text: "Add", handler: function () {
-                var grid = this.up("window").down("grid")
-                grid.addIp()
-            }
+        buttons: [{
+                text: "Add",
+                handler: function () {
+                    var grid = this.up("window").down("grid")
+                    grid.addIp()
+                }
             },
             {
-                text: "Delete", handler: function () {
-                var grid = this.up("window").down("grid")
-                grid.deleteIp();
-            }
+                text: "Delete",
+                handler: function () {
+                    var grid = this.up("window").down("grid")
+                    grid.deleteIp();
+                }
             },
             "->",
             {
-                text: "Ok", handler: function () {
-                var grid = this.up("window").down("grid")
-                console.log(grid)
-                grid.saveIpsXml();
-            }
+                text: "Ok",
+                handler: function () {
+                    var grid = this.up("window").down("grid")
+                    console.log(grid)
+                    grid.saveIpsXml();
+                }
             },
             {
-                text: "Cancel", handler: function () {
-                this.up("window").close()
-            }
+                text: "Cancel",
+                handler: function () {
+                    this.up("window").close()
+                }
             }
         ]
     })
@@ -2563,7 +2772,8 @@ function showDataRecordWindow() {
                 treePanel.collapseAll()
             }
         }, "->", {
-            text: "config filter point", handler: function () {
+            text: "config filter point",
+            handler: function () {
                 Ext.create("FilterPointWindow", {
                     callback: function (res) {
                         //Ext.Msg.alert("Info","Ok");
@@ -2571,84 +2781,84 @@ function showDataRecordWindow() {
                 })
             }
         }, {
-            text: "config database", handler: function () {
+            text: "config database",
+            handler: function () {
                 var win = Ext.create("Ext.window.Window", {
                     title: "Config database .",
                     autoShow: true,
                     width: 300,
                     resizeable: false,
-                    items: [
-                        {
-                            xtype: "form",
-                            defaults: {
-                                margin: 10,
-                                allowBlank: false
+                    items: [{
+                        xtype: "form",
+                        defaults: {
+                            margin: 10,
+                            allowBlank: false
+                        },
+                        items: [{
+                                xtype: "textfield",
+                                fieldLabel: "Database host",
+                                name: "host",
+                                value: "127.0.0.1"
                             },
-                            items: [
-                                {
-                                    xtype: "textfield",
-                                    fieldLabel: "Database host",
-                                    name: "host",
-                                    value: "127.0.0.1"
-                                },
-                                {
-                                    xtype: "textfield",
-                                    fieldLabel: "username",
-                                    name: "username",
-                                    value: "root"
-                                },
-                                {
-                                    xtype: "textfield",
-                                    fieldLabel: "password",
-                                    name: "password",
-                                    inputType: "password",
-                                    value: "root"
-                                },
-                                {
-                                    xtype: "textfield",
-                                    fieldLabel: "Database name",
-                                    name: "databasename",
-                                    value: "smartio_db"
-                                }, {
-                                    xtype: "button",
-                                    text: "create ", handler: function () {
-                                        var form = this.up("form");
-                                        form.submit({
-                                            url: "php/mysqlInit.php?par=createTable",
-                                            success: function (form, action) {
-                                                Ext.Msg.alert('Info ', action.response.responseText);
-                                            },
-                                            failure: function (form, action) {
-                                                Ext.Msg.alert('Info ', action.response.responseText);
-                                            }
-                                        })
-                                    }
-                                }
-                            ],
-                            listeners: {
-                                boxready: function (form) {
-                                    Ext.Ajax.request({
-                                        url: "php/mysqlInit.php?par=getConfig",
-                                        success: function (response) {
-                                            var xml = $(response.responseText);
-                                            var host = xml.find("host").text()
-                                            var username = xml.find("username").text()
-                                            var password = xml.find("password").text()
-                                            var databasename = xml.find("databasename").text()
-                                            var ojson = {
-                                                host: host || "127.0.0.1",
-                                                username: username || "root",
-                                                password: password || "root",
-                                                databasename: databasename || "smartio_db"
-                                            }
-                                            form.getForm().setValues(ojson)
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "username",
+                                name: "username",
+                                value: "root"
+                            },
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "password",
+                                name: "password",
+                                inputType: "password",
+                                value: "root"
+                            },
+                            {
+                                xtype: "textfield",
+                                fieldLabel: "Database name",
+                                name: "databasename",
+                                value: "smartio_db"
+                            }, {
+                                xtype: "button",
+                                text: "create ",
+                                handler: function () {
+                                    var form = this.up("form");
+                                    form.submit({
+                                        url: "php/mysqlInit.php?par=createTable",
+                                        success: function (form, action) {
+                                            Ext.Msg.alert('Info ', action.response.responseText);
+                                        },
+                                        failure: function (form, action) {
+                                            Ext.Msg.alert('Info ', action.response.responseText);
                                         }
                                     })
                                 }
-                            },
-                            buttons: [
-                                {
-                                    text: "Test Connect", handler: function () {
+                            }
+                        ],
+                        listeners: {
+                            boxready: function (form) {
+                                Ext.Ajax.request({
+                                    url: "php/mysqlInit.php?par=getConfig",
+                                    success: function (response) {
+                                        var xml = $(response.responseText);
+                                        var host = xml.find("host").text()
+                                        var username = xml.find("username").text()
+                                        var password = xml.find("password").text()
+                                        var databasename = xml.find("databasename").text()
+                                        var ojson = {
+                                            host: host || "127.0.0.1",
+                                            username: username || "root",
+                                            password: password || "root",
+                                            databasename: databasename || "smartio_db"
+                                        }
+                                        form.getForm().setValues(ojson)
+                                    }
+                                })
+                            }
+                        },
+                        buttons: [{
+                                text: "Test Connect",
+                                handler: function () {
                                     var form = this.up("form");
                                     form.submit({
                                         url: "php/mysqlInit.php?par=testConnect",
@@ -2661,10 +2871,11 @@ function showDataRecordWindow() {
                                     })
 
                                 }
-                                },
-                                "->",
-                                {
-                                    text: "Ok", handler: function () {
+                            },
+                            "->",
+                            {
+                                text: "Ok",
+                                handler: function () {
                                     var form = this.up("form");
                                     if (form.isValid()) {
                                         var values = form.getValues();
@@ -2679,19 +2890,20 @@ function showDataRecordWindow() {
                                         })
                                     }
                                 }
-                                },
-                                {
-                                    text: "Cancel", handler: function () {
+                            },
+                            {
+                                text: "Cancel",
+                                handler: function () {
                                     win.close();
                                 }
-                                }
-                            ]
-                        }
-                    ]
+                            }
+                        ]
+                    }]
                 })
             }
         }, {
-            text: "config Listeners Ip", handler: function () {
+            text: "config Listeners Ip",
+            handler: function () {
                 setIpsWindow()
             }
         }]
@@ -2704,58 +2916,60 @@ function showDataRecordWindow() {
         renderTo: Ext.getBody(),
         layout: "border",
         items: [formPanel, treePanel],
-        buttons: [
-            {
-                text: "Run/Restart", handler: function () {
-                Ext.Ajax.request({
-                    url: "php/mysqlinit.php?par=runListen"
-                }).then(function (response) {
-                    console.log(response.responseText);
-                    Ext.Msg.alert("info", " ok .");
-                })
-            }
+        buttons: [{
+                text: "Run/Restart",
+                handler: function () {
+                    Ext.Ajax.request({
+                        url: "php/mysqlinit.php?par=runListen"
+                    }).then(function (response) {
+                        console.log(response.responseText);
+                        Ext.Msg.alert("info", " ok .");
+                    })
+                }
             },
             "->",
             {
-                text: "Show Event", handler: function () {
-                var keysArr = treePanel.getSelectPoints();
+                text: "Show Event",
+                handler: function () {
+                    var keysArr = treePanel.getSelectPoints();
 
-                var qdr = Ext.create("QueryEventRecord", {
-                    ip:  IPCombo.value,
-                    keys:keysArr.join(",")
-                })
-                // var cdr = Ext.create("ChartDataRecord", {
-                //     store: qdr.store
-                // })
+                    var qdr = Ext.create("QueryEventRecord", {
+                        ip: IPCombo.value,
+                        keys: keysArr.join(",")
+                    })
+                    // var cdr = Ext.create("ChartDataRecord", {
+                    //     store: qdr.store
+                    // })
 
-                Ext.create("Ext.window.Window", {
-                    title: "Show Data Record",
-                    autoShow: true,
-                    scrollable: "y",
-                    items: [ qdr]
-                })
+                    Ext.create("Ext.window.Window", {
+                        title: "Show Data Record",
+                        autoShow: true,
+                        scrollable: "y",
+                        items: [qdr]
+                    })
 
 
-            }
+                }
             },
             {
-                text: "Show", handler: function () {
-                var keysArr = treePanel.getSelectPoints();
-                var qdr = Ext.create("QueryDataRecord", {
-                    ip: IPCombo.value,
-                    keys: keysArr.join(",")
-                })
-                var cdr = Ext.create("ChartDataRecord", {
-                    store: qdr.store
-                })
+                text: "Show",
+                handler: function () {
+                    var keysArr = treePanel.getSelectPoints();
+                    var qdr = Ext.create("QueryDataRecord", {
+                        ip: IPCombo.value,
+                        keys: keysArr.join(",")
+                    })
+                    var cdr = Ext.create("ChartDataRecord", {
+                        store: qdr.store
+                    })
 
-                Ext.create("Ext.window.Window", {
-                    title: "Show Data Record",
-                    autoShow: true,
-                    scrollable: "y",
-                    items: [cdr, qdr]
-                })
-            }
+                    Ext.create("Ext.window.Window", {
+                        title: "Show Data Record",
+                        autoShow: true,
+                        scrollable: "y",
+                        items: [cdr, qdr]
+                    })
+                }
             }
         ]
 
@@ -2827,16 +3041,19 @@ Ext.define("FilterPoint", {
             }
         })
     },
-    columns: [
-        {
-            text: "Ip", dataIndex: "ip", flex: 1,
+    columns: [{
+            text: "Ip",
+            dataIndex: "ip",
+            flex: 1,
             editor: {
                 xtype: 'textfield',
                 allowBlank: false
             }
         },
         {
-            text: "Port", dataIndex: "port", flex: 1,
+            text: "Port",
+            dataIndex: "port",
+            flex: 1,
             hidden: true,
             editor: {
                 xtype: 'numberfield',
@@ -2846,39 +3063,44 @@ Ext.define("FilterPoint", {
             }
         },
         {
-            text: "Key", dataIndex: "key", flex: 1,
+            text: "Key",
+            dataIndex: "key",
+            flex: 1,
             editor: {
                 xtype: "textfield",
                 allowBlank: false
             }
         },
         {
-            text: "Object_Name", dataIndex: "object_name", flex: 1, renderer: function (und, ele, model) {
-            var key = model.data.key
-            //console.log(arguments)
-            if (und != "") {
+            text: "Object_Name",
+            dataIndex: "object_name",
+            flex: 1,
+            renderer: function (und, ele, model) {
+                var key = model.data.key
+                //console.log(arguments)
+                if (und != "") {
+                    return und;
+                }
+                if (key) {
+                    Ext.Ajax.request({
+                        url: "php/main.php",
+                        async: false,
+                        params: {
+                            par: "getNodeTypeValue",
+                            ip: ip,
+                            port: port,
+                            nodename: model.data.key,
+                            type: "Object_Name"
+                        },
+                        success: function (response) {
+
+                            und = response.responseText;
+                            model.data.objectname = und
+                        }
+                    })
+                }
                 return und;
             }
-            if (key) {
-                Ext.Ajax.request({
-                    url: "php/main.php",
-                    async: false,
-                    params: {
-                        par: "getNodeTypeValue",
-                        ip: ip,
-                        port: port,
-                        nodename: model.data.key,
-                        type: "Object_Name"
-                    },
-                    success: function (response) {
-
-                        und = response.responseText;
-                        model.data.objectname = und
-                    }
-                })
-            }
-            return und;
-        }
         }
     ],
     plugins: [
@@ -2917,41 +3139,42 @@ Ext.define("FilterPointWindow", {
     title: "Setting Event No Listen Point",
     autoShow: true,
     scrollable: "y",
-    items: [
-        {
-            xtype: "FilterPoint"
-        }
-    ],
-    buttons: [
-        {
-            text: "Add", handler: function () {
-            var grid = this.up("window").down("grid")
-            Ext.create("SelectKeyFormWindow", {
-                callback: function (res) {
-                    console.log(res)
-                    grid.addItem(res)
-                }
-            })
-        }
+    items: [{
+        xtype: "FilterPoint"
+    }],
+    buttons: [{
+            text: "Add",
+            handler: function () {
+                var grid = this.up("window").down("grid")
+                Ext.create("SelectKeyFormWindow", {
+                    callback: function (res) {
+                        console.log(res)
+                        grid.addItem(res)
+                    }
+                })
+            }
         },
         {
-            text: "Delete", handler: function () {
-            var grid = this.up("window").down("grid")
-            grid.deleteSelectItem();
-        }
+            text: "Delete",
+            handler: function () {
+                var grid = this.up("window").down("grid")
+                grid.deleteSelectItem();
+            }
         },
         "->",
         {
-            text: "Ok", handler: function () {
-            var grid = this.up("window").down("grid")
-            console.log(grid)
-            grid.saveIpsXml();
-        }
+            text: "Ok",
+            handler: function () {
+                var grid = this.up("window").down("grid")
+                console.log(grid)
+                grid.saveIpsXml();
+            }
         },
         {
-            text: "Cancel", handler: function () {
-            this.up("window").close()
-        }
+            text: "Cancel",
+            handler: function () {
+                this.up("window").close()
+            }
         }
     ]
 })
@@ -2974,7 +3197,7 @@ Ext.define("ChartDataRecord", {
         width: 100,
         height: 30,
         x: 40, // the sprite x position
-        y: 30  // the sprite y position
+        y: 30 // the sprite y position
     }],
 
     tbar: {
@@ -3007,8 +3230,7 @@ Ext.define("ChartDataRecord", {
             ""
         ]
     },
-    interactions: [
-        {
+    interactions: [{
             type: 'panzoom',
             zoomOnPan: true
         }
@@ -3106,9 +3328,10 @@ Ext.define("ChartDataRecord", {
                     "Device Type :" + record.data.device_type,
                     "Device Number :" + record.data.device_number,
                     "Present Value :" + record.data.Present_Value,
-                    "Time :" + new Date(record.data.last_update_time).toLocaleString()]
+                    "Time :" + new Date(record.data.last_update_time).toLocaleString()
+                ]
                 if (record.data.message_number) {
-                    arr.push("message :"+record.data.message_number+"");
+                    arr.push("message :" + record.data.message_number + "");
                 }
                 tooltip.setHtml(arr.join("<br>"))
             }

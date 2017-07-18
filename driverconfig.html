@@ -194,8 +194,8 @@
 
     <div class="toolbar">
         <!-- Large button group -->
-        <button type="button" class="hide btn btn-success btn-lg button_shadow" title="Listen Config" data-toggle="modal"
-               onclick="showDataRecordWindow()" aria-label="Left Align">
+        <button type="button" class="hide btn btn-success btn-lg button_shadow" title="Listen Config" data-toggle="modal" onclick="showDataRecordWindow()"
+            aria-label="Left Align">
             <span class=" glyphicon glyphicon-cog" aria-hidden="true"></span> Listen Config
         </button>
         <button type="button" class="btn btn-danger btn-lg button_shadow" aria-label="Left Align" id="reboot">
@@ -413,10 +413,10 @@
 <script src="js/ext-component.js"></script>-->
 
 <script type="text/javascript">
-    var jsArr=['js/main.js','js/ext-component.js']
-    for(var i=0;i<jsArr.length;i++){
+    var jsArr = ['js/main.js', 'js/ext-component.js']
+    for (var i = 0; i < jsArr.length; i++) {
         var script = document.createElement("script")
-        script.src=jsArr[i]+"?"+Math.random()
+        script.src = jsArr[i] + "?" + Math.random()
         document.getElementsByTagName("body")[0].append(script)
     }
     //modbus
@@ -465,19 +465,27 @@
                     port: PortCombo.value
                 }
             ],
-            buttons: [
+            buttons: [{
+                    text: "Change",
+                    handler: function () {
+                        modbusSetWin.down("grid").addModbusChange()
+                    }
+                },
                 {
-                    text: "Add", handler: function () {
+                    text: "Add",
+                    handler: function () {
                         modbusSetWin.down("grid").addModbus()
                     }
                 }, {
-                    text: "Delete", handler: function () {
+                    text: "Delete",
+                    handler: function () {
                         modbusSetWin.down("grid").deleteModbus()
                     }
                 },
                 "->",
                 {
-                    text: "Ok", handler: function () {
+                    text: "Ok",
+                    handler: function () {
                         var xmlstr = modbusSetWin.down("grid").generateModbusXml();
                         Ext.Ajax.request({
                             url: "php/file.php",
@@ -498,7 +506,8 @@
                     }
                 },
                 {
-                    text: "Cancel", handler: function () {
+                    text: "Cancel",
+                    handler: function () {
                         modbusSetWin.close();
 
                     }
@@ -604,7 +613,8 @@
             var fileName = "../../guard.xml";
             var content = $(".modal-body textarea[data-id=modbus]").val();
             console.log(content)
-            if (content.indexOf("modbus.sh") >= 0 & content.indexOf("modbus.sh") >= 0 & content.indexOf("modbus.sh") >= 0) {
+            if (content.indexOf("modbus.sh") >= 0 & content.indexOf("modbus.sh") >= 0 & content.indexOf(
+                    "modbus.sh") >= 0) {
                 progress60s()
                 $.ajax({
                     url: "upload.php",
@@ -731,9 +741,12 @@
                         for (var i = 0; i < aDri.length; i++) {
                             //console.log($(aDri[i].outerHTML||NodeToStr(aDri[i])));
                             // console.log($(oDri))
-                            console.log($(aDri[i].outerHTML || NodeToStr(aDri[i]))[0].outerHTML + "  " + $(oDri)[0].outerHTML);
-                            console.log($(aDri[i].outerHTML || NodeToStr(aDri[i]))[0].outerHTML == $(oDri)[0].outerHTML);
-                            if ($(aDri[i].outerHTML || NodeToStr(aDri[i]))[0].outerHTML == $(oDri)[0].outerHTML) { //如果找到了相同的
+                            console.log($(aDri[i].outerHTML || NodeToStr(aDri[i]))[0].outerHTML +
+                                "  " + $(oDri)[0].outerHTML);
+                            console.log($(aDri[i].outerHTML || NodeToStr(aDri[i]))[0].outerHTML ==
+                                $(oDri)[0].outerHTML);
+                            if ($(aDri[i].outerHTML || NodeToStr(aDri[i]))[0].outerHTML == $(
+                                    oDri)[0].outerHTML) { //如果找到了相同的
                                 if (ad == "Add") {
                                     alert("Exception:This file node repetition")
                                     //$($.parseXML(res)).find("root").append(oDri);
@@ -756,7 +769,7 @@
                                 }
                             }
 
-                        }//循环结束没找到
+                        } //循环结束没找到
                         if (ad == "Add") {
                             var content = $("#xmlpan .panel-body *").text();
                             content = content.substring(0, content.indexOf("</root>"));
@@ -845,8 +858,7 @@
                 xml += '\n' + '<driver feed_dog="' + isSelect + '" name="modbus.sh"/>';
                 xml += '\n' + '<driver feed_dog="' + isSelect + '" name="bac-logic-modbus"/>';
                 xml += '\n' + '<driver feed_dog="1" name="bac-server-modbus"/>';
-            }
-            ;
+            };
             if ($("#concheck8")[0].checked) {
                 var isSelect = 0;
                 if ($("#concheck8_s")[0].checked) {
@@ -910,71 +922,75 @@
             var fileName = document.getElementById('driveName').value;
             var file = document.getElementById("driveFile").files[0];
 
-            Ext.MessageBox.confirm('Massage', 'Do you want to overwrite the driver file <div style="color:red">' + fileName + "?" + "</div>", function (ms) {
-                if (ms == 'yes') {
-                    var st3 = $("#updateDriveStep3");
-                    var st4 = $("#updateDriveStep4");
-                    var st5 = $("#updateDriveStep5");
-                    var backBt = $("#updateDriveStepBt1");
-                    var nextBt = $("#updateDriveStepBt2");
-                    st4.removeClass("hide")
-                    st3.addClass("hide")
-                    backBt.addClass("hide")
-                    nextBt.addClass("hide")
-                    /* var p = Ext.create('Ext.ProgressBar', {
-                     renderTo: Ext.getBody(),
-                     width: 300
-                     });
-                     Ext.create("Ext.window.Window",{
-                     autoShow:true,
-                     items:p,
-                     title:"uploading ..."
-                     })*/
-                    // Wait for 5 seconds, then update the status el (progress bar will auto-reset)
+            Ext.MessageBox.confirm('Massage',
+                'Do you want to overwrite the driver file <div style="color:red">' + fileName + "?" +
+                "</div>",
+                function (ms) {
+                    if (ms == 'yes') {
+                        var st3 = $("#updateDriveStep3");
+                        var st4 = $("#updateDriveStep4");
+                        var st5 = $("#updateDriveStep5");
+                        var backBt = $("#updateDriveStepBt1");
+                        var nextBt = $("#updateDriveStepBt2");
+                        st4.removeClass("hide")
+                        st3.addClass("hide")
+                        backBt.addClass("hide")
+                        nextBt.addClass("hide")
+                        /* var p = Ext.create('Ext.ProgressBar', {
+                         renderTo: Ext.getBody(),
+                         width: 300
+                         });
+                         Ext.create("Ext.window.Window",{
+                         autoShow:true,
+                         items:p,
+                         title:"uploading ..."
+                         })*/
+                        // Wait for 5 seconds, then update the status el (progress bar will auto-reset)
 
-                    fileSliceUpload(file, fileName, "php/UpdateDrive.php", function (total, i) {
-                        //p.updateProgress(i/total , "uploading ...")
-                        var pressbar = $("#updateDriveStep4 .progress-bar")
-                        var formatV = Ext.util.Format.percent(i / total);
-                        pressbar[0].style.width = formatV
-                        if (i > total) {
-                            pressbar.html("done!");
-                            st4.addClass("hide")
-                            st5.removeClass("hide")
-                            st5.animate({
-                                marginLeft: "230px"
-                                //height: "3%",
-                                //fontSize: "10em",
-                                //borderWidth: 50
-                            }, 1000);
-                            setTimeout(function () {
-                                $.ajax({
-                                    url: "upload.php",
-                                    data: {
-                                        par: "system",
-                                        command: "cd /mnt/nandflash\n chmod 777 *\n ./" + fileName
-                                    },
-                                    success: function (data) {
-
-
-                                        console.log(arguments)
-                                    }
-                                })
-                            }, 5000)
-                        } else {
-                            pressbar.html(formatV + " Complete");
-                            
+                        fileSliceUpload(file, fileName, "php/UpdateDrive.php", function (total, i) {
+                            //p.updateProgress(i/total , "uploading ...")
+                            var pressbar = $("#updateDriveStep4 .progress-bar")
+                            var formatV = Ext.util.Format.percent(i / total);
+                            pressbar[0].style.width = formatV
+                            if (i > total) {
+                                pressbar.html("done!");
+                                st4.addClass("hide")
+                                st5.removeClass("hide")
+                                st5.animate({
+                                    marginLeft: "230px"
+                                    //height: "3%",
+                                    //fontSize: "10em",
+                                    //borderWidth: 50
+                                }, 1000);
+                                setTimeout(function () {
+                                    $.ajax({
+                                        url: "upload.php",
+                                        data: {
+                                            par: "system",
+                                            command: "cd /mnt/nandflash\n chmod 777 *\n ./" +
+                                                fileName
+                                        },
+                                        success: function (data) {
 
 
-                        }
+                                            console.log(arguments)
+                                        }
+                                    })
+                                }, 5000)
+                            } else {
+                                pressbar.html(formatV + " Complete");
 
 
-                        //0% Complete
-                        console.log(arguments)
 
-                    });
-                }
-            }, this);
+                            }
+
+
+                            //0% Complete
+                            console.log(arguments)
+
+                        });
+                    }
+                }, this);
 
 
             function fileSliceUpload(file, fileName, url, callback) {
@@ -1052,6 +1068,7 @@
         "bac-client": "bac_client.pid",
         "bac-server": "bac_server.pid",
     }
+
     function updateDrive(go) {
         var st1 = $("#updateDriveStep1");
         var st2 = $("#updateDriveStep2");
@@ -1075,8 +1092,6 @@
             }
         }
     }
-
-
 </script>
 
 </html>

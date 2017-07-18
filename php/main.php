@@ -265,7 +265,7 @@ function getDevs($arList)
     }
     $devs = array_unique($arr);
     foreach ($devs as $value) {
-        array_push($root['children'], array('leaf' => false, 'text' => $value, 'children' => getDevChildren($arList, $value, $redis)));
+        array_push($root['children'], array('leaf' => false, "checked"=>false, 'text' => $value, 'children' => getDevChildren($arList, $value, $redis)));
     }
     echo json_encode($root);
     //return $arr;
@@ -279,7 +279,7 @@ function getDevChildren($arList, $devValue, $redis)
     for ($i = 0; $i <= 6; $i++) {
         $children = getChildren($arList, $devValue . (string)$i, $redis);
         if (sizeof($children)) {
-            array_push($arr, array('text' => $types[$i], 'leaf' => false, 'children' => $children));
+            array_push($arr, array('text' => $types[$i],"checked"=>false, 'leaf' => false, 'children' => $children));
         }
     }
     return $arr;
@@ -293,7 +293,7 @@ function getChildren($arList, $devValue, $redis)
             //$Object_Name = $redis->hGet($value, 'Object_Name');
             $Object_Name = hGet($redis, $value, "Object_Name");
 
-            array_push($arr, array('leaf' => true, 'text' => $Object_Name, 'value' => $value));
+            array_push($arr, array('leaf' => true, "checked"=>false, 'text' => $Object_Name, 'value' => $value));
         }
     }
     return $arr;
