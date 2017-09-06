@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="633d9224-d895-4f36-981f-81e88d16658e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/未标题-1.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/driverconfig.html" afterPath="$PROJECT_DIR$/driverconfig.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ext-component.js" afterPath="$PROJECT_DIR$/js/ext-component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/mysqlInit.php" afterPath="$PROJECT_DIR$/php/mysqlInit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/deviceip.sql" afterPath="$PROJECT_DIR$/resources/deviceip.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload.php" afterPath="$PROJECT_DIR$/upload.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,49 +51,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ext-component.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ext-component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ext-component.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="2180" column="0" selection-start-line="2180" selection-start-column="0" selection-end-line="2180" selection-end-column="0" />
+              <caret line="2411" column="0" selection-start-line="2411" selection-start-column="0" selection-end-line="2411" selection-end-column="0" />
               <folding>
-                <element signature="e#24#7584#0" expanded="false" />
-                <element signature="e#7613#16699#0" expanded="false" />
+                <element signature="e#24#7585#0" expanded="false" />
+                <element signature="e#7614#17323#0" expanded="false" />
                 <element signature="n#!!block;n#popUpdate#0" expanded="false" />
-                <element signature="e#16973#21354#0" expanded="false" />
-                <element signature="e#21397#30794#0" expanded="false" />
-                <element signature="n#!!block;n#userLogin#0" expanded="false" />
-                <element signature="e#33507#39859#0" expanded="false" />
-                <element signature="e#39903#40378#0" expanded="false" />
-                <element signature="e#40417#44326#0" expanded="false" />
-                <element signature="e#44364#48628#0" expanded="false" />
-                <element signature="e#56907#73195#0" expanded="false" />
-                <element signature="e#57059#58356#0" expanded="false" />
-                <element signature="e#58395#59633#0" expanded="false" />
-                <element signature="e#59650#60071#0" expanded="false" />
-                <element signature="e#61015#62327#0" expanded="false" />
-                <element signature="e#62367#62682#0" expanded="false" />
-                <element signature="e#62877#65972#0" expanded="false" />
-                <element signature="e#63481#65939#0" expanded="false" />
-                <element signature="e#66021#66171#0" expanded="false" />
-                <element signature="e#66184#69418#0" expanded="false" />
-                <element signature="e#73221#76163#0" expanded="false" />
-                <element signature="e#77917#78512#0" expanded="false" />
-                <element signature="e#78528#78682#0" expanded="false" />
-                <element signature="e#79169#79854#0" expanded="false" />
-                <element signature="n#!!block;n#setIpsWindow#0" expanded="false" />
-                <element signature="e#85622#85820#0" expanded="false" />
-                <element signature="e#85881#85970#0" expanded="false" />
-                <element signature="e#86022#87193#0" expanded="false" />
-                <element signature="e#87244#94995#0" expanded="false" />
-                <element signature="e#88474#94856#0" expanded="false" />
-                <element signature="e#95033#96979#0" expanded="false" />
-                <element signature="e#95245#96972#0" expanded="false" />
-                <element signature="e#97010#101414#0" expanded="false" />
-                <element signature="e#98609#99193#0" expanded="false" />
-                <element signature="e#101449#102528#0" expanded="false" />
-                <element signature="e#107072#107655#0" expanded="false" />
+                <element signature="e#17597#21679#0" expanded="false" />
+                <element signature="e#21722#34005#0" expanded="false" />
+                <element signature="e#36774#43394#0" expanded="false" />
+                <element signature="e#43438#43867#0" expanded="false" />
+                <element signature="e#43905#47687#0" expanded="false" />
+                <element signature="e#47724#51754#0" expanded="false" />
+                <element signature="e#85598#90602#0" expanded="false" />
+                <element signature="e#108983#113480#0" expanded="false" />
+                <element signature="e#113506#114089#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/upload.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="112" column="1" selection-start-line="112" selection-start-column="1" selection-end-line="112" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,8 +87,8 @@
       <file leaf-file-name="driverconfig.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/driverconfig.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="197" column="38" selection-start-line="197" selection-start-column="38" selection-end-line="197" selection-end-column="38" />
+            <state relative-caret-position="2955">
+              <caret line="197" column="36" selection-start-line="197" selection-start-column="36" selection-end-line="197" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -156,7 +147,6 @@
         <option value="$PROJECT_DIR$/php/user.php" />
         <option value="$PROJECT_DIR$/php/UpdateDrive.php" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/upload.php" />
         <option value="$PROJECT_DIR$/UpdateLog.text" />
         <option value="$PROJECT_DIR$/php/main.php" />
         <option value="$PROJECT_DIR$/../../xamppfiles/htdocs/graph/resources/subscribe.php" />
@@ -177,9 +167,10 @@
         <option value="$PROJECT_DIR$/changeIP.html" />
         <option value="$PROJECT_DIR$/default.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/ext-component.js" />
         <option value="dbtable:/d839fdb7/dd97ec6e-5607-4e7b-8d16-9d4b6185a0e2/jddb.goods" />
         <option value="$PROJECT_DIR$/driverconfig.html" />
+        <option value="$PROJECT_DIR$/js/ext-component.js" />
+        <option value="$PROJECT_DIR$/upload.php" />
       </list>
     </option>
   </component>
@@ -224,7 +215,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -243,23 +234,9 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -467,17 +444,18 @@
       <workItem from="1499937009607" duration="5694000" />
       <workItem from="1499953669452" duration="5652000" />
       <workItem from="1499993401534" duration="4171000" />
+      <workItem from="1501746859972" duration="42000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="430333000" />
+    <option name="totallyTimeSpent" value="430375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="23" width="1878" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18300654" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18464053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944608" sideWeight="0.50385356" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -514,13 +492,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Redis.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="90" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modbusID.xml" />
     <entry file="file://$PROJECT_DIR$/a.xsl" />
     <entry file="dbDummy://dbtable:/d839fdb7/dd97ec6e-5607-4e7b-8d16-9d4b6185a0e2/test.smartio_key">
@@ -843,7 +814,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -856,7 +826,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -869,7 +838,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -882,7 +850,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -901,8 +868,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/driverconfig.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="197" column="38" selection-start-line="197" selection-start-column="38" selection-end-line="197" selection-end-column="38" />
+        <state relative-caret-position="2955">
+          <caret line="197" column="36" selection-start-line="197" selection-start-column="36" selection-end-line="197" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -910,45 +877,29 @@
     <entry file="file://$PROJECT_DIR$/js/ext-component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="2180" column="0" selection-start-line="2180" selection-start-column="0" selection-end-line="2180" selection-end-column="0" />
+          <caret line="2411" column="0" selection-start-line="2411" selection-start-column="0" selection-end-line="2411" selection-end-column="0" />
           <folding>
-            <element signature="e#24#7584#0" expanded="false" />
-            <element signature="e#7613#16699#0" expanded="false" />
+            <element signature="e#24#7585#0" expanded="false" />
+            <element signature="e#7614#17323#0" expanded="false" />
             <element signature="n#!!block;n#popUpdate#0" expanded="false" />
-            <element signature="e#16973#21354#0" expanded="false" />
-            <element signature="e#21397#30794#0" expanded="false" />
-            <element signature="n#!!block;n#userLogin#0" expanded="false" />
-            <element signature="e#33507#39859#0" expanded="false" />
-            <element signature="e#39903#40378#0" expanded="false" />
-            <element signature="e#40417#44326#0" expanded="false" />
-            <element signature="e#44364#48628#0" expanded="false" />
-            <element signature="e#56907#73195#0" expanded="false" />
-            <element signature="e#57059#58356#0" expanded="false" />
-            <element signature="e#58395#59633#0" expanded="false" />
-            <element signature="e#59650#60071#0" expanded="false" />
-            <element signature="e#61015#62327#0" expanded="false" />
-            <element signature="e#62367#62682#0" expanded="false" />
-            <element signature="e#62877#65972#0" expanded="false" />
-            <element signature="e#63481#65939#0" expanded="false" />
-            <element signature="e#66021#66171#0" expanded="false" />
-            <element signature="e#66184#69418#0" expanded="false" />
-            <element signature="e#73221#76163#0" expanded="false" />
-            <element signature="e#77917#78512#0" expanded="false" />
-            <element signature="e#78528#78682#0" expanded="false" />
-            <element signature="e#79169#79854#0" expanded="false" />
-            <element signature="n#!!block;n#setIpsWindow#0" expanded="false" />
-            <element signature="e#85622#85820#0" expanded="false" />
-            <element signature="e#85881#85970#0" expanded="false" />
-            <element signature="e#86022#87193#0" expanded="false" />
-            <element signature="e#87244#94995#0" expanded="false" />
-            <element signature="e#88474#94856#0" expanded="false" />
-            <element signature="e#95033#96979#0" expanded="false" />
-            <element signature="e#95245#96972#0" expanded="false" />
-            <element signature="e#97010#101414#0" expanded="false" />
-            <element signature="e#98609#99193#0" expanded="false" />
-            <element signature="e#101449#102528#0" expanded="false" />
-            <element signature="e#107072#107655#0" expanded="false" />
+            <element signature="e#17597#21679#0" expanded="false" />
+            <element signature="e#21722#34005#0" expanded="false" />
+            <element signature="e#36774#43394#0" expanded="false" />
+            <element signature="e#43438#43867#0" expanded="false" />
+            <element signature="e#43905#47687#0" expanded="false" />
+            <element signature="e#47724#51754#0" expanded="false" />
+            <element signature="e#85598#90602#0" expanded="false" />
+            <element signature="e#108983#113480#0" expanded="false" />
+            <element signature="e#113506#114089#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="112" column="1" selection-start-line="112" selection-start-column="1" selection-end-line="112" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

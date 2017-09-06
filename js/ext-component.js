@@ -1584,50 +1584,23 @@ Ext.define("modbusConfig", {
         var items = store.data.items;
         var root = document.createElement("root");
         //floatInvert
-        var float_invert_El = document.createElement("float_invert");
-        float_invert_El.innerHTML = grid.float_invert;
-        root.appendChild(float_invert_El)
-        var aiOffsetEl = document.createElement("aiOffset");
-        aiOffsetEl.innerHTML = grid.aiOffset;
-        root.appendChild(aiOffsetEl)
+        rootAddItems(root, ["float_invert"], [grid.float_invert])
+        rootAddItems(root, ["aiOffset", "aoOffset", "diOffset", "doOffset"], [grid.aiOffset, grid.aoOffset, grid.diOffset, grid.doOffset])
+        rootAddItems(root, ["ai_map_reg", "ao_map_reg", "av_map_reg", "bi_map_reg", "bo_map_reg", "bv_map_reg"], [grid.ai_map_reg, grid.ao_map_reg, grid.av_map_reg, grid.bi_map_reg, grid.bo_map_reg, grid.bv_map_reg])
+        rootAddItems(root, ["ai_priority", "ao_priority", "av_priority", "bi_priority", "bo_priority", "bv_priority"], [grid.ai_priority, grid.ao_priority, grid.av_priority, grid.bi_priority, grid.bo_priority, grid.bv_priority])
 
-        var aoOffsetEl = document.createElement("aoOffset");
-        aoOffsetEl.innerHTML = grid.aoOffset;
-        root.appendChild(aoOffsetEl)
-
-        var diOffsetEl = document.createElement("diOffset");
-        diOffsetEl.innerHTML = grid.diOffset;
-        root.appendChild(diOffsetEl)
-
-        var doOffsetEl = document.createElement("doOffset");
-        doOffsetEl.innerHTML = grid.doOffset;
-        root.appendChild(doOffsetEl)
-
-        var ai_map_reg_el = document.createElement("ai_map_reg");
-        ai_map_reg_el.innerHTML = grid.ai_map_reg;
-        root.appendChild(ai_map_reg_el);
-        var ao_map_reg_el = document.createElement("ao_map_reg");
-        ao_map_reg_el.innerHTML = grid.ao_map_reg;
-        root.appendChild(ao_map_reg_el);
-        var av_map_reg_el = document.createElement("av_map_reg");
-        av_map_reg_el.innerHTML = grid.av_map_reg;
-        root.appendChild(av_map_reg_el);
-        var bi_map_reg_el = document.createElement("bi_map_reg");
-        bi_map_reg_el.innerHTML = grid.bi_map_reg;
-        root.appendChild(bi_map_reg_el);
-        var bo_map_reg_el = document.createElement("bo_map_reg");
-        bo_map_reg_el.innerHTML = grid.bo_map_reg;
-        root.appendChild(bo_map_reg_el);
-        var bv_map_reg_el = document.createElement("bv_map_reg");
-        bv_map_reg_el.innerHTML = grid.bv_map_reg;
-        root.appendChild(bv_map_reg_el);
-
+        function rootAddItems(root, types, values) {
+            for (var i = 0; i < types.length; i++) {
+                var el = document.createElement(types[i]);
+                el.innerHTML = values[i];
+                root.appendChild(el);
+            }
+        }
         for (var i = 0; i < items.length; i++) {
             var key = document.createElement("key");
             console.log(items[i])
             key.setAttribute("slavenumber", items[i].data.slavenumber)
             key.setAttribute("key", items[i].data.key)
-
             key.setAttribute("pointnumber", items[i].data.pointnumber)
             key.innerHTML = items[i].data.objectname
             root.appendChild(key);
@@ -1646,66 +1619,19 @@ Ext.define("modbusConfig", {
         } else {
             grid.float_invert = 1
         }
-        var aiOffset = $(xmlstr).find("aiOffset")[0];
-        if (aiOffset) {
-            grid.aiOffset = aiOffset.innerHTML;
-        } else {
-            grid.aiOffset = 0
-        }
-
-        var aoOffset = $(xmlstr).find("aoOffset")[0];
-        if (aoOffset) {
-            grid.aoOffset = aoOffset.innerHTML;
-        } else {
-            grid.aoOffset = 0
-        }
-        var diOffset = $(xmlstr).find("diOffset")[0];
-        if (diOffset) {
-            grid.diOffset = diOffset.innerHTML;
-        } else {
-            grid.diOffset = 0
-        }
-        var doOffset = $(xmlstr).find("doOffset")[0];
-        if (doOffset) {
-            grid.doOffset = doOffset.innerHTML;
-        } else {
-            grid.doOffset = 0
-        }
-        var ai_map_reg = $(xmlstr).find("ai_map_reg")[0];
-        if (ai_map_reg) {
-            grid.ai_map_reg = ai_map_reg.innerHTML;
-        } else {
-            grid.ai_map_reg = 4;
-        }
-        var ao_map_reg = $(xmlstr).find("ao_map_reg")[0];
-        if (ao_map_reg) {
-            grid.ao_map_reg = ao_map_reg.innerHTML;
-        } else {
-            grid.ao_map_reg = 3;
-        }
-        var av_map_reg = $(xmlstr).find("av_map_reg")[0];
-        if (av_map_reg) {
-            grid.av_map_reg = av_map_reg.innerHTML;
-        } else {
-            grid.av_map_reg = 3;
-        }
-        var bi_map_reg = $(xmlstr).find("bi_map_reg")[0];
-        if (bi_map_reg) {
-            grid.bi_map_reg = bi_map_reg.innerHTML;
-        } else {
-            grid.bi_map_reg = 2;
-        }
-        var bo_map_reg = $(xmlstr).find("bo_map_reg")[0];
-        if (bo_map_reg) {
-            grid.bo_map_reg = bo_map_reg.innerHTML;
-        } else {
-            grid.bo_map_reg = 1;
-        }
-        var bv_map_reg = $(xmlstr).find("bv_map_reg")[0];
-        if (bv_map_reg) {
-            grid.bv_map_reg = bv_map_reg.innerHTML;
-        } else {
-            grid.bv_map_reg = 1;
+        setGridTypesValue(xmlstr, grid, ["float_invert"], [1]);
+        setGridTypesValue(xmlstr, grid, ["aiOffset", "aoOffset", "diOffset", "doOffset"], [0, 0, 0, 0]);
+        setGridTypesValue(xmlstr, grid,["ai_map_reg","ao_map_reg","av_map_reg","bi_map_reg","bo_map_reg","bv_map_reg"],[4,3,3,2,1,1]);
+        setGridTypesValue(xmlstr, grid,["ai_priority", "ao_priority", "av_priority", "bi_priority", "bo_priority", "bv_priority"],[7,7,7,7,7,7]);
+        function setGridTypesValue(xmlstr, grid, types, defaults) {
+            for (var i = 0; i < types.length; i++) {
+                var el = $(xmlstr).find(types[i])[0];
+                if (el) {
+                    grid[types[i]] = el.innerHTML;
+                } else {
+                    grid[types[i]] = defaults[i];
+                }
+            }
         }
         var keys = $(xmlstr).find("key");
         var arr = [];
@@ -1754,6 +1680,9 @@ Ext.define("modbusConfig", {
                         return false;
                     }
                 })
+                keys.sort(function (a, b) {
+                    return a.data.value[4] - b.data.value[4];
+                })
                 var arr = [
                     [],
                     [],
@@ -1762,6 +1691,7 @@ Ext.define("modbusConfig", {
                     [],
                     []
                 ];
+
                 grid.store.removeAll()
                 for (var i = 0; i < keys.length; i++) {
                     var key = keys[i].data.value;
@@ -1778,9 +1708,20 @@ Ext.define("modbusConfig", {
                         objectname: obj
                     }
                     arr[num].push(data);
-                    grid.store.add(data);
                 }
-                console.log(arr)
+                for (var i = 0; i < arr.length; i++) {
+                    arr[i] = arr[i].sort(function (a, b) {
+                        return a.key - b.key;
+                    })
+                    for (var j = 0; j < arr[i].length; j++) {
+                        var key = arr[i][j].key;
+                        arr[i][j].pointnumber = j + 1;
+                        if (key[4] == "2" || key[4] == "5") {
+                            arr[i][j].pointnumber += arr[i - 1].length
+                        }
+                    }
+                    grid.store.add(arr[i]);
+                }
             }
         })
 
@@ -1977,6 +1918,60 @@ Ext.define("modbusConfig", {
                         value: 3
                     }]
                 })
+
+                Ext.define("PriorityStore", {
+                    extend: "Ext.data.Store",
+                    fields: ["name", "value"],
+                    data: [{
+                        name: "Priority 1",
+                        value: 0
+                    }, {
+                        name: "Priority 2",
+                        value: 1
+                    }, {
+                        name: "Priority 3",
+                        value: 2
+                    }, {
+                        name: "Priority 4",
+                        value: 3
+                    }, {
+                        name: "Priority 5",
+                        value: 4
+                    }, {
+                        name: "Priority 6",
+                        value: 5
+                    }, {
+                        name: "Priority 7",
+                        value: 6
+                    }, {
+                        name: "Priority 8",
+                        value: 7
+                    }, {
+                        name: "Priority 9",
+                        value: 8
+                    }, {
+                        name: "Priority 10",
+                        value: 9
+                    }, {
+                        name: "Priority 11",
+                        value: 10
+                    }, {
+                        name: "Priority 12",
+                        value: 11
+                    }, {
+                        name: "Priority 13",
+                        value: 12
+                    }, {
+                        name: "Priority 14",
+                        value: 13
+                    }, {
+                        name: "Priority 15",
+                        value: 14
+                    }, {
+                        name: "Priority 16",
+                        value: 15
+                    }]
+                })
                 Ext.create("Ext.window.Window", {
                     title: "Settings",
                     autoShow: true,
@@ -2000,6 +1995,12 @@ Ext.define("modbusConfig", {
                                 grid.bi_map_reg = values.bi_map_reg;
                                 grid.bo_map_reg = values.bo_map_reg;
                                 grid.bv_map_reg = values.bv_map_reg;
+                                grid.ai_priority = values.ai_priority;
+                                grid.ao_priority = values.ao_priority;
+                                grid.av_priority = values.av_priority;
+                                grid.bi_priority = values.bi_priority;
+                                grid.bo_priority = values.bo_priority;
+                                grid.bv_priority = values.bv_priority;
                                 //rec.set(form.getValues());
                                 win.close();
                             }
@@ -2036,8 +2037,51 @@ Ext.define("modbusConfig", {
                             },
                             {
                                 xtype: "fieldset",
+                                title: "priority",
+                                hidden: false,
+                                defaults: {
+                                    xtype: "combo",
+                                    store: Ext.create("PriorityStore"),
+                                    displayField: "name",
+                                    valueField: "value",
+                                    width: 268
+                                },
+                                items: [{
+                                        fieldLabel: "AI",
+                                        value: grid.ai_priority || 7,
+                                        name: "ai_priority"
+                                    },
+                                    {
+                                        fieldLabel: "AO",
+                                        value: grid.ao_priority || 7,
+                                        name: "ao_priority"
+                                    },
+                                    {
+                                        fieldLabel: "AV",
+                                        value: grid.av_priority || 7,
+                                        name: "av_priority"
+                                    },
+                                    {
+                                        fieldLabel: "BI",
+                                        value: grid.bi_priority || 7,
+                                        name: "bi_priority"
+                                    },
+                                    {
+                                        fieldLabel: "BO",
+                                        value: grid.bo_priority || 7,
+                                        name: "bo_priority"
+                                    },
+                                    {
+                                        fieldLabel: "BV",
+                                        value: grid.bv_priority || 7,
+                                        name: "bv_priority"
+                                    }
+                                ]
+                            },
+                            {
+                                xtype: "fieldset",
                                 title: "map",
-                                hidden: true,
+                                hidden: false,
                                 defaults: {
                                     xtype: "combo",
                                     store: Ext.create("RegisterStore"),
@@ -2113,7 +2157,7 @@ Ext.define("modbusConfig", {
         {
             text: "Export ...",
             handler: function () {
-                open("php/file.php?par=get&fileName=/mnt/nandflash/modbusId.xml&header=Content-Disposition: attachment; filename=modbusId.xml");
+                open("php/file.php?par=get&fileName=/mnt/nandflash/modbusID.xml&header=Content-Disposition: attachment; filename=modbusId.xml");
             }
         }
     ],
@@ -2133,9 +2177,39 @@ Ext.define("modbusConfig", {
                 }
             },
             {
+                text: "Register Type",
+                renderer: function (und, ele, model) {
+                    var key = model.data.key
+                    if (key) {
+                        switch (key[4]) {
+                            case "0":
+                                return "3";
+                            case "1":
+                                return "4";
+                            case "2":
+                                return "4";
+                            case "3":
+                                return "1";
+                            case "4":
+                                return "0";
+                            case "5":
+                                return "0";
+                        }
+                    }
+                }
+            },
+            {
                 text: "Point Number",
                 dataIndex: "pointnumber",
                 flex: 1,
+                renderer: function (und, ele, model) {
+                    var type = model.data.key[4];
+                    if (type == "0" || type == "1" || type == "2") {
+                        return und * 2 - 1;
+                    } else {
+                        return und;
+                    }
+                },
                 editor: {
                     xtype: 'numberfield',
                     allowBlank: false,

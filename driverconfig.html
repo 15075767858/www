@@ -409,16 +409,16 @@
 <script src="js/ext-all.js"></script>
 <script src="js/charts.js"></script>
 
-<!--<script src="js/main.js"></script>
-<script src="js/ext-component.js"></script>-->
+<script src="js/main.js"></script>
+<script src="js/ext-component.js"></script>
 
 <script type="text/javascript">
-    var jsArr = ['js/main.js', 'js/ext-component.js']
-    for (var i = 0; i < jsArr.length; i++) {
-        var script = document.createElement("script")
-        script.src = jsArr[i] + "?" + Math.random()
-        document.getElementsByTagName("body")[0].append(script)
-    }
+    // var jsArr = ['js/main.js', 'js/ext-component.js']
+    // for (var i = 0; i < jsArr.length; i++) {
+    //     var script = document.createElement("script")
+    //     script.src = jsArr[i] + "?" + Math.random()
+    //     document.getElementsByTagName("body")[0].append(script)
+    // }
     //modbus
     function modbusXml() {
         var IPCombo = Ext.create("Ext.form.field.ComboBox", {
@@ -454,7 +454,7 @@
         var modbusSetWin = Ext.create("Ext.window.Window", {
             autoShow: true,
             title: "Modbus Setting",
-            width: 600,
+            width: 800,
             maxHeight: 500,
             scrollable: true,
             items: [
