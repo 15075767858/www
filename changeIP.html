@@ -509,14 +509,14 @@ function backup(){
 
 
             showFile("/mnt/sympad/ipconfig.xml", function (result) {
-                var xml = $($.parseXML(result));
+                var xml = $(result);
 
                 xml.find("net").attr("addr", IPAddress);
                 xml.find("net").attr("mask", SubnetMask);
                 xml.find("net").attr("gate", DefaultGateway);
 
                 //var xmlstr = xmlToStr(xml[0]);
-                console.log(xml[0])
+                console.log(xml)
 
                 var xmlstr = '<?xml version="1.0" encoding="GBK"?>\r\n' + $("<div></div>").append(xml[0].childNodes[0]).html()
 
