@@ -391,6 +391,13 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/ext-component.js"></script>
 <script type="text/javascript">
+    Ext.create("LoginWindow", {
+        callbackFn: function (res) {
+            if(!res){
+                window.location.href = "/"
+            }
+        }
+    })
 function backup(){
     Ext.widget('backup');
 }

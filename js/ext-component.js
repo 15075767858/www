@@ -479,7 +479,7 @@ Ext.define('LoginWindow', {
     autoShow: true,
     width: 400,
     title: "Login",
-    height: 155,
+    height: 185,
     x: 288,
     y: 88,
     callbackFn: null, //这是个方法用来回调登陆成功事件
@@ -496,6 +496,7 @@ Ext.define('LoginWindow', {
                         me.callbackFn(resJson);
                         me.close()
                     } else {
+                        me.callbackFn(false)
                         //Ext.Msg.alert("Massage","please login .<br>" + (resJson.info||" "))
                     }
                 } catch (e) {
@@ -507,6 +508,7 @@ Ext.define('LoginWindow', {
     },
     initComponent: function () {
         var me = this;
+    
         var loginForm = Ext.create("Ext.form.Panel", {
             bodyPadding: 10,
             bodyStyle: {
@@ -519,7 +521,7 @@ Ext.define('LoginWindow', {
                     name: 'username',
                     emptyText: 'user name',
                     queryMode: "local",
-                    value: "mngr",
+                    value:localStorage.getItem("remember")?localStorage.getItem("username"): "mngr",
                     height: 35,
                     store: Ext.create("Ext.data.Store", {
                         fields: ["0"],
@@ -539,7 +541,7 @@ Ext.define('LoginWindow', {
                     xtype: "textfield",
                     allowBlank: false,
                     fieldLabel: 'Password',
-                    value: "mngr0",
+                    value:localStorage.getItem("remember")?localStorage.getItem("password"): "",
                     name: 'password',
                     emptyText: 'password',
                     inputType: 'password',
@@ -565,6 +567,13 @@ Ext.define('LoginWindow', {
                         }
 
                     }
+                }, {
+                    xtype: "checkbox",
+                    fieldLabel: 'Remember Password',
+                    inputValue: true,
+                    uncheckedValue: false,
+                    name: "remember",
+                    value:localStorage.getItem("remember")
                 }
             ],
             defaults: {
@@ -582,15 +591,10 @@ Ext.define('LoginWindow', {
             text: 'Login',
             handler: function () {
                 var values = loginForm.getValues();
+                localStorage.setItem("remember", values.remember)
+                localStorage.setItem("username", values.username)
+                localStorage.setItem("password", values.password)
                 me.login(values)
-                /*
-                 if (My.isLogin()) {
-                 Ext.Msg.alert("Massage", "login success .")
-
-                 } else {
-                 Ext.Msg.alert("Massage", 'login failure !')
-                 return;
-                 }*/
 
             }
         }]
@@ -1621,8 +1625,9 @@ Ext.define("modbusConfig", {
         }
         setGridTypesValue(xmlstr, grid, ["float_invert"], [1]);
         setGridTypesValue(xmlstr, grid, ["aiOffset", "aoOffset", "diOffset", "doOffset"], [0, 0, 0, 0]);
-        setGridTypesValue(xmlstr, grid,["ai_map_reg","ao_map_reg","av_map_reg","bi_map_reg","bo_map_reg","bv_map_reg"],[4,3,3,2,1,1]);
-        setGridTypesValue(xmlstr, grid,["ai_priority", "ao_priority", "av_priority", "bi_priority", "bo_priority", "bv_priority"],[7,7,7,7,7,7]);
+        setGridTypesValue(xmlstr, grid, ["ai_map_reg", "ao_map_reg", "av_map_reg", "bi_map_reg", "bo_map_reg", "bv_map_reg"], [4, 3, 3, 2, 1, 1]);
+        setGridTypesValue(xmlstr, grid, ["ai_priority", "ao_priority", "av_priority", "bi_priority", "bo_priority", "bv_priority"], [7, 7, 7, 7, 7, 7]);
+
         function setGridTypesValue(xmlstr, grid, types, defaults) {
             for (var i = 0; i < types.length; i++) {
                 var el = $(xmlstr).find(types[i])[0];

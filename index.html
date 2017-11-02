@@ -308,15 +308,19 @@
         //var password = window.prompt("please input password")
         //login("engineerLogin", password);
         Ext.create("LoginWindow", {
-            callbackFn: function () {
+            callbackFn: function (res) {
+                if(res){
                 window.location.href = "default.html"
+                }
             }
         })
     });
     $("#userLogin").click(function () {
         Ext.create("LoginWindow", {
-            callbackFn: function () {
-                window.location.href = "home"
+            callbackFn: function (res) {
+                if(res){
+                    window.location.href = "home"
+                }
             }
         })
         //var password = window.prompt("please input password")

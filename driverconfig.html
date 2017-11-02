@@ -413,6 +413,13 @@
 <script src="js/ext-component.js"></script>
 
 <script type="text/javascript">
+    Ext.create("LoginWindow", {
+        callbackFn: function (res) {
+            if(!res){
+                window.location.href = "/"
+            }
+        }
+    })
     // var jsArr = ['js/main.js', 'js/ext-component.js']
     // for (var i = 0; i < jsArr.length; i++) {
     //     var script = document.createElement("script")

@@ -57,6 +57,13 @@ if ($par == "runListen") {
         echo system($expath);
     }
 }
+if($par=="listenNode"){
+    if (isMac()==false) {
+        $expath = "initfiles\\n.exe initfiles\\restart.js";
+        echo $expath;
+        echo system($expath);
+    }
+}
 
 function isMac()
 {
